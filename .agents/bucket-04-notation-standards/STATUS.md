@@ -1,5 +1,5 @@
 status: done
-updated: 2026-09-06T13:29:00Z
+updated: 2026-09-06T13:38:00Z
 done:
   - dossier written, validated and pushed: docs/research/round2/04-notation-standards.md
     (1783 lines, six sections in the structure the brief prescribes)
@@ -39,22 +39,32 @@ done:
         Licence caution recorded: the academia.edu and scribd copies are reference-only.
       marching cymbal terms: negative result recorded as such, with the corps packets named
         and the resolution handed to bucket 08.
-  - two corrections to my own earlier text, both now in the dossier:
-      "Guz" is NOT an OCR artefact - it occurs twice in vendor HTML in a table where "Buzz"
-      occurs nine times, so it is either a real Tapspace stroke or MakeMusic's typo; meaning
-      stays UNVERIFIED, spelling is verified
-      "choke" stated precisely: it exists in vocabulary/rules.json only as a relation inside
-      the splash.hit decomposition, which lets the resolver SYNTHESISE a choke but gives a
-      source file no way to STATE one
+  - "choke" stated precisely: it exists in vocabulary/rules.json only as a relation inside
+    the splash.hit decomposition, which lets the resolver SYNTHESISE a choke but gives a
+    source file no way to STATE one
+  - guz and zing corrected from bucket 08, which owns their literature (commit 516d470):
+      guz is a real Tapspace Virtual Drumline term at the same two note numbers Finale
+        lists, not a typo and not an OCR artefact - recorded as attested but undefined,
+        Tapspace sole source
+      zing loses its UNVERIFIED mark: six institutionally independent marching sources
+        define it as a scrape of one plate's edge along the other's bow, bell outward. That
+        makes it the SIXTH witness for a direction axis and the best-corroborated new term
+        in this bucket, so it now has its own gap row rather than sitting in the pile of
+        single-source marching names. suc has four sources, crunch two, smash one.
+      the self-critique gains the rule both errors broke: an empty search from inside this
+        bucket says nothing about literature this bucket does not own, so a trade term
+        missing from the notation standards is out of scope, not unverified
 next:
   - nothing; bucket complete
 questions:
   - answered and closed: fist and fingernail are genuinely absent from axes.json serial 1,
     the brief was written from an earlier sketch, the file is authoritative. The dossier now
     says so and treats both as gaps with their MusicXML and SMuFL evidence.
-  - no open queries. If bucket 08 resolves "zing", "smash" and "crunch" from the Tapspace
-    manual, §3.14(c) of my dossier should be updated with the result; I have flagged it
-    there as theirs to resolve.
+  - no open queries. Bucket 08's results for guz, zing, suc, crunch and smash are folded in
+    already; if that bucket later defines guz, §2.11 and §3.5 of my dossier are the two
+    places to update.
+  - dossier line count is now 1799; the only UNVERIFIED marks left are two narrow ones
+    (MNX's future intent, and whether SMuFL pictSwishStem means sweep or swirl).
 needs_owner:
   - mint technique "choke"? Six independent sources name it (SMuFL pictChokeCymbal, Guitar
     Pro on five instruments, Sibelius, MuseScore, Finale, Weinberg 1994). The existing
