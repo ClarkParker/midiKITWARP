@@ -50,12 +50,26 @@ did NOT get, so the reconciliation pass can decide whether to chase it.
 - curl to github.com and raw.githubusercontent.com is BLOCKED (403). git clone --depth 1
   WORKS for public repositories.
 - Load WebFetch and WebSearch via ToolSearch with query "select:WebFetch,WebSearch".
-- Many vendor PDF paths return 403 to a direct fetch. Try, in order: the vendor's own
-  knowledge-base HTML page; web.archive.org/web/<url>; the Wayback CDX API
-  (http://web.archive.org/cdx/search/cdx?url=...&output=json) to find a snapshot;
-  Google Books; archive.org full-text search
-  (https://archive.org/advancedsearch.php?q=...&output=json); IMSLP for older treatises;
-  HathiTrust; university library open pages.
+- **web.archive.org is UNREACHABLE in this environment.** Every connection resets
+  mid-tunnel, by curl and by WebFetch alike. There is no Wayback route. Do not spend time
+  on it.
+- **archive.org itself DOES answer** (HTTP 200). Its details pages, the metadata API
+  (https://archive.org/metadata/<id>), full-text search
+  (https://archive.org/advancedsearch.php?q=...&output=json) and the plain-text derivatives
+  (https://archive.org/stream/<id>/<id>_djvu.txt) all work.
+- **WebSearch draws on ONE session-wide budget shared by every worker.** Assume it is
+  scarce or already spent. A search that returns nothing is the budget, not your query.
+  Plan around WebFetch on URLs you construct directly, `git clone --depth 1` for anything
+  on GitHub, and a site's own search endpoint fetched as a URL.
+- Many vendor PDF paths return 403. Try, in order: the vendor's own knowledge-base HTML
+  page; regional vendor domains; the vendor's separate documentation portal; Google Books;
+  IMSLP for older treatises; HathiTrust; university library open pages.
+- **The egress policy denies more hosts than github.com.** Confirmed 502 on CONNECT for
+  instruments.ircam.fr, lclsds.loc.gov, vocabs.dariah.eu, duckduckgo.com,
+  howtowriteforpercussion.com, pearleurope.com, www.drummica.com. A host answering 502 is
+  denied, not slow: record it as unreachable with its locator and move on.
+- A complete candidate register with live locators for sources you could NOT reach is worth
+  as much as the extraction. Never stall retrying a dead host.
 - Use python3 for parsing and aggregation. Save large intermediate downloads under
   scratch:buckets/<your bucket>/ and never into the project working directory
   /home/user/midiKITWARP.
