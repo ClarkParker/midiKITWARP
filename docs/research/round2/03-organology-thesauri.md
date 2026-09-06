@@ -53,7 +53,7 @@ AAT's `drumheads`, `shells (drum components)` and `snares (drum components)`, it
 side stick, flam, drag, buzz, choke, or open/closed hi-hat (query, §2.5), and no concept
 for a drum rim or a cymbal bow, bell or edge (§2.10). LCMPT has none either, and by design — it is a *medium of
 performance* thesaurus, not a technique thesaurus. Hornbostel-Sachs, in the authors' own
-words, deliberately excludes playing technique for membranophones (§2.2.3). The one
+words, deliberately excludes playing technique for membranophones (§2.2). The one
 linked-data vocabulary that promises "instrument playing techniques", DOREMUS
 `vocabulary/technique/`, turns out to hold 20 concepts, all of them vocal — *blow,
 breathing, cantillation, coloratura, cry, incantation, rapping, scat, throat singing,
@@ -149,7 +149,7 @@ secondary aggregation or index.
 | 1 | *Systematik der Musikinstrumente. Ein Versuch* | E. M. von Hornbostel, C. Sachs | 1914 | journal article | *Zeitschrift für Ethnologie* 46, Heft 4–5, pp. 553–590. Introductory essay reprinted as Univ. Würzburg, Institut für Musikforschung, *Materialhefte* n° 1, `https://www.musikwissenschaft.uni-wuerzburg.de/fileadmin/04070000/Instrumentensammlung/Materialien_Instrumente/Hornbostel_SysTex.pdf` (14 pp, HTTP 200) | A | **yes**, essay only, not the numbered table |
 | 2 | "Classification of Musical Instruments" (English translation of #1) | A. Baines, K. P. Wachsmann (trans.) | 1961 | journal article | *Galpin Society Journal* 14, pp. 3–29. JSTOR. Cited by #3 p. 4 and #5 p. 1 | A | **no** — paywalled |
 | 3 | *Revision of the Hornbostel-Sachs Classification of Musical Instruments by the MIMO Consortium* | MIMO working group for classification and thesauri, chaired by M. Birley (Horniman Museum), with A. Myers (Edinburgh), S. Willaert (MIM Brussels) | 8 July 2011 | standard document | 26 pp PDF, `https://archive.org/details/revisionofthehornbostelsachsclassificationofmusicalinstrumentsbythemimoconsortium`; also `http://www.mimo-international.com/documents/hornbostel%20sachs.pdf` (HTTP 200 over http) | A | **yes** |
-| 4 | *Addenda & Corrigenda* to #3 | MIMO Consortium | n.d. | erratum | second file in the same archive.org item | A | **no** — not fetched |
+| 4 | *Addenda & Corrigenda* to #3 | CIMCIM Working Group for Classification, chair M. Birley (Horniman) | **October 2017** | erratum | `https://archive.org/download/revisionofthehornbostelsachsclassificationofmusicalinstrumentsbythemimoconsortium/…%20-%20Addenda%20%26%20Corrigienda_djvu.txt` (follow the 302) | A | **yes** |
 | 5 | *The Knight Revision of Hornbostel-Sachs: a new look at musical instrument classification* | R. C. Knight, Oberlin College | © 2015, rev. 2017 | classification scheme | 44 pp PDF, `https://www2.oberlin.edu/faculty/rknight/Organology/KnightRev2015.pdf` | B | **yes** |
 | 6 | "A New Look at Classification and Terminology for Musical Instruments" | R. C. Knight | 2016 | journal article | *Galpin Society Journal* 69 | B | **no** — paywalled |
 | 7 | Revision of H-S classes 1–4 | J. Montagu | n.d. | classification scheme | published in *Muzyka*; #3 p. 1 states its revision is "closely based" on it | B | **no** |
@@ -306,7 +306,9 @@ cord-and-flange; `-85` cord-and-belt; `-86` cord-and-peg; `-9` membrane lapped o
 
 ### 2.2 What Hornbostel and Sachs said about playing technique — the decisive passage
 
-Register #1, Würzburg reprint p. 11, verbatim German:
+Register #1, Würzburg reprint p. 11. The MIMO *Addenda & Corrigenda* (register #4,
+footnote 1) gives the locator in the original and in translation: **ZfE xlvi (1914)
+pp. 560–561 = Galpin Society Journal 14 (1961) pp. 11–12.** Verbatim German:
 
 > "Gemeinsame Merkmale, die für alle Instrumente einer Klasse in Frage kommen könnten,
 > z. B. **für Membranophone die Art der Fellbefestigung** und **für Chordophone die
@@ -748,7 +750,7 @@ Two things GND does that KITWARP should notice:
 | Bass drum in marching band (211.212.12) | MIMO 2011 p. 8 | instrument | `kick` |
 | Drum set / Schlagzeug / Batterie | MIMO 5702 | — | the whole layout, not a term |
 | tom-tom | LCMPT mp2013015737 | instrument | `tom` |
-| roto-tom | LCMPT mp2019015002 | instrument | near `octoban` (§4.6) |
+| roto-tom | LCMPT mp2019015002 | instrument | near `octoban` (§4.7) |
 | cowbell / Almglocke | LCMPT mp2013015187 | instrument | `cowbell` |
 | wood block, temple blocks | LCMPT mp2017015001 / mp2023015004 | instrument | `woodblock` |
 | tambourine | LCMPT mp2013015705 | instrument | `tambourine` |
@@ -894,13 +896,35 @@ stick, striker)"), and there is no class for it — 111.24 Percussion vessels de
 to gongs, bells, slit drums and troughs. MIMO nevertheless files `Crash cymbal`,
 `Choke cymbal`, `Sizzle cymbal` and `Sock cymbal` under 111.142.
 
+The October 2017 *Addenda & Corrigenda* (register #4) revisits the idiophones — it adds a
+whole new class, **17 Shaken springs, Thunder tube**, and corrects 111.241.1 — and it
+leaves 111.142 untouched. So this is not an oversight awaiting a fix; it is the settled
+position of the classification.
+
 The reason is historical and instructive: **H-S classifies by the canonical playing mode of
 1914**, when the orchestral cymbal was a clashed pair. The whole of drum-kit practice —
 suspended cymbal, stick, bow and bell zones, foot pedal — postdates the scheme and is
 invisible to it. Wikidata partially corrects this by tagging crash, ride and splash
 `111.24` instead of `111.142`, which contradicts MIMO. Both cannot be right.
 
-### 4.4 MIMO contains duplicate concepts for the same thing
+### 4.4 MIMO's machine-readable Hornbostel-Sachs is six years behind MIMO's own published one
+
+The October 2017 *Addenda & Corrigenda* (register #4) adds **class 17, "Shaken springs,
+Thunder tube"**, as a new top-level subdivision of idiophones, citing Knight, GSJ 69 (2016)
+p. 11. It also rewrites the definitions of 211.24 hourglass-shaped drums and 211.26
+goblet-shaped drums, and fixes the cross-reference in the -81 suffix.
+
+The live MIMO SKOS does not have any of it. A `children` call on the Idiophones node
+returns exactly six: `11, 12, 13, 14, 15, 16`. **There is no 17.** The published standard
+and its own machine-readable implementation, served by the same consortium, have been out
+of step since 2017.
+
+The consequence for KITWARP is narrow but real: if it records a Hornbostel-Sachs notation,
+"which MIMO" is a second question after "which revision" (§4.2). The pinned form has to be
+something like `hs-mimo-2011:111.142`, and even that does not say whether the 2017 addenda
+were applied.
+
+### 4.5 MIMO contains duplicate concepts for the same thing
 
 `Drum set` exists twice, 5702 and 5703, with 5703 nested under 5702 and identical
 prefLabels in all 13 languages. `Cymbals` exists twice, 2451 and 2471, with 2471 a child of
@@ -908,7 +932,7 @@ prefLabels in all 13 languages. `Cymbals` exists twice, 2451 and 2471, with 2471
 P3763 = 5702 and 5703; Q190172 carries 2451 and 2471). A KITWARP xref would have to pick
 one, and there is no rule that says which.
 
-### 4.5 Wikidata labels are not unique
+### 4.6 Wikidata labels are not unique
 
 The English label `triangle` is carried by five distinct Wikidata items (Q19821, Q201735,
 Q2309718, Q11357200, Q89193228, Q107385829 — six, in fact); `cymbal` by four (Q190172,
@@ -916,7 +940,7 @@ Q3676836, Q4220665, Q136514071); `cowbell` by three; `tambourine` by four. Only 
 `triangle` and Q190172 `cymbal` carry AAT ids. Any label-based lookup into Wikidata is
 therefore wrong by construction; only the Q-id is usable.
 
-### 4.6 One-word false friends across the authority files
+### 4.7 One-word false friends across the authority files
 
 | Word | Meaning A | Meaning B | Locators |
 |---|---|---|---|
@@ -950,7 +974,7 @@ point `implement = bow` and `site = bow` will coexist and mean unrelated things 
 term. This is the same species of collision as `bell` in §5.3, and it is worth catching
 before the orchestral family is minted.
 
-### 4.7 Different words, same thing
+### 4.9 Different words, same thing
 
 - `snare drum` = `side drum` = `caixa` (LCMPT UF ring) = H-S 211.212.11 "Side drum".
 - `timpani` = `kettledrums` = H-S 211.11 "Separate vessel drums — European timpani".
@@ -1083,8 +1107,9 @@ versus hand-part, arriving from a different direction. **Recorded, not resolved.
 - **LCGFT** was identified and not extracted. It is a genre/form vocabulary, so it would
   contribute nothing to the instrument axis; skipping it was a judgement, not an oversight,
   but it is untested.
-- **The MIMO Addenda & Corrigenda** was not read. It may correct exactly the cymbal
-  misclassification described in §4.3.
+- **The MIMO Addenda & Corrigenda** was read after the fact (register #4). It does not
+  correct the cymbal misclassification; see §4.3, which is now a settled finding rather
+  than a provisional one.
 - **Nothing was extracted from Italian or Spanish scholarly sources.** The Italian and
   Spanish searches returned pedagogical material and Wikipedia-grade summaries, and the one
   peer-reviewed hit (Revista Musical Chilena 67/219, SciELO, "Clasificación
@@ -1125,7 +1150,7 @@ technique as a primary axis, which would be a direct precedent for KITWARP's des
   is seven years ago. A better test would be the MIMO service's own change log, which was
   not found.
 - The coverage matrix in §0.1 was built by regex over label strings. Regex over labels is
-  the very method §4.5 warns against. The eleven "no concept anywhere" verdicts were each
+  the very method §4.6 warns against. The eleven "no concept anywhere" verdicts were each
   re-checked by a targeted query per authority, but a concept hiding under an unexpected
   label (a `ride cymbal` recorded in AAT as, say, `suspended cymbals`) would have been
   missed. Confidence: high for MIMO and LCMPT, which were searched exhaustively over a
