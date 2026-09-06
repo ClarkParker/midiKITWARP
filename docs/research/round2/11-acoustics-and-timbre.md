@@ -183,10 +183,14 @@ gives three physically privileged radii and no fourth. Corroborated independentl
   driver to dampening."
 - Timpani: the normal beating point is chosen to suppress the concentric modes and favour
   the diametric ones. **UNVERIFIED** as to the exact radius — I could not reach Rossing's
-  own text; the secondary statement I found (wtt.pauken.org, "Rossing Et al." page) puts it
-  "a quarter of the distance between the edge and the center", i.e. r ≈ 0.75R, while the
-  common trade phrasing "a quarter of the diameter in from the rim" gives r ≈ 0.5R. These
-  are different radii. See the false-friend entry in section 4.
+  own text. The best secondary statement reached is *The Well-Tempered Timpani*
+  (wtt.pauken.org, ch. 3, "Timpani Bowl", p. 3): "When a timpano is struck a quarter of the
+  distance between the edge and the center, in many practical cases the inharmonic modes
+  will radiate their energy much more efficiently and decay faster leaving the more
+  harmonic preferred modes to dominate the sound spectrum." That is r ≈ 0.75R. The page
+  attributes this sentence to no publication, though it cites Rossing 1982 (*Percussionist*)
+  and Rossing 2000 elsewhere. The common trade phrasing "a quarter of the diameter in from
+  the rim" gives r ≈ 0.5R instead. These are different radii. See §4.
 
 **(e) Cymbals are different and the axis should not pretend otherwise.**
 On a cymbal, radial strike position is a genuine continuum with no privileged steps.
@@ -273,8 +277,10 @@ trade, pedagogical or student work; **D** = tertiary summary.
 | 48 | Acoustic and modal analysis of an African djembe drum | — | 2000 | Meeting abstract, JASA 108(5 suppl.) 2591 | pubs.aip.org `jasa/article/108/5_Supplement/2591` | A | No — content via #3 |
 | 49 | Banjo drum physics — sound experiments and simple acoustics demos | D. Politzer | 2018 | Preprint | arXiv:1806.08857 | B | No |
 | 50 | Hi-hat / Choke cymbal / Sizzle cymbal / Crash cymbal (etc.) | Grove Music Online | 2001–2003 | Reference entries | DOIs `10.1093/gmo/9781561592630.article.52537`, `.j085200`, `.j412200`, `.j105300`, `.j424200`, `.j084600`, `.j452700`, `.j082400` | B | No — paywall; **worth chasing, these are the definitional entries** |
+| 51 | Modes of vibration and directivity of percussion instruments | T. D. Rossing | 2018 | ASA outreach article, Explore Sound | exploresound.org `2018/03/modes-vibration-directivity-percussion-instruments/` | B | **Yes** |
+| 52 | The Well-Tempered Timpani, ch. 3 "Timpani Bowl" | — | — | Pedagogical web book | wtt.pauken.org `chapter-3/timpani-bowl/3` | C | **Yes** — the only reachable statement of the timpani beating radius |
 
-Reached in full: 9 of 50. Reached in part (abstract, TOC or metadata): 10. That ratio is
+Reached in full: 12 of 52. Reached in part (abstract, TOC or metadata): 10. That ratio is
 expected; the register itself is the deliverable, and it says clearly where the remaining
 value sits — rows 1, 2, 4, 12, 27, 29 and 50.
 
@@ -300,6 +306,8 @@ value sits — rows 1, 2, 4, 12, 27, 29 and 50.
 | normal beating spot (timpani) | Radius chosen to reinforce the diametric modes and suppress the concentric ones | **UNVERIFIED** — secondary only, wtt.pauken.org; exact radius disputed, see §4 |
 | Helmholtz resonance (djembé) | "a bass note around 70 to 80 Hz, which appears to be due to the Helmholtz resonance of the shell" | Rossing 2001 §3 |
 | stroke height | The height the stick starts from; established as "the major factor in the resulting amplitude of the strike" | Henzie 1960 via Tindale 2004 §3; measured levels 8/16/24/32 cm in Prockup 2013 §3 |
+| radiation character of the first five drumhead modes | The first "radiates pretty much in all directions, at least in its own plane"; the rest "radiate most strongly in 2, 4, 6, or 8 directions" — monopole, dipole, quadrupole, hexapole, octupole | Rossing, ASA Explore Sound 2018 |
+| two-head interaction | "the two membranes interact strongly as they vibrate", making "the modes or patterns of the drum quite different form what they are in a drum with a single membrane" | Rossing, ASA Explore Sound 2018 |
 
 ### 2.2 Snare mechanism and damping
 
@@ -477,9 +485,10 @@ Per the brief, these are the most valuable findings, because each implies a miss
 
 **A genuine numeric conflict, flagged for whoever owns the position axis:**
 the privileged intermediate radius on a timpano is described as "a quarter of the distance
-between the edge and the center" (r ≈ 0.75R) in the secondary source I could reach, while
-the common trade phrasing is "a quarter of the diameter in from the rim" (r ≈ 0.5R).
-Those are different places. Both are called "the normal beating spot". **UNVERIFIED** —
+between the edge and the center" (*The Well-Tempered Timpani*, ch. 3 "Timpani Bowl" p. 3),
+which is r ≈ 0.75R, while the common trade phrasing is "a quarter of the diameter in from
+the rim", which is r ≈ 0.5R. Those are different places. Both are called "the normal
+beating spot". The wtt page attributes its sentence to no publication. **UNVERIFIED** —
 resolving it requires Rossing 1992 (Physics Today) or Fletcher & Rossing ch. 18. Until it
 is resolved, `halfway` and any future `quarter` position value are ambiguous.
 
