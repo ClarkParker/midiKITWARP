@@ -820,6 +820,14 @@ Two side findings from the same sweep, both from vendor pages:
    titles). This was not tested; there is no host in this environment. **Recommendation: put
    it to the reconciliation pass as a question, not a finding.**
 
+**Second route tried for the three hard negatives.** archive.org proper (not Wayback) was
+searched for user-uploaded copies of the account-gated documents, since a vendor-authored
+PDF reached through a mirror would still be usable if labelled: `advancedsearch.php` for
+`title:("MODO Drum")`, `title:("Superior Drummer")`, `title:("GetGood")` and for any item
+titled keymap / key map / drum map. Nothing relevant exists — the only hits are a plugin
+database screenshot, a Twitch VOD and unrelated audio. So "no public copy" for MODO Drum
+and Superior Drummer 3 has now been tested through two independent routes, not one.
+
 **What could have been done better here.** The searches in round A were organised by vendor
 rather than by document type; the two most productive routes of the whole pass — the Zendesk
 attachments API and the vendors' historic `updates/manuals/` directories — were found by
