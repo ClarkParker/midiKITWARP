@@ -30,6 +30,31 @@ an axis; section 3.9 lists the ones that fit **no** axis, which the brief identi
 most valuable finding. Section 5 states what vocabulary v0.1 (155 terms, kit-only) is
 missing or has named wrongly, measured against this literature.
 
+### 0.1 The two findings the reconciliation pass most needs
+
+**(a) The axis decomposition was arrived at independently in 1953, without reference to
+MIDI.** Gardner Read's *Thesaurus of Orchestral Devices* organises its percussion part
+(pp. 158–233; contents at pp. XVI–XVII) under six recurring section headings, applied to
+every instrument family in turn:
+
+> **Dampened · Methods of Striking · Muffled · Stick Types · Without snares · Other Effects**
+
+Those are, in order, KITWARP's `damping` (transient), `site` + `position` + `technique`,
+`damping` (sustained), `implement`, `mechanism`, and the residue. A working orchestrator
+building a reference book from published scores, forty years before General MIDI, cut the
+problem along the same joints. That is the strongest external validation of the model
+found in this bucket, and it is worth more than any individual term, because it is
+evidence that the axes are in the subject matter rather than in the tooling. Read also
+splits `Dampened` from `Muffled`, which v0.1 does not — see §5.2 and §4 item 7.
+
+**(b) `timbre` is a false friend, and it collides with an existing axis name.** In French
+and Italian scores `timbre` / `timbro` means the **snare wires**: `sans timbre` = snares
+off (Widor p. 108; Read p. 209), `avec timbre(s)` = snares on (Read p. 210), `détimbrée` =
+de-snared; `caisse claire` is named for it. KITWARP's `timbre` axis means
+acoustic-vs-808-vs-FM. Any importer that sees `timbre` in a French or Italian source string
+and resolves it on the `timbre` axis will silently destroy a `mechanism` value. This needs
+flagging in `rules.json`, not burying in a table.
+
 ---
 
 ## 1. Candidate source register (Round A)
@@ -50,6 +75,9 @@ The environment blocked the ordinary route:
 | `ia-fts.archive.org` | HTTP 502 on CONNECT — blocked by egress policy |
 | `web.archive.org` | dead in this environment (supervisor-verified); not used |
 | `imslp.org/api.php?action=query&list=search` | HTTP 200 but `{"query":{"search":[]}}` for every query; `Special:Search` 302s. Not a usable route |
+| `gallica.bnf.fr` | `SRU?operation=searchRetrieve` returns 403. An `ark:` viewer URL returns HTTP 200 — but so does every path under it, including `.texteBrut` and `/f41.texteBrut`, all serving the identical 50 212-byte **"Vérification de sécurité"** interstitial. Gallica is therefore closed, not open, despite the 200 |
+| `pas.org` | site reachable, its search works, but article bodies are behind a member login |
+| `fr.wikisource.org` | **works** |
 | `www.vsl.co.at`, `howtowriteforpercussion.com` | HTTP 502 on CONNECT — egress policy, do not retry |
 | archive.org `fulltext/inside.php` (search-inside) | **works, HTTP 200, JSON with per-page match snippets, for unrestricted items**; **HTTP 403 "Item not available" for every lending-restricted item**, on both `d1` and `d2` hosts, with and without a `Referer` header and the `pre_tag`/`post_tag` parameters the BookReader itself sends |
 | archive.org `advancedsearch.php` | **works** — the main breadth instrument used here |
@@ -81,7 +109,7 @@ public-domain scan or from the publisher's own preview PDF.
 
 ### 1.1 The searches actually run
 
-Twelve is the floor the brief sets; 42 distinct queries were run, varying register,
+Twelve is the floor the brief sets; 48 distinct queries were run, varying register,
 language, source type and era.
 
 | # | Register / language / era | Query |
@@ -128,6 +156,15 @@ language, source type and era.
 | Q40 | vernacular, EN, 19c | IA: `(Greissinger OR Strube OR Nevins OR "drum instructor")` |
 | Q41 | vernacular, EN, 1920s | IA: `("modern drumming" OR "dance drumming" OR "trap drummer" OR "traps")` |
 | Q42 | vernacular, EN, 1900–40 | IA: `(drum AND (ragtime OR jazz) AND (method OR instructor OR system)) AND date:[1900 TO 1940]` |
+| Q43 | vernacular, EN, 1937 | IA: `(Bauduc OR "Dixieland drumming")` — **hit**, see §2.17 |
+| Q44 | vernacular, EN, 1938 | IA: `(Krupa AND (drum OR drums OR drumming))` — no method book |
+| Q45 | vernacular, EN, 1930–50 | IA: `("drum method" OR "modern drumming" OR "drum instructor") AND date:[1930 TO 1950]` |
+| Q46 | rudimental, EN, 19c | IA: `(rudimental OR "N.A.R.D." OR "National Association of Rudimental Drummers")` — yielded Strube 1870 |
+| Q47 | treatise, FR, 19c | IA: `(Kastner AND (timbales OR tambour))` — nothing |
+| Q48 | handbook, DE/EN | IA: `(Peinkofer OR Tannigel)` — only the two lending-restricted copies |
+
+Q43–Q48 were run on the supervisor's leads after the WebSearch pool proved still closed to
+this worker. Q43 closed the open question in §4; Q47 and Q48 confirmed the two negatives.
 
 Q33–Q35 returned **no** unrestricted copy of any of the six named books. Q36–Q38 returned
 only one relevant new item, Sanderson's 1980 thesis *The dramatic role of percussion in
@@ -164,6 +201,9 @@ manual; **C** = a course guide, vendor page or derived resource.
 | S19 | **The Military Drummer** | Carlton E. Gardner | 1918 | method, EN | `TheMilitaryDrummerAManual` | B | medium — counted stroke-roll series, §2.15 |
 | S19b | **Straight's Modern Syncopated Rhythms for Drums** | Edward B. Straight | 1922 | dance-band method, EN | `StraightsModernSyncopatedRhythms` | B | medium — 1922 attestation of tip/butt and "Jazz sticks", §2.16 |
 | S19c | Army Regulations for Drum, Fife and Bugle | William Nevins | 1864 | military manual, EN | `armyregulationsf00nevi` | C | low |
+| S19d | Strube's Drum and Fife Instructor | Gardiner A. Strube | 1870 | method, EN | `strubesdrumfifei00stru` | C | low — rudimental, belongs to the rudiments bucket |
+| S19e | **Dixieland Drumming** | Ray Bauduc | 1937 | dance-band method, EN | `RayBauducDixielandDrumming` — community upload, **no stated licence or rights field, uploader a private individual. All rights reserved under CLAUDE.md rule 2: registered and described, not quoted.** | B | **high for one question** — the 1937 rim-shot attestation, §2.17 |
+| S20b | Méthode pratique d'orchestration symphonique, *Instruments à percussion* | Émile Tavan | 1887 | manual, FR | `fr.wikisource.org/wiki/Méthode_pratique_d’orchestration_symphonique/Instruments_à_percussion` | C | low — notation, ranges and orchestral usage; **no** beater, position, stroke or muffling terms |
 | S20 | Manuel général de musique militaire | J.-G. Kastner | 1848 | treatise, FR | `manuelgnraldemu00kastgoog` | A | not yet mined (see §6) |
 | S21 | Treatise on Orchestration, ch. 2 | Charles Koechlin (posted translation) | n.d. | treatise, EN tr. | `treatise-on-orchestration-chapter-2` | B | low |
 | S22 | **Behind Bars** | Elaine Gould | 2011 | notation manual, EN | `behind-bars-by-elaine-gould` — openly posted; **licence: all rights reserved (Faber). Treat as reference-only, do not copy tables into `data/`.** | A | high, but overlaps the notation-standards bucket |
@@ -186,7 +226,7 @@ manual; **C** = a course guide, vendor page or derived resource.
 | N2 | **Orchestral Percussion Technique** | James Blades | 1961 / 1973 | IA `orchestralpercus0000blad`, `orchestralpercus0000unse` | instrument-by-instrument technique with the player's names for strokes |
 | N3 | **The Study of Orchestration** | Samuel Adler | 1982 / 1989 / 2002 | IA `studyoforchestra0000adle`, `…0002edadle_i2v0`, `…0003adle` | the percussion chapter's technique tables |
 | N4 | **Music Notation in the Twentieth Century** | Kurt Stone | 1980 | IA `musicnotationint0000ston`, `…_h3s0` | ch. X: instrument abbreviations and pictograms, stick/mallet/beater pictograms, "effects and techniques"; beater pictograms at p. 211 (page reference from a secondary description, UNVERIFIED) |
-| N5 | **Handbook of Percussion Instruments** | Peinkofer & Tannigel, tr. Kurt & Else Stone | 1976 (EN) / 1969 (DE) | IA `handbookofpercus0000pein`, `handbookofpercus0000karl` | "their characteristics and playing techniques" — the closest printed thing to the KITWARP model |
+| N5 | **Handbook of Percussion Instruments** | Peinkofer & Tannigel, tr. **Kurt and Else Stone** | 1976 (EN) / 1969 (DE) | IA `handbookofpercus0000pein`, `handbookofpercus0000karl`; Google Books `rN4IAQAAMAAJ`; Schott `noc346712` | **Contents confirmed by the supervisor and they are the KITWARP model, item for item:** classification into basic groups; construction, incl. Latin-American, Afro-American and East-Asian instruments; origin and history; ranges of the pitched instruments; **beaters for each instrument**; **essential playing techniques for each instrument**; orchestral and operatic usage; 100+ musical examples; photographs and descriptions of mallets, sticks and beaters; and **an extensive four-language dictionary of percussion terms — English, German, Italian, French**. That last item is the same artefact as Read's ch. 38 (§2.2), twenty-three years later and far larger. Note the translators: the English edition is by the same Kurt Stone as N4, so N4 and N5 are one lineage, not two independent sources |
 | N6 | **Contemporary Percussion** | Reginald Smith Brindle | 1970 | IA `contemporaryperc0000brin` | extended-technique names of the 1960s avant-garde |
 | N7 | Compendium of Modern Instrumental Techniques | Gardner Read | 1993 | IA `compendiumofmode0000read` | Read's later, technique-first organisation — see §6 |
 | N8 | Contemporary Instrumental Techniques | Gardner Read | 1976 | IA `contemporaryinst0000read` | predecessor of N7 |
@@ -196,12 +236,11 @@ manual; **C** = a course guide, vendor page or derived resource.
 | N12 | Orchestration (2/e) | Cecil Forsyth | 1935 / 1936 / 1944 | IA `orchestration0000ceci_*` (many) | second-edition revisions; the 1914 first edition (S7) was used instead |
 | N13 | Instrumentationslehre | Engelbert Humperdinck | 1981 | IA `instrumentations0000unse_o0c7` | 20c German pedagogical usage |
 | N14 | Traité d'instrumentation et d'orchestration (critical ed.) | Berlioz | 1970 | IA `traitdinstrument0000berl` | modern editorial apparatus on Berlioz's terms |
-| N15 | **Méthode complète et raisonnée de tambour / de timbales** | J.-G. Kastner | 1845 | not on archive.org under any identifier found by Q12 or Q24; BnF holds it | the primary French definitions of *ta*, *fla*, *tra*, *ra*, which Gevaert p. 332 n. 1 cites second-hand. Gallica returns 403 to this environment, so BnF is unreachable too |
+| N15 | **Méthode complète et raisonnée de timbales** | J.-G. Kastner | 1845 | **BnF Gallica ark `btv1b10075080v`** (exists; Gallica serves only a security interstitial here, §1.0); Google Books `kdTS3H5ZVBwC`; secondary: "Some Observations on Jean George Kastner's Méthode complète et raisonnée de timbales", `pas.org/publication-articles/some-observations-on-jean-george-kastners-methode-complete-et-raisonnee-de-timbales/` — **member login required**, only the blurb is visible: "This method appears to be the first practical guide for the orchestral timpanist and as such deserves to be more widely known" | the primary French definitions of the timpani beaters and strokes; Gevaert p. 332 n. 1 cites Kastner second-hand. A Scribd copy exists with no stated licence — reference-only, not used |
+| N16 | The Art of Playing Cymbals | Sam Denov | 1963 | Henry Adler, New York; no archive.org copy found (searched) | a whole monograph on cymbal technique — directly on this bucket's `site`, `technique` and `implement` axes for cymbals, which Read covers in one chapter |
+| N17 | Early Percussion Instruments from the Middle Ages to the Present | Blades & Montagu | 1976 | OUP | the organological layer behind N1 |
 
-**Register totals: 30 reached (28 in full text), 15 named and not reached, 45 candidates.**
-The fifteenth not-reached title is **Kastner, *Méthode complète et raisonnée de tambour* /
-*de timbales*** (Paris, 1845), which is what Gevaert p. 332 n. 1 actually points at and
-which is on archive.org under no identifier found by Q12 or Q24.
+**Register totals: 34 reached (32 in full text), 17 named and not reached, 51 candidates.**
 
 ---
 
@@ -696,7 +735,38 @@ alongside the wood block.
 first printing, and the search should continue in 1930s method books, which are outside this
 bucket.
 
-### 2.17 Minor sources, recorded for completeness
+### 2.17 Ray Bauduc, *Dixieland Drumming* (1937) — where "rim shot" is first found in print
+
+`RayBauducDixielandDrumming`, archive.org community upload, **no stated licence or rights
+field**, uploader a private individual. Under CLAUDE.md rule 2 that is all rights reserved,
+so this entry **describes what the source contains and where, and does not reproduce its
+wording**. Locators are the book's own named sections; the OCR carries no clean printed page
+numbers and the item has no `_page_numbers.json` derivative.
+
+This closes the question left open in §4 and §6.1. Read records in 1953 that *rim shot* had
+no Italian, French or German equivalent; Gardner 1918, Bower 1912 and Straight 1922 do not
+use the term at all. **Bauduc 1937 does**, and uses it as an established word needing no
+definition — twice, in two separate sections:
+
+| Where | What is attested |
+|---|---|
+| section **"Press Roll No. 3"** (within *Dixieland Press Rolls*) | the roll is described as pressing on the down beat and crescendoing to a *sforzando* **rim-shot** on the after-beat; a following sentence characterises the rim-shot as a decided sforzando on after-beats. So in 1937 the rim shot is already a **dynamic-accent device**, not a timbre |
+| a later exercise on **rim-shot phrasing with the snare drum** | the rim-shot is said to give the character of that particular beat, to act as a preliminary pick-up note, and to lose its effect if surrounding notes are struck as loud as the accented rim-shots |
+
+Other kit vocabulary the same book attests, all of it earlier than any source previously in
+this dossier:
+
+| Term | Axis reading |
+|---|---|
+| **bass drum counter hoop** as a named playing surface, listed beside snare drum, tom tom and the top of the heavy cymbal, struck **with the tips of sticks** | `instrument: kick` × `site: rim` (the counterhoop specifically) × `contact: tip` — confirming Straight 1922 (§2.16) five years later, and confirming §5.1's claim that the counterhoop is a distinct site |
+| **press roll**, six numbered varieties, distinguished by where the press falls and whether it is "a drag of the left hand stick" or a distinct press | an `ornament` v0.1 has no value for: `buzz` and `roll` exist, `press-roll` does not, and Bauduc treats it as the central device of the style |
+| **sock cymbal pedal** | the pre-1940 name for the hi-hat; v0.1's `hihat` has no historical alias |
+| **Chinese Crash cymbal**, **large Turkish cymbal**, **small Turkish cymbal** (given as three distinct notation symbols) | `instrument` — a 1937 three-way cymbal distinction by origin and size, where v0.1 has `china`, `crash` and `cymbal` |
+| **brushes**, four numbered patterns, one of which works "in a circular movement" | `implement: brush` × `technique: circling` |
+| **glissando from the cow bell** | `technique: gliss` on `instrument: cowbell` |
+| **Flam Tap**, **Rudimental Swing**, **Indian Beat**, **after-beat** | rudiment and groove names; the rudiments bucket owns these |
+
+### 2.18 Minor sources, recorded for completeness
 
 - **Philharmonia Orchestra** percussion resource page (S25): technique words used in prose
   only — "softer sticks", "hard mallets topped with wood or metal hammers", "soft beater",
@@ -834,6 +904,7 @@ Two structural findings on this axis:
 | **Five- / Six- / Seven- / Nine- / Ten- / Eleven-Stroke Roll** | Gardner 1918, 20–22 | `roll` with an explicit attack count — the English counterpart of Gevaert's *ra* series |
 | **The Four-Stroke Ruff** | Gardner 1918, 23 | `ruff`, attack count 4 — v0.1 has the slug but not the count |
 | **Single Drag / Double Drag** | Gardner 1918, 25–26 | `drag`, with multiplicity |
+| **press roll**, six numbered varieties | Bauduc 1937, *Dixieland Press Rolls* | **no v0.1 value** — `buzz` and `roll` exist; the press roll is neither, and Bauduc distinguishes six by where the press falls |
 | Roll(ed) / Rullo / Roulement / Wirbel | Read *passim* | `roll` |
 | "Flam" stroke | Read 198 | `flam` |
 | Rolls | Solomon 77 | `roll` |
@@ -1000,14 +1071,23 @@ distinction that the current twelve-axis model cannot carry.
   (Read p. 163) and cymbals (Read p. 180), and absent from every modern list examined.
 - `fla` (FR, Gevaert 331) = `flam` (EN, Read 198) = `Flam` — identical.
 
-**A documented absence.** At Read p. 200 the entry **"Rim shot — Shot"** has its Italian,
-French and German columns **empty**. Read fills those columns for essentially every other
-entry in 76 pages. The absence is therefore evidence, not an omission: in 1953 the
-orchestral literature had no Italian, French or German name for the rim shot, because it
-arrived from American dance-band and military drumming. Corroborating this, the two other
+**A documented absence, and its date.** At Read p. 200 the entry **"Rim shot — Shot"** has
+its Italian, French and German columns **empty**. Read fills those columns for essentially
+every other entry in 76 pages. The absence is therefore evidence, not an omission: in 1953
+the orchestral literature had no Italian, French or German name for the rim shot, because it
+arrived from American dance-band drumming. Corroborating this, the two other
 American-vernacular entries in Read's percussion part — **`"Ride" solo`** (p. 212) and
 **`"Stomp the beat"`** (p. 194) — also have all three columns empty and are the only other
 entries so marked.
+
+The date can now be bracketed. The term is **absent** from Gardner 1918, Bower 1912 and
+Straight 1922 — the three pre-1930 American methods reachable here, two of which discuss
+playing on the rim at length without ever using it (§2.15, §2.16). It is **present and
+already idiomatic** in Bauduc 1937, used twice without definition (§2.17). So *rim shot*
+enters printed English between 1922 and 1937, in the dance-band literature, and had still
+not crossed into the orchestral languages sixteen years later. That is the shape of a term
+KITWARP inherits from one tradition only, and it explains why `rimshot` has no
+cross-language aliases to ship while `muffled` has eight.
 
 ---
 
@@ -1023,7 +1103,7 @@ Measured against `vocabulary/axes.json` v0.1.0 (155 pivot terms, drum kit only).
 | `position` | nothing missing as *values*; missing as *shape* — Read 212's centre→rim gradient needs the radial controller, and the vocabulary should say so explicitly |
 | `contact` | v0.1 has `tip / shank / butt` for a stick. Read distinguishes **thick end** vs **thin end** (p. 184) which maps cleanly, and **`Holzschaft`** = shaft (p. 184) which is `shank`. No gap, but the aliases are missing |
 | `technique` | **bow** (Read 179, 195; Solomon 244), **friction-roll** (Read 219; Solomon 244), **fist** (Read 214), **knuckle** (Read 214, 216; Forsyth 32), **fingernail** (Read 164 — listed in the brief's axis sketch, absent from `axes.json`), **knee** (Read 214), **pitch-bend** (Solomon 123), **vibrato** (Read 179; Solomon 247), **cluster** (Solomon 249), **harmonic** (Read 225; Solomon 250), **two-plate-stroke** (Forsyth 35) |
-| `ornament` | an **attack count** on `roll`, `ruff` and `drag`, which two independent traditions supply as named series — `ra de 3/4/5/6/7 coups` (Gevaert 332) and `Five-/Six-/Seven-/Nine-/Ten-/Eleven-Stroke Roll`, `Four-Stroke Ruff` (Gardner 1918, 20–23); **tra / coup de charge** (Gevaert 332); **thumb-roll** as an ornament distinct from `roll` (Read 213; Forsyth 32; Widor 109 — Widor calls it a "temporary roll", i.e. it cannot be sustained) |
+| `ornament` | an **attack count** on `roll`, `ruff` and `drag`, which two independent traditions supply as named series — `ra de 3/4/5/6/7 coups` (Gevaert 332) and `Five-/Six-/Seven-/Nine-/Ten-/Eleven-Stroke Roll`, `Four-Stroke Ruff` (Gardner 1918, 20–23); **tra / coup de charge** (Gevaert 332); **thumb-roll** as an ornament distinct from `roll` (Read 213; Forsyth 32; Widor 109 — Widor calls it a "temporary roll", i.e. it cannot be sustained); **press-roll** (Bauduc 1937) |
 | `damping` | **prepared** (paper, felt, cloth *on* the head — Read 211, 212), **half** as an ordinal step (Read 195), **choke** for cymbals as distinct from `damped` (Read 194; Berlioz-Strauss 422) |
 | `mechanism` | **wires-slack** as a third state between `wires-on` and `wires-off` (Read 209; Berlioz-Strauss 423; Gevaert 332; Widor 108 — three independent sources make this the *usual* practice, not an edge case), **wires-tight** (Read 210 `Très timbrée`), **cymbal-coupled-to-kick** (Read 182; Berlioz-Strauss 418), **pedal-bass-drum** (Read 201) |
 | `implement` | **sponge** (Berlioz-Strauss 406; Widor 100; Read 166–167 — the historically dominant timpani beater), **leather**, **rawhide**, **cane**, **rattan**, **cotton**, **wool**, **fibre/capoc head**, **steel**, **iron**, **metal**, **plush**, **padded**, **two-headed stick**, **triangle-beater**, **chime-hammer**, **knitting-needle** (Solomon 92), **coin**, **bow**, **saw-blade**, **rosined-glove**. Also a *hardness* qualifier that is orthogonal to material: Read carries `quarter-hard`, `half-hard`, `medium-hard`, `medium-soft`, `soft`, `hard`, `very hard`, `very soft` on rubber, felt and leather independently (pp. 166–167) — v0.1's `mallet-soft/medium/hard` folds material and hardness into one value, which cannot express "medium-hard **leather**" |
@@ -1095,22 +1175,26 @@ Measured against `vocabulary/axes.json` v0.1.0 (155 pivot terms, drum kit only).
 - **Kastner's *Manuel général de musique militaire* (1848, S20) was mined and is the wrong
   book.** It is a history and repertoire survey of military music, not a method; it contains
   no definition of *ta*, *fla*, *tra* or *ra*. The book that does is Kastner's separate
-  *Méthode complète et raisonnée de tambour* / *de timbales*, which is **not on archive.org
-  under any identifier found here** and should be added to the not-reached list. Gevaert
-  p. 332 n. 1 cites "Kastner, Manuel de musique militaire" as his source for the French
-  drum beats, so the definitions may be in a part of the 1848 volume the greps did not
-  reach; UNVERIFIED either way.
+  *Méthode complète et raisonnée de timbales* (1845, N15). It **exists and is digitised** —
+  BnF ark `btv1b10075080v`, Google Books `kdTS3H5ZVBwC` — but Gallica serves this
+  environment only a security interstitial (§1.0) and the Google Books API is quota-blocked,
+  so it stayed shut. The Percussive Arts Society's scholarly note on it is behind a member
+  login. Any one of those three doors opening would close this.
 - **Bower 1912 (S17, S18) was mined and yields almost nothing in text.** It is a Google
   scan of an exercise book: the OCR is mostly noteheads, and the only prose terms are
   "Primary" and "Secondary" blow (arm vs wrist). Gardner 1918 (S19) **was** productive and
   is now §2.15.
-- **The American vernacular Read could not translate is still not traced to a printed
-  source.** Gardner 1918, Bower 1912 and Straight 1922 — the three pre-1930 American drum
-  methods reachable here — contain neither `rim shot` nor `ride`. Straight 1922 came closest
-  and instead yielded the tip/butt and "Jazz sticks" attestations (§2.16). The earliest
-  printing of `rim shot` is therefore still open and is probably in a 1930s dance-band
-  method, outside this bucket. Suggested query for the supervisor: `"rim shot" drum method
-  1930s "Gene Krupa" OR "Ray Bauduc" OR "Ben Duncan" site:archive.org`.
+- **CLOSED: the American vernacular Read could not translate is now bracketed.** `rim shot`
+  is absent from Bower 1912, Gardner 1918 and Straight 1922 and present-and-idiomatic in
+  Bauduc 1937 (§2.17), so it enters printed English between 1922 and 1937. What is still
+  open is narrower and probably not worth chasing: the *first* printing, and whether Krupa's
+  *Drum Method* (1938) — which secondary sources say discusses rimshots explicitly, and
+  which is **not** on archive.org (Q44) — defines the stroke physically. The physical
+  definition attributed to Krupa's "crackling rim shot", striking the **shaft** of the stick
+  between head and rim, is the one this project wants for `technique: rimshot` +
+  `contact: shank`, and it is so far **secondary only, UNVERIFIED**.
+- **`ride` is still not traced at all.** Read p. 212 records `"Ride" solo` in 1953 with no
+  translation; Bauduc 1937 does not use the word. Unresolved.
 - **The German and Italian registers are thinner than the French and English.** Hofmann
   (S15), Teuchert (S16) and Prout's Italian translation (S12) were downloaded but only
   spot-checked. Peinkofer/Tannigel would have been the German authority and is closed.
@@ -1124,28 +1208,43 @@ Measured against `vocabulary/axes.json` v0.1.0 (155 pivot terms, drum kit only).
 
 ### 6.2 The single most authoritative source NOT obtained
 
-**Gardner Read, *Compendium of Modern Instrumental Techniques* (Greenwood, 1993; ISBN
-0-313-28512-8; archive.org `compendiumofmode0000read`).**
+**Karl Peinkofer & Fritz Tannigel, *Handbook of Percussion Instruments: Their
+Characteristics and Playing Techniques*** (Schott; German *Handbuch des Schlagzeugs*, 1969;
+English translation by **Kurt and Else Stone**, 1976. Google Books `rN4IAQAAMAAJ`;
+archive.org `handbookofpercus0000pein`, lending-restricted).
 
-The bucket brief already identifies Read as "the single richest source of technique names
-in print", and it is right — but the 1953 *Thesaurus* obtained here is organised **by
-composer and score**, with the technique names appearing as headings over citation tables.
-The 1993 *Compendium* is organised **by technique**, codifying each one with its production
-and effect. For a project that needs the technique list itself rather than its usage, the
-*Compendium* is the higher-value book by a clear margin, and it is the one Read wrote after
-forty more years of the repertoire.
+This was second on the list before its contents were confirmed. It is now first, on the
+evidence in N5: the book pairs **beaters for each instrument** with **essential playing
+techniques for each instrument**, across the full orchestral, Latin-American, Afro-American
+and East-Asian inventory, and it closes with **an extensive four-language dictionary of
+percussion terms in English, German, Italian and French**. That dictionary is the same
+artefact as Read's ch. 38 (§2.2) — the single highest-yield two pages in this whole dossier
+— but book-length rather than two pages, and twenty-three years later. It also has
+photographs and descriptions of the mallets, sticks and beaters, which is exactly what
+§5.1's eleven missing `implement` values need in order to be minted with a source rather
+than a guess.
 
-Second on the list, and cheaper to obtain because it is in print and not a lending item, is
-**Peinkofer & Tannigel, *Handbook of Percussion Instruments: Their Characteristics and
-Playing Techniques*** (Schott, EN 1976 / DE *Handbuch des Schlagzeugs*, 1969) — the only
-title in this bucket whose subtitle is literally the KITWARP model, and the only one that
-covers instrument, characteristic and technique together for the full orchestral inventory
-in both German and English.
+One caution that the confirmed contents introduce: the English edition is translated by
+**Kurt Stone**, the author of N4. N4 and N5 are therefore **one lineage, not two independent
+witnesses**, and the reconciliation pass should not count agreement between them as
+corroboration.
 
-Third, and obtainable for the price of a library copy rather than a scan: **Solomon,
-Appendix C, pp. 239–250**. Its sixteen headings are already recovered here (§2.14) and they
-map onto §3.9's gap list almost one to one. Sixteen pages of body text would close most of
-the "fits no axis" column.
+**Second: Gardner Read, *Compendium of Modern Instrumental Techniques*** (Greenwood, 1993;
+ISBN 0-313-28512-8; archive.org `compendiumofmode0000read`). The bucket brief calls Read the
+richest source of technique names in print, and it is right — but the 1953 *Thesaurus*
+obtained here is organised **by composer and score**, with technique names as headings over
+citation tables. The 1993 *Compendium* is organised **by technique**, codifying each with
+its production and effect. For a project that needs the technique list rather than its
+usage, that ordering is worth a great deal.
+
+**Third: Solomon, Appendix C, pp. 239–250.** Its sixteen headings are already recovered
+(§2.14) and map onto §3.9's gap list almost one to one. Sixteen pages of body text would
+close most of the "fits no axis" column.
+
+**Fourth, and new: Sam Denov, *The Art of Playing Cymbals*** (Henry Adler, 1963; N16). A
+whole monograph on one instrument family, where every other source in this bucket gives
+cymbals a chapter. Cymbals are where §5.2 says v0.1 is weakest — no pair-versus-suspended
+distinction at all — so a book-length treatment is disproportionately valuable.
 
 ### 6.3 Confidence
 
@@ -1156,4 +1255,8 @@ the "fits no axis" column.
 | Solomon page numbers (§2.14) | high — from the publisher's own preview PDF |
 | Stone p. 211 beater pictograms | **UNVERIFIED** — from a secondary description, the book itself was unreachable |
 | Absence claims ("no Italian/French/German for rim shot", §4) | medium-high — the absence is visible in the source's own table, but only for the 1953 edition |
+| The 1922–1937 bracket on *rim shot* (§4, §2.17) | medium — four printed sources bracket it, but only four, and all reachable-by-accident rather than sampled |
+| Bauduc 1937 content claims (§2.17) | medium — the OCR is badly damaged and the source is described, not quoted; the terms are legible but the surrounding sentences are not always |
+| Peinkofer & Tannigel contents (N5, §6.2) | medium — supplied by the supervisor from publisher/catalogue copy, not read here; **UNVERIFIED against the book** |
+| Krupa's physical definition of the rim shot (shaft between head and rim) | **UNVERIFIED** — secondary description only, the 1938 book is not on archive.org |
 | "Not reached" verdicts (§1.2) | high — each locator was probed and the failure mode recorded |
