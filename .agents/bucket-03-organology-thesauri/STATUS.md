@@ -1,17 +1,21 @@
 status: running
-updated: 2026-09-06T12:40:22Z
+updated: 2026-09-06T12:49:11Z
 done:
-  - Round A finished, 16 searches, five languages, candidate register drafted
-  - MIMO Skosmos REST API reached, two vocabularies confirmed live,
-    HornbostelAndSachs and InstrumentsKeywords, the latter in 13 languages
-  - Walked the MIMO Hornbostel-Sachs tree, 109 idiophone and 144 membranophone
-    concepts with notations, including the MIMO suffix system
-  - Getty AAT SPARQL queried, percussion instruments 300041726 has 92 extended
-    descendants, idiophones 300041646 has 177, drum kits 300411407 has none
-  - LCMPT downloaded whole, 942 concepts, file dated 2026-09-02, percussion
-    instrument subtree of 231 nodes extracted
+  - Round A finished, 16 searches, five languages
+  - MIMO reached, InstrumentsKeywords 2724 concepts in 13 languages, 973 in the
+    percussion subtree, HornbostelAndSachs 643 concepts walked
+  - Getty AAT SPARQL, LCMPT bulk file, Wikidata SPARQL and MusicBrainz all
+    answered; coverage matrix for all 27 KITWARP instrument values built
+  - Primary texts obtained, MIMO 2011 revision PDF, Knight revision 2015/2017
+    PDF, Hornbostel and Sachs 1914 German introduction
+  - Central answer established with evidence, no maintained authority file
+    descends below cymbal and hi-hat, and none carries site, technique,
+    implement, damping or openness at all
 next:
-  - Finish the MIMO InstrumentsKeywords percussion walk, then Wikidata SPARQL,
-    MusicBrainz, DARIAH, and the 2011 MIMO revision PDF, then write the dossier
-questions: []
+  - Two or three confirmation queries, then write
+    docs/research/round2/03-organology-thesauri.md
+questions:
+  - The MIMO thesaurus publishes no licence statement anywhere reachable. Is
+    storing only a MIMO integer id as a cross-reference, with no MIMO label
+    copied, inside or outside the licence question under ADR-0004?
 needs_owner: []
