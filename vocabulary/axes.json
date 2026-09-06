@@ -1,0 +1,725 @@
+{
+  "vocabulary_version": "0.1.0",
+  "vocabulary_serial": 1,
+  "axes": {
+    "instrument": {
+      "description": "What makes the sound. Grouped by family; the family is documentation and fallback scope, not part of the identity.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "kick",
+          "family": "kit.membrane"
+        },
+        {
+          "id": 2,
+          "slug": "snare",
+          "family": "kit.membrane"
+        },
+        {
+          "id": 3,
+          "slug": "tom",
+          "family": "kit.membrane"
+        },
+        {
+          "id": 4,
+          "slug": "octoban",
+          "family": "kit.membrane"
+        },
+        {
+          "id": 10,
+          "slug": "hihat",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 11,
+          "slug": "xhat",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 12,
+          "slug": "ride",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 13,
+          "slug": "crash",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 14,
+          "slug": "china",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 15,
+          "slug": "splash",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 16,
+          "slug": "stack",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 17,
+          "slug": "bell",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 18,
+          "slug": "cymbal",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 19,
+          "slug": "mini-china",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 20,
+          "slug": "mini-hihat",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 21,
+          "slug": "crash-ride",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 22,
+          "slug": "sizzle-ride",
+          "family": "kit.cymbal"
+        },
+        {
+          "id": 30,
+          "slug": "cowbell",
+          "family": "kit.aux"
+        },
+        {
+          "id": 31,
+          "slug": "jam-block",
+          "family": "kit.aux"
+        },
+        {
+          "id": 32,
+          "slug": "woodblock",
+          "family": "kit.aux"
+        },
+        {
+          "id": 33,
+          "slug": "tambourine",
+          "family": "kit.aux"
+        },
+        {
+          "id": 34,
+          "slug": "sticks",
+          "family": "kit.aux"
+        },
+        {
+          "id": 35,
+          "slug": "clap",
+          "family": "kit.aux"
+        },
+        {
+          "id": 36,
+          "slug": "shaker",
+          "family": "kit.aux"
+        },
+        {
+          "id": 37,
+          "slug": "triangle",
+          "family": "kit.aux"
+        },
+        {
+          "id": 38,
+          "slug": "chimes",
+          "family": "kit.aux"
+        },
+        {
+          "id": 39,
+          "slug": "aux-pad",
+          "family": "kit.aux"
+        }
+      ],
+      "reserved_families": [
+        "perc.hand",
+        "perc.shaken",
+        "perc.scraped",
+        "perc.struck-idiophone",
+        "perc.wind",
+        "orch",
+        "electronic",
+        "utility",
+        "unknown"
+      ]
+    },
+    "site": {
+      "description": "Contact site ON THE INSTRUMENT. Distinct from `contact`, which is the part of the implement. PAL splits these and real layouts contain both.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "head"
+        },
+        {
+          "id": 2,
+          "slug": "rim"
+        },
+        {
+          "id": 3,
+          "slug": "rim2"
+        },
+        {
+          "id": 4,
+          "slug": "crossstick"
+        },
+        {
+          "id": 5,
+          "slug": "shell"
+        },
+        {
+          "id": 6,
+          "slug": "bow"
+        },
+        {
+          "id": 7,
+          "slug": "edge"
+        },
+        {
+          "id": 8,
+          "slug": "bell"
+        },
+        {
+          "id": 9,
+          "slug": "underside"
+        }
+      ]
+    },
+    "position": {
+      "description": "Where on the site, radially. Also expressible continuously through the strike_position controllers.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "centre"
+        },
+        {
+          "id": 2,
+          "slug": "halfway"
+        },
+        {
+          "id": 3,
+          "slug": "offset"
+        },
+        {
+          "id": 4,
+          "slug": "perimeter"
+        }
+      ]
+    },
+    "contact": {
+      "description": "Part of the implement that touches. Orthogonal to `site`: Superior Drummer ships Bow Tip, Bow Shank, Bell Tip and Bell Shank.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "tip"
+        },
+        {
+          "id": 2,
+          "slug": "shank"
+        },
+        {
+          "id": 3,
+          "slug": "butt"
+        }
+      ]
+    },
+    "technique": {
+      "description": "The stroke itself. `choke` is deliberately absent: it is a relation on a previously sounded event, not a stroke. See vocabulary/rules.json.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "hit"
+        },
+        {
+          "id": 2,
+          "slug": "rimshot"
+        },
+        {
+          "id": 3,
+          "slug": "rim-only"
+        },
+        {
+          "id": 4,
+          "slug": "sidestick"
+        },
+        {
+          "id": 5,
+          "slug": "stick-shot"
+        },
+        {
+          "id": 6,
+          "slug": "back-stick"
+        },
+        {
+          "id": 7,
+          "slug": "ping-shot"
+        },
+        {
+          "id": 8,
+          "slug": "gok-shot"
+        },
+        {
+          "id": 9,
+          "slug": "slap"
+        },
+        {
+          "id": 10,
+          "slug": "open-tone"
+        },
+        {
+          "id": 11,
+          "slug": "bass-tone"
+        },
+        {
+          "id": 12,
+          "slug": "mute-stroke"
+        },
+        {
+          "id": 13,
+          "slug": "heel"
+        },
+        {
+          "id": 14,
+          "slug": "toe"
+        },
+        {
+          "id": 15,
+          "slug": "thumb"
+        },
+        {
+          "id": 16,
+          "slug": "sweep"
+        },
+        {
+          "id": 17,
+          "slug": "swirl"
+        },
+        {
+          "id": 18,
+          "slug": "circling"
+        },
+        {
+          "id": 19,
+          "slug": "scrape"
+        },
+        {
+          "id": 20,
+          "slug": "shake"
+        },
+        {
+          "id": 21,
+          "slug": "gliss"
+        },
+        {
+          "id": 22,
+          "slug": "dead"
+        },
+        {
+          "id": 23,
+          "slug": "chick"
+        },
+        {
+          "id": 24,
+          "slug": "foot-splash"
+        }
+      ]
+    },
+    "ornament": {
+      "description": "Grace or multi-stroke qualifier. `attacks` lets the expansion rules find compound strokes mechanically: a flam is one note in a library and two notes in a performance.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "flam",
+          "attacks": 2
+        },
+        {
+          "id": 2,
+          "slug": "drag",
+          "attacks": 3
+        },
+        {
+          "id": 3,
+          "slug": "ruff",
+          "attacks": 4
+        },
+        {
+          "id": 4,
+          "slug": "bounced",
+          "attacks": 2
+        },
+        {
+          "id": 5,
+          "slug": "roll",
+          "attacks": 0
+        },
+        {
+          "id": 6,
+          "slug": "buzz",
+          "attacks": 0
+        },
+        {
+          "id": 7,
+          "slug": "crescendo",
+          "attacks": 0
+        },
+        {
+          "id": 8,
+          "slug": "swell",
+          "attacks": 0
+        },
+        {
+          "id": 9,
+          "slug": "wash",
+          "attacks": 0
+        }
+      ],
+      "value_meaning": "attacks: number of contacts, 0 = sustained/indeterminate"
+    },
+    "openness": {
+      "description": "Ordered state. The named anchors are labels for bands of one normalised scalar, 0.0 fully closed to 1.0 fully open, so a four-level device and a six-level device project onto the same axis without inventing terms. This is the same axis the hi-hat pedal CC measures.",
+      "values": [
+        {
+          "id": 0,
+          "slug": "tight",
+          "scalar": 0.0
+        },
+        {
+          "id": 1,
+          "slug": "closed",
+          "scalar": 0.12
+        },
+        {
+          "id": 2,
+          "slug": "closed-loose",
+          "scalar": 0.2
+        },
+        {
+          "id": 3,
+          "slug": "quarter",
+          "scalar": 0.25
+        },
+        {
+          "id": 4,
+          "slug": "half",
+          "scalar": 0.5
+        },
+        {
+          "id": 5,
+          "slug": "three-quarter",
+          "scalar": 0.75
+        },
+        {
+          "id": 6,
+          "slug": "loose",
+          "scalar": 0.85
+        },
+        {
+          "id": 7,
+          "slug": "open",
+          "scalar": 1.0
+        }
+      ],
+      "value_meaning": "scalar: position on the normalised openness axis"
+    },
+    "damping": {
+      "description": "What damps and when, applied AT the strike. PAL shows this is not a bare scalar: hand damping while striking and while not striking are different sounds. Distinct from the choke relation, which is applied after.",
+      "values": [
+        {
+          "id": 0,
+          "slug": "none"
+        },
+        {
+          "id": 1,
+          "slug": "muted"
+        },
+        {
+          "id": 2,
+          "slug": "damped"
+        },
+        {
+          "id": 3,
+          "slug": "towel"
+        },
+        {
+          "id": 4,
+          "slug": "gated"
+        }
+      ]
+    },
+    "mechanism": {
+      "description": "Device state that is not damping. Snares off is a resonating mechanism being disengaged, not a mute.",
+      "values": [
+        {
+          "id": 0,
+          "slug": "wires-on"
+        },
+        {
+          "id": 1,
+          "slug": "wires-off"
+        },
+        {
+          "id": 2,
+          "slug": "kick-damped"
+        },
+        {
+          "id": 3,
+          "slug": "kick-half-open"
+        }
+      ]
+    },
+    "implement": {
+      "description": "What strikes it. MusicXML factors this as stick-type x stick-material; VSL ships a seven-step hardness scale. Tip hardness is carried in the value name where a source distinguishes it.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "stick"
+        },
+        {
+          "id": 2,
+          "slug": "jazz-stick"
+        },
+        {
+          "id": 3,
+          "slug": "brush"
+        },
+        {
+          "id": 4,
+          "slug": "rod"
+        },
+        {
+          "id": 5,
+          "slug": "mallet-soft"
+        },
+        {
+          "id": 6,
+          "slug": "mallet-medium"
+        },
+        {
+          "id": 7,
+          "slug": "mallet-hard"
+        },
+        {
+          "id": 8,
+          "slug": "hand"
+        },
+        {
+          "id": 9,
+          "slug": "finger"
+        },
+        {
+          "id": 10,
+          "slug": "felt-beater"
+        },
+        {
+          "id": 11,
+          "slug": "wood-beater"
+        },
+        {
+          "id": 12,
+          "slug": "plastic-beater"
+        },
+        {
+          "id": 13,
+          "slug": "rubber-beater"
+        },
+        {
+          "id": 14,
+          "slug": "superball"
+        }
+      ]
+    },
+    "dynamic": {
+      "description": "Sample tier, not musical role. Some layouts give a dynamic band its own note (Snare Ghost, Seq Soft / Seq Hard); without this axis such a note cannot map onto a target's plain hit at low velocity, or back.",
+      "values": [
+        {
+          "id": 0,
+          "slug": "normal"
+        },
+        {
+          "id": 1,
+          "slug": "ghost"
+        },
+        {
+          "id": 2,
+          "slug": "soft"
+        },
+        {
+          "id": 3,
+          "slug": "hard"
+        },
+        {
+          "id": 4,
+          "slug": "accent"
+        }
+      ]
+    },
+    "timbre": {
+      "description": "Sound-generating lineage. Without it every GM2 Analog, GS TR-808 and XG Electro source becomes indistinguishable from the acoustic set after a round trip.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "acoustic"
+        },
+        {
+          "id": 2,
+          "slug": "electronic"
+        },
+        {
+          "id": 3,
+          "slug": "analog-808"
+        },
+        {
+          "id": 4,
+          "slug": "analog-909"
+        },
+        {
+          "id": 5,
+          "slug": "analog-707"
+        },
+        {
+          "id": 6,
+          "slug": "analog-606"
+        },
+        {
+          "id": 7,
+          "slug": "analog-cr78"
+        },
+        {
+          "id": 8,
+          "slug": "fm"
+        },
+        {
+          "id": 9,
+          "slug": "pcm"
+        },
+        {
+          "id": 10,
+          "slug": "physical"
+        },
+        {
+          "id": 11,
+          "slug": "chip"
+        },
+        {
+          "id": 12,
+          "slug": "noise"
+        },
+        {
+          "id": 99,
+          "slug": "unknown"
+        }
+      ]
+    },
+    "voicing": {
+      "description": "Kit or miking variant of the same instrument. GM2 builds seven of its nine sets on this alone.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "standard"
+        },
+        {
+          "id": 2,
+          "slug": "room"
+        },
+        {
+          "id": 3,
+          "slug": "power"
+        },
+        {
+          "id": 4,
+          "slug": "jazz"
+        },
+        {
+          "id": 5,
+          "slug": "orchestra"
+        },
+        {
+          "id": 6,
+          "slug": "lo-fi"
+        },
+        {
+          "id": 7,
+          "slug": "dark"
+        }
+      ]
+    }
+  },
+  "reference_axes": {
+    "instance": {
+      "description": "Which one of several identical instruments on the device, 1-based, ordered high to low in pitch for toms and left to right from the player's seat for cymbals. The direction is fixed here and must not be reinterpreted per device: getting it backwards silently swaps every tom."
+    },
+    "limb": {
+      "description": "Which limb, where a layout samples them separately. Identity-bearing when present, but a target that lacks it drops it at zero fallback cost.",
+      "values": [
+        {
+          "id": 1,
+          "slug": "left-hand"
+        },
+        {
+          "id": 2,
+          "slug": "right-hand"
+        },
+        {
+          "id": 3,
+          "slug": "alternating"
+        },
+        {
+          "id": 4,
+          "slug": "left-foot"
+        },
+        {
+          "id": 5,
+          "slug": "right-foot"
+        }
+      ]
+    }
+  },
+  "controllers": [
+    {
+      "id": 1,
+      "slug": "hihat.pedal_position",
+      "description": "0.0 fully open .. 1.0 fully closed, normalised. Roland transmits 0-90 and everyone else 0-127, 2Box can invert polarity, and every vendor sends it before the note-on."
+    },
+    {
+      "id": 2,
+      "slug": "strike_position.radial",
+      "description": "centre .. perimeter, for snare and tom heads, ride bow, hi-hat bow. Jamstix carries it as CC14 for snare and CC15 for tom."
+    },
+    {
+      "id": 3,
+      "slug": "strike_position.rim_depth",
+      "description": "deep .. shallow on a rim. A different geometry from radial."
+    },
+    {
+      "id": 4,
+      "slug": "strike_position.lateral",
+      "description": "left .. right."
+    },
+    {
+      "id": 5,
+      "slug": "choke_amount",
+      "description": "0.0 .. 1.0, continuous on Roland digital pads."
+    }
+  ],
+  "relations": [
+    {
+      "id": 1,
+      "slug": "choke",
+      "description": "damps the last event on the referenced instrument"
+    },
+    {
+      "id": 2,
+      "slug": "open-close",
+      "description": "an open stroke followed by the pedal closing"
+    }
+  ]
+}

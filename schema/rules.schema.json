@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ClarkParker/midiKITWARP/schema/rules.schema.json",
+  "title": "KITWARP fallback rules",
+  "type": "object",
+  "required": [
+    "vocabulary_version",
+    "vocabulary_serial",
+    "axis_degradation",
+    "curated",
+    "expansions",
+    "roots"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "vocabulary_version": {
+      "type": "string"
+    },
+    "vocabulary_serial": {
+      "type": "integer"
+    },
+    "axis_degradation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "axis",
+          "from",
+          "to",
+          "velocity_delta",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "axis": {
+            "type": "string"
+          },
+          "from": {
+            "type": "string",
+            "description": "an axis value, or * for any"
+          },
+          "to": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "an axis value, null to unset the axis, or 'nearest' for an ordered axis"
+          },
+          "velocity_delta": {
+            "type": "integer",
+            "minimum": -127,
+            "maximum": 127
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "curated": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": [
+            "to",
+            "velocity_delta",
+            "reason"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "to": {
+              "type": "string"
+            },
+            "velocity_delta": {
+              "type": "integer",
+              "minimum": -127,
+              "maximum": 127
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "expansions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": [
+            "parts",
+            "reason"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "parts": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "to"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "to": {
+                    "type": "string"
+                  },
+                  "relation": {
+                    "enum": [
+                      "choke",
+                      "open-close"
+                    ]
+                  },
+                  "offset_quarters": {
+                    "type": "number"
+                  },
+                  "velocity_scale": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "duration_quarters": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "roots": {
+      "type": "array",
+      "description": "Terms that are intentionally terminal: nothing to fall back to, said explicitly rather than left as an omission.",
+      "items": {
+        "type": "object",
+        "required": [
+          "term",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "term": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "vocabulary_version": "0.1.0",
+  "vocabulary_serial": 1,
+  "axis_degradation": [
+    {
+      "axis": "site",
+      "from": "bell",
+      "to": "bow",
+      "velocity_delta": -6,
+      "reason": "no bell on this piece; the bow is the nearest body"
+    },
+    {
+      "axis": "site",
+      "from": "edge",
+      "to": "bow",
+      "velocity_delta": -4,
+      "reason": "no edge zone; the bow is the nearest body"
+    },
+    {
+      "axis": "site",
+      "from": "rim2",
+      "to": "rim",
+      "velocity_delta": 0,
+      "reason": "second rim zone absent; use the rim"
+    },
+    {
+      "axis": "site",
+      "from": "crossstick",
+      "to": "rim",
+      "velocity_delta": -8,
+      "reason": "no cross-stick zone; a quiet rim is the nearest gesture"
+    },
+    {
+      "axis": "site",
+      "from": "shell",
+      "to": "rim",
+      "velocity_delta": -6,
+      "reason": "no shell zone; the rim is the nearest wooden sound"
+    },
+    {
+      "axis": "contact",
+      "from": "shank",
+      "to": "tip",
+      "velocity_delta": 6,
+      "reason": "no shank sample; the tip with more velocity keeps the accent"
+    },
+    {
+      "axis": "contact",
+      "from": "butt",
+      "to": "shank",
+      "velocity_delta": 0,
+      "reason": "no butt sample; the shank is nearest"
+    },
+    {
+      "axis": "openness",
+      "from": "*",
+      "to": "nearest",
+      "velocity_delta": 0,
+      "reason": "no such openness level; move to the nearest available level"
+    },
+    {
+      "axis": "mechanism",
+      "from": "wires-off",
+      "to": "wires-on",
+      "velocity_delta": 0,
+      "reason": "target cannot disengage the snares"
+    },
+    {
+      "axis": "mechanism",
+      "from": "kick-damped",
+      "to": "kick-half-open",
+      "velocity_delta": 0,
+      "reason": "no damped kick; half open is nearer than open"
+    },
+    {
+      "axis": "damping",
+      "from": "towel",
+      "to": "damped",
+      "velocity_delta": 0,
+      "reason": "no towel state; plain damping is nearest"
+    },
+    {
+      "axis": "damping",
+      "from": "damped",
+      "to": "muted",
+      "velocity_delta": 0,
+      "reason": "no damped state; muted is nearest"
+    },
+    {
+      "axis": "damping",
+      "from": "muted",
+      "to": "none",
+      "velocity_delta": -8,
+      "reason": "no muted sample; play it open and quieter"
+    },
+    {
+      "axis": "implement",
+      "from": "jazz-stick",
+      "to": "stick",
+      "velocity_delta": 0,
+      "reason": "no jazz stick; the standard stick is nearest"
+    },
+    {
+      "axis": "implement",
+      "from": "rod",
+      "to": "brush",
+      "velocity_delta": 0,
+      "reason": "no rods; brushes are nearer than sticks"
+    },
+    {
+      "axis": "implement",
+      "from": "brush",
+      "to": "stick",
+      "velocity_delta": -12,
+      "reason": "no brushes; a quiet stick is the least wrong"
+    },
+    {
+      "axis": "implement",
+      "from": "mallet-hard",
+      "to": "mallet-medium",
+      "velocity_delta": 0,
+      "reason": "hardness step down"
+    },
+    {
+      "axis": "implement",
+      "from": "mallet-medium",
+      "to": "mallet-soft",
+      "velocity_delta": 0,
+      "reason": "hardness step down"
+    },
+    {
+      "axis": "implement",
+      "from": "mallet-soft",
+      "to": "stick",
+      "velocity_delta": -6,
+      "reason": "no mallets at all"
+    },
+    {
+      "axis": "implement",
+      "from": "wood-beater",
+      "to": "plastic-beater",
+      "velocity_delta": 0,
+      "reason": "beater hardness step"
+    },
+    {
+      "axis": "implement",
+      "from": "plastic-beater",
+      "to": "felt-beater",
+      "velocity_delta": 0,
+      "reason": "beater hardness step"
+    },
+    {
+      "axis": "dynamic",
+      "from": "ghost",
+      "to": "normal",
+      "velocity_delta": -25,
+      "reason": "no ghost sample; a very quiet normal hit"
+    },
+    {
+      "axis": "dynamic",
+      "from": "soft",
+      "to": "normal",
+      "velocity_delta": -12,
+      "reason": "no soft layer"
+    },
+    {
+      "axis": "dynamic",
+      "from": "hard",
+      "to": "normal",
+      "velocity_delta": 12,
+      "reason": "no hard layer"
+    },
+    {
+      "axis": "dynamic",
+      "from": "accent",
+      "to": "normal",
+      "velocity_delta": 15,
+      "reason": "no accent sample"
+    },
+    {
+      "axis": "ornament",
+      "from": "buzz",
+      "to": "roll",
+      "velocity_delta": 0,
+      "reason": "no buzz roll; a roll is nearest"
+    },
+    {
+      "axis": "ornament",
+      "from": "ruff",
+      "to": "drag",
+      "velocity_delta": 0,
+      "reason": "ornament with fewer grace notes"
+    },
+    {
+      "axis": "ornament",
+      "from": "drag",
+      "to": "flam",
+      "velocity_delta": 0,
+      "reason": "ornament with fewer grace notes"
+    },
+    {
+      "axis": "ornament",
+      "from": "flam",
+      "to": null,
+      "velocity_delta": 8,
+      "reason": "no ornament; a single hit with more velocity for the doubled attack"
+    },
+    {
+      "axis": "ornament",
+      "from": "bounced",
+      "to": "flam",
+      "velocity_delta": 0,
+      "reason": "double stroke as a flam"
+    },
+    {
+      "axis": "ornament",
+      "from": "swell",
+      "to": "roll",
+      "velocity_delta": 0,
+      "reason": "no swell; a roll is nearest"
+    },
+    {
+      "axis": "ornament",
+      "from": "wash",
+      "to": null,
+      "velocity_delta": 0,
+      "reason": "no open-close gesture; the plain stroke"
+    },
+    {
+      "axis": "position",
+      "from": "halfway",
+      "to": "centre",
+      "velocity_delta": 0,
+      "reason": "no positional sampling"
+    },
+    {
+      "axis": "position",
+      "from": "offset",
+      "to": "centre",
+      "velocity_delta": 0,
+      "reason": "no positional sampling"
+    },
+    {
+      "axis": "position",
+      "from": "perimeter",
+      "to": "halfway",
+      "velocity_delta": 0,
+      "reason": "no edge position; move inward"
+    },
+    {
+      "axis": "timbre",
+      "from": "electronic",
+      "to": "acoustic",
+      "velocity_delta": 0,
+      "reason": "target has no electronic voice for this piece"
+    },
+    {
+      "axis": "limb",
+      "from": "*",
+      "to": null,
+      "velocity_delta": 0,
+      "reason": "target does not sample hands separately; drop at no cost"
+    }
+  ],
+  "curated": {
+    "snare.sidestick": [
+      {
+        "to": "snare.hit",
+        "velocity_delta": -20,
+        "reason": "cross stick to a quiet centre hit; same function, lower dynamics"
+      },
+      {
+        "to": "snare.rimshot",
+        "velocity_delta": -25,
+        "reason": "cross stick to a very quiet rimshot"
+      }
+    ],
+    "snare.wires-off": [
+      {
+        "to": "tom.hit",
+        "velocity_delta": 0,
+        "reason": "wires off sounds like a timbale; the highest rack tom"
+      },
+      {
+        "to": "snare.hit",
+        "velocity_delta": 0,
+        "reason": "last resort: an ordinary snare hit"
+      }
+    ],
+    "ride.bow": [
+      {
+        "to": "crash-ride.bow",
+        "velocity_delta": 0,
+        "reason": "the only other riding metal"
+      },
+      {
+        "to": "hihat.closed.tip",
+        "velocity_delta": 0,
+        "reason": "timekeeping stays timekeeping: closed hi-hat"
+      }
+    ],
+    "ride.bell": [
+      {
+        "to": "bell.bell",
+        "velocity_delta": 0,
+        "reason": "bell character preserved"
+      },
+      {
+        "to": "cowbell.hit",
+        "velocity_delta": 0,
+        "reason": "metallic ping, timekeeping kept"
+      }
+    ],
+    "cowbell.hit": [
+      {
+        "to": "ride.bell",
+        "velocity_delta": 0,
+        "reason": "metallic ping, timekeeping kept"
+      }
+    ],
+    "xhat.closed": [
+      {
+        "to": "hihat.closed",
+        "velocity_delta": 0,
+        "reason": "no auxiliary hat; the main hi-hat"
+      }
+    ],
+    "xhat.open": [
+      {
+        "to": "hihat.open",
+        "velocity_delta": 0,
+        "reason": "no auxiliary hat; the main hi-hat"
+      }
+    ],
+    "mini-hihat.closed": [
+      {
+        "to": "hihat.closed",
+        "velocity_delta": 0,
+        "reason": "no mini hat; the main hi-hat"
+      }
+    ],
+    "mini-china.hit": [
+      {
+        "to": "china.hit",
+        "velocity_delta": -8,
+        "reason": "no mini china; the full china, quieter"
+      }
+    ],
+    "china.hit": [
+      {
+        "to": "crash.hit",
+        "velocity_delta": 0,
+        "reason": "same role, nearest wash"
+      },
+      {
+        "to": "ride.crash",
+        "velocity_delta": 0,
+        "reason": "crash on the ride"
+      }
+    ],
+    "crash.hit": [
+      {
+        "to": "china.hit",
+        "velocity_delta": 0,
+        "reason": "the only other accent cymbal"
+      },
+      {
+        "to": "ride.crash",
+        "velocity_delta": 0,
+        "reason": "crash on the ride"
+      }
+    ],
+    "splash.hit": [
+      {
+        "to": "crash.hit",
+        "velocity_delta": -10,
+        "reason": "smaller cymbal, less velocity"
+      },
+      {
+        "to": "china.hit",
+        "velocity_delta": -10,
+        "reason": "china, less velocity"
+      }
+    ],
+    "stack.hit": [
+      {
+        "to": "splash.hit",
+        "velocity_delta": 0,
+        "reason": "short trashy accent"
+      },
+      {
+        "to": "china.hit",
+        "velocity_delta": -10,
+        "reason": "china, shorter accent"
+      }
+    ],
+    "cymbal.hit": [
+      {
+        "to": "crash.hit",
+        "velocity_delta": 0,
+        "reason": "unclassified cymbal defaults to a crash"
+      },
+      {
+        "to": "ride.crash",
+        "velocity_delta": 0,
+        "reason": "then to a crashed ride"
+      }
+    ],
+    "octoban.hit": [
+      {
+        "to": "tom.hit",
+        "velocity_delta": 0,
+        "reason": "no octoban; the highest tom"
+      }
+    ],
+    "jam-block.hit": [
+      {
+        "to": "woodblock.hit",
+        "velocity_delta": 0,
+        "reason": "same wooden click"
+      },
+      {
+        "to": "cowbell.hit",
+        "velocity_delta": -6,
+        "reason": "no wood; the cowbell is the nearest click"
+      }
+    ],
+    "sizzle-ride.bow": [
+      {
+        "to": "ride.bow",
+        "velocity_delta": 0,
+        "reason": "no sizzle; the plain ride bow"
+      }
+    ],
+    "aux-pad.hit": [
+      {
+        "to": "tom.hit",
+        "velocity_delta": 0,
+        "reason": "an unassigned pad defaults to a tom rather than vanishing"
+      }
+    ],
+    "woodblock.hit": [
+      {
+        "to": "jam-block.hit",
+        "velocity_delta": 0,
+        "reason": "same wooden click"
+      },
+      {
+        "to": "cowbell.mute",
+        "velocity_delta": -4,
+        "reason": "no wood at all; a muted cowbell is the nearest click"
+      }
+    ],
+    "tambourine.hit": [
+      {
+        "to": "shaker.hit",
+        "velocity_delta": 0,
+        "reason": "no tambourine; a shaker keeps the same pulse"
+      },
+      {
+        "to": "sticks.hit",
+        "velocity_delta": -6,
+        "reason": "last resort: a dry click"
+      }
+    ],
+    "tambourine.shake": [
+      {
+        "to": "shaker.shake",
+        "velocity_delta": 0,
+        "reason": "no tambourine; the shaker is the nearest sustained rattle"
+      }
+    ],
+    "shaker.hit": [
+      {
+        "to": "tambourine.shake",
+        "velocity_delta": -6,
+        "reason": "no shaker; a quiet tambourine shake"
+      }
+    ],
+    "triangle.open": [
+      {
+        "to": "bell.bell",
+        "velocity_delta": -8,
+        "reason": "no triangle; a small bell is the nearest ringing metal"
+      },
+      {
+        "to": "ride.bell",
+        "velocity_delta": -12,
+        "reason": "last resort: the ride bell, well down in level"
+      }
+    ],
+    "chimes.gliss": [
+      {
+        "to": "triangle.roll",
+        "velocity_delta": 0,
+        "reason": "no chimes; a triangle roll is the nearest shimmer"
+      }
+    ],
+    "clap.hit": [
+      {
+        "to": "snare.rimshot",
+        "velocity_delta": 0,
+        "reason": "no clap; a rimshot is the nearest sharp backbeat"
+      },
+      {
+        "to": "snare.hit",
+        "velocity_delta": 6,
+        "reason": "then an ordinary snare, lifted"
+      }
+    ],
+    "sticks.hit": [
+      {
+        "to": "snare.sidestick",
+        "velocity_delta": 0,
+        "reason": "no sticks; a cross stick is the nearest dry click"
+      },
+      {
+        "to": "woodblock.hit",
+        "velocity_delta": 0,
+        "reason": "then a woodblock"
+      }
+    ]
+  },
+  "expansions": {
+    "hihat.open-close.tip": [
+      {
+        "parts": [
+          {
+            "to": "hihat.open.tip"
+          },
+          {
+            "to": "hihat.pedal.chick",
+            "offset_quarters": 0.125,
+            "velocity_scale": 0.7,
+            "duration_quarters": 0.125
+          }
+        ],
+        "reason": "open-close gesture: the open hit plus the foot closing a 32nd later"
+      },
+      {
+        "parts": [
+          {
+            "to": "hihat.open.tip"
+          }
+        ],
+        "reason": "open-close without the close"
+      }
+    ],
+    "hihat.open-close.edge": [
+      {
+        "parts": [
+          {
+            "to": "hihat.open.edge"
+          },
+          {
+            "to": "hihat.pedal.chick",
+            "offset_quarters": 0.125,
+            "velocity_scale": 0.7,
+            "duration_quarters": 0.125
+          }
+        ],
+        "reason": "open-close gesture on the edge"
+      },
+      {
+        "parts": [
+          {
+            "to": "hihat.open.edge"
+          }
+        ],
+        "reason": "open-close without the close"
+      }
+    ],
+    "splash.hit": [
+      {
+        "parts": [
+          {
+            "to": "crash.hit"
+          },
+          {
+            "to": "crash.hit",
+            "relation": "choke",
+            "offset_quarters": 0.5,
+            "velocity_scale": 0.9,
+            "duration_quarters": 0.125
+          }
+        ],
+        "reason": "a splash is close to a choked crash: hit, then choke an eighth later"
+      }
+    ]
+  },
+  "roots": [
+    {
+      "term": "kick.hit",
+      "reason": "every kit has a kick; if a target lacks one there is nothing to substitute"
+    }
+  ]
+}

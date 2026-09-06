@@ -1,0 +1,2084 @@
+{
+  "vocabulary_version": "0.1.0",
+  "vocabulary_serial": 1,
+  "next_id": 1156,
+  "terms": {
+    "kick.hit": {
+      "id": 1001,
+      "display_name": "Kick",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit"
+      },
+      "role_hint": "foundation"
+    },
+    "kick.hit.damped": {
+      "id": 1002,
+      "display_name": "Kick, damped",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "mechanism": "kick-damped"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.hit.half-open": {
+      "id": 1003,
+      "display_name": "Kick, half open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "mechanism": "kick-half-open"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.hit.wires-off": {
+      "id": 1004,
+      "display_name": "Kick, snares off",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "mechanism": "wires-off"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.hit.felt": {
+      "id": 1005,
+      "display_name": "Kick, felt beater",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "implement": "felt-beater"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.hit.wood": {
+      "id": 1006,
+      "display_name": "Kick, wood beater",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "implement": "wood-beater"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.hit.plastic": {
+      "id": 1007,
+      "display_name": "Kick, plastic beater",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "implement": "plastic-beater"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.hit.double": {
+      "id": 1008,
+      "display_name": "Kick, auto double",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "ornament": "bounced"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "kick.rim": {
+      "id": 1009,
+      "display_name": "Kick rim",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "site": "rim",
+        "technique": "hit"
+      },
+      "parent": "kick.hit",
+      "role_hint": "effect"
+    },
+    "kick.electric": {
+      "id": 1010,
+      "display_name": "Kick, electronic",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "kick",
+        "technique": "hit",
+        "timbre": "electronic"
+      },
+      "parent": "kick.hit",
+      "role_hint": "foundation"
+    },
+    "snare.hit": {
+      "id": 1011,
+      "display_name": "Snare",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "position": "centre",
+        "technique": "hit"
+      },
+      "role_hint": "backbeat"
+    },
+    "snare.hit.halfway": {
+      "id": 1012,
+      "display_name": "Snare, halfway",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "position": "halfway",
+        "technique": "hit"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.hit.offset": {
+      "id": 1013,
+      "display_name": "Snare, off centre",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "position": "offset",
+        "technique": "hit"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.hit.edge": {
+      "id": 1014,
+      "display_name": "Snare, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "position": "perimeter",
+        "technique": "hit"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.hit.ghost": {
+      "id": 1015,
+      "display_name": "Snare, ghost",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "dynamic": "ghost"
+      },
+      "parent": "snare.hit",
+      "role_hint": "ghost"
+    },
+    "snare.hit.soft": {
+      "id": 1016,
+      "display_name": "Snare, soft layer",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "dynamic": "soft"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.hit.hard": {
+      "id": 1017,
+      "display_name": "Snare, hard layer",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "dynamic": "hard"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.rimshot": {
+      "id": 1018,
+      "display_name": "Snare rimshot",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "rim",
+        "technique": "rimshot"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.rimshot.shallow": {
+      "id": 1019,
+      "display_name": "Snare rimshot, shallow",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "rim",
+        "position": "perimeter",
+        "technique": "rimshot"
+      },
+      "parent": "snare.rimshot",
+      "role_hint": "backbeat"
+    },
+    "snare.rim-only": {
+      "id": 1020,
+      "display_name": "Snare rim only",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "rim",
+        "technique": "rim-only"
+      },
+      "parent": "snare.hit",
+      "role_hint": "ghost"
+    },
+    "snare.sidestick": {
+      "id": 1021,
+      "display_name": "Snare cross stick",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "crossstick",
+        "technique": "sidestick"
+      },
+      "parent": "snare.hit",
+      "role_hint": "ghost"
+    },
+    "snare.stick-shot": {
+      "id": 1022,
+      "display_name": "Snare stick shot",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "stick-shot"
+      },
+      "parent": "snare.hit",
+      "role_hint": "accent"
+    },
+    "snare.back-stick": {
+      "id": 1023,
+      "display_name": "Snare back stick",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "back-stick"
+      },
+      "parent": "snare.hit",
+      "role_hint": "accent"
+    },
+    "snare.ping-shot": {
+      "id": 1024,
+      "display_name": "Snare ping shot",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "rim",
+        "technique": "ping-shot"
+      },
+      "parent": "snare.rimshot",
+      "role_hint": "accent"
+    },
+    "snare.gok-shot": {
+      "id": 1025,
+      "display_name": "Snare gok shot",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "rim",
+        "technique": "gok-shot"
+      },
+      "parent": "snare.rimshot",
+      "role_hint": "accent"
+    },
+    "snare.shell": {
+      "id": 1026,
+      "display_name": "Snare shell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "shell",
+        "technique": "hit"
+      },
+      "parent": "snare.hit",
+      "role_hint": "effect"
+    },
+    "snare.flam": {
+      "id": 1027,
+      "display_name": "Snare flam",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "flam"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.drag": {
+      "id": 1028,
+      "display_name": "Snare drag",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "drag"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.ruff": {
+      "id": 1029,
+      "display_name": "Snare ruff",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "ruff"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.roll": {
+      "id": 1030,
+      "display_name": "Snare roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "roll"
+      },
+      "parent": "snare.hit",
+      "role_hint": "fill"
+    },
+    "snare.buzz": {
+      "id": 1031,
+      "display_name": "Snare buzz roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "buzz"
+      },
+      "parent": "snare.roll",
+      "role_hint": "fill"
+    },
+    "snare.wires-off": {
+      "id": 1032,
+      "display_name": "Snare, wires off",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "mechanism": "wires-off"
+      },
+      "parent": "snare.hit",
+      "role_hint": "effect"
+    },
+    "snare.wires-off.rimshot": {
+      "id": 1033,
+      "display_name": "Snare rimshot, wires off",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "rim",
+        "technique": "rimshot",
+        "mechanism": "wires-off"
+      },
+      "parent": "snare.wires-off",
+      "role_hint": "effect"
+    },
+    "snare.towel": {
+      "id": 1034,
+      "display_name": "Snare, towel",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "damping": "towel"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.brush.hit": {
+      "id": 1035,
+      "display_name": "Snare, brush",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "implement": "brush"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.brush.sweep": {
+      "id": 1036,
+      "display_name": "Snare, brush sweep",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "sweep",
+        "implement": "brush"
+      },
+      "parent": "snare.brush.hit",
+      "role_hint": "timekeeping"
+    },
+    "snare.brush.swirl": {
+      "id": 1037,
+      "display_name": "Snare, brush swirl",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "swirl",
+        "implement": "brush"
+      },
+      "parent": "snare.brush.hit",
+      "role_hint": "timekeeping"
+    },
+    "snare.brush.circling": {
+      "id": 1038,
+      "display_name": "Snare, brush circling",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "circling",
+        "implement": "brush"
+      },
+      "parent": "snare.brush.sweep",
+      "role_hint": "timekeeping"
+    },
+    "snare.brush.muted": {
+      "id": 1039,
+      "display_name": "Snare, brush muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "implement": "brush",
+        "damping": "muted"
+      },
+      "parent": "snare.brush.hit",
+      "role_hint": "ghost"
+    },
+    "snare.rod.hit": {
+      "id": 1040,
+      "display_name": "Snare, rods",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "implement": "rod"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "snare.mallet.hit": {
+      "id": 1041,
+      "display_name": "Snare, mallet",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "implement": "mallet-medium"
+      },
+      "parent": "snare.hit",
+      "role_hint": "fill"
+    },
+    "snare.electric": {
+      "id": 1042,
+      "display_name": "Snare, electronic",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "snare",
+        "site": "head",
+        "technique": "hit",
+        "timbre": "electronic"
+      },
+      "parent": "snare.hit",
+      "role_hint": "backbeat"
+    },
+    "tom.hit": {
+      "id": 1043,
+      "display_name": "Tom",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "position": "centre",
+        "technique": "hit"
+      },
+      "role_hint": "fill"
+    },
+    "tom.hit.edge": {
+      "id": 1044,
+      "display_name": "Tom, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "position": "perimeter",
+        "technique": "hit"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.hit.ghost": {
+      "id": 1045,
+      "display_name": "Tom, ghost",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "dynamic": "ghost"
+      },
+      "parent": "tom.hit",
+      "role_hint": "ghost"
+    },
+    "tom.rimshot": {
+      "id": 1046,
+      "display_name": "Tom rimshot",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "rim",
+        "technique": "rimshot"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.rim-only": {
+      "id": 1047,
+      "display_name": "Tom rim only",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "rim",
+        "technique": "rim-only"
+      },
+      "parent": "tom.hit",
+      "role_hint": "ghost"
+    },
+    "tom.shell": {
+      "id": 1048,
+      "display_name": "Tom shell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "shell",
+        "technique": "hit"
+      },
+      "parent": "tom.hit",
+      "role_hint": "effect"
+    },
+    "tom.flam": {
+      "id": 1049,
+      "display_name": "Tom flam",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "flam"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.roll": {
+      "id": 1050,
+      "display_name": "Tom roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "ornament": "roll"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.hit.damped": {
+      "id": 1051,
+      "display_name": "Tom, damped",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "damping": "damped"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.hit.towel": {
+      "id": 1052,
+      "display_name": "Tom, towel",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "damping": "towel"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.brush.hit": {
+      "id": 1053,
+      "display_name": "Tom, brush",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "implement": "brush"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.brush.sweep": {
+      "id": 1054,
+      "display_name": "Tom, brush sweep",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "sweep",
+        "implement": "brush"
+      },
+      "parent": "tom.brush.hit",
+      "role_hint": "timekeeping"
+    },
+    "tom.mallet.hit": {
+      "id": 1055,
+      "display_name": "Tom, mallet",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "implement": "mallet-medium"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "tom.electric": {
+      "id": 1056,
+      "display_name": "Tom, electronic",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tom",
+        "site": "head",
+        "technique": "hit",
+        "timbre": "electronic"
+      },
+      "parent": "tom.hit",
+      "role_hint": "fill"
+    },
+    "octoban.hit": {
+      "id": 1057,
+      "display_name": "Octoban",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "octoban",
+        "site": "head",
+        "technique": "hit"
+      },
+      "role_hint": "fill"
+    },
+    "hihat.tight": {
+      "id": 1058,
+      "display_name": "Hi-hat, tight",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "tight"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.tight.tip": {
+      "id": 1059,
+      "display_name": "Hi-hat, tight, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "tight"
+      },
+      "parent": "hihat.tight",
+      "role_hint": "timekeeping"
+    },
+    "hihat.tight.shank": {
+      "id": 1060,
+      "display_name": "Hi-hat, tight, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "tight"
+      },
+      "parent": "hihat.tight",
+      "role_hint": "timekeeping"
+    },
+    "hihat.tight.edge": {
+      "id": 1061,
+      "display_name": "Hi-hat, tight, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "tight"
+      },
+      "parent": "hihat.tight",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed": {
+      "id": 1062,
+      "display_name": "Hi-hat, closed",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed.tip": {
+      "id": 1063,
+      "display_name": "Hi-hat, closed, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "parent": "hihat.closed",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed.shank": {
+      "id": 1064,
+      "display_name": "Hi-hat, closed, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "parent": "hihat.closed",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed.edge": {
+      "id": 1065,
+      "display_name": "Hi-hat, closed, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "parent": "hihat.closed",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed-loose": {
+      "id": 1066,
+      "display_name": "Hi-hat, loose closed",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "closed-loose"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed-loose.tip": {
+      "id": 1067,
+      "display_name": "Hi-hat, loose closed, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "closed-loose"
+      },
+      "parent": "hihat.closed-loose",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed-loose.shank": {
+      "id": 1068,
+      "display_name": "Hi-hat, loose closed, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "closed-loose"
+      },
+      "parent": "hihat.closed-loose",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed-loose.edge": {
+      "id": 1069,
+      "display_name": "Hi-hat, loose closed, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "closed-loose"
+      },
+      "parent": "hihat.closed-loose",
+      "role_hint": "timekeeping"
+    },
+    "hihat.quarter": {
+      "id": 1070,
+      "display_name": "Hi-hat, quarter open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "quarter"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.quarter.tip": {
+      "id": 1071,
+      "display_name": "Hi-hat, quarter open, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "quarter"
+      },
+      "parent": "hihat.quarter",
+      "role_hint": "timekeeping"
+    },
+    "hihat.quarter.shank": {
+      "id": 1072,
+      "display_name": "Hi-hat, quarter open, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "quarter"
+      },
+      "parent": "hihat.quarter",
+      "role_hint": "timekeeping"
+    },
+    "hihat.quarter.edge": {
+      "id": 1073,
+      "display_name": "Hi-hat, quarter open, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "quarter"
+      },
+      "parent": "hihat.quarter",
+      "role_hint": "timekeeping"
+    },
+    "hihat.half": {
+      "id": 1074,
+      "display_name": "Hi-hat, half open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "half"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.half.tip": {
+      "id": 1075,
+      "display_name": "Hi-hat, half open, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "half"
+      },
+      "parent": "hihat.half",
+      "role_hint": "timekeeping"
+    },
+    "hihat.half.shank": {
+      "id": 1076,
+      "display_name": "Hi-hat, half open, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "half"
+      },
+      "parent": "hihat.half",
+      "role_hint": "timekeeping"
+    },
+    "hihat.half.edge": {
+      "id": 1077,
+      "display_name": "Hi-hat, half open, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "half"
+      },
+      "parent": "hihat.half",
+      "role_hint": "timekeeping"
+    },
+    "hihat.three-quarter": {
+      "id": 1078,
+      "display_name": "Hi-hat, three-quarter open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "three-quarter"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.three-quarter.tip": {
+      "id": 1079,
+      "display_name": "Hi-hat, three-quarter open, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "three-quarter"
+      },
+      "parent": "hihat.three-quarter",
+      "role_hint": "timekeeping"
+    },
+    "hihat.three-quarter.shank": {
+      "id": 1080,
+      "display_name": "Hi-hat, three-quarter open, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "three-quarter"
+      },
+      "parent": "hihat.three-quarter",
+      "role_hint": "timekeeping"
+    },
+    "hihat.three-quarter.edge": {
+      "id": 1081,
+      "display_name": "Hi-hat, three-quarter open, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "three-quarter"
+      },
+      "parent": "hihat.three-quarter",
+      "role_hint": "timekeeping"
+    },
+    "hihat.loose": {
+      "id": 1082,
+      "display_name": "Hi-hat, loose",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "loose"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.loose.tip": {
+      "id": 1083,
+      "display_name": "Hi-hat, loose, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "loose"
+      },
+      "parent": "hihat.loose",
+      "role_hint": "timekeeping"
+    },
+    "hihat.loose.shank": {
+      "id": 1084,
+      "display_name": "Hi-hat, loose, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "loose"
+      },
+      "parent": "hihat.loose",
+      "role_hint": "timekeeping"
+    },
+    "hihat.loose.edge": {
+      "id": 1085,
+      "display_name": "Hi-hat, loose, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "loose"
+      },
+      "parent": "hihat.loose",
+      "role_hint": "timekeeping"
+    },
+    "hihat.open": {
+      "id": 1086,
+      "display_name": "Hi-hat, open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.open.tip": {
+      "id": 1087,
+      "display_name": "Hi-hat, open, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "parent": "hihat.open",
+      "role_hint": "timekeeping"
+    },
+    "hihat.open.shank": {
+      "id": 1088,
+      "display_name": "Hi-hat, open, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "parent": "hihat.open",
+      "role_hint": "timekeeping"
+    },
+    "hihat.open.edge": {
+      "id": 1089,
+      "display_name": "Hi-hat, open, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "parent": "hihat.open",
+      "role_hint": "timekeeping"
+    },
+    "hihat.closed.bell": {
+      "id": 1090,
+      "display_name": "Hi-hat bell, closed",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bell",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "parent": "hihat.closed",
+      "role_hint": "accent"
+    },
+    "hihat.open.bell": {
+      "id": 1091,
+      "display_name": "Hi-hat bell, open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bell",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "parent": "hihat.open",
+      "role_hint": "accent"
+    },
+    "hihat.pedal.chick": {
+      "id": 1092,
+      "display_name": "Hi-hat pedal chick",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "technique": "chick",
+        "openness": "closed"
+      },
+      "role_hint": "timekeeping"
+    },
+    "hihat.pedal.splash": {
+      "id": 1093,
+      "display_name": "Hi-hat foot splash",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "technique": "foot-splash",
+        "openness": "half"
+      },
+      "parent": "hihat.pedal.chick",
+      "role_hint": "accent"
+    },
+    "hihat.open-close.tip": {
+      "id": 1094,
+      "display_name": "Hi-hat open-close, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit",
+        "openness": "open",
+        "ornament": "wash"
+      },
+      "parent": "hihat.open.tip",
+      "role_hint": "timekeeping"
+    },
+    "hihat.open-close.edge": {
+      "id": 1095,
+      "display_name": "Hi-hat open-close, edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "hihat",
+        "site": "edge",
+        "technique": "hit",
+        "openness": "open",
+        "ornament": "wash"
+      },
+      "parent": "hihat.open.edge",
+      "role_hint": "timekeeping"
+    },
+    "xhat.closed": {
+      "id": 1096,
+      "display_name": "X-hat, closed",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "xhat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "role_hint": "timekeeping"
+    },
+    "xhat.open": {
+      "id": 1097,
+      "display_name": "X-hat, open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "xhat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "role_hint": "timekeeping"
+    },
+    "mini-hihat.closed": {
+      "id": 1098,
+      "display_name": "Mini hi-hat, closed",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "mini-hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "closed"
+      },
+      "role_hint": "timekeeping"
+    },
+    "mini-hihat.open": {
+      "id": 1099,
+      "display_name": "Mini hi-hat, open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "mini-hihat",
+        "site": "bow",
+        "technique": "hit",
+        "openness": "open"
+      },
+      "role_hint": "timekeeping"
+    },
+    "ride.bow": {
+      "id": 1100,
+      "display_name": "Ride bow",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "ride.bow.tip": {
+      "id": 1101,
+      "display_name": "Ride bow, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "contact": "tip",
+        "technique": "hit"
+      },
+      "parent": "ride.bow",
+      "role_hint": "timekeeping"
+    },
+    "ride.bow.shank": {
+      "id": 1102,
+      "display_name": "Ride bow, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "contact": "shank",
+        "technique": "hit"
+      },
+      "parent": "ride.bow",
+      "role_hint": "timekeeping"
+    },
+    "ride.bell": {
+      "id": 1103,
+      "display_name": "Ride bell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bell",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "ride.bell.tip": {
+      "id": 1104,
+      "display_name": "Ride bell, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bell",
+        "contact": "tip",
+        "technique": "hit"
+      },
+      "parent": "ride.bell",
+      "role_hint": "accent"
+    },
+    "ride.bell.shank": {
+      "id": 1105,
+      "display_name": "Ride bell, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bell",
+        "contact": "shank",
+        "technique": "hit"
+      },
+      "parent": "ride.bell",
+      "role_hint": "accent"
+    },
+    "ride.edge": {
+      "id": 1106,
+      "display_name": "Ride edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "edge",
+        "technique": "hit"
+      },
+      "parent": "ride.bow",
+      "role_hint": "timekeeping"
+    },
+    "ride.crash": {
+      "id": 1107,
+      "display_name": "Ride, crashed",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "edge",
+        "technique": "hit",
+        "dynamic": "accent"
+      },
+      "parent": "ride.edge",
+      "role_hint": "accent"
+    },
+    "ride.roll": {
+      "id": 1108,
+      "display_name": "Ride roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "technique": "hit",
+        "ornament": "roll"
+      },
+      "parent": "ride.bow",
+      "role_hint": "fill"
+    },
+    "ride.swell": {
+      "id": 1109,
+      "display_name": "Ride swell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "technique": "hit",
+        "ornament": "swell"
+      },
+      "parent": "ride.bow",
+      "role_hint": "effect"
+    },
+    "ride.mute": {
+      "id": 1110,
+      "display_name": "Ride, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "ride.bow",
+      "role_hint": "timekeeping"
+    },
+    "ride.brush": {
+      "id": 1111,
+      "display_name": "Ride, brush",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "technique": "hit",
+        "implement": "brush"
+      },
+      "parent": "ride.bow",
+      "role_hint": "timekeeping"
+    },
+    "ride.mallet": {
+      "id": 1112,
+      "display_name": "Ride, mallet",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "ride",
+        "site": "bow",
+        "technique": "hit",
+        "implement": "mallet-medium"
+      },
+      "parent": "ride.bow",
+      "role_hint": "effect"
+    },
+    "sizzle-ride.bow": {
+      "id": 1113,
+      "display_name": "Sizzle ride",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "sizzle-ride",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "crash-ride.bow": {
+      "id": 1114,
+      "display_name": "Crash ride",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash-ride",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "crash.hit": {
+      "id": 1115,
+      "display_name": "Crash",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "crash.mute": {
+      "id": 1116,
+      "display_name": "Crash, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "crash.hit",
+      "role_hint": "accent"
+    },
+    "china.hit": {
+      "id": 1117,
+      "display_name": "China",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "china",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "china.mute": {
+      "id": 1118,
+      "display_name": "China, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "china",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "china.hit",
+      "role_hint": "accent"
+    },
+    "splash.hit": {
+      "id": 1119,
+      "display_name": "Splash",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "splash",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "splash.mute": {
+      "id": 1120,
+      "display_name": "Splash, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "splash",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "splash.hit",
+      "role_hint": "accent"
+    },
+    "stack.hit": {
+      "id": 1121,
+      "display_name": "Stack",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "stack",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "stack.mute": {
+      "id": 1122,
+      "display_name": "Stack, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "stack",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "stack.hit",
+      "role_hint": "accent"
+    },
+    "mini-china.hit": {
+      "id": 1123,
+      "display_name": "Mini china",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "mini-china",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "mini-china.mute": {
+      "id": 1124,
+      "display_name": "Mini china, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "mini-china",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "mini-china.hit",
+      "role_hint": "accent"
+    },
+    "crash.edge": {
+      "id": 1125,
+      "display_name": "Crash edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "edge",
+        "technique": "hit"
+      },
+      "parent": "crash.hit",
+      "role_hint": "accent"
+    },
+    "crash.bell": {
+      "id": 1126,
+      "display_name": "Crash bell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "bell",
+        "technique": "hit"
+      },
+      "parent": "crash.hit",
+      "role_hint": "accent"
+    },
+    "crash.swell": {
+      "id": 1127,
+      "display_name": "Crash swell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "bow",
+        "technique": "hit",
+        "ornament": "swell"
+      },
+      "parent": "crash.hit",
+      "role_hint": "effect"
+    },
+    "crash.roll": {
+      "id": 1128,
+      "display_name": "Crash roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "bow",
+        "technique": "hit",
+        "ornament": "roll"
+      },
+      "parent": "crash.hit",
+      "role_hint": "fill"
+    },
+    "crash.mallet": {
+      "id": 1129,
+      "display_name": "Crash, mallet",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "crash",
+        "site": "bow",
+        "technique": "hit",
+        "implement": "mallet-medium"
+      },
+      "parent": "crash.hit",
+      "role_hint": "effect"
+    },
+    "china.edge": {
+      "id": 1130,
+      "display_name": "China edge",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "china",
+        "site": "edge",
+        "technique": "hit"
+      },
+      "parent": "china.hit",
+      "role_hint": "accent"
+    },
+    "china.bell": {
+      "id": 1131,
+      "display_name": "China bell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "china",
+        "site": "bell",
+        "technique": "hit"
+      },
+      "parent": "china.hit",
+      "role_hint": "accent"
+    },
+    "stack.tight": {
+      "id": 1132,
+      "display_name": "Stack, tight",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "stack",
+        "site": "bow",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "stack.hit",
+      "role_hint": "accent"
+    },
+    "stack.loose": {
+      "id": 1133,
+      "display_name": "Stack, loose",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "stack",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "parent": "stack.hit",
+      "role_hint": "accent"
+    },
+    "bell.bow": {
+      "id": 1134,
+      "display_name": "Kit bell, bow",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "bell",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "bell.bell": {
+      "id": 1135,
+      "display_name": "Kit bell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "bell",
+        "site": "bell",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "cymbal.hit": {
+      "id": 1136,
+      "display_name": "Cymbal, unclassified",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "cymbal",
+        "site": "bow",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "cowbell.hit": {
+      "id": 1137,
+      "display_name": "Cowbell",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "cowbell",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "cowbell.tip": {
+      "id": 1138,
+      "display_name": "Cowbell, tip",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "cowbell",
+        "contact": "tip",
+        "technique": "hit"
+      },
+      "parent": "cowbell.hit",
+      "role_hint": "timekeeping"
+    },
+    "cowbell.shank": {
+      "id": 1139,
+      "display_name": "Cowbell, shank",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "cowbell",
+        "contact": "shank",
+        "technique": "hit"
+      },
+      "parent": "cowbell.hit",
+      "role_hint": "accent"
+    },
+    "cowbell.mute": {
+      "id": 1140,
+      "display_name": "Cowbell, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "cowbell",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "cowbell.hit",
+      "role_hint": "timekeeping"
+    },
+    "jam-block.hit": {
+      "id": 1141,
+      "display_name": "Jam block",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "jam-block",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "woodblock.hit": {
+      "id": 1142,
+      "display_name": "Woodblock",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "woodblock",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "tambourine.hit": {
+      "id": 1143,
+      "display_name": "Tambourine",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tambourine",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "tambourine.shake": {
+      "id": 1144,
+      "display_name": "Tambourine, shake",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tambourine",
+        "technique": "shake"
+      },
+      "parent": "tambourine.hit",
+      "role_hint": "timekeeping"
+    },
+    "tambourine.roll": {
+      "id": 1145,
+      "display_name": "Tambourine roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tambourine",
+        "technique": "hit",
+        "ornament": "roll"
+      },
+      "parent": "tambourine.hit",
+      "role_hint": "fill"
+    },
+    "tambourine.thumb-roll": {
+      "id": 1146,
+      "display_name": "Tambourine thumb roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "tambourine",
+        "technique": "thumb",
+        "ornament": "roll"
+      },
+      "parent": "tambourine.roll",
+      "role_hint": "fill"
+    },
+    "sticks.hit": {
+      "id": 1147,
+      "display_name": "Sticks",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "sticks",
+        "technique": "hit"
+      },
+      "role_hint": "effect"
+    },
+    "clap.hit": {
+      "id": 1148,
+      "display_name": "Hand clap",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "clap",
+        "technique": "hit"
+      },
+      "role_hint": "backbeat"
+    },
+    "shaker.hit": {
+      "id": 1149,
+      "display_name": "Shaker",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "shaker",
+        "technique": "hit"
+      },
+      "role_hint": "timekeeping"
+    },
+    "shaker.shake": {
+      "id": 1150,
+      "display_name": "Shaker, shake",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "shaker",
+        "technique": "shake"
+      },
+      "parent": "shaker.hit",
+      "role_hint": "timekeeping"
+    },
+    "triangle.open": {
+      "id": 1151,
+      "display_name": "Triangle, open",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "triangle",
+        "technique": "hit"
+      },
+      "role_hint": "accent"
+    },
+    "triangle.mute": {
+      "id": 1152,
+      "display_name": "Triangle, muted",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "triangle",
+        "technique": "hit",
+        "damping": "muted"
+      },
+      "parent": "triangle.open",
+      "role_hint": "accent"
+    },
+    "triangle.roll": {
+      "id": 1153,
+      "display_name": "Triangle roll",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "triangle",
+        "technique": "hit",
+        "ornament": "roll"
+      },
+      "parent": "triangle.open",
+      "role_hint": "effect"
+    },
+    "chimes.gliss": {
+      "id": 1154,
+      "display_name": "Chimes, glissando",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "chimes",
+        "technique": "gliss"
+      },
+      "role_hint": "effect"
+    },
+    "aux-pad.hit": {
+      "id": 1155,
+      "display_name": "Auxiliary pad",
+      "status": "active",
+      "added_in": "0.1.0",
+      "axes": {
+        "instrument": "aux-pad",
+        "technique": "hit"
+      },
+      "role_hint": "effect"
+    }
+  }
+}

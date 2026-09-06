@@ -1,0 +1,44 @@
+{
+  "layout_id": "fixture.example",
+  "name": "Validator fixture",
+  "vendor": "KITWARP",
+  "kind": "fixture",
+  "vocabulary_version": "0.1.0",
+  "octave_convention": "c3=60",
+  "octave_verified": true,
+  "unmapped_policy": "pass-through",
+  "controllers": [
+    {
+      "controller": "hihat.pedal_position",
+      "carrier": "cc",
+      "number": 4,
+      "min": 0,
+      "max": 90,
+      "polarity": "normal",
+      "channel_scope": "global",
+      "emission": "pre-note",
+      "provenance": {
+        "source_id": "src.fixture",
+        "method": "measured",
+        "locator": "synthetic fixture, not a real device",
+        "obtained": "2026-09-06",
+        "observer": "tools/validate/fixtures",
+        "confidence": "measured",
+        "licence_verdict": "ingest-free"
+      }
+    }
+  ],
+  "notes": [
+    {"note": 36, "pivot": "kick.hit", "instance": 1, "entry_kind": "canonical", "vendor_label": "Kick", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 38, "pivot": "snare.hit", "instance": 1, "entry_kind": "canonical", "vendor_label": "Snare", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 40, "pivot": "snare.rimshot", "instance": 1, "entry_kind": "canonical", "vendor_label": "Snare rimshot", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 42, "pivot": "hihat.closed.tip", "instance": 1, "entry_kind": "canonical", "vendor_label": "HH closed tip", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 44, "pivot": "hihat.pedal.chick", "instance": 1, "entry_kind": "canonical", "vendor_label": "HH pedal", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 46, "pivot": "hihat.open.tip", "instance": 1, "entry_kind": "canonical", "vendor_label": "HH open tip", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 49, "pivot": "crash.hit", "instance": 1, "entry_kind": "canonical", "vendor_label": "Crash L", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 57, "pivot": "crash.hit", "instance": 2, "entry_kind": "canonical", "vendor_label": "Crash R", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 51, "pivot": "ride.bow", "instance": 1, "entry_kind": "canonical", "vendor_label": "Ride", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 59, "pivot": "ride.bow", "instance": 1, "entry_kind": "alias", "vendor_label": "Ride (GM alias)", "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]},
+    {"note": 17, "pivot": "", "entry_kind": "non-sound", "vendor_label": "Hats CC trigger", "notes": ["a note that selects a controller state rather than sounding"], "provenance": [{"source_id": "src.fixture", "method": "measured", "locator": "synthetic fixture", "obtained": "2026-09-06", "observer": "tools/validate/fixtures", "confidence": "measured", "licence_verdict": "ingest-free"}]}
+  ]
+}

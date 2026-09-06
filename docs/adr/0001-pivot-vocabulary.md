@@ -149,7 +149,6 @@ combinatorially.
 | facet | meaning | example values |
 |---|---|---|
 | `instrument` | what makes the sound | kick, snare, tom, hihat, ride, crash, conga, … |
-| `instance` | which one of several, ordinal within the device's set | 1, 2, 3 … |
 | `site` | contact site **on the instrument** | head, rim, rim2, crossstick, shell, bow, edge, bell |
 | `position` | where on that site, radially | centre, halfway, offset, perimeter |
 | `contact` | contact part **of the implement** | tip, shank, butt |
@@ -159,10 +158,24 @@ combinatorially.
 | `damping` | what damps and when | none, beater-strike, hand-strike, hand-after, body |
 | `mechanism` | device state that is not damping | wires-on, wires-off, kick-dampened, gated |
 | `implement` | what strikes it, with tip hardness | stick, brush, rod, mallet-soft/medium/hard, hand, felt-beater |
-| `limb` | which limb, where a layout samples it separately | left-hand, right-hand, alternating, left-foot, right-foot |
 | `dynamic` | sample tier, not musical role | normal, ghost, soft, hard, accent |
 | `timbre` | sound-generating lineage | acoustic, electronic, analog-808, fm, pcm, noise |
 | `voicing` | kit or miking variant of the same instrument | standard, room, power, jazz, orchestra |
+
+**Two facets deliberately live on the reference, not on the term.** A layout slot names a
+term *plus* an optional `instance` and `limb`:
+
+- `instance` is an unbounded ordinal — a kit may have six toms and six crashes — so minting
+  a term per instance would multiply the registry by the largest kit anyone owns, for no
+  gain: the fallback rule for instances is positional pairing, which needs the number, not a
+  name. The ordinal is 1-based and its direction is fixed once, here: **toms high to low in
+  pitch, cymbals left to right from the player's seat.** Getting that direction wrong
+  silently swaps every tom and every conga in every conversion, and the sources genuinely
+  conflict — GM puts High Bongo on note 60 and Low Bongo on 61, MuseScore's `tom-toms` has
+  `Tom 6` as the *lowest* drum while its `temple-blocks` runs low to high.
+- `limb` is dropped at zero fallback cost by a target that does not sample hands separately,
+  which is a property no other facet has. It is identity-bearing where a layout ships
+  separate Left Hand / Right Hand samples, and invisible everywhere else.
 
 `choke` is deliberately **not** a technique. It is a relation on a previously sounded event,
 which is why Jamstix models it as one generic stateful action that a target emits either as a
@@ -267,10 +280,18 @@ report.
 Every device layout now needs facet-level curation rather than a note list, which is slower
 per device and is the reason the inventory says twenty good maps beat two hundred raw ones.
 
-**Now required.** A validator (`tools/validate`) that checks: every layout slot references a
-minted term; no duplicate canonical notes; every collision is either declared or an error;
-every term reachable from some layout; every entry carries provenance; the fallback graph is
-acyclic and total.
+**Now required.** A validator (`tools/validate`) that checks: every layout slot references an
+*active* minted term; no two canonical slots claim one note on one channel; every axis value
+is registered; every entry carries provenance and at least one record whose licence verdict
+permits shipping; identifiers are stable against a frozen baseline; and **every term has a
+route out** — a parent, a curated edge, an expansion, a degradable axis, or an explicit
+entry in the `roots` list saying that nothing to fall back to is the correct answer.
+
+Totality, not acyclicity, is the invariant. Mutual curated edges are legitimate and
+expected — "if the target has no ride bell use the cowbell" and "if it has no cowbell use
+the ride bell" are both good rules, and only one can ever fire for a given target — so the
+resolver walks with a visited set, exactly as `marty-615/drum-remap`'s `resolveTag` does.
+The validator reports cycles so they stay visible and fails on terms with no route at all.
 
 **Irreversible once collection starts.** Adding an axis after data exists is a MAJOR bump and
 a re-curation of everything. Adding axis *values* and terms is cheap. That asymmetry is why

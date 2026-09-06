@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ClarkParker/midiKITWARP/schema/sources.schema.json",
+  "title": "KITWARP sources registry",
+  "description": "One row per external source. Per-source facts live here so that a licence is stated once rather than restated on ten thousand assertions, where the restatements drift.",
+  "type": "object",
+  "required": [
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "sources": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^src\\.[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "kind",
+          "title",
+          "locator",
+          "retrieved",
+          "licence_applied",
+          "licence_verdict"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "repository",
+              "manual",
+              "product-file",
+              "website",
+              "forum-post",
+              "vendor-correspondence",
+              "measurement-rig",
+              "standard"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 3
+          },
+          "version": {
+            "type": "string",
+            "description": "commit, document revision, firmware version, edition"
+          },
+          "retrieved": {
+            "type": "string",
+            "format": "date"
+          },
+          "licence_declared": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "spdx",
+                "evidence"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "spdx": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "licence_applied": {
+            "type": "string",
+            "description": "SPDX id, or 'proprietary', or 'none-stated'"
+          },
+          "licence_resolution": {
+            "type": "string"
+          },
+          "licence_verdict": {
+            "enum": [
+              "ingest-free",
+              "ingest-attribute",
+              "ingest-restricted",
+              "rederive-only",
+              "reference-only",
+              "forbidden"
+            ]
+          },
+          "attribution_required": {
+            "type": "boolean"
+          },
+          "attribution_string": {
+            "type": "string"
+          },
+          "redistribute_data": {
+            "type": "boolean"
+          },
+          "extraction_budget": {
+            "type": "object",
+            "required": [
+              "rows_taken",
+              "cap_rows"
+            ],
+            "additionalProperties": false,
+            "description": "Cumulative across the project's whole history. A cap that resets is not a cap.",
+            "properties": {
+              "total_rows_in_source": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "rows_taken": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cap_rows": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cap_fraction": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "contact": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "attribution_required": {
+                  "const": true
+                }
+              },
+              "required": [
+                "attribution_required"
+              ]
+            },
+            "then": {
+              "required": [
+                "attribution_string"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

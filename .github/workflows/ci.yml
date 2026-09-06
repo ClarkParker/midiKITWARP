@@ -38,8 +38,14 @@ jobs:
             check-jsonschema --schemafile schema/sources.schema.json data/sources.json
           fi
 
+      - name: Schema — validator fixture
+        run: check-jsonschema --schemafile schema/device-layout.schema.json tools/validate/fixtures/*.json
+
       - name: Invariants a schema cannot express
         run: python -m tools.validate
+
+      - name: Validator self-test against the fixture
+        run: python -m tools.validate --devices tools/validate/fixtures
 
       - name: Canonical formatting
         run: python -m tools.format --check

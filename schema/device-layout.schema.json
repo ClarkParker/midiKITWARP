@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ClarkParker/midiKITWARP/schema/device-layout.schema.json",
+  "title": "KITWARP device layout",
+  "description": "One layout: a device or library, its slots, and the provenance of each. Note numbers appear here and nowhere else.",
+  "type": "object",
+  "required": [
+    "layout_id",
+    "name",
+    "vendor",
+    "kind",
+    "vocabulary_version",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "layout_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "vendor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "library",
+        "module",
+        "drum-machine",
+        "daw-instrument",
+        "standard",
+        "notation",
+        "fixture"
+      ]
+    },
+    "revision": {
+      "type": "string",
+      "description": "firmware, product version, or map revision"
+    },
+    "vocabulary_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "octave_convention": {
+      "enum": [
+        "c3=60",
+        "c4=60",
+        "c5=60"
+      ]
+    },
+    "octave_verified": {
+      "type": "boolean"
+    },
+    "unmapped_policy": {
+      "enum": [
+        "pass-through",
+        "drop",
+        "nearest"
+      ],
+      "default": "pass-through"
+    },
+    "controllers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "controller",
+          "carrier"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "controller": {
+            "type": "string",
+            "description": "a slug from axes.json controllers"
+          },
+          "carrier": {
+            "enum": [
+              "cc",
+              "aftertouch",
+              "poly-aftertouch",
+              "note",
+              "none"
+            ]
+          },
+          "number": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "min": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "max": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "polarity": {
+            "enum": [
+              "normal",
+              "inverted"
+            ]
+          },
+          "channel_scope": {
+            "enum": [
+              "global",
+              "per-zone"
+            ]
+          },
+          "emission": {
+            "enum": [
+              "pre-note",
+              "continuous",
+              "unknown"
+            ]
+          },
+          "provenance": {
+            "$ref": "#/$defs/provenance"
+          }
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "note",
+          "pivot",
+          "entry_kind",
+          "provenance"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "note": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "channel": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 16
+          },
+          "pivot": {
+            "type": "string",
+            "description": "a slug from pivot.json"
+          },
+          "instance": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "limb": {
+            "enum": [
+              "left-hand",
+              "right-hand",
+              "alternating",
+              "left-foot",
+              "right-foot"
+            ]
+          },
+          "entry_kind": {
+            "enum": [
+              "canonical",
+              "alias",
+              "gm-anchor",
+              "controller-trigger",
+              "choke-modifier",
+              "reserved",
+              "non-sound"
+            ]
+          },
+          "vendor_label": {
+            "type": "string",
+            "description": "the device's own name for this note; display only, never keyed on"
+          },
+          "exclusion_group": {
+            "type": "string"
+          },
+          "velocity_min": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "velocity_max": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          },
+          "device_slot": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provenance": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/provenance"
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "entry_kind": {
+                  "const": "non-sound"
+                }
+              },
+              "required": [
+                "entry_kind"
+              ]
+            },
+            "then": {
+              "properties": {
+                "pivot": {
+                  "const": ""
+                }
+              },
+              "description": "a non-sound slot names no pivot term"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "method",
+        "locator",
+        "obtained",
+        "observer",
+        "confidence",
+        "licence_verdict"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "type": "string"
+        },
+        "method": {
+          "enum": [
+            "manufacturer-doc",
+            "product-file",
+            "measured",
+            "vendor-support",
+            "third-party-collection",
+            "user-report",
+            "inferred"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 3,
+          "description": "precise enough for a second person to reach the same page without asking"
+        },
+        "quote": {
+          "type": "string"
+        },
+        "obtained": {
+          "type": "string",
+          "format": "date"
+        },
+        "observer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "enum": [
+            "measured",
+            "documented",
+            "corroborated",
+            "single-source",
+            "inferred",
+            "disputed"
+          ]
+        },
+        "licence_verdict": {
+          "enum": [
+            "ingest-free",
+            "ingest-attribute",
+            "ingest-restricted",
+            "rederive-only",
+            "reference-only"
+          ]
+        },
+        "corroborated_by": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "conflicts_with": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "tracker": {
+          "type": "string"
+        }
+      },
+      "dependentRequired": {
+        "quote": [
+          "method"
+        ]
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "method": {
+                "const": "manufacturer-doc"
+              }
+            },
+            "required": [
+              "method"
+            ]
+          },
+          "then": {
+            "required": [
+              "quote"
+            ],
+            "description": "a verbatim excerpt is cheap now and impossible to reconstruct later"
+          }
+        }
+      ]
+    }
+  }
+}

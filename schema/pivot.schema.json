@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ClarkParker/midiKITWARP/schema/pivot.schema.json",
+  "title": "KITWARP pivot vocabulary",
+  "type": "object",
+  "required": [
+    "vocabulary_version",
+    "vocabulary_serial",
+    "next_id",
+    "terms"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "vocabulary_version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "vocabulary_serial": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "next_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "terms": {
+      "type": "object",
+      "propertyNames": {
+        "$ref": "#/$defs/slug"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/term"
+      }
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*)*$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "term": {
+      "type": "object",
+      "required": [
+        "id",
+        "display_name",
+        "status",
+        "added_in",
+        "axes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 999999,
+          "description": "opaque, monotonic, never reused. >= 1000000 is private extension space."
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "active",
+            "deprecated",
+            "withdrawn"
+          ]
+        },
+        "added_in": {
+          "$ref": "#/$defs/version"
+        },
+        "deprecated_in": {
+          "$ref": "#/$defs/version"
+        },
+        "deprecation_reason": {
+          "enum": [
+            "split",
+            "merged",
+            "ambiguous",
+            "erroneous",
+            "duplicate",
+            "superseded"
+          ]
+        },
+        "supersession_kind": {
+          "enum": [
+            "same-as",
+            "replaced-by",
+            "merged-into",
+            "split-into"
+          ]
+        },
+        "superseded_by": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "migration_note": {
+          "type": "string"
+        },
+        "see_also": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "tracker": {
+          "type": "string",
+          "format": "uri"
+        },
+        "parent": {
+          "$ref": "#/$defs/slug"
+        },
+        "role_hint": {
+          "enum": [
+            "foundation",
+            "backbeat",
+            "ghost",
+            "timekeeping",
+            "fill",
+            "accent",
+            "effect"
+          ]
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "value",
+              "kind"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "$ref": "#/$defs/slug"
+              },
+              "kind": {
+                "enum": [
+                  "correction",
+                  "alternate",
+                  "abbreviation",
+                  "deprecated"
+                ]
+              }
+            }
+          }
+        },
+        "axes": {
+          "type": "object",
+          "required": [
+            "instrument"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "instrument": {
+              "type": "string"
+            },
+            "site": {
+              "type": "string"
+            },
+            "position": {
+              "type": "string"
+            },
+            "contact": {
+              "type": "string"
+            },
+            "technique": {
+              "type": "string"
+            },
+            "ornament": {
+              "type": "string"
+            },
+            "openness": {
+              "type": "string"
+            },
+            "damping": {
+              "type": "string"
+            },
+            "mechanism": {
+              "type": "string"
+            },
+            "implement": {
+              "type": "string"
+            },
+            "dynamic": {
+              "type": "string"
+            },
+            "timbre": {
+              "type": "string"
+            },
+            "voicing": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "dependentRequired": {
+        "deprecated_in": [
+          "deprecation_reason"
+        ],
+        "superseded_by": [
+          "supersession_kind"
+        ],
+        "supersession_kind": [
+          "superseded_by"
+        ]
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "deprecated",
+                  "withdrawn"
+                ]
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "required": [
+              "deprecated_in",
+              "deprecation_reason"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "axes": {
+                "required": [
+                  "openness"
+                ]
+              }
+            },
+            "required": [
+              "axes"
+            ]
+          },
+          "then": {
+            "properties": {
+              "axes": {
+                "properties": {
+                  "instrument": {
+                    "enum": [
+                      "hihat",
+                      "xhat",
+                      "mini-hihat",
+                      "conga",
+                      "cuica",
+                      "surdo",
+                      "triangle",
+                      "tambourine"
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "openness is only meaningful on instruments that have an openness state"
+          }
+        }
+      ]
+    }
+  }
+}
