@@ -35,7 +35,7 @@ musical instruments. All six were reached and queried live. Measured against KIT
 | Getty AAT (musical instruments branch) | 348 under `aat:300041620`, plus 177 under `aat:300041646` | 11 / 27 | 16 | ODC-By 1.0 |
 | Wikidata (percussion subtree) | 877 | 17 / 27 | 10 | CC0 |
 | MusicBrainz instruments (percussion) | 288 | 12 / 27 | 15 | CC0 |
-| GND, subject category 14.3 *Musikinstrumentenkunde* | 908 | ~12 / 27 (UNVERIFIED, sampled not enumerated) | — | CC0 |
+| GND, subject category 14.3 *Musikinstrumentenkunde* | 908 | ~12 / 27 (UNVERIFIED, sampled not enumerated) | ~15 (UNVERIFIED) | CC0 |
 
 Nothing that any of them offers reaches KITWARP's working granularity. **Not one of the
 six has a concept for `ride`, `china`, `splash`, `stack`, `xhat`, `mini-china`,
@@ -47,12 +47,12 @@ is the only file with `ride cymbal`, and its `ride cymbal` item carries no MIMO 
 id and no MusicBrainz id — that is, the item exists but no authority file has adopted it.
 
 **For everything that is not the instrument axis there is next to nothing.** The whole
-harvest from all six files, across KITWARP's other eleven axes, is five concepts: Getty
-AAT's `drumheads`, `shells (drum components)` and `snares (drum components)`, its five
-`percussion beaters`, and LCMPT's `drum machine`. Getty AAT has no concept for rim shot,
-side stick, flam, drag, buzz, choke, or open/closed hi-hat (query, §2.5), and no concept
-for a drum rim or a cymbal bow, bell or edge (§2.10). LCMPT has none either, and by design — it is a *medium of
-performance* thesaurus, not a technique thesaurus. Hornbostel-Sachs, in the authors' own
+harvest from all six files, across KITWARP's other eleven axes, is **nine concepts**:
+Getty AAT's `drumheads`, `shells (drum components)` and `snares (drum components)`, its
+five `percussion beaters`, and LCMPT's `drum machine`. Getty AAT has no concept for rim
+shot, side stick, flam, drag, buzz, choke, or open/closed hi-hat (query, §2.5), and no
+concept for a drum rim or a cymbal bow, bell or edge (§2.10). LCMPT has none either, and
+by design — it is a *medium of performance* thesaurus, not a technique thesaurus. Hornbostel-Sachs, in the authors' own
 words, deliberately excludes playing technique for membranophones (§2.2). The one
 linked-data vocabulary that promises "instrument playing techniques", DOREMUS
 `vocabulary/technique/`, turns out to hold 20 concepts, all of them vocal — *blow,
