@@ -75,7 +75,25 @@ secondary; **D** aggregation.
 | S44 | *Schule für alle Schlaginstrumente* | H. Kling | pre-1911 | method, named as a standard text by S42 p. 201 | — | DE | A | NO |
 | S45 | Instrumentology / Academy — vibraphone and gong, German edition | Vienna Symphonic Library | live | vendor instrumentology | https://www.vsl.co.at/de/academy/percussion/vibraphone ; `/gong` | DE | B | YES |
 
-Reached: **24 of 45** — 23 marked YES plus S05 partially.
+| S46 | Cross-language links for percussion articles, plus *Rullante* | Wikipedia (en/de/fr/it/es) | live | encyclopaedia, queried mechanically | `https://en.wikipedia.org/w/api.php?action=query&prop=langlinks&lllimit=500&titles=<article>` ; https://it.wikipedia.org/wiki/Rullante | multi | C | YES |
+
+Reached: **25 of 46** — 24 marked YES plus S05 partially.
+
+### 1.0 Licence position on the sources used
+
+Per CLAUDE.md rule 2 and `docs/adr/0004-provenance-and-licensing.md`:
+
+- **Quoted from, and safe to quote:** S33 (Berlioz 1843) and S42 (Haupt & Teuchert 1911) are
+  public domain and were taken from archive.org's own copies. S03 (Facchin) was taken from
+  **the publisher's own promotional extract on zecchini.cloud**, and only index lines with
+  their page numbers are reproduced — the book itself is in copyright and is registered, not
+  reproduced. S07 and S17 are public institutional documents. S04 is MIMO's published SKOS
+  vocabulary. S01/S02/S45 are the vendor's own public pages, cited and paraphrased.
+- **Registered by locator only, never quoted:** S27 (Kurt Stone 1980) and S28 (Gardner Read
+  1969). Both are in copyright, and the full-text copies that turn up for them sit on
+  mirror sites with no stated licence. They appear in the register so the project knows
+  where to look and can buy or borrow a copy; nothing in this dossier is drawn from them.
+- **Rederive-only if used:** S22/S23 (MuseScore) — GPL.
 
 ### 1.1 Discovery method, and what did not work
 
@@ -750,6 +768,60 @@ Definitions for pp. 55–65 are **not in the publisher's sample**; only the term
 page numbers are verified. Marked UNVERIFIED for the glosses, which are given here from the
 literal Spanish and should be confirmed against the printed book.
 
+### 2.19 Kit register versus orchestral register (S46)
+
+An independent cross-check of §2.1 and §2.2, built from Wikipedia's own cross-language
+links (`action=query&prop=langlinks` on `en.wikipedia.org`, resolved for de/fr/it/es). The
+method is mechanical and repeatable, and it does not depend on any one editor's translation
+choice, because a langlink is an assertion that two articles describe the same thing.
+
+| EN | DE | FR | IT | ES |
+|---|---|---|---|---|
+| Snare drum | Kleine Trommel | Caisse claire | **Rullante** | **Caja** |
+| Bass drum | Große Trommel | Grosse caisse | Grancassa | **Bombo** |
+| Tom drum | Tomtom | Tom | Tom-tom | — |
+| Hi-hat | Hi-Hat | Charleston | Hi-hat | Hi hat |
+| **Ride cymbal** | **—** | Cymbale ride | Piatto ride | — |
+| **Crash cymbal** | **—** | Cymbale crash | Piatto crash | — |
+| **China cymbal** | **—** | Cymbale china | Piatto China | — |
+| **Splash cymbal** | **—** | Cymbale splash | Piatto splash | — |
+| Cymbal | Becken | Cymbale | **Piatto** (sing.) | Platillos |
+| Cowbell | Kuhglocke | Sonnaille | Campanaccio | Cencerro |
+| Tambourine | Tamburin | Tambourin sur cadre | Tamburello | Pandereta |
+| Triangle | Triangel | Triangle | Triangolo | Triángulo |
+| Woodblock | Holzblock | Wood-block | Woodblock | **Caja china** |
+| Timpani | Pauke | **Timbales (musique classique)** | Timpano | Timbal de concierto |
+| Drum kit | Schlagzeug | Batterie | Batteria | Batería |
+| Drum stick | **Stick (Schlagzeug)** | — | Bacchette | Baqueta |
+| Drumhead | Schlagzeugfell | — | — | Parche de tambor |
+| Drum roll | **Wirbel (Spieltechnik)** | Roulement de tambour | — | **Redoble** |
+| Claves | Claves | Claves | **Legnetti** | Clave |
+| Güiro | Güiro | Güiro | Güiro | Güiro |
+| Vibraslap | Vibraslap | Vibraslap | Vibraslap | Vibraslap |
+
+**The structural finding is the register split.** German has a precise native word for every
+orchestral instrument — *Kleine Trommel, Große Trommel, Becken, Pauke, Wirbel* — and **no
+native word at all** for ride, crash, china or splash, where it borrows the English term
+outright; its word for a kit drumstick is *Stick*, not *Trommelstock* or *Schlägel*. The
+same split appears in §4.3, where German-language MIDI practice keeps the GM drum map in
+English. Italian goes the other way and coins native kit terms (*piatto ride*, *piatto
+crash*), and Spanish has fully native band vocabulary (*caja*, *bombo*, *redoble*,
+*baqueta*, *parche*).
+
+Two consequences for aliasing. First, a German alias set must be built from two registers
+and the boundary runs between the orchestral battery and the kit — aliases cannot be
+generated uniformly. Second, **MIMO's Spanish labels are museum-register, not
+musician-register**: MIMO gives *Tambor vertical* and *Tambor bajo* (§2.1) where players and
+Wikipedia say *caja* and *bombo*. Both are correct for their purpose; only the second
+belongs in a performance alias set.
+
+Italian drum-part vocabulary, from the same source (`it.wikipedia.org/wiki/Rullante`):
+**fusto** (shell), **pelle battente** / **pelle risonante** (batter / snare-side head),
+**cerchi** (rims), **cordiera** (the snare mechanism), **macchinetta tendicordiera**
+(strainer), **tiranti** (tension rods), **blocchetti** (lugs), **fili** (the snare wires,
+"venti nei modelli più comuni"), **bacchette**, **spazzole**, **bacchette con punte in
+nylon**.
+
 ---
 
 ## 3. Axis mapping
@@ -901,7 +973,9 @@ The most valuable part of this bucket. Grouped by what kind of thing they name.
 | **timbale** | FR | the orchestral timpano (MIMO 2887) | *timbale aigüe/grave* = the Latin-American timbales (GM 65/66) | S04; S19 |
 | **Tambourin** | FR | tambourine, *tambour de basque* | **tambourin de Provence**, a long two-headed drum with **no jingles** — a separate MIMO concept (2745) and a separate Facchin head-word | S03 index; S04 |
 | **Crash cymbals** | EN in DE/FR/IT sources | in Facchin's index, *Crash cymbals*, *Cymbales choquées*, *HandBecken*, *2 Beckenteller* all redirect to **piatti a mano (in coppia)** — the clashed *pair* | in kit English, `crash` is a single suspended cymbal | S03 index |
-| **Cimbali** vs **Piatti** | IT | *cimbali* = small paired cymbals (MIMO 2451) | *piatti* = orchestral cymbal pair (MIMO 2471). English says "cymbals" for both; German "Becken" and French "Cymbales" also collapse them | S04 |
+| **Cimbali** vs **Piatti** vs **cinelli** | IT | *cimbali* = small paired cymbals (MIMO 2451) | *piatti* = orchestral cymbal pair (MIMO 2471); *cinelli* is a third historical variant (S42 p. 204, 1911). English says "cymbals" for all three | S04, S42 |
+| **rullante / tamburo rullante** | IT | In **kit** Italian, *rullante* and *tamburo rullante* are interchangeable names for the **snare drum** (S46) | In **orchestral** Italian, *tamburo rullante* / *cassa rullante* is a **different, deeper drum** — Facchin gives it its own chapter at p. 758, separate from *cassa chiara* at p. 463, and equates it with FR *caisse roulante* and *caisse sourde* (S03 index). The kit snare is *cassa chiara* there | S03, S46 |
+| **piatto** vs **piatti** | IT | singular *piatto* = one cymbal, e.g. *piatto sospeso* | plural *piatti* = the clashed pair, a different instrument. English "cymbal(s)" carries the same letters but not the distinction | S03, S46 |
 | **Wirbel** | DE | a roll | the tuning peg of a string instrument | S11 |
 | **Vorschlag** | DE | a grace-note figure, counted: *einfach / zweifach / dreifach / vierfach* | EN "grace note" is not systematically counted; it becomes flam/drag/ruff, three unrelated words | S01 |
 | **Randschlag** vs **am Rand / Fellrand** | DE | *Randschlag* = the rim shot, a stroke | *Fellrand* = near the rim, a position | S01, S07 |
@@ -930,7 +1004,7 @@ The most valuable part of this bucket. Grouped by what kind of thing they name.
 | bell / dome of a cymbal | Beckenkuppe | coupole | cupola | — | bell, dome, cup |
 | the striking sweet spot | Schlagfleck | — | — | — | (no single term) |
 
-### 4.3 A significant negative
+### 4.3 A significant negative, and the register split behind it
 
 **German-language MIDI practice does not translate the GM drum map.** The German Wikipedia
 *General MIDI* article (S20) lists the channel-10 assignment with the **English** names
@@ -939,6 +1013,11 @@ practice does translate it (S19). So a German-language KITWARP alias set would h
 disjoint registers: precise German score terminology for acoustic technique, and untranslated
 English for anything MIDI-adjacent. Aliases must be sourced accordingly, not
 machine-translated across the boundary.
+
+§2.19 shows this is not a MIDI artefact but a property of the language: German has no native
+word for ride, crash, china or splash cymbals at all, and calls a kit drumstick a *Stick*.
+The boundary is the orchestral battery versus the kit, and the GM map simply sits on the kit
+side of it.
 
 ---
 
