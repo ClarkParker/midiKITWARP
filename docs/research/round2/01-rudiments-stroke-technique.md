@@ -75,6 +75,8 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | R43 | **Arsenault, Frank, _Wm. F. Ludwig Presents The 26 Standard American Drum Rudiments and Selected Solos_**, Ludwig Drum Company, 1958 | LP, 1958 | **normative** — NARD's own official recording, made by a NARD president | archive.org id `lp_wm-f-ludwig-presents-the-26-standard-ameri_frank-arsenault`; **item metadata carries the full 33-track list** | recording in copyright; the **track titles are the deliverable** → cite-only | **reached** via `archive.org/metadata/<id>`; §2.2b |
 | R44 | _Corps Style Snare Drum Dictionary: A Complete Reference Guide … Through The Use Of American And Swiss Rudiments_, Alfred Publishing, 1981 | dictionary, 1981 | secondary, but a **dictionary** — the genre this bucket most needs | archive.org id `corpsstylesnared0000unse`, ISBN 9780739023228 | in-copyright, lending-restricted → cite-only | **located, not opened**; the likeliest place to find `back stick` and `gock` defined |
 | R45 | Retzel, Frank / Adler, Henry / McKenzie, Ted, _Buddy Rich's Modern Interpretation of Snare Drum Rudiments_, Amsco | book | secondary | archive.org id `buddyrichsmodern0000fran`, ISBN 9780825634659 | in-copyright, lending-restricted → cite-only | located, not opened |
+| R46 | **Hessler, Claus / Percussion Creativ, _Rudimental Codex_ — A3 poster, English edition** | standard, current | **normative** — published by the Codex's own compiler and the president of Percussion Creativ | `https://claushessler.com/wp-content/uploads/2024/11/Rudiment-Codex-Poster-A3-English.pdf`, found via `https://claushessler.com/downloads/` | © Hessler / Percussion Creativ → cite-only | **reached in full**, 1 601 980 B; **all 42 rudiments with German/Swiss and French names**, §2.13b — this is N08, obtained |
+| R47 | en.wikipedia **Percussion Creativ** | tertiary | tertiary | `action=raw`, 6 470 B | CC BY-SA 4.0 | reached; founding 1986, Hessler president since 2016, the Codex's stated purpose and its UNESCO submission |
 
 ### 1.2 Reached only as an abstract (paywall)
 
@@ -95,7 +97,7 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | N05 | Berger, Fritz R., _Instructor for Basle Drumming_ / _Méthode Baloise de Tambour_ (1964) | book, primary | the export-notation edition | in print |
 | N06 | Benson, Allen C., _Details of the Swiss Basle Style of Drumming_ (1980) | book, secondary | the main English-language Basel description | only on pdfcoffee (403) |
 | N07 | Hessler, Claus, _Camp Duty Update_, Alfred Music 2017 | book, primary | supplies the working definition of "rudiment" quoted by R04 | in print |
-| N08 | **Percussion Creativ, _Rudimental Codex_ (42 rudiments)** | standard proposal, German/French/Basel | the only modern attempt at a trilingual normative list; submitted to UNESCO | **no reachable URL found**; `percussion-creativ.de/rudimental-codex/` → 404 |
+| ~~N08~~ | ~~Percussion Creativ, _Rudimental Codex_ (42 rudiments)~~ | — | — | **OBTAINED — see R46.** `percussion-creativ.de/rudimental-codex/` is a 404 and the association's own site carries no link, but the compiler publishes the full poster on his personal downloads page. Register the *author's* site, not only the *body's* |
 | N09 | Bloom, Ryan Alexander, _Encyclopedia Rudimentia_, Hudson Music 2019 | book, secondary | the most complete cross-cultural rudiment concordance in print | in print |
 | N10 | Weinberg, Norman, _Guide to Standardized Drumset Notation_, PAS (ISBN 9780966492811) | standard, current | PAS's own drumset notation legend, adopted by Finale, Sibelius and Dorico | in print; no open copy |
 | N11 | Cameron, Clayton, _Brushworks: The New Language for Playing Brushes_ | book+CD, primary | the named brush-stroke rudiment system | in print |
@@ -118,10 +120,11 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | N28 | Dawson, Alan, "Rudimental Ritual" | curriculum, primary | the Berklee kit application of the rudiments | in print |
 | N29 | Freytag, _Rudimental Cookbook_ (1993); Delucia, _Percussion Discussion_ (1995); Wooton, _Rudimental Remedies_ (2010); Bachman, _Rudimental Logic_ (2010) | books, primary | where hybrid naming actually happened | in print |
 
-**Register totals:** 45 sources reached in full, as an abstract or as catalogue metadata, and
-29 named and not reached — 74 distinct sources, 78 register rows (R22 carries four
-sub-articles). Ids R35–R37 sit in §1.2 and R38–R45 in §1.1 because the latter were added after
-the register was first closed; ids are never renumbered.
+**Register totals:** 47 sources reached in full, as an abstract or as catalogue metadata, and
+28 still named and not reached (N08 was struck when R46 obtained it) — 75 distinct sources,
+80 register rows (R22 carries four sub-articles). Ids R35–R37 sit in §1.2 and R38–R47 in §1.1
+because the latter were added after the register was first closed; ids are never renumbered,
+and a struck row keeps its id with a pointer to what replaced it.
 
 Two access facts worth carrying forward: `web.archive.org` **content** is unreachable from
 this environment even though its availability API is not, and
@@ -644,6 +647,15 @@ as "gestes non décrits dans les rudiments".
 | **Trommelstreiche** | the 19th-century Bavarian regulation word for drum strokes (title of the 1823 Royal Bavarian infantry instruction) | R13 §Literatur |
 | **Chick**, **halboffen** | the German literature imports "Chick" untranslated and uses `halboffen` for half-open | R16 |
 | **Rebound** | imported untranslated into German pedagogy | R16 |
+| **Einfacher Vorschlag**, **Schlepp** | the two German/Swiss names for the **flam** | R46 #13 |
+| **Schlepptriole** | flam accent | R46 #19 |
+| **Schleppmühle** | single flammed mill / windmill | R46 #22 |
+| **Mühle** | in the Codex, **single paradiddle** — *not* the double-stroke preparation exercise the German Wikipedia gives (§4.1) | R46 #7 vs R14 |
+| **3er Ruf**, **5er Ruf** … **15er Ruf** | the numbered rolls, German/Swiss | R46 #24, #35–#42 |
+| **Endstreich** (`7er Endstreich`) | "final stroke" — the Codex's *Final of Seven* | R46 #33 |
+| **Tagwachtstreich** | double drag tap, named after the Tagwacht march genre | R46 #28 |
+| **Schweizer Ordonnanztriole** | Swiss Army Triplet | R46 #20 |
+| **Umgekehrt-**, **Tripliert-** | the Codex's productive prefixes for reversed and tripled forms | R46 #26, #29, #32, #34 |
 
 ### 2.13 Italian and Spanish
 
@@ -664,10 +676,118 @@ diez/once/trece/quince/diecisiete golpes`, `paradiddle sencillo`, `doble paradid
 (also `half drag`, `ruff`), `drag sencillo`, `drag doble`, `lección 25`, `dragadiddle`,
 `drag paradiddle n.º 1 / n.º 2`, `ratamacue sencillo / doble / triple`.
 
+### 2.13b The Rudimental Codex — all 42, trilingual, from its author
+
+**Obtained in full** as the *Rudimental Codex Poster (A3, English)* published on Claus
+Hessler's own downloads page (R46). Hessler is the Codex's compiler and the president of
+Percussion Creativ, so this is the normative artefact for the list, not a description of it.
+Each entry carries the English name on the first line and the **German/Swiss** and **French**
+names beneath, separated by `|` exactly as reproduced here. The poster's footnote reads:
+*"Find German/Swiss and French names of the patterns as well as hints on interpretation and
+performance details below the notation of the rudiments."*
+
+| # | English | German / Swiss | French |
+|---|---|---|---|
+| 1 | Single Stroke Roll | Einzelschläge | Coup Simple |
+| 2 | **Basic element "loud-soft"** | — | — |
+| 3 | **Basic element "soft-loud"** | — | — |
+| 4 | Closed Roll | Geschlossener Wirbel | Roulement |
+| 5 | Open Roll | Offener Wirbel | Roulement |
+| 6 | Inverted Open Roll | Invertierter, offener Wirbel | — |
+| 7 | Single Paradiddle | **Mühle** | **Moulin** |
+| 8 | Inward Paradiddle | Invertierter Paradiddle bzw. Mühle | — |
+| 9 | Reverse Paradiddle | Invertierter Paradiddle bzw. Mühle | — |
+| 10 | Outward Paradiddle | Invertierter Paradiddle bzw. Mühle | — |
+| 11 | Paradiddle-Diddle | — | — |
+| 12 | Double Paradiddle | — | **Coup Volant** |
+| 13 | Flam | Einfacher Vorschlag \| **"Schlepp"** | **Fla** |
+| 14 | **Coup de Charge (Switzerland)** | Charge stroke (Swiss tradition) | — |
+| 15 | Flammed Coup de Charge | Flammed charge stroke | — |
+| 16 | **Coup de Charge (France)** | Charge stroke (French tradition) | — |
+| 17 | Flam Tap \| Stroke and Flam | — | **Batard** |
+| 18 | Inverted Flam Tap \| Flam and Stroke | **Doublé** | **Coup Anglais** |
+| 19 | Flam Accent | **Schlepptriole** | **Batafla** |
+| 20 | Swiss Army Triplet | **Schweizer Ordonnanztriole** | — |
+| 21 | Pataflafla | **Bataflafla** | — |
+| 22 | Single Flammed Mill \| Windmill | **Schleppmühle** | — |
+| 23 | **Swiss Dragadiddle** | **3er Ruf Mühle** | **Patatrata** |
+| 24 | Half Drag \| Drag | **3er Ruf** | **Ra de 3** |
+| 25 | Single Drag Tap \| Single Drag | — | **Rigodon** |
+| 26 | Reversed Single Drag Tap | **Umgekehrter Rigodon** | — |
+| 27 | Lesson 25 \| **Quick Scotch** | — | **Raté Sauté de 3** |
+| 28 | Double Drag Tap \| Double Drag | **Tagwachtstreich** | **Diane** |
+| 29 | Reversed Double Drag No. 1 | **Umgekehrter Tagwachtstreich** | — |
+| 30 | Reversed Double Drag No. 2 | **Tagwachtstreich, 3er Ruf Kombination** | — |
+| 31 | Single Ratamacue | — | — |
+| 32 | Double Ratamacue | **Triplierter Tagwachtstreich** | — |
+| 33 | **Final of Seven** | **7er Endstreich** | **Raté Sauté de 5** |
+| 34 | Reversed Final of Seven | **Umgekehrter 7er Endstreich** | — |
+| 35 | 5-Stroke Roll \| **"Mother"** | **5er Ruf** | **Ra de 5** |
+| 36 | 6-Stroke Roll | **6er Ruf** | **Ra de 6** |
+| 37 | 7-Stroke Roll | **7er Ruf** | **Ra de 7** |
+| 38 | 9-Stroke Roll | **9er Ruf** | **Ra de 9** |
+| 39 | 10-Stroke Roll | **10er Ruf** | **Ra de 10** |
+| 40 | 11-Stroke Roll | **11er Ruf** | **Ra de 11** |
+| 41 | 13-Stroke Roll | **13er Ruf** | **Ra de 13** |
+| 42 | 15-Stroke Roll | **15er Ruf** | **Ra de 15** |
+
+Four things about this list matter more than the names themselves.
+
+1. **Its sticking legend is dynamic, not handed.** The poster's only legend line reads
+   `RIGHT HAND | loud - soft` and `LEFT HAND | loud - soft` — four glyph classes, one per hand
+   per dynamic level. Where the American sheets encode *which hand*, the Codex encodes *which
+   hand at which volume*, and it makes that the primitive: **items 2 and 3 of the Codex are
+   nothing but the pairs "loud-soft" and "soft-loud"**. A dynamic relation between two adjacent
+   attacks is treated as a rudiment in its own right, ranked above the flam. This is Hart's
+   1860 definition of the flam ("a very soft, fine blow … and a full heavy blow immediately
+   following", §2.3b) promoted to a first-class element.
+2. **It splits the charge stroke by nation.** Items 14 and 16 are the *same figure name* with
+   two entries, "Coup de Charge (Switzerland)" and "Coup de Charge (France)", confirming R04's
+   claim that the French form and the Swiss form differ (§2.4). No American list carries either.
+3. **It independently confirms the French mapping in §2.11.** Marc de Douvan (R21), working
+   from Tourte 1946, and Hessler's Codex agree on every French↔American pair they share:
+   `moulin` = single paradiddle, `volant` = double paradiddle, `coup anglais` = inverted flam
+   tap, `bâtard` = flam tap, `rigodon` = single drag tap, `coup de la Diane` = double drag tap,
+   `raté sauté de 3` = Lesson 25, `ra de N` = the N-stroke rolls. Two independent sources, no
+   disagreement — the French section can be treated as solid.
+4. **The numbered rolls are `Ruf` in German/Swiss and `ra` in French**, giving a clean
+   three-language concordance for the whole attack-count series 3, 5, 6, 7, 9, 10, 11, 13, 15.
+
+Named in the Codex and in **no** other source reached: `Swiss Dragadiddle` / `3er Ruf Mühle` /
+`Patatrata`, `Final of Seven` / `7er Endstreich` / `Raté Sauté de 5`, `Quick Scotch` as a name
+for Lesson 25, `"Mother"` as a name for the 5-stroke roll, `Schlepptriole`, `Batafla` (distinct
+from `Bataflafla`), and the four paradiddle inversions as separate entries (inward, reverse,
+outward).
+
 ### 2.14 The Swiss/Basel layer — what could actually be verified
 
-This bucket's brief asks specifically for Basel nomenclature. **The enumerated Basel
-Grundstreiche list was not obtained.** What is verified:
+This bucket's brief asks specifically for Basel nomenclature. §2.13b now supplies the Swiss
+names for 42 rudiments from the Codex's own author, which is the bulk of what was missing.
+**The enumerated Basel `Grundstreiche` list as the Basel school itself teaches it was still
+not obtained** — the Codex is a pan-European reconciliation, not the Basel curriculum.
+
+A set of candidate Basel stroke names was supplied to this worker from a search summary and
+each was checked against a fetchable source before being admitted. The outcome, recorded in
+full because a negative result with a locator is a finding:
+
+| Candidate name | Verdict | Where |
+|---|---|---|
+| `Schlepp` | **verified** — the Swiss name for the **Flam** | R46 #13 |
+| `Doublé` | **verified**, but *not* as described — it is the Swiss name for the **Inverted Flam Tap / Flam and Stroke / Coup Anglais**, not "a Schleppstreich doubled by a quiet preceding Tupfen" | R46 #18 |
+| `5er Ruf` | **verified** — the 5-Stroke Roll | R46 #35 |
+| `7er`, `11er`, `13er`, `15er` | **verified** as `7er Ruf`, `11er Ruf`, `13er Ruf`, `15er Ruf` | R46 #37, #40, #41, #42 |
+| `19er` | **not found**; the Codex series stops at `15er Ruf` | R46 |
+| `Bataflafla` | **verified** — the Swiss name for the **Pataflafla** | R46 #21 |
+| `Coup de Charge` | **verified**, and split into **two** entries, Swiss and French | R46 #14, #16 |
+| `Tagwacht` strokes, simple and reversed | **verified** as `Tagwachtstreich` (Double Drag Tap), `Umgekehrter Tagwachtstreich`, `Tagwachtstreich, 3er Ruf Kombination`, `Triplierter Tagwachtstreich` | R46 #28–#30, #32 |
+| `Rigodonstreich` | **verified in the form `Rigodon`** (Single Drag Tap) and `Umgekehrter Rigodon`; the compound `Rigodonstreich` was not found | R46 #25, #26 |
+| `3er-Ruf-Tirole` | **not verified**; the Codex has `3er Ruf` and `3er Ruf Mühle`, no `Tirole` | R46 #23, #24 |
+| `Tupfen` | **not found in any source reached** | — |
+| `Papamama` | **not found in any source reached**, though the cognate `Mama-Papa` is attested for the German double-stroke roll (R15) and `papa-maman` for the French one (R21) | — |
+| `Hieroglyphenschrift`, `Bergerschrift` | **verified** — "Es gibt zwei Notenschriften: Die alte Hieroglyphenschrift und die modernere Berger Notenschrift"; the school "prefers the Hieroglyphenschrift" for beginners | R31, verbatim |
+| `Zündstoffschrift` | **not found in any source reached** | — |
+
+Everything else in this section was verified before the Codex arrived:
 
 | Fact | Locator |
 |---|---|
@@ -798,8 +918,10 @@ the correct answer — but any future contributor will try to add `full-stroke` 
 | **ruff** | historically: `llR` played **closed** (the open version was called *half drag*) | modern American: `rlR`, two **single** grace notes | R04 §Ruff |
 | **roll** | orchestral/German band default: **closed** (buzz) | rudimental/drum corps default: **open** (double stroke) | R15, explicit for German and Austrian march music |
 | **press roll** | drum-set usage: the multiple-bounce roll | German `Presswirbel`: the same, but `Pressschlag` is the *single* pressed stroke | R04; R14; R15 |
-| **mill** | American `mill stroke`: reversed paradiddle `RRLR` | German `Mühle`: the **preparatory double-stroke exercise** for the roll | R04 §Mill stroke; R14 |
-| **moulin** | French: the **single paradiddle** | — but cognate with both of the above | R21 item 16 |
+| **mill** | American `mill stroke`: reversed paradiddle `RRLR` | German Wikipedia `Mühle`: the **preparatory double-stroke exercise** for the roll — but the Rudimental Codex uses `Mühle` for the plain **single paradiddle**. Three senses of one word inside German alone | R04 §Mill stroke; R14; **R46 #7** |
+| **moulin** | French: the **single paradiddle** — the Codex and de Douvan agree | R21 item 16; R46 #7 |
+| **Batafla** vs **Bataflafla** | Codex `Batafla` = **flam accent** | Codex `Bataflafla` = **pataflafla**. One syllable apart, different figures | R46 #19, #21 |
+| **Coup de Charge** | Swiss form | French form — the Codex lists them as two separate rudiments | R46 #14, #16 |
 | **French** | `French roll` = triple stroke roll | `French grip` = palms-inward matched grip | R04; R16 |
 | **splash** | `splash cymbal`, an instrument | hi-hat `foot splash`, a technique | R11; v0.1 has both |
 | **dead** | orchestral `dead stroke`: mallet held against the bar | rudimental `deadstick`: a grace note that does not rebound | R04 §Drag |
@@ -856,7 +978,7 @@ alias set has to span revisions of the *same* list, not just rival lists.
 | NARD Standard American | 26 (13 + 13) | National Association of Rudimental Drummers, 1933; revived by the IATD | R23, R13 |
 | PAS International | 40 | Percussive Arts Society, 1984 | R01 |
 | Scottish Drumming Rudiments | 46 | pipe band tradition | R04 §PAS rudiments |
-| Rudimental Codex (French/Swiss) | 42 | Percussion Creativ / Claus Hessler; submitted to UNESCO | R04 §Present day |
+| **Rudimental Codex** (French/German/Swiss) | **42** | Percussion Creativ under Claus Hessler; "in order to **challenge the Percussive Arts Society interpretation** of many rudiments of European origin, as well as promote the cultural heritage of French, German, and Swiss rudimental drumming"; submitted to UNESCO | **R46 (the list itself, §2.13b)**; R47, verbatim |
 | Spalding's proposal | 5 essential + 22 | published *inside* Percussive Notes | R36 |
 | French conservatoire (Tourte) | 34, from a historical catalogue of 70+ | CNSM Paris | R04 §French |
 | Hybrid corpus | 500+ and open | nobody | R29 |
@@ -894,7 +1016,8 @@ not a nicety here, they are the only way a mapping survives contact with a sourc
 | Axis | Missing value | Evidence |
 |---|---|---|
 | ornament | **flat flam / double stop / unison** — both hands exactly together | R04 §Double stop: "a staple of several European systems … used in modern corps style snare drumming as well as drum kit and classical percussion" |
-| ornament | **charge stroke** — grace *after* the primary | R04 §Charge stroke; R21 item 7 |
+| ornament | **charge stroke** — grace *after* the primary. Now backed by a normative list that carries **two** of them, `Coup de Charge (Switzerland)` and `Coup de Charge (France)`, plus a `Flammed Coup de Charge` | R04 §Charge stroke; R21 item 7; **R46 #14–#16** |
+| dynamic, or a new *pair* relation | **`loud-soft` and `soft-loud` as primitives in their own right** — items 2 and 3 of the Codex are exactly these two, ranked above the flam, and the poster's whole sticking legend is `RIGHT HAND \| loud - soft`, `LEFT HAND \| loud - soft`. The relation between two adjacent attacks is treated as elementary; v0.1 has no way to say "this attack is the soft half of a loud-soft pair" | **R46 #2, #3 and legend**; R38 Lesson IV |
 | ornament | **attack count** as an ordered parameter (3–17, 25) | R01 #7–#15; R06 on the 4/8/12/14/16 and Scottish 25 |
 | ornament | **open flam** as distinct from flam | R03 line 1134; R04 §Flam |
 | technique | **rim roll**, **rim buzz**, **trill**, **pulled double**, **legato push**, **palm-up snap** (brush) | R22a, R22d |
@@ -983,14 +1106,22 @@ Two more that this bucket did not expect to confirm:
 **Fritz R. Berger, _Das Basler Trommeln. Sein Werden und Wesen_ (Trommel-Verlag Basel, 1928),
 with its companion complete method** (N04/N05). This is the source the bucket brief points at
 directly, it is the reason Basel nomenclature exists outside Switzerland at all, and its
-notation was revised into the current STPV standard in 1983. Without it the Basel section of
-this dossier is five verified facts and one stroke name (`Doublé`). It is in print from Musik
-Hug (Zurich) and Percussion Brandt (Germany) and is not digitised anywhere reachable.
-**Recommendation to the reconciliation pass:** either buy it, or chase the
-**Percussion Creativ _Rudimental Codex_** (N08), which is a modern trilingual list explicitly
-built to reconcile the French and Basel systems with the American one and would deliver
-German, French and English names side by side in one document. No URL for it was found; the
-route is probably percussion-creativ.de's publications page or Claus Hessler directly.
+notation was revised into the current STPV standard in 1983. It is in print from Musik Hug
+(Zurich) and Percussion Brandt (Germany) and is not digitised anywhere reachable.
+
+The earlier recommendation here — chase the **Rudimental Codex** as the cheaper substitute —
+**has been discharged**: the Codex was obtained in full (R46, §2.13b) and it delivered the
+Swiss, German and French names for 42 rudiments side by side, exactly as hoped. The route was
+not the association's site, which 404s, but the compiler's own downloads page. That is a
+general lesson: **when a standards body publishes nothing, look for the individual who wrote
+the standard.**
+
+What Berger would still add that the Codex does not: the Codex is a *pan-European
+reconciliation* aimed at American practice, so it gives the Basel name for figures that have an
+American counterpart. It cannot give the figures that have **no** counterpart, and it is not
+the Basel curriculum. The Basel school teaches from `Grundstreiche` (R31) and that enumerated
+list remains unobtained — as do the two Basel notation systems in any readable form. Berger is
+the only source that would close both.
 
 ### 6.2 Everything else this bucket could not reach, and what it would have added
 
@@ -999,7 +1130,9 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 | Weinberg, _Guide to Standardized Drumset Notation_ (N10) | PAS's own **drumset** notation legend — the one document that would say authoritatively which technique names PAS blesses for the kit (as opposed to the snare), and it is the list Finale, Sibelius and Dorico implement |
 | Moeller 1925 (N01), Stone _Accents and Rebounds_ (N02) | first-hand codification of the stroke types and of the two right-hand grips, instead of tertiary paraphrase |
 | Cameron _Brushworks_ (N11), Thigpen _The Sound of Brushes_ (N12) | the named brush-stroke systems. §2.8 has real definitions only because a PAS journal anthology happened to be mirrored on a university page; the two canonical brush books remain unread, so `Tap-Sweep-Tap`, `Silent Sweep`, `Lift`, `Guitar Stroke` stay UNVERIFIED |
-| Scottish Drumming Rudiments sheet (N21) | 46 names including the stroked rolls to 25 and `trizzlet` — the third national standard, entirely absent here |
+| Scottish Drumming Rudiments sheet (N21) | 46 names including the stroked rolls to 25 and `trizzlet` — the third national standard, entirely absent here. Note that the Codex calls Lesson 25 "**Quick Scotch**" (R46 #27), so a Scottish concordance probably exists |
+| the Basel `Grundstreiche` curriculum list | the school's own teaching sequence, which the Codex does not replace (§6.1) |
+| the two Basel notation systems in readable form | `Hieroglyphenschrift` and `Bergerschrift` are named by the Basel school (R31) but no legend for either was obtained. A third name, `Zündstoffschrift`, was suggested to this worker and could not be verified anywhere |
 | Swiss Ordonnanz manuals 1728–1964 (N19) | the ~32-rudiment military Swiss system; R25 lists them but only behind Google Drive folders |
 | Bruce & Emmett 1862/1865 (R34) | the first printed **Flamacue** and the first advocacy of "open, closed, open" practice; the IMSLP PDF is public domain and downloadable — a later worker should simply take it |
 | the *notation* of R03, R38, R39, R40 | all four are lithographed scores whose engraved figures did not OCR; every claim about them here rests on their **prose** only. Reading the plates would settle, for instance, exactly how many strokes Nevins's `SLOW SAG` has |
@@ -1040,7 +1173,11 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
   said the pool had recovered; two retries from this worker were still refused with
   `200 of 200`. **Two searches were queued and never ran**: the Percussion Creativ
   _Rudimental Codex_ list (N08), and a German-language search for an enumerated Basel
-  `Grundstreiche` table. Both are named in §6.1 as the chase-list for reconciliation.
+  `Grundstreiche` table. **The supervisor later ran both and returned the results**, which is
+  how R46 and R47 entered this dossier; the standing arrangement is that a worker puts the
+  query in `questions` and the supervisor runs it. Every name that came back in that summary
+  was re-checked against a fetched document before admission, and the ones that failed the
+  check are listed as failures in §2.14 rather than quietly dropped.
 
 ### 6.4 Environment findings worth passing to other buckets
 
@@ -1062,6 +1199,20 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
   publisher issued as a record, a video or a poster.
 - Several publisher sites (bloomdrums, elephantdrums, pdfcoffee, drumlines mirrors) return 403
   to urllib but **succeed via WebFetch**, and vice versa for PDFs. Trying both is worth it.
+- **When an organisation publishes nothing, fetch the person who wrote the standard.**
+  `percussion-creativ.de/rudimental-codex/` is a 404 and the association's front page carries
+  no link to its own Codex, but the compiler's personal site has the complete poster at
+  `claushessler.com/downloads/`. This single redirection of target turned the bucket's
+  top-priority miss into a full obtain.
+- Hosts checked while chasing the Basel layer, with their behaviour, so nobody repeats it:
+  `lebendige-traditionen.ch` serves HTML (200) but is a Nuxt SPA with no `_payload.json`, and
+  its `/dam/…pdf` asset path returns **502**; `baslerstadtbuch.ch` **soft-404s** — every unknown
+  path, including `robots.txt` and `sitemap.xml`, returns the 112 KB homepage — and its
+  `/suche.html?term=` results are JS-only, so the Weber article could not be located;
+  `musikhug.ch` serves a JavaScript/cookie wall; `piccoloschule.ch` and `trommelschule-basel.ch`
+  are SPAs that WebFetch renders but urllib does not; `trummu.ch/jungtambouren` is now **404**;
+  `claushessler.com/en/education/artikel-fachmagazine/` is **404** (the live path is
+  `/education/`, and the useful page is `/downloads/`).
 - Full-text mirrors of in-copyright method books surface on unlicensed aggregators
   (pdfcoffee, epdf and similar). Under CLAUDE.md rule 2 those are reference-only: this dossier
   registers such books with their locator and does **not** quote them. Every verbatim quotation
