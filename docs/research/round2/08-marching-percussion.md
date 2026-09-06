@@ -23,6 +23,85 @@ per-name verdicts are in §2.8.
 
 ---
 
+## 0. Ruling on `ping-shot`, `gok-shot` and `stick-shot`
+
+v0.1 has minted all three on the `technique` axis with no source recorded, and the
+vendor-glossary bucket reports that no cymbal, head or stick manufacturer it reached uses
+any of them. Marching pedagogy is where they live. Verdicts:
+
+**`stick-shot` — authority found, keep.** Four independent sources, three of them
+citable:
+
+- *Modern Drummer*, "Jazz Drummer's Workshop: The Stick Shot", Steve Fidyk, July 2013:
+  "Press one drumstick tip against the head at approximately 30 degrees, while striking
+  that stick at the shoulder with the opposite stick."
+- SMuFL glyph `pictStickShot`, U+E7F0 — a named notation standard symbol.
+- Tapspace *Virtual Drumline 2.5 User Guide* v.2.5.6, keymaps pp. 24–28: `Stick Shot` on
+  every SnareLine instrument, and `Stick shot HIGH` / `Stick shot LOW` on the two solo snare
+  instruments.
+- Wikipedia *Rimshot*, wikitext line 20, §orchestral: the orchestral rimshot "is also known
+  as a 'stick shot'".
+
+Note the register split: the stick shot is a *jazz and orchestral* term that marching
+percussion also uses. Blakley's glossary records the collision — his second sense of
+"cross stick" is the stick shot.
+
+**`ping-shot` — authority found, keep.** Four sources, one of them a vendor's own
+articulation name:
+
+- Tapspace *VDL 2.5 User Guide*, pp. 24, 25, 26, 27, 28: `Ping Shot` is a literal, shipped
+  articulation name on five separate marching snare instruments. This is the strongest
+  evidence in the bucket for any snare stroke name.
+- Southern Utah University Drumline 2025 Exercise Packet: "Ping Shot" written as a
+  performance direction above the snare stave (rehearsal figure 23), contrasted with
+  "Full Shot" two figures later.
+- Wikipedia *Rimshot*, line 15: "the 'ping shot', where the bead is struck about one inch
+  (2.5 cm) from the rim. This produces a high-pitched sound."
+- icanplaydrums.com, Jack Bennett, 2025-01-13: "Ping Rimshot: achieved by hitting closer to
+  the rim, producing a higher-pitched, metallic sound."
+
+**`gok-shot` — no authority for the name. Reconsider it.** Stated plainly, because that is
+the finding:
+
+- The spelling **`Gok`** occurs in exactly one place: MuseScore's
+  `share/templates/Marching_Snare_Drums.drm`, pitch 52, added 2024-07-27 in commit
+  `c7dc55ea2d` from Muse Drumline's definitions. `git log -S "Gok"` over the whole MuseScore
+  repository returns that one commit.
+- Tapspace's 112-page *Virtual Drumline 2.5 User Guide* — the industry-standard marching
+  library, and the vendor behind the earlier MuseScore Drumline extension — **never uses
+  the word, in any spelling**. It ships `Ping Shot` but no gock.
+- None of the five marching technique packets, two technique manuals or the notated
+  exercise packets reached uses it.
+- No association standard reached uses it (PAS is paywalled; see §6).
+- The only definition of the *concept* found anywhere is Wikipedia *Rimshot* line 16 — "a
+  'gock' (also spelled *gawk*), which is produced by hitting the bead of the drum stick at
+  the center of the drum while the rim is percussed with the distal shaft of the stick
+  (near the hand). This makes a lower sound." **That paragraph carries no citation.** Every
+  other statement of the three rimshot types reached in this bucket is a paraphrase of it.
+- Where "gock" *does* appear in sourced reference works, it means something else entirely:
+  the small 6″ or 8″ accent drum on a multi-tenor rack (Wikipedia *Marching percussion*
+  line 64, citing Udow; Blakley's glossary, s.v. Gock, "also called a spock or shot drum").
+
+The *physical distinction* is real and worth a term — a rimshot with the bead at the centre
+of the head is audibly lower than one an inch from the rim, and MuseScore, Muse Drumline
+and the model all need to express it. What has no authority is the **name**. Three options,
+none of which a worker may take unilaterally under ADR 0003:
+
+1. Keep `gok-shot` as the immutable slug and add a `correction` alias `gock-shot`, with
+   `gawk-shot` as a second alias. Cheapest, preserves the id, and matches the way the term
+   is actually spelled in the one tertiary source that defines it.
+2. Retire the name and express the sound compositionally as `rimshot` + `position=centre`,
+   which is what the definition literally says and what §5.1 recommends anyway for all
+   three rimshot variants.
+3. Leave it and record the provenance as "Muse Drumline, single vendor, uncorroborated".
+
+Recommendation to the owner: option 1 plus the §5.1 rule, so the slug survives, the field
+spelling resolves, and the ping/normal/gock family is recorded as one technique at three
+positions rather than three techniques. **Do not present `gok-shot` as an established
+marching term; it is one vendor's spelling of a word whose only definition is uncited.**
+
+---
+
 ## 1. Candidate source register (round A)
 
 Authority levels used: **P** primary (the body that owns the term, or the artefact itself),
@@ -74,6 +153,11 @@ primary (a program's own technique packet — written by the people who use the 
 | 40 | French-language *batterie-fanfare* literature | — | — | — | searched (`caisse claire technique de jeu`, `coup de baguette`); batteriefanfare.com, marcdedouvan.com | S | **negative result, same** |
 | 41 | musescore.org node 109826, "Add 2nd spock drum to Marching Percussion Tenor instrument" | MuseScore community | 2017 | issue thread | `https://musescore.org/en/node/109826` | P | **no — Cloudflare 403 to both WebFetch and curl** |
 | 42 | musescore.org/en/mdl, MuseScore Drumline landing | MuseScore | 2018 | vendor page | `https://musescore.org/en/mdl` | V | **no — same Cloudflare block** |
+| 43 | "Jazz Drummer's Workshop: The Stick Shot" | Steve Fidyk, *Modern Drummer*, July 2013 | 2013 | trade periodical | `https://www.moderndrummer.com/2013/06/jazz-drummers-workshop-the-stick-shot/` | P | yes |
+| 44 | "The Art of Mastering a Snare Drum Rimshot" | Jack Bennett, icanplaydrums.com | 2025-01-13 | pedagogy article | `https://www.icanplaydrums.com/blog/the-art-of-mastering-a-rimshot` | S | yes — names Full / Side / **Ping** rimshot |
+| 45 | Drum Glossary, 250+ terms | drumming.com | 2026 | glossary | `https://www.drumming.com/drum-glossary` | S | yes — **negative result**: no entry for gock, gawk, ping shot, stick shot or backstick |
+| 46 | archive.org full-text/metadata search for `"gock" AND "rimshot"` | Internet Archive | — | search API | `https://archive.org/advancedsearch.php?q=%22gock%22+AND+%22rimshot%22&output=json` | — | yes — **0 hits** |
+| 47 | Google Books API, `q="gock shot"` and `q="gock" marching snare` | Google | — | search API | `https://www.googleapis.com/books/v1/volumes` | — | **no — HTTP 429, daily project quota exhausted** |
 
 Searches run in round A (18, all distinct): `"gock" marching snare rimshot`; `PAS marching
 percussion terminology standard glossary`; `MuseScore Drumline MDL Tapspace`; `"spock
@@ -245,7 +329,9 @@ Marching Percussion" combined map (source 13) also contains `Snare Guz Short` (5
 | **ping shot** | "the bead is struck about one inch (2.5 cm) from the rim. This produces a high-pitched sound." | ibid. line 15 |
 | **gock** (also **gawk**) | "produced by hitting the bead of the drum stick at the center of the drum while the rim is percussed with the distal shaft of the stick (near the hand). This makes a lower sound." | ibid. line 16 |
 | — | "In Latin percussion, timbales players use rimshots near the edge of the head, but these sound very different from gocks in marching percussion." | ibid. line 18 |
+| **ping rimshot** | "achieved by hitting closer to the rim, producing a higher-pitched, metallic sound" | Jack Bennett, icanplaydrums.com, 2025-01-13 |
 | **stick shot** | "a rimshot is performed by placing one drum stick with the stick head near the middle of the drumhead, and the shaft pressed against the rim, and striking with the other stick. This produces a less powerful sound … This variation is also known as a 'stick shot'." | ibid. line 20, §orchestral |
+| **stick shot** | "Press one drumstick tip against the head at approximately 30 degrees, while striking that stick at the shoulder with the opposite stick." | Steve Fidyk, "Jazz Drummer's Workshop: The Stick Shot", *Modern Drummer*, July 2013 |
 | **cross stick** | "the tip of a drum stick is placed on the head near one of the bearing edges and the shaft of the stick is struck against the rim opposite the tip, thus creating a dry, high-pitched 'click' similar to a set of claves" | ibid. line 22 |
 | **backsticking** | "a snare drum technique characterized by swinging the butt of the drumstick to play the drum … typically only practiced among marching drum corps or drumlines" | Wikipedia *Backsticking* |
 | **backstick** | "when a note is played with the butt of the drumstick, most often found in marching snarelines … Backsticks are closely related to visuals" | Blakley, *Percussion Glossary*, s.v. Backstick |
@@ -523,11 +609,14 @@ are reserved and unminted. Against that baseline:
 
 ### 5.1 What is misnamed
 
-1. **`technique.gok-shot`.** The identifier carries MuseScore's single-vendor spelling. The
-   field spelling is **gock**, with **gawk** as a documented variant (Wikipedia *Rimshot*
-   line 16); Tapspace's 112-page manual, the five technique packets and the marching
-   glossaries never write "gok". Per ADR 0003 the slug cannot be renamed; the correct
-   remedy is a `correction` alias `gock-shot → gok-shot`, plus an alias `gawk-shot`.
+1. **`technique.gok-shot`.** Full ruling in **§0**. The identifier carries MuseScore's
+   single-vendor spelling; the field spelling is **gock**, with **gawk** as a documented
+   variant (Wikipedia *Rimshot* line 16). Tapspace's 112-page manual, the five technique
+   packets, the notated exercise packets and the marching glossaries never write "gok" —
+   and the reference works that do write "gock" mostly mean the tenor drum, not the stroke.
+   Per ADR 0003 the slug cannot be renamed; the recommended remedy is a `correction` alias
+   `gock-shot → gok-shot`, plus an alias `gawk-shot`, and a provenance record that says
+   "Muse Drumline, single vendor, concept uncited".
 2. **`technique.ping-shot` / `gok-shot` / `rimshot` are not three techniques.** Every
    authority reached describes them as **one technique (rimshot) at three striking
    positions**. Modelling them as sibling `technique` values means a converter cannot tell
@@ -639,8 +728,10 @@ authority for `split part`.
   indicates it would not contain stroke vocabulary. This is a judgement call and could be
   wrong; a reconciliation pass that wants certainty should fetch
   `wgi.org/percussion/percussion-score-sheets/` directly.
-- **snarescience.com** returns HTTP 500 and `web.archive.org` is blocked from this
-  environment (`403 Blocked by egress policy`, including the CDX API). That forum is the
+- **snarescience.com** returns HTTP 500 and `web.archive.org` is unreachable from this
+  environment — the CDX API answers `403 Blocked by egress policy` and the supervisor
+  reports connections reset mid-tunnel for both curl and WebFetch. `archive.org` itself
+  answers HTTP 200, and its search API was used (source 46, zero hits). That forum is the
   main community record of "gock/gawk" and of the spelling debate around it, and it is the
   likely upstream of the Wikipedia *Rimshot* passage — which is itself **unsourced**. That
   is a real weakness: the sharpest definition of gock in this dossier rests on an
@@ -671,10 +762,25 @@ authority for `split part`.
   monolingual American English and is not translated in scores worldwide.** Bucket 12
   (German/French/Italian) should not expect overlap here.
 
+**Environment limits that shaped what could be checked**
+
+- `web.archive.org` is unreachable (see above). The Wayback fallback the round 2 brief
+  prescribes does not work in this environment; `archive.org`'s own search API does.
+- WebSearch draws on one session-wide budget shared by all twelve round 2 workers and was
+  exhausted (200/200) partway through this bucket. Round A's eighteen searches were all
+  completed before that; everything after it was WebFetch and curl against constructed or
+  already-discovered URLs.
+- The Google Books API returns HTTP 429 "daily quota exhausted" for the whole project, so
+  the two book sources (Udow; Bailey & Caneva) could not be checked by a second route.
+- `musescore.org` and `tapspace.com/product/...` sit behind Cloudflare and refuse WebFetch;
+  `tapspace.com/wp-content/...` does not, which is how the VDL user guide was retrieved.
+
 **Where this dossier is weakest**
 
-1. The gock definition rests on an unsourced Wikipedia paragraph (§2.5). Everything else in
-   the snare table has vendor or teaching-packet backing; gock does not.
+1. The gock definition rests on an unsourced Wikipedia paragraph (§2.5, §0). Everything else
+   in the snare table has vendor or teaching-packet backing; gock does not. This is the
+   bucket's central negative finding and it is stated plainly in §0 rather than smoothed
+   over: `ping-shot` and `stick-shot` have authorities, `gok-shot` does not.
 2. "guz" (Finale's VDLite map, notes 53–54) is recorded but not explained. It is the one
    term in this bucket I found and could not define.
 3. The bass-line numbering rule is triangulated from three artefacts rather than quoted.
