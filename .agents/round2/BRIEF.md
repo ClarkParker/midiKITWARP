@@ -50,9 +50,15 @@ did NOT get, so the reconciliation pass can decide whether to chase it.
 - curl to github.com and raw.githubusercontent.com is BLOCKED (403). git clone --depth 1
   WORKS for public repositories.
 - Load WebFetch and WebSearch via ToolSearch with query "select:WebFetch,WebSearch".
-- **web.archive.org is UNREACHABLE in this environment.** Every connection resets
-  mid-tunnel, by curl and by WebFetch alike. There is no Wayback route. Do not spend time
-  on it.
+- **web.archive.org is INTERMITTENT, not blocked.** Corrected 2026-09-06 after a worker
+  proved it: WebFetch refuses it, and curl fails on most attempts with a mid-tunnel reset,
+  but a persistent retry does get through — one worker fetched the same 1,095,305-byte PDF
+  twice, byte-identical, on attempts two and three. Retry three to five times before
+  concluding a document is unreachable. The availability API
+  (`https://archive.org/wayback/available?url=...`) is reliable and answers 200 with JSON
+  even while snapshot fetches are failing, so use it to confirm a snapshot exists before
+  spending retries on it. An earlier version of this brief called Wayback dead; any source
+  registered as unreachable on that basis deserves one more attempt.
 - **archive.org itself DOES answer** (HTTP 200). Its details pages, the metadata API
   (https://archive.org/metadata/<id>), full-text search
   (https://archive.org/advancedsearch.php?q=...&output=json) and the plain-text derivatives
