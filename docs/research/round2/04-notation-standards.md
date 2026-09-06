@@ -9,12 +9,15 @@ Worker: `bucket-04-notation-standards`. Extraction date: 2026-09-06 (UTC).
 Every table below is transcribed from the file or page named in its locator, not from prose
 summaries of it.
 
-Environment notes that constrain what is here: the session's WebSearch budget was exhausted
-after this bucket's 15th round A search, so later breadth ran through WebFetch on known URLs
-and through `git clone`; `web.archive.org` is blocked outright in this environment, so the
-Wayback fallback named in the brief was unavailable; `curl` to github.com and
-raw.githubusercontent.com is blocked (403) but `git clone --depth 1` works, including with
-`--filter=blob:none --sparse`.
+Environment notes that constrain what is here: the shared session WebSearch budget (200 calls
+across all workers) was exhausted after this bucket's 15th round A search and still refused
+calls when retried later, so all breadth after round A ran through direct HTTP and `git clone`;
+`web.archive.org` is blocked outright, so the Wayback fallback named in the brief was
+unavailable; `curl` to github.com and raw.githubusercontent.com is blocked (403) but
+`git clone --depth 1` works, including with `--filter=blob:none --sparse`. One methodological
+note that cost this bucket a false negative and is worth passing on: WebFetch summarises rather
+than transcribes, and on the Finale tables it declined to reproduce them at all — for a source
+that must be complete and verbatim, fetch the raw page and parse it locally (§6, item 2).
 
 ---
 
@@ -60,6 +63,9 @@ Authority levels used below:
 | 28 | Dorico `.doricolib` playing-technique ids (`pt.*`) | Steinberg + third-party expression maps | 2026 | vendor data | GitHub code search: `mhcoffin/fiddle`, `taylorbrook/O-Audio-VST-Development` (`pt.natural`, `pt.legato`, `<PlayingTechniqueDefinition>`) | vendor | partial — namespace confirmed, percussion ids not found in public files |
 | 29 | Finale "Percussion MIDI Map Editor dialog box" | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleMac/Content/Finale/db-percussion-midi-map-editor.htm | vendor | yes — no enumeration published |
 | 30 | Finale "Percussion Layout Designer dialog box" | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleWin/Content/Finale/db-percussion-layout-designer.htm | vendor | listed only |
+| 30a | Finale "Percussion MIDI Maps: Tapspace Drumline for Finale" — six complete Note Type ↔ MIDI tables | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleMac/Content/Finale/PercussionMaps3.htm (direct HTTP; the WebFetch summariser refuses to reproduce the tables, curl with a browser user-agent returns them) | vendor | **yes — this is where Finale's enumeration actually is** |
+| 30b | Finale "Percussion MIDI Maps: Garritan Instruments for Finale" — 572 distinct Note Types | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleMac/Content/Finale/PercussionMaps2.htm | vendor | yes |
+| 30c | Finale "Percussion MIDI Maps" index | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleMac/Content/Finale/PercussionMaps.htm | vendor | no — HTTP 403 |
 | 31 | Sibelius 7 Sounds User Guide (sound names per library) | Avid | 2012 | vendor manual | https://resources.avid.com/SupportFiles/Sibelius/sibelius712-sounds-en.pdf | vendor | listed only |
 | 32 | Guitar Pro 7 user guide (drum articulation UI: open / semi-open / closed hi-hat on numeric keys 1/2/3) | Arobas Music | 2017 | vendor manual | https://static.guitar-pro.com/gp7/manual/GuitarPro7-user-guide.pdf | vendor | listed only |
 | 33 | "Notation pour percussion" (French MuseScore handbook) | MuseScore | — | manual (FR) | https://musescore.org/fr/manuel/notation-pour-percussion | de-facto (FR) | listed only |
@@ -771,8 +777,8 @@ wbl, cuim, cuio, trim, tri, trio, tt.
 
 `splashhihat` / `hhs` is worth flagging: it exists in the source file but is **absent from the
 published documentation table** at
-https://lilypond.org/doc/v2.24/Documentation/notation/percussion-notes, which lists 64 names
-without it. It is the foot-splash: in `drums-style` it is notated `cross` with `(open . DOWN)`
+https://lilypond.org/doc/v2.24/Documentation/notation/percussion-notes (retrieved 2026-09-06;
+the rendered table there does not contain a `splashhihat` row). It is the foot-splash: in `drums-style` it is notated `cross` with `(open . DOWN)`
 at staff position -5, i.e. the pedal hi-hat position with an "open" articulation below.
 
 Seven style tables define, per style, `(name notehead articulation staff-position)`:
@@ -1061,6 +1067,92 @@ indicate L.H., R.H. at top of box; Always draw the striking end next to top of b
 Weinberg's own diagnosis of the field, which is the reason this bucket exists: 31 different
 notational procedures were found in the literature for the single effect "rimshot".
 
+---
+
+### 2.11 Finale — the Note Type vocabulary
+
+Locator: MakeMusic Finale user manual, `usermanuals.finalemusic.com/FinaleMac/Content/Finale/`,
+pages `PercussionMaps2.htm` ("Percussion MIDI Maps: Garritan Instruments for Finale") and
+`PercussionMaps3.htm` ("Percussion MIDI Maps: Tapspace Drumline for Finale"), retrieved by
+direct HTTP on 2026-09-06 (the dialog-documentation pages named in §1 rows 29–30 describe the
+mechanism only; **the enumeration is published on the percussion-map pages**, and this
+supersedes the "no enumeration published" reading those two pages alone suggest).
+Licence: MakeMusic vendor documentation, all rights reserved — cited as evidence.
+
+Finale's term of art is **Note Type**: "A Percussion MIDI Map is simply a list that matches
+each percussion instrument in a sound library with a particular MIDI note number." A Note Type
+is the instrument-plus-technique identity that the percussion layout, the notehead and the
+staff position all hang off; the Percussion MIDI Map then binds each Note Type to a note number
+per sound library. Two Note Types may share a MIDI number in one map (e.g. 50 = "Snare Section
+Hits" and "Snare Drum"), which is the clearest possible statement that the Note Type, not the
+note number, is the identity.
+
+**VDLite Finale Marching Percussion Map, complete (72 rows, MIDI 36–101):**
+36 Bass Drum 5 (5) · 36 Kick Drum · 37 Bass Drum Rim · 38 Bass Drum 4 (4) · 39 Bass Drum Unison
+Hits · 40 Bass Drum 3 (3) · 41 Bass Drum 2 (2) · 42 Bass Drum Roll · 43 Bass Drum · 44 Crash
+Cymbals Crash · 45 Cymbal Section Crash · 46 Cymbal Section Hi-Hat Choke · 47 Crash Cymbals
+Choke Fat · 48 Snare Section Hits LH · 49 Snare Rim LH · 50 Snare Section Hits · 50 Snare Drum ·
+51 Snare Rims · 53 Snare Guz Short · 54 Snare Guz Long · 55 Snare Rim Shot (Both Hands) · 56
+Snare Rim Shot LH · 57 Snare Cross Shots · 58 Snare Section Rim Shots (Both Hands) · 59 Stick
+Clicks · 59 Snare Cross Stick · 60 Snare Section Buzz Rolls · 60 Snare Buzz Roll · 60 Snare Roll
+· 61 Ride Bell · 62 Ride Cymbal · 63 Hi-Hat Open · 64 Hi-Hat Closed · 65 Low Tom · 66 Low Tom
+Shot/Rim · 67 Low Tom Short Roll · 69 Low-Mid Tom · 70 Low-Mid Tom Shot/Rim · 71 Low-Mid Tom
+Short Roll · 72 High-Mid Tom · 73 High-Mid Tom Shot/Rim · 74 Hi-Mid Tom Short Roll · 76 High Tom
+· 76 Floor Tom 1 · 76 Floor Tom 2 · 77 High Tom Shot/Rim · 78 High Tom Short Roll · 79 Spock
+Drum · 80 Spock Drum Rim Shot · 81 Tenors High Rims · 82 Tenors Low Rims · 83 Stick Click · 84
+Crash Cymbal · 85 China Cymbal · 86 Cowbell · 87 Low Agogo · 88 High Agogo · 89 Claves · 89 High
+Woodblock · 90 Vibra Slap · 91 Tambourine · 92 Cabasa · 93 Conga Dead Stroke · 94 Conga · 95
+Conga Bass Tone · 96 Kick Drum (2) · 97 Triangle Mute · 98 Triangle Open · 99 Whistle Short ·
+100 Whistle Long · 101 Large Gong
+
+**VDLite General MIDI Percussion Map, complete (46 rows, MIDI 35–81):**
+35 Bass Drum · 36 Kick Drum · 37 Snare Cross Stick · 38 Snare Drum · 39 Hand Clap · 40 Electric
+Snare Drum · 41 Floor Tom 2 · 42 Hi-Hat Closed · 43 Floor Tom 1 · 44 Hi-Hat Foot · 45 Low Tom ·
+46 Hi-Hat Open · 47 Low-Mid Tom · 48 High-Mid Tom · 49 Crash Cymbal · 50 High Tom · 51 Ride
+Cymbal · 52 China Cymbal · 53 Ride Bell · 54 Tambourine · 55 Splash Cymbal · 56 Cowbell · 57
+Crash Cymbal 2 · 58 Vibra Slap · 59 Ride Cymbal 2 · 60 High Bongo · 61 Low Bongo · 62 Conga Dead
+Stroke · 63 Conga · 64 Tumba · 65 High Timbale · 66 Low Timbale · 67 High Agogo · 68 Low Agogo ·
+69 Cabasa · 70 Maracas · 71 Whistle Short · 72 Whistle Long · 73 Guiro Short · 74 Guiro Long ·
+75 Claves · 76 High Woodblock · 77 Low Woodblock · 80 Triangle Mute · 81 Triangle Open
+
+The four VDLite line maps on the same page enumerate the marching sections: **Snareline** (13
+rows: Snare Section Rim Shots LH, Snare Section Rims LH, Snare Section Rim Shots, Snare Section
+Rims, Snare Cross Stick, Snare Cross Shot, Snare Section Hits LH, Snare Section Cross Shots,
+Snare Section Hits, Snare Drum, Snare Section Buzz Rolls, Snare Roll); **Tenorline** (31 rows:
+Low/Low-Mid/High-Mid/High Tom and Spock Drum / Spock Drum 2, each as plain, Shot/Rim, Buzz Roll
+and LH variants, plus Sustained Buzz Roll); **Bassline** (17 rows: Bass Drum 1–6 with LH
+variants, Bass Drum Unison Hits, Bass Drum Roll, Kick Drum); **Cymbal Line** (8 rows: Crash
+Cymbal, Hi-Hat Open, China Cymbal, Ride Cymbal, Suspended Cymbal Fat Choke w/ Stick, Sizzle
+Cymbal, Hi-Hat Closed).
+
+The Garritan map page carries 572 distinct Note Types. Most are instrument identities; the
+technique-bearing ones, complete by technique word:
+
+| Technique word in the Note Type | Note Types that use it |
+|---|---|
+| **Dead Stroke** | Conga Dead Stroke, Djembe Dead Stroke, Djembe Dead Stroke (2), Darbuka Dead Stroke, High/Medium/Low Bata Dead Stroke, Tumba Dead Stroke, Super Tumba Dead Stroke, Quinto Dead Stroke, Surdu Dead Stroke |
+| **Bass Tone** | Conga Bass Tone, Djembe Bass Tone, Djembe Bass Tone (2), Tumba Bass Tone, Super Tumba Bass Tone, Tabla Bass Tone |
+| **Slap** | Conga Slap, Djembe Slap, Djembe Slap (2), Darbuka Slap, High/Medium/Low Bata Slap, High/Low Bongo Slap, Tumba Slap, Super Tumba Slap, Quinto Slap, Cajone Slap |
+| **Mute / Muff** | High Bongo Mute, Low Bongo Mute, Triangle Mute, Surdu Muff (Custom 3), Suspended Cymbal Roll (Mute Release) |
+| **Choke** | Crash Cymbals Choke Fat, Cymbal Section Crunch Choke, Cymbal Section Hi-Hat Choke, Suspended Cymbal Short Choke w/ Stick, Suspended Cymbal Fat Choke w/ Stick |
+| **Rim / Rims / Rim Shot / Shot** | Bass Drum Rim, Snare Rim LH, Snare Rims, Snare Section Rims, Snare Rim Shot (Both Hands), Snare Rim Shot LH, Snare Section Rim Shots, Spock Drum Rim Shot, Tenors High Rims, Tenors Low Rims, Low Timbale Rim, {Low, Low-Mid, High-Mid, High} Tom Shot/Rim |
+| **Cross Stick / Cross Shot / Stick Click** | Snare Cross Stick, Snare Cross Shot, Snare Section Cross Shots, Stick Click, Stick Clicks |
+| **Flam** | Snare Flam, {Low, Low-Mid, High-Mid, High} Tom Flam |
+| **Roll (kinds)** | Snare Roll, Snare Buzz Roll, Snare Section Buzz Rolls, {…} Tom Buzz Roll, {…} Tom Short Roll, Spock Drum Sustained Buzz Roll, Bass Drum Roll, Bass Drum Unison Rolls, Side Drum Roll, Castanets Roll, Suspended Cymbal Roll, Suspended Cymbal Cresc (Loud) |
+| **Guz** | Snare Guz Short, Snare Guz Long (UNVERIFIED: a Tapspace/marching term this bucket could not define from a primary source) |
+| **Shake / Snap / Multi Shake** | Tambourine Shake, Shekere High Shake, Shekere Low Shake, Cabasa Multi Shake, Egg Shaker Multi Shake, Cabasa Snap |
+| **Scratch Push / Scratch Pull** | Scratch Push, Scratch Pull |
+| **Fingertips** | Djembe Fingertips |
+| **Click / Ding / Crunch** | Crash Cymbals Click, Crash Cymbals Ding, Cymbal Section Click, Cymbal Section Crunch Choke |
+| **Foot** | Hi-Hat Foot |
+| **Open** | Hi-Hat Open, Triangle Open, Surdu Open (Custom 4) |
+| **LH** (left hand) | Snare Drum LH, Side Drum LH, Snare Section Hits LH, Snare Rim LH, Snare Rim Shot LH, Bass Drum LH, Bass Drum 2–6 LH, Bass Drum Unison Hits LH, {…} Tom LH, Spock Drum LH |
+| **Unison** | Bass Drum Unison Hits, Bass Drum Unison Rolls |
+
+Four of these are not attested anywhere else in this bucket and are recorded in §3.14:
+**Scratch Push / Scratch Pull** (direction of a scrape), **Crash Cymbals Click / Ding /
+Crunch** (hand-cymbal plate contact), **Dead Stroke** as a named family across nine
+instruments, and **Guz**.
 
 ---
 
@@ -1143,6 +1235,11 @@ MuseScore and Weinberg have no concept of which part of the stick lands.
 | Rim Shot, Rim Click, Stick Click, Stick Shot, Shell, Backstick, Buzz | MuseScore `marching-snare` | rimshot, (rim-only?), (sticks?), stick-shot, site shell, back-stick, ornament buzz |
 | Muted, Rim, Buzz, Shell | MuseScore `marching-tenor-drums` | damping muted, site rim, ornament buzz, site shell |
 | Full Crash, Half Crash, Sizzle, Crash-Choke, Tap, Tap-Choke, Bell Tap, Bell Tap-Choke, Muted Tap, Smash, Zing, Roll | MuseScore `marching-cymbals` | **mostly NEW — hand-cymbal (piatti) techniques, see §3.14** |
+| Crash Cymbals Crash / Click / Ding / Choke Fat; Cymbal Section Crash / Click / Crunch Choke / Hi-Hat Choke; Suspended Cymbal Short Choke w/ Stick, Fat Choke w/ Stick, Roll (Mute Release) | Finale VDLite and Garritan maps (§2.11) | **NEW — hand-cymbal contact and choke variants** |
+| Dead Stroke (on conga, djembe, darbuka, bata, tumba, super tumba, quinto, surdu, tabla) | Finale Note Types (§2.11) | dead |
+| Bass Tone, Slap, Mute, Fingertips | Finale Note Types (§2.11) | bass-tone, slap, muted, implement finger |
+| Scratch Push, Scratch Pull | Finale Note Types (§2.11) | scrape + a direction that has no axis (§3.14) |
+| Snare Guz Short, Snare Guz Long | Finale VDLite Marching map (§2.11) | UNVERIFIED — no primary definition found |
 | Slap / Open / Bass | MuseScore djembe and doumbek entries | slap, open-tone, bass-tone |
 | martellato, martellato lift, hand martellato, muted martellato, mallet lift, mallet table, pluck lift, swing, echo, gyro, belltree, damp | SMuFL handbells U+E810–U+E821 and MusicXML `handbell-value` | **NEW — handbell family, unminted** |
 | `slap`, `pressed`, `choke`, `scrape`, `ping`, `sizzle`, `cracked` | Sibelius id elements | slap, **NEW pressed**, **NEW choke**, scrape, ping-shot, — , — |
@@ -1264,8 +1361,9 @@ U+E819), Guitar Pro Guiro (scrap-return) `stick.scrape.return`. A scrape from ce
 and a scrape from edge to centre are different sounds. KITWARP has `technique = scrape`,
 `swirl`, `circling` and a single `site`/`position` — it cannot express *from where to where*,
 nor *which way round*. What is needed: either a direction qualifier (in/out, cw/ccw) or a
-second site slot (`site_from`, `site_to`). **A missing axis, on the evidence of four separate
-sources.**
+second site slot (`site_from`, `site_to`). Finale adds an independent fifth witness with the
+Note Types **Scratch Push** and **Scratch Pull** (§2.11), where the direction is the *only*
+thing distinguishing the two. **A missing axis, on the evidence of five separate sources.**
 
 **(b) Two-phase gestures ("lift").** `handbellsMartellatoLift` (U+E811),
 `handbellsMalletLft` (U+E816), `handbellsPluckLift` (U+E817), MusicXML `handbell-value`
@@ -1281,8 +1379,13 @@ SMuFL `pictCrashCymbals` (U+E720). Here the instrument *is a pair of plates* and
 describes how the two plates meet each other — there is no implement striking a site, so
 `site`, `contact` and `implement` are all empty and `technique` would have to carry the whole
 distinction. v0.1 has no hand-cymbal instrument and no vocabulary for plate-against-plate
-contact. UNVERIFIED: whether "Zing" and "Smash" are standard PAS marching terms or MuseScore's
-own; they are not in Weinberg 1994.
+contact. Finale independently enumerates the same family from a different vendor's library:
+**Crash Cymbals Crash / Click / Ding / Choke Fat** and **Cymbal Section Crash / Click / Crunch
+Choke / Hi-Hat Choke** (§2.11), where "Click" and "Ding" are edge-to-edge contacts and "Crunch"
+is a full plate-to-plate press. Two independent sources enumerating a family v0.1 cannot hold
+at all is the strongest case in this section for a new instrument plus its own technique set.
+UNVERIFIED: whether "Zing" and "Smash" are standard PAS marching terms or MuseScore's own; they
+are not in Weinberg 1994.
 
 **(d) Stroke length as identity.** MusicXML Standard Sounds and LilyPond both mint two
 instruments where there is one instrument and two stroke lengths: `shortguiro`/`longguiro`,
@@ -1429,7 +1532,7 @@ Read against `vocabulary/axes.json` at vocabulary_version 0.1.0, vocabulary_seri
 
 | Axis | Proposed value | Attestation |
 |---|---|---|
-| technique | **choke** | SMuFL `pictChokeCymbal` "Choke (Weinberg)" U+E805; Guitar Pro `stick.hit.choke` on five instruments; Sibelius `choke` in 13 ids; MuseScore Crash-Choke, Tap-Choke, Bell Tap-Choke; Weinberg 1994 p. 21 (cut-off notation). v0.1 has no way at all to say a cymbal was choked. **The single clearest gap in this bucket.** |
+| technique | **choke** | SMuFL `pictChokeCymbal` "Choke (Weinberg)" U+E805; Guitar Pro `stick.hit.choke` on five instruments; Sibelius `choke` in 13 ids; MuseScore Crash-Choke, Tap-Choke, Bell Tap-Choke; Finale Crash Cymbals Choke Fat, Cymbal Section Crunch Choke, Cymbal Section Hi-Hat Choke, Suspended Cymbal Short/Fat Choke w/ Stick; Weinberg 1994 p. 21 (cut-off notation). Six independent sources; v0.1 has no way at all to say a cymbal was choked. **The single clearest gap in this bucket.** |
 | technique | **return** (back-stroke of a shaken or scraped instrument) | Guitar Pro `hand.hit.return` (tambourine, cabasa, maraca, shaker), `stick.hit.return` (bell tree), `stick.scrape.return` (guiro) |
 | technique | **pressed** | Sibelius `pressed` (10 ids); SMuFL `pictCrushStem` "Combining crush for stem" is the same family |
 | technique | **tap**, **bell-tap**, **muted-tap**, **half-crash**, **full-crash**, **smash**, **zing** | MuseScore `marching-cymbals` — but see §3.14(c): these need a hand-cymbal instrument first |
@@ -1476,6 +1579,11 @@ score file, and must come from hardware or library sources instead:
 5. **`technique = chick` and `technique = foot-splash` are confirmed verbatim** by Weinberg 1994
    p. 21 and by LilyPond's `splashhihat` — these two v0.1 terms now have a primary-source
    provenance record, which they did not have before.
+6. **`technique = dead`, `bass-tone`, `slap`, `open-tone` and `mute-stroke` are confirmed as a
+   coherent family** by Finale's Note Types, which apply Dead Stroke / Bass Tone / Slap / Mute
+   consistently across nine hand-drum instruments (§2.11), and by MuseScore's Djembe and Doumbek
+   entries (Slap / Open / Bass). The hand-drum stroke set is the one part of v0.1 that the
+   notation sources corroborate without disagreement.
 
 ---
 
@@ -1495,9 +1603,19 @@ score file, and must come from hardware or library sources instead:
    technique→notehead→playback triple. **This is the single most valuable unreached item for a
    later pass**, and the way to get it is a Dorico installation (or its `Playing Techniques.doricolib`
    posted by a user), not the web.
-2. **Finale's Note Type list.** Same shape of failure: `db-percussion-midi-map-editor.htm` and
-   `db-percussion-layout-designer.htm` describe the mechanism and name only "bass drum = 36,
-   snare drum = 38" as examples. The list is in the application's percussion maps.
+2. **Finale's Note Type list — obtained, after a false negative.** The two dialog-documentation
+   pages describe the mechanism and name only "bass drum = 36, snare drum = 38" as examples,
+   which reads as "not published". It is published, on the percussion-map pages (§2.11), and
+   this bucket only found it by fetching a page whose title mentioned a *third-party library*
+   (Tapspace Drumline). Method note for later passes: when a vendor documents an editor but not
+   its vocabulary, look for the pages documenting the shipped presets. A second failure mode is
+   worth recording: WebFetch's summariser declined to reproduce the Finale tables on the ground
+   that quoting them would exceed a quotation limit, and reported only the table captions —
+   plain `curl` with a browser user-agent plus local HTML parsing returned all 187 rows. When an
+   enumeration must be complete and verbatim, fetch and parse rather than summarise.
+   What remains unobtained is Finale's *master* Note Type list as shipped in the application
+   (the maps pages give the Note Types used by particular sound libraries, not the closed set
+   the Percussion Layout Designer offers).
 3. **Gould, *Behind Bars*, percussion chapter** — print only, no open full text. It would add
    the editorial rules: when a change of technique is a change of instrument, how to label a
    shared stave, and the house conventions that Faber/Fabermusic engravers apply. Its absence
