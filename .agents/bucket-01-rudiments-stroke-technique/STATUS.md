@@ -1,18 +1,23 @@
 status: running
-updated: 2026-09-06T12:33:32Z
+updated: 2026-09-06T12:43:16Z
 done:
-  - setup complete, branch pushed
-  - round A: 20 distinct searches run (English, German, French, Italian, Spanish;
-    scholarly, pedagogical, trade, notational registers; 1812-2019 era spread)
-  - primary source obtained: PAS International Drum Rudiments sheet
-    (pas.org/wp-content/uploads/2024/04/pas-rudiments.pdf, 40 names verbatim,
-    26 NARD members marked by asterisk, copyright 1984)
-  - obtained: en.wikipedia Drum_rudiment / Drum_stroke / Drum_roll / Rimshot /
-    Moeller_method raw wikitext (national rudimental systems, stroke types,
-    roll cross-culture names, rimshot family incl. ping shot and gock)
+  - round A complete: 20 distinct searches, plus direct fetch probing; candidate
+    register assembled (40+ candidates)
+  - reached in full: PAS rudiment sheet PDF (40 names verbatim + NARD-26 marks),
+    Percussive Notes brush anthology PDF (O'Mahoney 1996, Hazilla 2004,
+    Soph, Hamilton 2004), marcdedouvan French military rudiment lesson
+    (sourced to Tourte 1946 and Furetiere 1690), NARD history page,
+    en/de/it/es/fr Wikipedia raw wikitext for rudiment, stroke, roll, rimshot,
+    Moeller, heel-toe, Basel drum, marching percussion, hi-hat, snare
+  - reached partially: Vic Firth 40-rudiments page (respells PAS names),
+    historicdrumming Swiss manual register, Bloom on fake Swiss rudiments
+  - NOT reached and recorded as such: PAS Percussive Notes articles (paywall),
+    web.archive.org content (proxy 403), Basel Grundstreiche enumerated list
 next:
-  - fetch remaining round A candidates: Basel/Swiss sources, hybrid rudiment
-    lists, brush and foot technique sources, French/Italian/Spanish primaries
-  - then round B extraction tables, axis mapping, conflicts, gaps
+  - write docs/research/round2/01-rudiments-stroke-technique.md, sections 1-6
 questions:
+  - WebSearch budget for this session is exhausted (200/200) and DuckDuckGo
+    HTML is blocked by the proxy; is there another search route a later worker
+    can use, or should the reconciliation pass re-run searches for the Basel
+    Grundstreiche list?
 needs_owner:
