@@ -69,8 +69,8 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | R34 | IMSLP, **Bruce & Emmett, _The Drummer's & Fifer's Guide_**, Wm. A. Pond & Co. | book, 1862 (this ed. 1865) | primary | `https://imslp.org/wiki/The_Drummer's_&_Fifer's_Guide_(Emmett,_Daniel_Decatur)`, file `PMLP1013283-b-e-guide.pdf`, 96 pp., 6.11 MB | public domain → free | **metadata reached, PDF not downloaded** |
 | R38 | **Hart, Col. H. C., _Col. H.C. Hart's New and Improved Instructor for the Drum, with Original Notation_** | book, 1860 (the manual R04 dates 1862) | primary | archive.org id `colhchartsnewimp00hart`, OCR `_djvu.txt`, 44 457 B | public domain → free | **reached in full**; four-primitive alphabet, §2.3b |
 | R39 | **Nevins, William (with A. J. Vaas), _Army Regulations for Drum, Fife and Bugle_** | book, 1864 | primary | archive.org id `armyregulationsf00nevi`, OCR `_djvu.txt`, 28 631 B | public domain → free | **reached in full**; the 30-item "Drum School" gamut, §2.3b |
-| R40 | Greissinger, F. Henri, _Instructions for the Trumpet and Drum_ | book, 1900 | primary | archive.org id `instructionsfor00smitgoog`, 45 877 B | public domain → free | reached; not yet mined |
-| R41 | Straight, Edward B., _Straight's Modern Syncopated Rhythms for Drums_ | book, 1922 | primary | archive.org id `StraightsModernSyncopatedRhythms`, 180 676 B | public domain → free | reached; not yet mined |
+| R40 | **Greissinger, F. Henri, _Instructions for the Trumpet and Drum_** | book, 1900 | primary | archive.org id `instructionsfor00smitgoog`, OCR `_djvu.txt`, 45 877 B | public domain → free | **reached in full**; the `t/f/d/r` + count encoding, §2.3c |
+| R41 | **Straight, Edward B., _Straight's Modern Syncopated Rhythms for Drums_** | book, 1922 | primary | archive.org id `StraightsModernSyncopatedRhythms`, OCR `_djvu.txt`, 180 676 B | public domain → free | **reached in full**; drag-vs-press by attack count, 1922 implement list, §2.3c |
 | R42 | Peinkofer, Karl / Tannigel, Fritz, _Handbook of Percussion Instruments_ (English translation of N17) | handbook, 1976 | normative-in-German, in translation | archive.org ids `handbookofpercus0000pein`, `handbookofpercus0000karl` | in-copyright, lending-restricted → cite-only | **located, not opened** — this is the reachable route to N17 |
 
 ### 1.2 Reached only as an abstract (paywall)
@@ -329,6 +329,45 @@ Three findings from Nevins that bear directly on the pivot model:
 `SLOW SAG` (No. 24) appears in no later list reached and no source defines it; recorded as an
 unexplained 1864 name.
 
+### 2.3c Greissinger 1900 and Straight 1922 — an encoding and a drum-set hinge
+
+#### Greissinger 1900 (R40) — a four-letter event code with a numeric attack count
+
+The most directly relevant single sentence found in this bucket. Verbatim, from the
+Explanations page (line 5034):
+
+> "**t** indicates tap; **f**, flam; **d**, drag; **r**, roll. The **figures under the rolls
+> indicate the number of strokes in each roll**."
+
+A US military manual of 1900 encodes drum events as a **one-letter event type plus a numeric
+attack count** — which is precisely the `ornament` + count shape §5.3 finding 1 recommends,
+arrived at independently 126 years earlier.
+
+| Fact | Verbatim / locator |
+|---|---|
+| sticking letters | "The letter **L** under a note is for the left hand, **R** is for the right" (line 4110) — the earliest R/L attestation found here |
+| lead-hand default | "**Every roll or beat should begin with the left hand**, except those which are termed from hand to hand, which commence with the left and follow in succession" (line 4100) |
+| striking position | "Care should be taken that the sticks strike **near the middle of the drum-head**" (line 4089) |
+| accent inside the double | "Slightly **accent the second stroke of each hand**" (line 4105) |
+| onomatopoeia | the open roll is "called by drummers the '**Mammy-Daddy**'" (line 4099) — the American cognate of German `Mama-Papa` (R15) and French `papa-maman` (R21) |
+| **Eight-stroke Roll** | "The Eight-stroke Roll is from hand to hand" (line 4221) — confirms R06's claim that the even-numbered rolls exist in published sources; it is on no modern list |
+| named figures | The **Open Flam**, The **Flam and Stroke**, The **Open Drag**, The **Close Drag or Half Drag**, The Single Drag, The Double Drag, The **Drag Paradiddle**, The **Stroke and Drag Paradiddle**, The **Stroke and Single Drag** (lines 4289–4613) |
+
+Note the pairing **Open Drag / Close Drag**: the drag is again a single figure with an
+open↔closed axis, third independent attestation after Hart 1860 and R04.
+
+#### Straight 1922 (R41) — where the rudimental vocabulary meets the kit
+
+| Fact | Verbatim / locator |
+|---|---|
+| **drag vs press, by attack count** | "**Drags are not press rolls. A Drag is ended while a Press is made with one stick only. You must hear the two taps clear in a drag** and you must learn to play them with either hand." (line 1782) — the distinguishing feature is stated as *countability*, not as speed |
+| lead hand in the name | "it is a **Left hand Drag**"; "All the taps before the regular large note is made with Left hand" (line 1787) |
+| three-stroke roll as a live alternative | "instead of using the **three stroke roll** in a gallop, use the Left hand Drag" (line 1797) |
+| implements, 1922 | "Sand-blocks, **Clog-mallets**, **Jazz-sticks** or **Leather straps**" (line 13078); "**Tympanie sticks**" (line 9951) — a 1922 attestation for v0.1's `jazz-stick` |
+| damping | "Use **muffled drums** when you Jazz, not too loud" (line 4965); "both drums **muffled**" (line 6565) |
+| the aux family, 1922 | "**traps**" as the collective noun; "two Tom-Toms and Cymbal, two Cow-Bells and Wood-Block" (line 119) |
+| independence as the new problem | "We have to work on three different articles at once — Bass Drum, Snare Drum muffled and Tom-Tom at the same time and play three different beats" (line 117) |
+
 ### 2.4 Per-note ornaments, with attack counts
 
 This is the table the pivot model actually needs: the rudiments are *patterns*, but a small
@@ -487,6 +526,9 @@ weakly-cited article; treated as UNVERIFIED.
 | Italian | `R`, `L` borrowed from English | but "ogni rudimento viene eseguito solitamente **partendo con la mano sinistra**" — the default lead hand is the **left** | R18, verbatim |
 | German | `R`, `L`; plus `Führungshand` / `Nichtführungshand` for lead and off hand | R16 |
 | Strube 1870 | no letters at all — hand is encoded by **staff position** (left = E space, right = F space, rolls left-to-right = C) and by the **rudiment's name** | R03 lines 855–864 |
+| Hart 1860 | left-hand flams on the **upper line**, right-hand on the **lower line** | R38 Lesson IV |
+| Greissinger 1900 | "The letter **L** under a note is for the left hand, **R** is for the right" — the earliest letter sticking found here — plus a **default lead hand**: every roll or beat begins with the left | R40 lines 4100, 4110 |
+| Greissinger 1900, event code | `t` = tap, `f` = flam, `d` = drag, `r` = roll, with **the number of strokes written under the roll** | R40 line 5034 |
 | Pattern-level terms | `alternating` (single stroke), `diddle` (same-hand double at the prevailing rate), `paradiddle` = two singles + a diddle, whose function is explicitly "to switch the **lead hand**" | R04 §Paradiddle |
 | `Mill stroke` | "essentially a reversed paradiddle with the sticking `RRLR` or `LLRL` with an accent on the first note" | R04 §Mill stroke |
 
@@ -797,6 +839,12 @@ Checked against `vocabulary/axes.json` v0.1.0, serial 1.
 
 ### 5.3 Structural findings, not value lists
 
+0. **The recommended shape already existed in 1900.** Greissinger's legend — "t indicates
+   tap; f, flam; d, drag; r, roll. The figures under the rolls indicate the number of strokes
+   in each roll" (R40) — is an event-type letter plus an attack count, i.e. exactly finding 1
+   below. This is the strongest single piece of evidence in the bucket that the ornament axis
+   should carry a count, because it is a working encoding rather than a proposal.
+
 1. **The ornament axis needs a count, and the numbered rolls are that count vocabulary.**
    `.agents/round2/BRIEF.md` already says ornament carries "an attack count", but
    `axes.json` v0.1 has no field for it. The rudiment literature is the canonical source of
@@ -805,17 +853,24 @@ Checked against `vocabulary/axes.json` v0.1.0, serial 1.
    roll ends on **two** accented notes, an odd-count roll on one.
 
 2. **Openness is not a hi-hat-only axis.** v0.1's `openness` anchors are all hi-hat words, but
-   the primary literature applies open/closed to **rolls** (`open roll` / `closed roll`) and to
-   **flams** (`open flam`, PAS practice directive "open to close to open"). Either openness is
-   generalised, or the roll's open/closed distinction has to be modelled elsewhere — it is
-   currently split across `ornament: roll` and `ornament: buzz`, which is a workable answer but
-   should be written down as a decision.
+   the primary literature applies open/closed to **rolls** (`open roll` / `closed roll`), to
+   **flams** (Strube's `Open Flam`, Greissinger's `The Open Flam`) and to **drags**
+   (Hart's `Three Roll open` / `closed three Roll`, Greissinger's `Open Drag` /
+   `Close Drag or Half Drag`) — three independent attestations for the drag alone — plus the
+   PAS practice directive "open to close to open". Either openness is generalised, or the
+   roll's open/closed distinction has to be modelled elsewhere — it is currently split across
+   `ornament: roll` and `ornament: buzz`, which is a workable answer but should be written
+   down as a decision. Note the trap in §4.1: in Hart 1860 `open` means *soft*.
 
 3. **Lead hand is identity-bearing in the primary literature, not decoration.** Strube 1870
    names half his rudiments "Left Hand …" / "Right Hand …" and encodes the hand in the staff
-   position. v0.1 carries `limb` as a *reference* axis on the layout slot rather than on the
-   term. That is probably right for sampled drum kits, but a converter reading a rudimental
-   source will find the hand baked into the name.
+   position; Hart 1860 puts left-hand flams on the upper line and right-hand on the lower;
+   Greissinger 1900 makes the left hand the default lead ("Every roll or beat should begin
+   with the left hand"); Straight 1922 still writes "a **Left hand** Drag"; and Italian
+   practice today still defaults to a left-hand start (R18). v0.1 carries `limb` as a
+   *reference* axis on the layout slot rather than on the term. That is probably right for
+   sampled drum kits, but a converter reading any rudimental source will find the hand baked
+   into the name, and the default lead hand is **left**, not right.
 
 4. **Rudiment names must not enter the pivot vocabulary.** They name patterns. The only
    rudiment-derived terms that belong on an axis are the per-note ornaments in §2.4.
@@ -870,7 +925,7 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 | Scottish Drumming Rudiments sheet (N21) | 46 names including the stroked rolls to 25 and `trizzlet` — the third national standard, entirely absent here |
 | Swiss Ordonnanz manuals 1728–1964 (N19) | the ~32-rudiment military Swiss system; R25 lists them but only behind Google Drive folders |
 | Bruce & Emmett 1862/1865 (R34) | the first printed **Flamacue** and the first advocacy of "open, closed, open" practice; the IMSLP PDF is public domain and downloadable — a later worker should simply take it |
-| Greissinger 1900 (R40), Straight 1922 (R41) | obtained but not mined; Straight 1922 in particular sits exactly at the hinge between rudimental and drum-set vocabulary |
+| the *notation* of R03, R38, R39, R40 | all four are lithographed scores whose engraved figures did not OCR; every claim about them here rests on their **prose** only. Reading the plates would settle, for instance, exactly how many strokes Nevins's `SLOW SAG` has |
 | Peinkofer/Tannigel English edition (R42) | the German normative handbook is on archive.org under lending restriction; worth one attempt with a borrowing account |
 | snarescience dictionary (N23) | the marching slang layer where `gock`, `sprock` and very likely `back stick` are actually defined |
 | Percussive Notes archive (R35–R37) | PAS's own account of the "certain changes in terminology" made in 1984 — i.e. exactly which names were changed and from what |
@@ -891,8 +946,9 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
   R04's transcription. Hart 1860 and Nevins 1864 OCR'd far better because their prose carries
   the definitions; their *notation* is still unreadable to this dossier, so every claim about
   what a Hart or Nevins figure looks like on the page rests on their prose alone.
-- **Two obtained sources were not mined**: Greissinger 1900 (R40) and Straight 1922 (R41).
-  They are in hand and cost nothing to re-fetch by identifier.
+- **The five archive.org primaries were mined for terminology, not exhaustively read.** Their
+  camp-duty and exercise sections (the bulk of each book) were skimmed by grep for named
+  figures, so a rudiment named only once in a tune heading could have been missed.
 - **The heel-toe article (R09) is weakly sourced on Wikipedia** and its attribution of the
   modern formalisation to James Davenport should not be repeated without a second source.
 - **No orchestral treatise was consulted** — Berlioz, Kastner, Blades, Peinkofer/Tannigel.
