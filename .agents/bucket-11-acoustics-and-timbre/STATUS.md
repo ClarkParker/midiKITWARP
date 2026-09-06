@@ -1,20 +1,21 @@
 status: running
-updated: 2026-09-06T12:36:00Z
+updated: 2026-09-06T12:45:00Z
 done:
-  - Read CLAUDE.md, .agents/README.md, .agents/round2/BRIEF.md and the bucket task
-  - Round A part 1: 16 WebSearch sweeps across scholarly, pedagogical, trade and
-    vendor registers, in English, German and French
-  - Round A part 2: 13 Crossref API bibliographic queries after the session WebSearch
-    budget was exhausted (200/200 used session-wide)
-  - Located high-value primary candidates: Tindale et al. ISMIR 2004 (radial strike
-    position classification), Sekiguchi et al. AST 2023 (hi-hat physical model with
-    openness parameter), Taylor et al. POMA 2023 (strike-location deep net),
-    Freed JASA 1990 (mallet hardness), Larkin et al. JASA 2007-2009 (snare head
-    damping modes), Miller 1956 (channel capacity, bounds anchor count)
+  - Round A: 16 WebSearch sweeps plus 13 Crossref and 3 DBLP queries; candidate
+    register assembled
+  - Round B extraction complete on nine reachable primaries, full text pulled and
+    converted: Tindale et al. ISMIR 2004, Prockup et al. ISMIR 2013,
+    Sekiguchi and Samejima AST 2023, Rossing AST 2001, Sokolovskis and McPherson
+    NIME 2014, Harrison and Hill IoA 2013, Wu et al. TASLP 2018, Madsen UIUC 2016,
+    Patranabis et al. arXiv 2015, plus Miller 1956 and the Freed 1990 abstract
+  - Both decision questions now have evidence: openness anchor count is bounded by
+    Miller channel capacity plus the Sekiguchi contact regimes; radial position is
+    bounded by Tindale five-class versus three-class accuracy and by the 18 mm
+    optical measurement error in Sokolovskis
 next:
-  - Fetch and extract the reachable primaries, starting with the two decision
-    questions: openness anchor count and radial position resolvability
+  - Write docs/research/round2/11-acoustics-and-timbre.md in the six-section shape
+    the brief requires, then commit and push
 questions:
-  - Session-wide WebSearch budget is exhausted; Crossref/arXiv/archive.org APIs and
-    WebFetch still work. Other workers will hit the same wall.
+  - Session WebSearch budget exhausted at 200/200 for all workers; Crossref, DBLP
+    and WebFetch still work
 needs_owner:
