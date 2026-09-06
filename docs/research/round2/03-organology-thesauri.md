@@ -24,28 +24,30 @@ locator. Anything not personally verified is marked UNVERIFIED.
 
 **Yes for the instrument axis, and only for its coarse half. No for every other axis.**
 
-There are five maintained authority files with stable, dereferenceable identifiers for
-musical instruments. All five were reached and queried live. Measured against KITWARP's
+There are six maintained authority files with stable, dereferenceable identifiers for
+musical instruments. All six were reached and queried live. Measured against KITWARP's
 27 `instrument` values:
 
-| Authority | Concepts (whole file) | KITWARP `instrument` values matched | Values with no concept at all |
-|---|---:|---:|---:|
-| MIMO Thesaurus of musical instrument names | 2 724 | 13 / 27 | 14 |
-| Library of Congress LCMPT | 942 | 13 / 27 | 14 |
-| Getty AAT (musical instruments branch) | 348 under `aat:300041620`, plus 177 under `aat:300041646` | 11 / 27 | 16 |
-| Wikidata (percussion subtree) | 877 | 17 / 27 | 10 |
-| MusicBrainz instruments (percussion) | 288 | 12 / 27 | 15 |
+| Authority | Concepts (whole file) | KITWARP `instrument` values matched | Values with no concept at all | Licence |
+|---|---:|---:|---:|---|
+| MIMO Thesaurus of musical instrument names | 2 724 | 13 / 27 | 14 | **none stated** |
+| Library of Congress LCMPT | 942 | 13 / 27 | 14 | public domain |
+| Getty AAT (musical instruments branch) | 348 under `aat:300041620`, plus 177 under `aat:300041646` | 11 / 27 | 16 | ODC-By 1.0 |
+| Wikidata (percussion subtree) | 877 | 17 / 27 | 10 | CC0 |
+| MusicBrainz instruments (percussion) | 288 | 12 / 27 | 15 | CC0 |
+| GND, subject category 14.3 *Musikinstrumentenkunde* | 908 | ~12 / 27 (UNVERIFIED, sampled not enumerated) | — | CC0 |
 
 Nothing that any of them offers reaches KITWARP's working granularity. **Not one of the
-five has a concept for `ride`, `china`, `splash`, `stack`, `xhat`, `mini-china`,
+six has a concept for `ride`, `china`, `splash`, `stack`, `xhat`, `mini-china`,
 `mini-hihat`, `crash-ride`, `jam-block` or `aux-pad`.** Getty AAT, LCMPT and MusicBrainz
 have no `hi-hat` concept at all; MIMO has one but its English label is *Choke cymbal* and
-its German label is *Hi-hat* (§4.1). Wikidata is the only one with `ride cymbal`, and its
-`ride cymbal` item carries no MIMO id, no AAT id and no MusicBrainz id — that is, the item
-exists but no authority file has adopted it.
+its German label is *Hi-hat* (§4.1); GND has one, `Hi-Hat-Maschine` (§2.11), which is the
+only authority-file *definition* of the instrument found anywhere in this bucket. Wikidata
+is the only file with `ride cymbal`, and its `ride cymbal` item carries no MIMO id, no AAT
+id and no MusicBrainz id — that is, the item exists but no authority file has adopted it.
 
 **For everything that is not the instrument axis there is next to nothing.** The whole
-harvest from all five files, across KITWARP's other eleven axes, is five concepts: Getty
+harvest from all six files, across KITWARP's other eleven axes, is five concepts: Getty
 AAT's `drumheads`, `shells (drum components)` and `snares (drum components)`, its five
 `percussion beaters`, and LCMPT's `drum machine`. Getty AAT has no concept for rim shot,
 side stick, flam, drag, buzz, choke, or open/closed hi-hat (query, §2.5), and no concept
@@ -81,7 +83,7 @@ never a source of truth:
   validator cannot make, and a wrong choice is invisible.
 - **Licence cost.** Mixed, and this is the sharp edge. Getty AAT is ODC-By 1.0 with a
   mandatory attribution string. LC data at `id.loc.gov` is declared a public domain data
-  set. MusicBrainz core data is CC0. Wikidata is CC0. **MIMO publishes no licence
+  set. MusicBrainz core data is CC0. Wikidata is CC0. GND is CC0, stated per record. **MIMO publishes no licence
   statement anywhere reachable** — not in the Skosmos vocabulary metadata, not on the
   concept-scheme resource, not on the vocabulary landing page. Under ADR-0004 that is
   `unknown` and therefore all rights reserved. See the open question in §6.4: storing the
@@ -120,7 +122,7 @@ never a source of truth:
    the granularity KITWARP needs; adopting one would force the vocabulary to invent
    children under borrowed parents, which is worse than owning the whole namespace.
 2. **Do add an optional outbound `xref` block** with namespaces `mimo`, `lcmpt`, `aat`,
-   `wikidata`, `mb`. Populate it only where the match is exact and a human has checked it;
+   `wikidata`, `mb`, `gnd`. Populate it only where the match is exact and a human has checked it;
    leave it absent otherwise. A documented gap beats a guessed cross-reference, exactly as
    for note numbers.
 3. **Do not copy any authority's label text into `pivot.json`.** Ids only. This keeps the
@@ -179,7 +181,7 @@ secondary aggregation or index.
 | 28 | Hornbostel-Sachs-Klassifikation (German museum vocabulary) | museumsvokabular.de / KOBV | — | `https://museumsvokabular.de/hornbostel-sachs/`, mirror `https://museumsvokabular.kobv.de/hornbostel-sachs/` | A | **no** |
 | 29 | term.museum-digital.de instrument tags | museum-digital | — | `https://smb.museum-digital.de/tag/38141` (Hornbostel-Sachs-Systematik) | B | **no** |
 | 30 | DOREMUS controlled vocabularies (33 vocabularies, 23 categories) | DOREMUS ANR project; described as IFLA de-facto standard | `technique` 20 concepts; `mop-mimo` 2 572 MIMO concepts | `git clone --depth 1 https://github.com/DOREMUS-ANR/knowledge-base.git`, HEAD 2024-03-29; portal `https://data.doremus.org/vocabularies/` | B | **yes** |
-| 31 | Gemeinsame Normdatei (GND) | DNB, via lobid | 8 M+ records overall | `https://lobid.org/gnd` | A | **no** |
+| 31 | Gemeinsame Normdatei (GND) | Deutsche Nationalbibliothek, via lobid (hbz) | **908** subject headings in category 14.3 *Musikinstrumentenkunde*; 8 M+ records overall | `https://lobid.org/gnd/search?q=…&format=json`, `https://lobid.org/gnd/{id}.json`. Licence CC0 1.0, stated per record | A | **yes** |
 | 32 | Iconclass | Henri van de Waal foundation, on DARIAH Skosmos | — | `https://vocabs.dariah.eu/iconclass/` | A | **no** — iconography, not organology |
 | 33 | CIMCIM resources (classification, brasswind terminology thesaurus) | ICOM CIMCIM | — | `https://cimcim.mini.icom.museum/resources/` | A | **no** |
 | 34 | Collections du Musée de la musique / POP-Joconde | Philharmonie de Paris | 8 000+ objects | `https://collectionsdumusee.philharmoniedeparis.fr/` | B | **no** |
@@ -686,6 +688,50 @@ unrelated senses — `rims (container components)`, `rims (landforms)`, `hoops (
 `hoops (shaping garments)`, `lugs (knobs)`. **There is no drum rim and no cymbal bow, bell
 or edge concept in the Getty AAT.**
 
+### 2.11 GND — the German national authority file, checked last and worth the trip
+
+Queried through lobid (`https://lobid.org/gnd/search?q=…&format=json` and
+`https://lobid.org/gnd/{id}.json`). GND subject headings in category 14.3
+*Musikinstrumentenkunde, Musikinstrumentenbau*: **908**. Licence, stated per record in
+`describedBy.license`: **CC0 1.0**. Maintainer DE-101 (Deutsche Nationalbibliothek).
+
+| GND id | preferredName | variantName | Broader | Note |
+|---|---|---|---|---|
+| **7525743-9** | **Hi-Hat-Maschine** | High-Hat, **Hi-Hat**, High-Hat-Maschine | Becken \<Musikinstrument\> | see the definition below |
+| 7542598-1 | Becken \<Musikinstrument\> | Becken \<Musik\>, Cymbeln, Zimbeln, Kymbala \<Becken\> | — | — |
+| 4137284-0 | Schlagzeug | **perc, Schz, Drumset** | — | the variants are score abbreviations |
+| 4226169-7 | Elektronisches Schlagzeug | **el-perc, E-Schz, el-dr, E-Drums** | — | score abbreviations again |
+| 7542431-9 | Kleine Trommel | — | — | snare drum |
+| 4117255-3 | Trommel | — | — | — |
+| 4504967-1 | Tamburin | Tambourin \<Musikinstrument\>, Schellentrommel | — | — |
+| 133326514X | Kuhglocke \<Musikinstrument\> | Cowbell | — | distinct from 4165940-5 *Kuhglocke* (variant *Treichel*), the farm object |
+
+**GND 7525743-9, verbatim definition** — the only definition of a hi-hat found in any
+authority file in this bucket:
+
+> "Zwei gegeneinander auf einen Ständer montierte Becken. Das obere bewegliche wird mittels
+> eines Pedalmechanismus' gegen das fixierte untere Becken geschlagen. Das Instrument wird
+> auch mit Trommelstock oder Besen angeschlagen."
+
+That single sentence carries four of KITWARP's axes at once: the pedal `mechanism`, the
+two-cymbal construction, and two `implement` values (*Trommelstock*, *Besen* — stick and
+brush). It is also the only place in the bucket where an authority file acknowledges that
+one instrument is played with more than one implement.
+
+GND has **no** concept for ride, crash, china or splash cymbal.
+
+Two things GND does that KITWARP should notice:
+
+1. **Homonym qualifiers in angle brackets.** *Becken* alone is a pelvis, a basin, a
+   geological basin and a technical vessel; GND ships seven of them and disambiguates with
+   `Becken <Musikinstrument>`, `Becken <Anatomie>`, `Becken <Geologie>` and so on. This is
+   the practice KITWARP needs for `bell` and `bow` (§4.8, §5.3), arrived at independently
+   by a national library.
+2. **Score abbreviations as variant names.** `Schlagzeug` carries `perc`, `Schz`,
+   `Drumset`; `Elektronisches Schlagzeug` carries `el-perc`, `E-Schz`, `el-dr`, `E-Drums`.
+   Those are exactly the tokens a parser meets in a German score or a device menu, and no
+   other authority file records them.
+
 ---
 
 ## 3. Axis mapping
@@ -726,8 +772,10 @@ or edge concept in the Getty AAT.**
 | shells (drum components) | AAT 300041856 | site | `shell` |
 | snares (drum components) | AAT 300041860 | mechanism | `wires-on` |
 
-That is the entire list. **Thirty-two mappings from five authority files and two
-classification schemes, and twenty-four of them land on the `instrument` axis.**
+That is the entire list. **Thirty-two mappings from six authority files and two
+classification schemes, and twenty-four of them land on the `instrument` axis.** GND adds
+no new axis coverage — its contribution is German labels, score abbreviations and one
+definition, not new distinctions.
 
 ### 3.2 Axes for which no authority-file term exists at all
 
@@ -888,6 +936,8 @@ therefore wrong by construction; only the Q-id is usable.
 | **beater** | a drum beater | AAT has three unrelated `beaters` — culinary tools 300201092, striking tools 300379166, textile-working equipment 300312126 — and the percussion sense only as `percussion beaters` 300042611 | AAT |
 | **bow** | the playing area of a cymbal, between bell and edge | in MIMO's `Elements of musical instruments`, `Bows` (2206) are violin bows | MIMO 2206 |
 | **shell** | KITWARP `site = shell`, a place to hit | in AAT, `shells (drum components)` 300041856 is the object, the drum body as an artefact | AAT |
+| **Sidestick** | KITWARP `technique = sidestick` | GND 4370425-6 `Sidestick` is an **aircraft control stick**, broader term *Steuerknüppel*, subject category 31.7 *Fahrzeugbau, Fördertechnik, Raumfahrttechnik* | GND |
+| **Kuhglocke** | the percussion cowbell, GND 133326514X, variant *Cowbell* | GND 4165940-5 *Kuhglocke*, variant *Treichel*, the farm object | GND |
 
 ### 4.8 A note on why `bow` is the worst word in the kit vocabulary
 
@@ -1026,8 +1076,10 @@ versus hand-part, arriving from a different direction. **Recorded, not resolved.
 - **German museum vocabularies** — museumsvokabular.de and term.museum-digital.de — were
   identified but not fetched. They are the German-language equivalent of MIMO and would
   give a second, independent German label set to check MIMO's *Hi-hat* problem against.
-- **GND** was identified and not queried. It is a national authority file with stable ids
-  and would be a sixth column in §0.1.
+- **GND** was queried after the search budget ran out, through the lobid JSON API, and is
+  now the sixth column in §0.1 (§2.11). What was *not* done is an enumeration of its 908
+  instrument headings; the coverage figure quoted for GND is a sample, marked UNVERIFIED.
+  Its `broaderTermGeneral` graph was also not walked, so GND's hierarchy is undescribed.
 - **LCGFT** was identified and not extracted. It is a genre/form vocabulary, so it would
   contribute nothing to the instrument axis; skipping it was a judgement, not an oversight,
   but it is untested.
@@ -1091,6 +1143,6 @@ integer identifier minted by a third party, stored without any of that party's t
 arguably a fact and not a reproduction — the same reasoning that lets this repository
 publish note numbers. The distinction decides whether §0.4's recommendation is
 implementable as written or whether the `mimo` namespace must be dropped from the xref
-block, leaving AAT (ODC-By, attributable), LCMPT (public domain), Wikidata (CC0) and
-MusicBrainz (CC0). This is a licence-policy judgement, not a research question, and it is
+block, leaving AAT (ODC-By, attributable), LCMPT (public domain), Wikidata (CC0),
+MusicBrainz (CC0) and GND (CC0). This is a licence-policy judgement, not a research question, and it is
 recorded in the worker's `STATUS.md`.
