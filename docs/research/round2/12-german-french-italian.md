@@ -61,7 +61,7 @@ secondary; **D** aggregation.
 | S30 | *Musiklehre Online: Spielanweisungen* | musicademy.de | live | pedagogical glossary | http://www.musicademy.de/index.php?id=2591 | DE | C | NO |
 | S31 | *Spielanweisungen* (engraving-house notes) | Vadon Music Preparation | live | engraving practice | http://www.vadonmusicpreparation.com/tag/spielanweisungen/ | DE | C | YES — strings only, no percussion content |
 | S32 | *Klassifikation der Musikinstrumente nach Hornbostel/Sachs* | Universität Würzburg, Institut für Musikforschung | live | university course material | https://www.musikwissenschaft.uni-wuerzburg.de/musikinstrumente/organologie/systematiken/hornbostelsachs/ | DE | A | NO |
-| S33 | *Grand traité d'instrumentation et d'orchestration modernes* | Hector Berlioz | 1844 | treatise, pre-MIDI primary | IMSLP | FR | A | NO |
+| S33 | *Grand traité d'instrumentation et d'orchestration modernes* | Hector Berlioz | 1843 | **treatise, pre-MIDI French primary** | archive.org id `grandtraitdins1843berl`; full text at https://archive.org/download/grandtraitdins1843berl/grandtraitdins1843berl_djvu.txt | FR | A | YES (poor OCR — see §2.13a) |
 | S34 | *Batterie : les caisses* | marcdedouvan.com | live | pedagogical | http://www.marcdedouvan.com/instru.php?instru=caisses | FR | C | NO |
 | S35 | Musique contemporaine — performer's own modes-de-jeu catalogue | Camille Émaille | live | performer catalogue | https://camilleemaille.com/projets/musique-contemporaine/ | FR | C | NO |
 | S36 | *Schlagzeugbegriffe* | d-drums Schlagzeugschule Berlin | live | pedagogical glossary | https://schlagzeug-berlin.de/schlagzeugbegriffe-in-den-ring-geworfen/ | DE | C | NO |
@@ -70,8 +70,12 @@ secondary; **D** aggregation.
 | S39 | *La tecnica completa del tamburo* | F. Campioni | Sonzogno | method, named as required text by S17 | ISBN not captured | IT | A | NO |
 | S40 | *Etüden für Timpani*, Heft 1 | Richard Hochrainer | Doblinger | method, named as required text by S07 | — | DE | B | NO |
 | S41 | *Schlaginstrumente 2: Pauken* | Eckehardt Keune | Breitkopf & Härtel | method, named as required text by S07 | — | DE | B | NO |
+| S42 | *Musik-Instrumentenkunde in Wort und Bild* | Erhard Walter Haupt, Emil Teuchert | 1911 | **pre-MIDI German organology**, public domain | archive.org id `musikinstrument00haupgoog`; full text at https://archive.org/download/musikinstrument00haupgoog/musikinstrument00haupgoog_djvu.txt | DE | A | YES |
+| S43 | *Große Trommel und Becken-Schule nebst Anleitung zum Triangel-, Tamburin- und Tam-tam-Schlagen* | A. Deutsch | pre-1911 | method, named as a standard text by S42 p. 201 | — | DE | A | NO |
+| S44 | *Schule für alle Schlaginstrumente* | H. Kling | pre-1911 | method, named as a standard text by S42 p. 201 | — | DE | A | NO |
+| S45 | Instrumentology / Academy — vibraphone and gong, German edition | Vienna Symphonic Library | live | vendor instrumentology | https://www.vsl.co.at/de/academy/percussion/vibraphone ; `/gong` | DE | B | YES |
 
-Reached in whole or part: S01–S21 minus S22–S30 and S32–S41, i.e. **19 of 41 reached**.
+Reached in whole or part: **22 of 45**.
 
 ### 1.1 Discovery method, and what did not work
 
@@ -452,6 +456,91 @@ ISB Bayern *Bewertungskriterien Perkussion*:
 - "**Handsätze** (z. B. r-l-l-r)", dependent on **Aufstellung**: European (lowest timpano to
   the player's right) versus American (to the left).
 
+### 2.11a Pre-MIDI German, 1911 (S42)
+
+Haupt & Teuchert, *Musik-Instrumentenkunde in Wort und Bild*, section D
+*Schlaginstrumente*. This is the pre-MIDI layer the brief asks for: it names physical
+distinctions with no reference to any note number, and it is public domain.
+
+**Timpani beater coverings, p. 166, verbatim:** "Zum Schlagen der Pauken werden Schlägel,
+die mit **Flanell, Filz, Schwamm oder Kork** überzogen sind, verwendet." Flannel, felt,
+**sponge** and **cork**. Sponge- and cork-headed beaters are standard 19th-century
+orchestral implements and have **no KITWARP `implement` value**; the axis has felt, wood,
+plastic, rubber and superball only.
+
+**Snare-drum damping, p. 202, verbatim:** "Das Dämpfen wird dadurch erzielt, daß man beim
+Schlagen entweder ein **Tuch auf das oberste Fell legt**, oder **die angezogenen Saiten**
+oder auch **das ganze, straff angezogene Fell nachläßt**." Three distinct damping
+mechanisms, named as alternatives:
+
+| mechanism | KITWARP |
+|---|---|
+| a cloth laid on the batter head | `damping.towel` |
+| slackening the snare wires | `mechanism.wires-off` — but *slackened*, not thrown off, which is a third state between wires-on and wires-off |
+| **slackening the head itself** | **no value on any axis** |
+
+The third is a real, historically standard technique — detuning the head to kill it — and
+KITWARP cannot express it. It is neither damping (nothing touches the head) nor a
+mechanism value that exists.
+
+**Cymbal damping, p. 204, verbatim:** the plates are damped by being "nach dem Schlagen
+schnell **an die Brust gedrückt**" — pressed to the chest. A named damping gesture; the
+nearest KITWARP relation is `choke`, which `vocabulary/rules.json` excludes.
+
+**Two snare drums, not one, p. 202.** S42 records that Strauss (*Der Rosenkavalier*) and
+Bittner (*Der Musikant*) call for two: "Die erste wird mit **Militärtrommel** oder **hohe
+Trommel** bezeichnet, während die zweite die Bezeichnung **tiefe** oder **große
+Rührtrommel** — auch **Tamburo vecchio** — trägt", the difference being head tension and
+shell depth. KITWARP has a single `snare` slug; German score practice distinguishes at
+least two instruments and Italian gives the deeper one its own direction.
+
+**Instrument names given in four languages, verbatim:**
+
+| DE (S42) | IT | FR | EN |
+|---|---|---|---|
+| große Trommel (p. 200) | gran-tamburo, gran-cassa | grand-caisse | bass-drum |
+| kleine Trommel, auch Militärtrommel (p. 201) | tamburo | tambour militaire | — |
+| Becken, auch türkische Becken (p. 204) | **piatti oder cinelli** | cymbales | — |
+| Tamtam (p. 204) | — | **beffroi** | — |
+
+*Cinelli* is a third Italian word for cymbals beside *piatti* and *cimbali* (cf. §4.1), and
+*beffroi* for the tam-tam is not in any modern source reached here — both are recorded as
+historical variants, not as current usage.
+
+**Tam-tam beater, p. 204:** "ein mit **Leder überzogener Holzklöppel**" — a
+leather-covered wooden beater, corroborating the *Lederkopfschlägel* of S01 from a source
+a century earlier.
+
+### 2.11b Vibraphone and gong (S45)
+
+| DE | gloss | Axis |
+|---|---|---|
+| Anschlagen | striking | technique = `hit` |
+| Vibrato / **Senza vibrato** | motor on / off | mechanism — **no value** |
+| Tremolo / Wirbel | tremolo | ornament |
+| Triller | trills | ornament |
+| Glissando | glissando | technique = `gliss` |
+| **Nachklangglissando** | resonance glissando — glissando over a still-ringing bar | technique |
+| Akkordspiel / **Akkordtremolo** | chord playing, chord tremolo | ornament |
+| Kontrabassbogen | double-bass bow | implement — **no value** |
+| **Dead stroke** | dead stroke — German uses the English term untranslated | technique = `dead` |
+| Legato / Staccatospielweise | legato, staccato manner | none — articulation |
+| **Dämpferpedal** vs **Dämpfung** | damper pedal vs damping generally | damping / mechanism |
+| Secco | dry, short | damping |
+
+Vibraphone mallet materials, verbatim: "Garn, Schnur, Hartgummi, **Rosenholz**,
+**Messing**, **Ebonitholz**" — yarn, cord, hard rubber, rosewood, brass, ebonite.
+
+Gong (S45), where German names the striking geometry differently from the cymbal:
+
+| DE | gloss | Axis |
+|---|---|---|
+| **Buckel** | the gong's boss / central dome | site = `bell`, but physically a different thing from a cymbal's *Beckenkuppe* |
+| Rand | rim | site = `edge` |
+| **Anschlagpunkt** | striking point | position |
+| Gestrichen | bowed | technique — no value |
+| Gedämpft | damped | damping |
+
 ### 2.12 Organological German (S06, Hornbostel–Sachs 1914)
 
 Class terms verbatim from the German original: **Idiophone**, **Aufschlagidiophone**
@@ -545,6 +634,54 @@ shell". And French names the toms by **register plus ordinal** (basse/médium/ai
 where English GM names them by *mounting* (floor/rack) plus register — six English names
 against three French registers. Here English is the more granular tradition, in the one
 place where it usually is not.
+
+### 2.13a Pre-MIDI French, 1843 (S33, Berlioz)
+
+The archive.org scan's OCR is poor — accents are mangled and words are broken — so every
+term below is given as the legible reading and the surrounding sense, and **the exact
+orthography should be confirmed against a clean edition before any of it is minted**. The
+terms themselves are unambiguous.
+
+*Les Timbales*, from line 10187 of the plain text:
+
+> "On trouve souvent dans les anciens maîtres surtout cette indication: **Timbales voilées
+> ou couvertes**. Elle signifie que la peau de l'instrument doit être couverte d'un
+> **morceau de drap** dont l'effet est d'étouffer sa sonorité … **Les baguettes à tête
+> d'éponge** sont encore préférables aux autres en pareil cas."
+
+This is the origin of the *voilé* that VSL still glosses in 2.3, from 1843, and it settles
+two things:
+
+| FR (S33, 1843) | what it names | Axis |
+|---|---|---|
+| **timbales voilées**, **timbales couvertes** | the head covered with a cloth — the French *coperto* | damping = `towel` |
+| **morceau de drap** | the cloth itself | damping |
+| **baguettes à tête d'éponge** | sponge-headed timpani sticks | implement — **no value**; confirms the *Schwamm* of S42 (1911) from the source that established the practice |
+| "frapper **avec les deux baguettes à la fois** ou **avec une seule baguette**" | a notated distinction between striking with both sticks together and with one | technique — cf. DE *Unisono-Schläge* (S01); no KITWARP value |
+
+Cymbals, from line 10455:
+
+> "**laissez vibrer** … avec ces mots: **étouffez le son**, ce que l'exécutant obtient en
+> **rapprochant de sa poitrine les cymbales** aussitôt après les avoir frappées. On se sert
+> quelquefois d'une **baguette de timbales à tête d'éponge**, ou d'un **tampon de grosse
+> caisse** pour faire vibrer une **cymbale suspendue par sa courroie**; cela produit un
+> frémissement métallique d'une assez longue durée."
+
+| FR (S33) | what it names | Axis |
+|---|---|---|
+| **laissez vibrer** | let ring | damping = `none` |
+| **étouffez le son** | damp the sound | damping |
+| "rapprochant de sa poitrine les cymbales" | the chest-damping gesture | **no value** — and see below |
+| **tampon (de grosse caisse)** | the bass-drum beater, a second French name beside *mailloche* | implement |
+| **cymbale suspendue par sa courroie** | the suspended cymbal, named by its strap | instrument |
+
+**The chest-damping gesture is named independently in both pre-MIDI traditions**: Berlioz
+1843, "rapprochant de sa poitrine les cymbales", and Haupt & Teuchert 1911, "nach dem
+Schlagen schnell an die Brust gedrückt" (§2.11a). Two sources, two languages, sixty-eight
+years apart, naming the same physical act that KITWARP has no way to express — its nearest
+relative is `choke`, which `vocabulary/rules.json` deliberately excludes as a relation on a
+previously sounded event. That two independent traditions bothered to name it is the
+strongest evidence in this dossier that the exclusion of `choke` leaves a real hole.
 
 ### 2.14 Italian terms beyond the snare (S03)
 
@@ -818,6 +955,12 @@ against `vocabulary/axes.json` at the head of `claude/kitwarp-pivot-vocab-data-w
 | implement | `leather-beater` | Lederkopfschlägel (S01) | Standard orchestral bass-drum beater. |
 | implement | `fist` | listed in the BRIEF's axis sketch but **absent from `vocabulary/axes.json`** | The BRIEF lists `fist` under implement; the shipped axes.json does not. Discrepancy, not a finding — flagged for the reconciliation pass. |
 | implement | `scraper` | Kralle (S01); Râcloir / Schrapinstrument / raspa / rascador (S04) | `technique.scrape` exists with no tool to do it. |
+| implement | `sponge-beater`, `cork-beater` | Schwamm, Kork (S42 p. 166, 1911); **baguettes à tête d'éponge** (S33, 1843) | Standard 19th-century timpani beaters, named independently in French in 1843 and in German in 1911. |
+| technique | `chest-damp` (or admit `choke` as a relation) | "rapprochant de sa poitrine les cymbales" (S33, 1843); "an die Brust gedrückt" (S42 p. 204, 1911) | Named in both pre-MIDI traditions. See §2.13a. |
+| implement | `brass-beater`, `rosewood-beater`, `ebonite-beater` | Messing, Rosenholz, Ebonitholz (S45, vibraphone) | For the mallet-percussion family when it is minted. |
+| mechanism | `head-slackened` | "das ganze, straff angezogene Fell nachläßt" (S42 p. 202) | Damping by detuning the head. Not `damping` — nothing touches the head. No axis has it. |
+| mechanism | `wires-slack` | "die angezogenen Saiten … nachläßt" (S42 p. 202) | A third snare state between `wires-on` and `wires-off`. |
+| mechanism | `motor-on` / `motor-off` | Vibrato / Senza vibrato (S45, vibraphone) | The vibraphone motor is a mechanism, and `senza vibrato` is a standard score direction. |
 | implement | `bow` | Gestrichen (S01); arco di contrabbasso (S03 p. 115) | Collides with `site.bow`; a name must be chosen carefully. |
 | technique | `bowed` | Gestrichen / con l'arco (S01, S03) | Not a strike; `scrape` is not a substitute. |
 | technique | `shear` or `slide` | Breiter Schlag, Strisciato (S01, S03) | The clashed-pair stroke. |
@@ -856,6 +999,12 @@ against `vocabulary/axes.json` at the head of `claude/kitwarp-pivot-vocab-data-w
 - **`site.rim` / `site.rim2`.** Italian distinguishes *cerchio* from *controcerchio* (S03
   p. 754) and, separately, the *wooden* rim from the *metal* rim (S03 p. 473). v0.1's `rim`
   and `rim2` are ordinals with no stated semantics; the Italian sources give them one.
+- **`instrument.snare` is one slug where the German orchestral tradition has two.** S42
+  p. 202 records the pair *Militärtrommel / hohe Trommel* against *tiefe (große)
+  Rührtrommel / Tamburo vecchio*, distinguished by head tension and shell depth and scored
+  separately by Strauss. VSL keeps them apart to this day as two instrument pages,
+  `snare-drum` and `field-drum` (S01). KITWARP's `snare` covers both, and `voicing` cannot
+  carry the difference because it is an instrument difference, not a production style.
 - **Tom naming.** French GM names toms by register + ordinal (basse/médium/aigu × 1–2, S19),
   English GM by mounting + register (floor/rack). KITWARP's `instance` ordinal ("toms high
   to low in pitch") matches the French convention and not the English one — which is
@@ -881,11 +1030,11 @@ taxonomy, S18, maps onto them one for one), `wires-off` (three languages, S02),
   this bucket.** The decisive discovery is that the same page exists at
   `vsl.co.at/de/academy/...` and `vsl.co.at/academy/...`, so the German and English editions
   gloss each other line by line, and the English edition additionally carries FR and IT
-  score directions (*sur le bois*, *sans timbre*, *senza corde*, *voilé*). Eight instrument
-  pages were mined. **Not mined: gong, tubular bells, plate bells, xylophone, vibraphone,
-  marimba, glockenspiel, celesta** — eight more pages, each with a *Spieltechniken* section
-  of the same density. That is the cheapest remaining win in this bucket and a follow-up
-  should simply finish the set.
+  score directions (*sur le bois*, *sans timbre*, *senza corde*, *voilé*). Ten instrument
+  pages were mined (§2.3–2.9, §2.11b). **Not mined: tubular bells, plate bells, xylophone,
+  marimba, glockenspiel, celesta** — six more pages of the same density. They bear on the
+  orchestral and mallet families, which are reserved and unminted, so finishing the set is
+  the right next step only once those families are being minted.
 - **IRCAM: partly blocked, and where reachable the answer is negative.** Two separate
   facts. First, `instruments.ircam.fr` is **denied by this environment's egress policy** —
   it answers 502 on CONNECT, verified independently by the supervisor and by a status probe
@@ -928,10 +1077,14 @@ UNVERIFIED. This is the source the reconciliation pass should chase.
   from "named at page N" to "defined as follows".
 - **The Spanish taxonomy (S18) is TOC-only** for the same reason. Pages 55–65 of *Percusión
   para Dummies* would confirm or correct nine stroke glosses.
-- **Berlioz's *Grand traité* (1844) (S33) was not attempted.** It is the pre-MIDI French
-  primary source the brief specifically asks for, it is public domain, and it is on IMSLP.
-  It would give the 19th-century French names for beaters (*baguettes d'éponge*, *baguettes
-  de bois*) and for damping, which is where several modern French terms come from.
+- **Berlioz 1843 (S33) was reached, but only through a bad scan.** The archive.org OCR of
+  `grandtraitdins1843berl` mangles accents and breaks words, so §2.13a reports the terms
+  with confidence but not the orthography. A clean edition — the 1855 reprint, the
+  Berlioz–Strauss *Instrumentationslehre* (archive.org `instrumentations01berl`, 1905,
+  which is the same text in German and therefore a ready-made FR/DE concordance), or the
+  1970 Paris edition `traitdinstrument0000berl` — would fix that cheaply. The
+  Berlioz–Strauss German edition is the more valuable of the three for this bucket's
+  purpose and was identified but not opened.
 - **Kurt Stone 1980 (S27)** has an accessible full PDF and was not opened. Its appendices
   carry multilingual instrument tables that would cross-check §2.1 and §2.2 independently.
 - **MuseScore's German and Italian percussion handbooks (S22, S23) both return 403.** They
