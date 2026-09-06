@@ -129,11 +129,12 @@ Rules:
 
 ## 5. Realtime core (Cmajor) — binding rules
 
-From the kit's golden rules plus the probes:
+From the kit's golden rules, the current Amorph contract
+(`docs/research/amorph-host-contract-notes.md`) and the probes:
 
 1. All MIDI work in `event midiIn`; `main()` runs the **scheduler**: a fixed ring of
    pending events (frame, status, note, velocity, channel), emitted when due. Time-based
-   modules only ever enqueue.
+   modules only ever enqueue. Amorph explicitly allows host-synced scheduling in `main()`.
 2. **Flat arrays, `int32`, zero means "none".** No multi-dimensional state arrays, no
    init loops over large arrays (probes: 0.2 s vs 75 s JIT).
 3. Tables are rebuilt in parameter/event handlers, never touched by the scheduler
@@ -147,6 +148,14 @@ From the kit's golden rules plus the probes:
 7. Random: xorshift/splitmix on `(TakeID, bar, step, pitch, channel, moduleIdx)` — never
    `processor.session` for anything audible.
 8. CC translation (hi-hat) waits for H6 (CC throughput in Amorph / VST3).
+9. **Amorph lint shape** (generator-enforced): endpoints first in one contiguous block;
+   IDs exactly `param1..paramN` with `name/min/max/init` (+ `step: 1` for labelled
+   selectors); every `processor.period` as `float(processor.period)`; every `/` and `%`
+   divisor visibly non-zero (`% max(1, n)`); typed locals instead of `let`; no `external`;
+   no field initialisers in structs; `transportIn` as `input event float` with the six
+   slots play · bpm · numerator · denominator · ppq · barStart.
+10. **Parameter budget ≤ 128 slots** (Amorph product guide); we target ≤ 96 and keep deep
+    module settings in stored state / struct events.
 
 ## 6. UI
 
@@ -203,14 +212,16 @@ pasted into an AI context.
 | ID | Question | Why it matters |
 |---|---|---|
 | H1 | Is the view instantiated on project load with the window closed? | stored state vs parameters for module settings (ADR-0002) |
-| H2 | Are MIDI channels delivered to `midiIn` and passed from `midiOut` unchanged? | the whole 16-slot idea |
+| H2 | Are MIDI channels delivered to `midiIn` and passed from `midiOut` unchanged? (UI hook already exposes the channel nibble — partial evidence) | the whole 16-slot idea |
 | H3 | Does `sendEventOrValue` deliver a struct with `int32[128]` fields to a non-parameter `input event`? | UI → DSP table push |
 | H4 | Does `DecompressionStream` exist in Amorph's WebView (mac / win / linux)? | UI blob format |
 | H5 | Is `processor.latency` honoured by Amorph and the DAW? | look-ahead bus |
 | H6 | Do CC and pitch-bend pass through `midiOut` to a downstream instrument? | hi-hat bridge |
-| H7 | `transportIn` slot order and PPQ behaviour as documented in kit doc 14? | groove, repeat, per-bar hold |
+| H7 | `transportIn` slot order (play, bpm, num, den, ppq, barStart) and the buffer-size audit (31/64/257/511 frames) with our scheduler | groove, repeat, per-bar hold — order is documented, behaviour still to be checked |
+| H8 | Does the runtime load a UI file far above the 8000-character generation rule (ours ≈ 200 KB)? | UI monolith with the data blob |
+| H9 | Does Amorph's lint accept the generated DSP (big `const` tables, `int64` literals, chunked arrays)? | DSP monolith |
 
-Each is a five-minute patch; H2 and H3 come first because they gate the core.
+Each is a five-minute patch; H2 and H3 come first because they gate the core. With a v1-beta build they can be driven over MCP from a local Claude Code session (`run_qa_probe` renders headlessly with GM drum notes).
 
 ## 9. Open points
 
@@ -218,5 +229,10 @@ Each is a five-minute patch; H2 and H3 come first because they gate the core.
 - The DSP source carries ~130 KB of numbers; acceptable for the compiler (0.2 s), but it
   is text the Amorph AI panel would read. Keep it stripped from prompts.
 - Parameter budget: 16 inputs × (layout, mask, filter) + 16 outputs × (layout, channel,
-  pass) ≈ 100, plus module enables/amounts. Field-tested fine (200+), but the automation
-  list gets long — decide the parameter naming/grouping before the first preset exists.
+  pass) ≈ 100 before module enables. Amorph offers **128 slots** — so per-module
+  enable/amount cannot all be parameters. Decide the split (parameters for what must
+  restore headlessly, stored state for the rest) before the first preset exists; H1 decides
+  how much stored state may carry.
+- The kit and the current Amorph contract disagree on parameter naming, `transportIn`,
+  `data-param` and `ResizeObserver`; we follow the contract (see the research notes) and
+  the kit gets a reconciliation task.
