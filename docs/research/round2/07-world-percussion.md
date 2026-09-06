@@ -39,6 +39,10 @@ research dataset); `C` trade or teaching site without citations; `D` marketing.
 | C10 | *Afro-Cuban Clave Basics* | dicciani.com | n.d. | pedagogy handout | `http://www.dicciani.com/materials/afro_cuban_intro_and_basics.pdf` | C | no |
 | C11 | *Güiro – Chequeré – Claves – Maracas* | Directorio Música Cubana | n.d. | reference, Spanish | `https://directoriomusicacubana.com/instrumentos/chequere/` | C | no |
 | C12 | *Conga Basics* | The Instrumentalist | 2008-11 | teaching magazine | `https://theinstrumentalist.com/november-2008/conga-basics/` | C | no |
+| C13 | *Intro to Afro-Cuban Mambo Rhythms and Drumset Patterns* | Marc Dicciani, Director of the School of Music, University of the Arts, Philadelphia | 2009 | university pedagogy handout; **defines `cáscara`, `palito`, `gua gua`, `bombo`, `ponche` in text** | `http://www.dicciani.com/materials/afro_cuban_intro_and_basics.pdf` | A/B | **yes** (PDF → text) |
+| C14 | *Timbales* | Wikipedia ES | 2026 | encyclopaedia, Spanish | `https://es.wikipedia.org/wiki/Timbales` | B | **yes** |
+| C15 | *How to Play Timbales – Basic Grooves and Fills* | Rhythm Notes | n.d. | trade teaching; **the only text definition of `abanico` as a physical figure that was reached** | `https://rhythmnotes.net/how-to-play-timbales/` | C | **yes** |
+| C16 | *Danzón* | Wikipedia EN | 2026 | encyclopaedia | `https://en.wikipedia.org/wiki/Danz%C3%B3n` | B | **yes** |
 
 ### 1.2 Brazilian
 
@@ -133,7 +137,7 @@ research dataset); `C` trade or teaching site without citations; `D` marketing.
 | X6 | *Acoustic-iconic mnemonic systems* | David W. Hughes, cited as [7] by E7 | — | the scholarly umbrella term for bol / solkattu / kuchi-shōga / luógǔjīng | via E7 | A | via E7 |
 | X7 | *Directly struck membranophones* (Hornbostel–Sachs 211) | Wikipedia EN | 2026 | classification | `https://en.wikipedia.org/wiki/Directly_struck_membranophones` | B | no |
 
-**Register totals: 66 candidates listed, 30 reached in full or in substantial part.**
+**Register totals: 70 candidates listed, 34 reached in full or in substantial part.**
 
 ---
 
@@ -218,10 +222,69 @@ C4 (*Timbales*):
 | timbaleta | alternative name |
 | timbalitos / pailitas | "small timbales with diameters of 15 centimetres (6 in), 20 centimetres (8 in) or 25 centimetres (10 in)" |
 | cáscara | "The shells and the typical pattern played on them are referred to as cáscara" — the word names **both the site and the pattern** |
-| abanico | 'fan'; a fill popularised in the 1930s. Round-A trade sources describe it as a rim-to-head sweep or flam-like figure signalling a section change; **UNVERIFIED** at primary level |
+| abanico | 'fan'; a fill popularised in the 1930s |
 | baqueteo | "The basic timbales part for danzón is called the baqueteo" |
 | típico | a soloing style, "tastefully sparse, straight forward" |
 | rim shot, roll | C4: "a variety of stick strokes, rim shots, and rolls" |
+
+**2.2.1 `cáscara`, `paila`, `abanico` — the three terms referred to this bucket by the
+vendor-glossary worker, which could find no citable text because Latin Percussion publishes
+technique only as video.** Text definitions exist. All three are closed below.
+
+**`cáscara` — closed, authority A/B.** C13: Marc Dicciani (Director, School of Music,
+University of the Arts, Philadelphia), *Intro to Afro-Cuban Mambo Rhythms and Drumset
+Patterns*, © 2009, p. 1, `http://www.dicciani.com/materials/afro_cuban_intro_and_basics.pdf`.
+Verbatim:
+
+> "The cascara or 'shell' pattern is a very commonly heard rhythm in Afro-Cuban styles. It is
+> called cascara because it is often played on the shells of the timbales or on the rim of
+> the floor tom on the drum set during soft sections of an arrangement. It is also sometimes
+> referred to as **palito** which means 'little sticks' because it is sometimes played on the
+> **gua gua**, a mounted piece of bamboo. Today, cascara refers more to the rhythm itself
+> than to the drum on which it is played."
+
+This is the decisive sentence for the pivot: *"cascara refers more to the rhythm itself than
+to the drum on which it is played."* The word began as a site (`site.shell`) and has become
+a pattern name. A vendor articulation labelled "cascara" therefore asserts a **groove**, not
+a stroke, and must not be minted as a pivot term; what it implies about the stroke is only
+(site = shell, implement = stick). The same page supplies `palito` ('little sticks') and
+`gua gua` (a mounted bamboo idiophone) as the two alternative sites for the identical
+pattern, and names two clave positions, `bombo` (2nd note of the 3-side) and `ponche` (3rd
+note of the 3-side).
+
+**`paila` — closed, but the word carries two incompatible senses.**
+(a) *The instrument.* C4: `pailas` / `pailas criollas` is an alternative name for the
+timbales, after the Spanish metal cookware bowls. Spanish Wikipedia (C14,
+`https://es.wikipedia.org/wiki/Timbales`) verbatim: "los **timbales**, *pailas, timbaletas*
+o *tarolas tropicales;* en la música latina (salsa, por ejemplo), tambores cilíndricos de un
+solo parche, con armazón de metal, más cortos que los tom toms, y afinados más agudos".
+(b) *The shell.* C15 (`https://rhythmnotes.net/how-to-play-timbales/`, authority C) uses
+`paila` for "the shell of the drum" — i.e. as a synonym for `cáscara` in its site sense.
+A converter meeting a note named `paila` cannot tell from the name alone whether it means
+the instrument or the surface; see §4.1.
+
+**`abanico` — closed at authority C, physically specific.** C15 verbatim: it is "the second
+fill", it "signals the transition between quieter dynamic sections and the louder dynamic
+sections", and it consists of **"a rimshot, followed by a roll on beat four"** on the
+**macho** drum, the roll being "usually either a 7-stroke roll or a 9-stroke roll" and
+resolving with a rimshot on beat one. The initiating rimshot falls on the *and* of beat
+three in 2:3 clave and on the downbeat of beat three in 3:2. C4 dates its popularisation to
+the 1930s.
+
+Decomposed: `abanico` = rimshot → measured roll → rimshot, on one named drum, with a
+structural signalling function. It is therefore **a two-term figure plus a cue, not a
+stroke**: `technique.rimshot` + `ornament.roll` + `technique.rimshot`. Round A's
+description of it as "a flam-like sweep from rim to head" is *not* supported by any text
+source reached and should be treated as wrong rather than merely unverified. The
+authority is C, so mark the stroke sequence UNVERIFIED-AT-PRIMARY; but it is a text
+definition of a specific physical gesture, which is what was asked for.
+
+**`baqueteo` — bonus, and it settles the notation.** Wikipedia *Danzón* (C16,
+`https://en.wikipedia.org/wiki/Danz%C3%B3n`): "The basic timbales part for danzón is called
+the baqueteo", and its notated example uses "slashed noteheads [to] indicate muted drum
+strokes, and the regular noteheads [to] indicate open strokes", with the güiro doubling the
+same pattern. The baqueteo is thus an **open/muted alternation on the head**, which maps to
+`damping` — not to a site, and not to a stroke name of its own.
 
 Minor percussion (round-A Spanish sources, authority C, treat as UNVERIFIED pending C11):
 `güiro` played with "long and short sounds, made by scraping up and down in long or short
@@ -686,7 +749,7 @@ membrane and the same two hand shapes.
 | `position` | djembe centre vs "closer to the edge"; conga centre vs "near the rim"; darbuka centre vs "near the edge"; taiko `hara` vs `fuchi`; tonbak centre vs rim; cajón "parte superior de la tapa" vs "el centro"; tabla's concentric rings are position names as much as site names |
 | `contact` | tonbak one-fingered vs two-fingered `bak`; mridangam Tha-Palm / Tha-Fingertips / Tha-Fingers-flat; djembe "edge of the palm and the fingertips" vs "most of the area of the fingers and the edge of the palm"; conga `ridge of the palm` vs `extended fingers`; pandeiro polegar / ponta dos dedos / punho / mão espalmada / unhas |
 | `technique` | open-tone (tono abierto, tonique, Tun, agudos); bass-tone (tono bajo, basse, doum, tom, Thom, graves, Don); mute-stroke (tono ahogado, apagados, pa/sak, polegar abafado, damped bols); slap (tono seco, claqué, slap, chasqueos, Chapu); heel and toe (talón/punta, PALM/FINGERS, punho/ponta, grave-agudo); rim-only (Ka on taiko, bak, tek); rimshot (pandeiro's "dedo indicador ou polegar entre a pele e o aro"); gliss (tono deslizado, bramido, moose call, kanjira pitch bend, gumiki); scrape (güiro, reco-reco, `raspagem com as unhas`); shake (chekeré, maracas, pandeiro shake, ganzá); circling (B3 #12, "raspagem … em movimento circular") |
-| `ornament` | tonbak `riz-e-por`, `takriz`, `riz-e-shallaghi`, `riz-e-timpani`, `riz-pelang` (all rolls); `rulo` and `rulo de mão` (pandeiro); darbuka finger roll; taiko `DoKo`/`DoRo`/`TsuKu`/`KaRa` (2 attacks each — these carry an explicit attack count, exactly as v0.1's `ornament.attacks` does); tabla `Tirkit`; timbales roll; `abanico` (if it is a flam-like sweep, UNVERIFIED) |
+| `ornament` | tonbak `riz-e-por`, `takriz`, `riz-e-shallaghi`, `riz-e-timpani`, `riz-pelang` (all rolls); `rulo` and `rulo de mão` (pandeiro); darbuka finger roll; taiko `DoKo`/`DoRo`/`TsuKu`/`KaRa` (2 attacks each — these carry an explicit attack count, exactly as v0.1's `ornament.attacks` does); tabla `Tirkit`; timbales roll, and the 7- or 9-stroke roll inside the `abanico` (§2.2.1) |
 | `damping` | B3 #1 vs #2 and #3 (`sem abafamento` vs `com abafamento`); conga muffled tone / muffled slap; darbuka `pa`/`sak`; the whole `D` class of I4's tabla table; E10's Balinese damping rule |
 | `mechanism` | bendir gut snare across the head; pandeiro `platinelas` present/absent; riq jingles; daf ring/chain jingles; cuíca's internal friction stick |
 | `implement` | hand, finger, `galan` (sabar tamarind stick), taiko `bachi`, janggu `gungchae` / `yeolchae`, tamborim nylon-thread beater vs wooden stick, dunun's three stick shapes, surdo hard/soft mallets, cajón `escobillas` (brushes) |
@@ -770,10 +833,13 @@ sounds different from one on a slanted stand) but are not strokes.
 **(7) Named patterns, not sounds.** `martillo`, `cáscara` (as pattern), `baqueteo`,
 `carreteiro`, `theka`, `tirkit` (borderline — a three-attack figure), `jangdan`, `kotekan`,
 `kotekan empat` / `telu` / `njog cak`, `oncang-oncang`, `luógǔjīng` pattern names (~90),
-`abanico`, `típico`, `oroshi`, `angsel`, `vacunao`. These belong in whatever layer KITWARP
-uses for grooves, not in the pivot vocabulary — but `cáscara` and `abanico` in particular
-are shipped as articulation names by sample libraries, so the reconciliation pass will meet
-them as if they were strokes.
+`abanico`, `típico`, `oroshi`, `angsel`, `vacunao`, `palito`. These belong in whatever layer
+KITWARP uses for grooves, not in the pivot vocabulary — but `cáscara` and `abanico` in
+particular are shipped as articulation names by sample libraries, so the reconciliation pass
+will meet them as if they were strokes. §2.2.1 shows what each actually implies about the
+stroke: `cáscara` implies only (site = shell, implement = stick); `abanico` implies
+rimshot + roll + rimshot on one named drum; `baqueteo` implies an open/muted alternation
+and so belongs to `damping`.
 
 **(8) A finger snap on the drum head.** tonbak `pelang` / `beshkan`, and its Farhangfar
 substitute `bargardan`; daf's "fingers … fastened about their neighbours and suddenly
@@ -816,7 +882,8 @@ that `Su` is not an unmapped instrument.
 | **tar** | a Persian frame drum in Hormozgan (طار) | (elsewhere) a long-necked Persian/Turkish lute | M2 |
 | **conga** | the individual drum | the drum *family*, and the Cuban carnival genre | C2 |
 | **cajón** | the Peruvian box drum | the Cuban `cajón de rumba` (a different instrument and repertoire) and the Mexican `cajón de tapeo` | X2, C3 |
-| **paila** | the timbales as an instrument | the metal cookware bowl the name derives from; and in some teaching, the act of playing on the shell (UNVERIFIED) | C4 |
+| **paila** | the timbales *as an instrument* (C4, C14: "los timbales, *pailas*, timbaletas o tarolas tropicales") | the **shell** of the drum, i.e. a synonym for `cáscara` in its site sense (C15) — plus the original sense, the Spanish metal cookware bowl | C4, C14, C15 |
+| **cáscara** | a *site*: the shells of the timbales | a *pattern*: C13, "cascara refers more to the rhythm itself than to the drum on which it is played" — and the same pattern is called `palito` when played on the `gua gua` | C4, C13 |
 | **pandeiro / pandereta / pandero / adufe** | four different instruments | one shared Iberian-Moorish root | M2 |
 | **riq / mazhar** | two instruments | differing only in size, mazhar being "the bass version of riq" | M2 |
 | **bangu** | the Beijing opera clapper-drum player's *pair* (ban + danpigu) | in other Chinese usage, the danpigu drum alone | E7 vs E14 |
@@ -1003,9 +1070,17 @@ client.
   appendix) and weak for everything else.** Surdo, tamborim, cuíca, agogô, caixa, ganzá,
   reco-reco and zabumba rest on Wikipedia alone; the surdo open/`abafado` pair — one of the
   most-used articulations in the whole bucket — is explicitly marked UNVERIFIED in §2.10.
-- **The WebSearch budget (200 calls, shared session-wide) was exhausted after round A.**
-  Round B therefore proceeded by direct URL only, which is why sabar, Javanese kendang and
-  Peruvian cajón were not closed: reaching them needed a search, not a fetch.
+- **The WebSearch budget (200 calls) is one session-wide pool shared by all twelve round-2
+  workers, and it was exhausted immediately after this bucket's round A.** Round B therefore
+  proceeded by direct URL only, which is why sabar, Javanese kendang and Peruvian cajón were
+  not closed: reaching them needed a search, not a fetch. Any future worker on this bucket
+  should spend its share of the pool on those three targets first.
+- **`web.archive.org` is unreachable in this environment** (connections reset mid-tunnel,
+  confirmed by the supervisor for both curl and WebFetch), so the brief's Wayback fallback
+  was never available. `archive.org` itself answers and its metadata and full-text search
+  work; the *Encyclopedia of Percussion* (X5) is nonetheless behind controlled lending and
+  was not opened. Several other hosts answered 403 or 503 to CONNECT and are recorded as
+  unreachable in §1 rather than retried.
 - **No stroke was verified by listening.** Every physical description is as the source
   words it. Where two sources word the same stroke differently (§4.3) this dossier records
   the disagreement rather than resolving it, per the house rule that a documented gap beats
@@ -1019,5 +1094,29 @@ client.
 /tmp/b07/pandeiro_ufu.pdf/.txt      B3, UFU dissertation — Appendix B extracted §2.10
 /tmp/b07/gamelan_bali.pdf/.txt      E10, Yudane — ensemble roles extracted §2.9
 /tmp/b07/hornbostel.pdf/.txt        X4, Würzburg reprint of the 1914 introductory essay
+/tmp/b07/dicciani.pdf/.txt          C13, Dicciani 2009 — the cáscara definition, §2.2.1
 ```
 Outside the repository, per the brief. Not committed.
+
+### 6.5 Answer to the question referred here by the vendor-glossary bucket
+
+`cáscara`, `paila` and `abanico` are **closed in §2.2.1**, with text definitions and
+locators, and the vendor-glossary dossier's UNVERIFIED entry can cite them:
+
+- `cáscara` — Marc Dicciani, *Intro to Afro-Cuban Mambo Rhythms and Drumset Patterns*,
+  © 2009, p. 1, `http://www.dicciani.com/materials/afro_cuban_intro_and_basics.pdf`.
+  Authority A/B, a named university music director's own teaching text. Verbatim quotation
+  in §2.2.1, including the sentence that decides the modelling question: "cascara refers
+  more to the rhythm itself than to the drum on which it is played."
+- `paila` — two incompatible senses, both cited (§2.2.1, §4.1): the instrument (Wikipedia
+  ES, verbatim Spanish) and the shell (Rhythm Notes). A note named `paila` is ambiguous on
+  its face.
+- `abanico` — Rhythm Notes, `https://rhythmnotes.net/how-to-play-timbales/`. Authority C,
+  but a specific physical definition: rimshot on the macho, 7- or 9-stroke roll on beat
+  four, resolving with a rimshot on beat one, used as a section-change cue. **The round-A
+  characterisation of the abanico as a "flam-like sweep from rim to head" is contradicted
+  by this and should be dropped, not carried as unverified.** A primary-source confirmation
+  (Rebeca Mauleón, *Salsa Guidebook for Piano and Ensemble*, Sher Music 1993, is the standard
+  reference and has a glossary) was not obtained and would upgrade this from C to A.
+- `baqueteo` — bonus, Wikipedia *Danzón*: an open/muted alternation, therefore a `damping`
+  fact rather than a stroke name.
