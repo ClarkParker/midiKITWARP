@@ -1,13 +1,18 @@
 status: running
-updated: 2026-09-06T12:29:00Z
+updated: 2026-09-06T12:33:32Z
 done:
-  - branch work/bucket-01-rudiments-stroke-technique created from
-    origin/claude/kitwarp-pivot-vocab-data-w56ld3
-  - read CLAUDE.md, .agents/README.md, .agents/round2/BRIEF.md,
-    .agents/round2/01-rudiments-stroke-technique.md
-  - read docs/research/README.md and dossier 07 for house dossier style
+  - setup complete, branch pushed
+  - round A: 20 distinct searches run (English, German, French, Italian, Spanish;
+    scholarly, pedagogical, trade, notational registers; 1812-2019 era spread)
+  - primary source obtained: PAS International Drum Rudiments sheet
+    (pas.org/wp-content/uploads/2024/04/pas-rudiments.pdf, 40 names verbatim,
+    26 NARD members marked by asterisk, copyright 1984)
+  - obtained: en.wikipedia Drum_rudiment / Drum_stroke / Drum_roll / Rimshot /
+    Moeller_method raw wikitext (national rudimental systems, stroke types,
+    roll cross-culture names, rimshot family incl. ping shot and gock)
 next:
-  - round A breadth sweep: at least twelve distinct searches varying register,
-    language, source type and era; build the candidate source register
+  - fetch remaining round A candidates: Basel/Swiss sources, hybrid rudiment
+    lists, brush and foot technique sources, French/Italian/Spanish primaries
+  - then round B extraction tables, axis mapping, conflicts, gaps
 questions:
 needs_owner:
