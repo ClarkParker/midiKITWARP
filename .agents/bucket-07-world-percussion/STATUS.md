@@ -1,14 +1,19 @@
 status: running
-updated: 2026-09-06T12:45:00Z
+updated: 2026-09-06T12:50:00Z
 done:
-  - setup complete, branch pushed
-  - round A breadth: 20 distinct searches run across Afro-Cuban, Brazilian,
-    Indian (Hindustani + Carnatic), Arabic/Turkish/Persian, West African,
-    East Asian (Japan/Korea/China/Indonesia) and cajon traditions, in English,
-    Spanish, Portuguese, French and German, plus scholarly (Hornbostel-Sachs,
-    CompMusic/ISMIR stroke datasets) and pedagogical registers
+  - round A: 20 searches, 55-entry candidate register committed
+  - round B wave 1 committed: conga, bongo, timbales, tabla, mridangam,
+    tonbak, darbuka, frame drums, djembe, dunun, taiko, janggu, kendang,
+    surdo, pandeiro
+  - round B wave 2 extracted, not yet written up: ISMIR 2014 Beijing opera
+    luogujing syllable table (verbatim, with Chinese characters and
+    instrument combinations); ISMIR 2021 tabla four-way stroke table
+    (bol to damped / resonant-treble / resonant-bass / resonant-both, with
+    explicit drumkit equivalents); UFU pandeiro dissertation appendix B
+    notation table (12 articulations); Telethusa flamenco cajon golpes;
+    ghatam and dunun terms
 next:
-  - finish candidate source register, then round B extraction from the
-    reachable primary and pedagogical sources
+  - write up wave 2, then sections 3 to 6 (axis mapping, conflicts,
+    gaps against v0.1, self-critique)
 questions:
 needs_owner:
