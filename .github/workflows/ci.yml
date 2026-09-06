@@ -20,7 +20,10 @@ jobs:
       - run: python -m pip install -r tools/requirements.txt
 
       - name: Schema — vocabulary
-        run: check-jsonschema --schemafile schema/pivot.schema.json vocabulary/pivot.json
+        run: |
+          check-jsonschema --schemafile schema/axes.schema.json  vocabulary/axes.json
+          check-jsonschema --schemafile schema/pivot.schema.json vocabulary/pivot.json
+          check-jsonschema --schemafile schema/rules.schema.json vocabulary/rules.json
 
       - name: Schema — device layouts
         run: |
