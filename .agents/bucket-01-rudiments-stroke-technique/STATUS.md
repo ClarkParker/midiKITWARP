@@ -1,5 +1,5 @@
-status: done
-updated: 2026-09-06T13:05:36Z
+status: running
+updated: 2026-09-06T13:07:59Z
 done:
   - dossier committed and pushed: docs/research/round2/01-rudiments-stroke-technique.md
     (1056 lines, sections 1-6 exactly as BRIEF.md specifies)
@@ -36,7 +36,9 @@ done:
     across two axes, and the ornament axis needs an attack count. jazz-stick is
     confirmed by a 1922 attestation
 next:
-  - nothing; bucket complete
+  - round B reopened: supervisor ran the two queued searches and returned
+    candidate Basel stroke names and Rudimental Codex leads. Verifying every name
+    against a fetched source before it enters the dossier
 questions:
   - WebSearch refused every retry from this worker with "200 of 200" even after
     the supervisor reported the pool had recovered. Two queued searches never ran:
