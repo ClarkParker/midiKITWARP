@@ -43,11 +43,11 @@ The main group. This is where the plugin earns its keep.
 | [~] | Studio Drummer | Native Instruments | P/D | `.iom` present |
 | [ ] | Abbey Road Drummer (60s/70s/80s/Modern/Vintage) | Native Instruments | D | check one layout per series |
 | [ ] | Battery 3 / 4 | Native Instruments | P | kit-dependent, no fixed layout |
-| [ ] | GGD Modern & Massive | GetGood Drums | P | `.nka` presets, converter exists |
+| [ ] | GGD Modern & Massive | GetGood Drums | M | see the GGD note below — no shortcut |
 | [ ] | GGD Invasion | GetGood Drums | P | |
 | [ ] | GGD Matt Halpern | GetGood Drums | P | |
 | [ ] | GGD One Kit Wonder (series) | GetGood Drums | P | several titles |
-| [ ] | GGD Architects | GetGood Drums | P | included in ReaperNoteNames |
+| [ ] | GGD Architects | GetGood Drums | M | see the GGD note below |
 | [ ] | MODO Drum | IK Multimedia | D | in the Groove Monkee set |
 | [ ] | ML Drums | ML Sound Lab | D | maps for four DAWs available |
 | [ ] | Drumforge Classic | Drumforge | P | |
@@ -62,7 +62,7 @@ The main group. This is where the plugin earns its keep.
 | [ ] | Ugritone kits | Ugritone | ? | many individual titles |
 | [ ] | Wave Alchemy Revolution | Wave Alchemy | ? | |
 | [ ] | MDrummer | MeldaProduction | H | |
-| [ ] | Jamstix 4 | Rayzoon | P | **ships its own maps for many libraries** |
+| [ ] | Jamstix 4 | Rayzoon | H | ships maps for many libraries, but they are behind the paywall — see below |
 | [ ] | Ocean Way Drums | Platinum Samples | ? | |
 | [ ] | uJAM Virtual Drummer (series) | uJAM | H | SOLID / HEAVY / PHAT / DEEP / 2ND |
 | [ ] | VQ Drums | — | ? | |
@@ -225,6 +225,43 @@ and the least problematic on licensing.
 
 ---
 
+## Two assumed shortcuts that do not hold
+
+**GGD is not a shortcut.** A GGD `.nka` file is a generic Kontakt `save_array()` dump: an
+array-name line followed by 256 signed integers, where the index is an articulation ordinal
+and the value is a MIDI note. **It contains no names at all.** Every articulation name in
+`JPplayground/MidiNoteNameGen` is a hand transcription from GUI screenshots — the repository
+asks contributors to send an exported `.nka` *and* a screenshot — and that repository is
+GPL-3.0, so its name tables cannot be copied here (ADR-0004: `rederive-only`). The `.nka` is
+also not a shipped product file: it is produced by the owner pressing "Export Map" after
+assigning every articulation a note, which makes its provenance method
+`instrument-export-by-owner` and requires owning the product. No official GGD note map,
+note-name file or articulation chart could be found anywhere. Measured slot counts from the
+arrays themselves: Matt Halpern Signature 49, Invasion 47, P4 Matt Halpern 37, OKW
+Architects 33, OKW Metal 32, OKW Aggressive Rock 24. Each GGD title is therefore its own
+row of manual work.
+
+**Jamstix is a design precedent, not a data source.** Its published pivot (Appendix B of the
+freely downloadable manual) is 99 IDs — 67 drum-kit plus 32 anonymous percussion slots, with
+six `RESERVED` holes. That is below Superior Drummer 3's 80 on the acoustic kit alone, so it
+cannot serve as a superset. The per-library `[Keys]` tables — the genuinely valuable
+artefact — are behind the paywall; the public download is a Windows downloader stub. What is
+worth copying is its *shape*: stable numeric IDs, reserved holes, controller configuration
+inside the map file rather than in the plugin, and named user-visible policies for unmapped
+slots.
+
+## Sources ruled out, and why
+
+| Source | Status | Reason |
+|---|---|---|
+| Groove Monkee mapping collection | **forbidden** | Its licence forbids using the contents "to create or contribute to any competitive product". After *Ryanair* (C-30/14) that contractual restriction stands whether or not a database right subsists. Not to be ingested, cross-checked, or present on the build machine. |
+| REAPER Stash note-name uploads | **reference-only** | No terms-of-use page located; uploads are by individual users with no stated licence. Unknown licence is not a permissive licence. Individual uploaders may be reachable — record any grant per file. |
+| `marty-615/drum-remap` `maps/` | **reference-only** | No `LICENSE` file, no `license` field, no notice. The project's *design* is an idea and freely usable; its data is not licensed. |
+| `markheath/midifilemapper` `Maps/` | **reference-only** | No licence anywhere, and a README soliciting contributed maps without stating terms, which makes the position worse rather than better. |
+| GPL-licensed collections (`MuseScore`, `LilyPond`, `Hydrogen`, `lotkey`, `MidiNoteNameGen`) | **rederive-only** | Read to know what to verify; the shipped value must come from a manufacturer document, a product file, or measurement. |
+
+Full reasoning in `docs/adr/0004-provenance-and-licensing.md`.
+
 ## Numbers
 
 Roughly **190 entries**, eleven of which are already covered by the existing `.iom` files.
@@ -236,7 +273,7 @@ articles, one article per model), the ten large libraries from group A, the four
 from group G, and the whole of group F.
 
 **Second wave — source available, more effort:** Yamaha DTX and Alesis via manuals,
-DAW-internal instruments, GGD via `.nka`.
+DAW-internal instruments, GGD one title at a time (see above).
 
 **Third wave — only on demand:** vintage drum machines, niche modules, notation beyond
 group F.

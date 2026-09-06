@@ -145,9 +145,25 @@ hand.
 | REAPER Stash uploads | no terms-of-use page found | **reference-only** — UNVERIFIED; unknown licence is not a permissive licence |
 
 Copying the file is what the GPL reaches; knowing the fact is not. GPLv3 § 0 is broad
-(*"'Copyright' also means copyright-like laws that apply to other kinds of works"*), which
-is exactly why the rule is a build rule and not a judgement call: no bytes from a
-`rederive-only` source in `data/`, ever.
+(*"'Copyright' also means copyright-like laws that apply to other kinds of works, such as
+semiconductor masks"*) — broad enough to be read as reaching the sui generis database right
+— which is exactly why the rule is a build rule and not a judgement call: no bytes from a
+`rederive-only` source in `data/`, ever, and no mechanical transform of such a file into
+`data/` either, because that is a derivative work regardless of who did the typing. A GPL
+repository goes in `corroborated_by`, never in `source_id`. **A fact obtainable only from a
+`rederive-only` source, and not independently confirmable, is dropped** — a documented gap
+beats a laundered one.
+
+Two consequences of CC BY 4.0 that are easy to miss:
+
+- § 3(a)(2) allows satisfying attribution by a URI, but a DAW plugin may run offline, so
+  `THIRD-PARTY-NOTICES.txt` ships **inside** the bundle and is surfaced in the About panel;
+  the link is a supplement, not a substitute.
+- § 4(b): this project's own layout corpus is itself a database in which the project holds
+  obtaining and verification investment. Incorporating a substantial portion of a CC BY
+  database therefore makes **our database** Adapted Material, so the duty to indicate
+  modification applies at database level, not merely per row. The notices file carries a
+  database-level statement as well as per-source blocks.
 
 ### 6. Trademarks
 
