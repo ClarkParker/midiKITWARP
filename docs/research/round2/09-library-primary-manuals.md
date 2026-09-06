@@ -77,8 +77,23 @@ article HTML directly without a block.
 
 ### 0.2 Environment note that contradicts the brief
 
-The supervisor's correction states that `web.archive.org` is dead in this environment. That
-is not what was observed here on 2026-09-06. Behaviour was **flaky but usable**:
+The supervisor's correction states that `web.archive.org` is dead in this environment, and a
+later correction adds that "Wayback content URLs remain 403". Neither matches what was
+observed here on 2026-09-06, and the difference was checked deliberately rather than
+assumed. Reproducible test, run at 13:09 UTC, three consecutive attempts at the same URL:
+
+```
+curl -L -o wbtest.pdf \
+  "https://web.archive.org/web/20080920202809id_/http://www.toontrack.com:80/updates/manuals/EZdrummer_Operation_Manual.pdf"
+try1: 000 0          <- connection reset
+try2: 200 1095305    <- complete PDF
+try3: 200 1095305    <- complete PDF, byte-identical
+```
+
+The payload is a real 18-page Toontrack PDF whose §4.4 is the EZdrummer key map quoted in
+§2.6 below; it is not a 302, not an error page, and not a bodyless HEAD. The same route
+delivered a 3,500,226-byte Abbey Road 70s manual ZIP that unzips to a valid PDF. So the
+correct advice is neither "dead" nor "works": it is **retry-tolerant**. Behaviour observed:
 
 - Large CDX queries (`matchType=domain` over `toontrack.com`, `native-instruments.com`,
   `sennheiser.com`) fail with `Recv failure: Connection reset by peer` or a 504 from the
@@ -90,7 +105,8 @@ is not what was observed here on 2026-09-06. Behaviour was **flaky but usable**:
   `Superior_Drummer_Operation_Manual.pdf` (3.5 MB), and three Abbey Road manual ZIPs
   (3.4 / 5.0 / 4.5 MB).
 - `WebFetch` against `web.archive.org` **is** refused ("Claude Code is unable to fetch from
-  web.archive.org"). curl is not.
+  web.archive.org"). curl is not. That asymmetry is the most likely explanation for the
+  "dead" report: a worker testing only with WebFetch would see a hard refusal every time.
 
 So: use curl, keep CDX queries narrow, and expect to retry. Four of the rows in the verdict
 table exist only because of that route.
@@ -628,6 +644,7 @@ Checked against `vocabulary/axes.json`, `vocabulary_version` 0.1.0, serial 1.
 | openness | an ordinal-ladder representation | XLN `Open A–D`, GGD `Open 1–3`. Four unnamed steps do not map onto eight named anchors without an assumption |
 | technique | a pedal-force state between `chick` and `foot-splash` | Sennheiser `pressed` vs `closed` vs `loose`; GGD `Pedal Ching` vs `Pedal Chick` |
 | instrument | `sizzle-ride` exists ✓; `chopper` does not | NI Abbey Road Modern Perc 3 |
+| instrument | `mini-ride` | GGD P V Matt Halpern Signature Pack, "R&D Big Bell Mini Ride 15"" — see §5.4 |
 | instrument | material-qualified shakers: `egg shaker`, `metal shaker` | Jamstix IDs 56, 57 — v0.1 has one `shaker` |
 | instrument | a compound "cymbal resting on a drum" | NI `Splash On/Off/Rim`; v0.1's `stack` covers cymbal-on-cymbal only |
 | dynamic | nothing missing, but a note: `Hit Softer` / `Hit Stronger` are *stroke types* in XLN's model | AD2 keymap, brushes column on Ride 1 and 2 |
@@ -658,6 +675,29 @@ v0.1's `technique` axis. The half they do use, they use almost unanimously.
   library; Sennheiser writes `Beach towel`. The slug is right; the alias set is missing.
 
 ---
+
+## 5.4 Where five disputed v0.1 slugs came from
+
+Assigned to this bucket after two other workers found that no manufacturer and no MIDI
+standard uses `ping-shot`, `gok-shot`, `stick-shot`, `mini-china` or `mini-hihat`. The
+question was whether a *library* coined them. Answers, with the evidence chain:
+
+| Slug | Did a library coin it? | Evidence |
+|---|---|---|
+| `ping-shot` | **No.** It entered v0.1 from notation software, not from a library. | MuseScore's shipped drumset file `Marching_Snare_Drums.drm`, note 49 `Ping Shot` — recorded first-hand in round 1, `docs/research/02-notation-oss.md` lines 286 and 966. No vendor document read in this bucket contains the word. |
+| `gok-shot` | **No.** Same origin. | `Marching_Snare_Drums.drm`, note 52 `Gok Shot` — `02-notation-oss.md` lines 286 and 967, which glosses it "rimshot near centre (dark)" against `ping-shot` "rimshot near the rim (bright)". Absent from every vendor document in this bucket. Tapspace, the one marching-percussion sample library with a public knowledge base, returns no results for `gock` (`support.tapspace.com/support/search/solutions?term=gock`, checked 2026-09-06); its own public vocabulary for the same family is "rim shots, buzzes, rim clicks, press strokes, stick clicks" (article 26000029872). |
+| `stick-shot` | **No**, but it is far better attested than the other two, outside this bucket. | SMuFL `pictStickShot` U+E7F0; MuseScore `marching-snare` 57 and `Marching_Snare_Drums.drm` 57; concert-snare technique lists (`docs/research/07-percussion-naming.md` lines 119, 320, 632). In *libraries* the word appears only as a false friend: XLN's snare `Sticks` stroke type (AD2 keymap, MIDI 75) and NI's `Stick Hit` are a stick *click*, not a stick shot. |
+| `mini-hihat` | **Yes — GetGood Drums**, and behind them Meinl. | The GGD Benny Greb Signature Pack product page lists a kit-piece category **"Mini Stack"** containing "Meinl Artist Concept Crasher Hats" and "**Meinl Artist Concept Mini Hats**" — `ggd.co/products/benny-greb-signature-pack`, "Included Kit Pieces", fetched 2026-09-06. So the name is vendor-published, and it originates as a Meinl *product* name that GGD adopted as a kit-piece name. |
+| `mini-china` | **Not established.** No vendor document found using it. | The only occurrences are third-party: a converter's slot labels for GGD OKW Architects (`Mini China Hit` 65 / `Mini China Choke` 66, `docs/research/12-nka-and-jamstix.md` lines 244–245 — and note that dossier attributes the names to the converter, not to the `.nka` payload) and `drum-remap` (`01-existing-converters.md` lines 433, 516, 758). GGD's own Architects page names the small china by model: "13" Zildjian Oriental Trash China", alongside a 19" — `ggd.co/products/one-kit-wonder-architects`. **UNVERIFIED** whether GGD's plugin UI calls it "Mini China"; that string would settle it and is visible only inside the product. |
+
+Two side findings from the same sweep, both from vendor pages:
+
+- GGD's **P V Matt Halpern Signature Pack** kit list includes an "R&D Big Bell **Mini Ride**
+  15"" (`ggd.co/products/p-v-matt-halpern-signature-pack`). v0.1 has `mini-china` and
+  `mini-hihat` but no `mini-ride`, so the diminutive family is minted inconsistently: two of
+  the three members exist, and the one with the best vendor attestation is missing.
+- GGD writes **"X-Hats"** on the same Architects page — "14" Zildjian A New Beat Hi-Hats
+  (X-Hats)" — which is direct vendor attestation for v0.1's `xhat` instrument.
 
 ## 6. Self-critique (round C)
 
