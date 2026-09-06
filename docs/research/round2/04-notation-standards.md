@@ -1179,7 +1179,7 @@ technique-bearing ones, complete by technique word:
 | **Cross Stick / Cross Shot / Stick Click** | Snare Cross Stick, Snare Cross Shot, Snare Section Cross Shots, Stick Click, Stick Clicks |
 | **Flam** | Snare Flam, {Low, Low-Mid, High-Mid, High} Tom Flam |
 | **Roll (kinds)** | Snare Roll, Snare Buzz Roll, Snare Section Buzz Rolls, {…} Tom Buzz Roll, {…} Tom Short Roll, Spock Drum Sustained Buzz Roll, Bass Drum Roll, Bass Drum Unison Rolls, Side Drum Roll, Castanets Roll, Suspended Cymbal Roll, Suspended Cymbal Cresc (Loud) |
-| **Guz** | Snare Guz Short, Snare Guz Long — UNVERIFIED as to meaning, but **verified as to spelling**: the string occurs twice in the page's HTML source, in a table where "Buzz" occurs nine times separately (Snare Buzz Roll, Snare Section Buzz Rolls, four Tom Buzz Rolls, Spock Drum Sustained Buzz Roll). The source is machine-readable vendor HTML, not an OCR'd scan, so this is not a scanning corruption; it is either a distinct Tapspace stroke or a typo in MakeMusic's own documentation. No primary definition found. |
+| **Guz** | Snare Guz Short (53), Snare Guz Long (54) — **attested, undefined**. Not a corruption of "Buzz": the string occurs twice in the page's HTML source in a table where "Buzz" occurs nine times separately (Snare Buzz Roll, Snare Section Buzz Rolls, four Tom Buzz Rolls, Spock Drum Sustained Buzz Roll), the source is machine-readable vendor HTML rather than a scan, and bucket 08 independently confirms it as a real entry in Tapspace's Virtual Drumline map for Finale at the same two note numbers. Tapspace is its sole source: searches across VDL documentation, drumline glossaries, technique manuals and snare pedagogy return no definition. Record it as a shipping product's own term whose physical meaning is unknown. |
 | **Shake / Snap / Multi Shake** | Tambourine Shake, Shekere High Shake, Shekere Low Shake, Cabasa Multi Shake, Egg Shaker Multi Shake, Cabasa Snap |
 | **Scratch Push / Scratch Pull** | Scratch Push, Scratch Pull |
 | **Fingertips** | Djembe Fingertips |
@@ -1331,7 +1331,7 @@ MuseScore and Weinberg have no concept of which part of the stick lands.
 | Dead Stroke (on conga, djembe, darbuka, bata, tumba, super tumba, quinto, surdu, tabla) | Finale Note Types (§2.11) | dead |
 | Bass Tone, Slap, Mute, Fingertips | Finale Note Types (§2.11) | bass-tone, slap, muted, implement finger |
 | Scratch Push, Scratch Pull | Finale Note Types (§2.11) | scrape + a direction that has no axis (§3.14) |
-| Snare Guz Short, Snare Guz Long | Finale VDLite Marching map (§2.11) | UNVERIFIED — no primary definition found |
+| Snare Guz Short, Snare Guz Long | Finale VDLite Marching map (§2.11); confirmed by bucket 08 as a Tapspace Virtual Drumline term | attested but **undefined** — a real vendor term whose physical meaning no published source gives |
 | Slap / Open / Bass | MuseScore djembe and doumbek entries | slap, open-tone, bass-tone |
 | martellato, martellato lift, hand martellato, muted martellato, mallet lift, mallet table, pluck lift, swing, echo, gyro, belltree, damp | SMuFL handbells U+E810–U+E821 and MusicXML `handbell-value` | **NEW — handbell family, unminted** |
 | `slap`, `pressed`, `choke`, `scrape`, `ping`, `sizzle`, `cracked` | Sibelius id elements | slap, **NEW pressed**, **NEW choke**, scrape, ping-shot, — , — |
@@ -1455,7 +1455,10 @@ and a scrape from edge to centre are different sounds. KITWARP has `technique = 
 nor *which way round*. What is needed: either a direction qualifier (in/out, cw/ccw) or a
 second site slot (`site_from`, `site_to`). Finale adds an independent fifth witness with the
 Note Types **Scratch Push** and **Scratch Pull** (§2.11), where the direction is the *only*
-thing distinguishing the two. **A missing axis, on the evidence of five separate sources.**
+thing distinguishing the two. A sixth comes from outside the notation standards: the marching
+**zing**, which six sources (via bucket 08) define as a scrape of one cymbal plate's edge along
+the other's bow **bell outward** — the direction is part of the definition, not a performance
+detail. **A missing axis, on the evidence of six separate sources.**
 
 **(b) Two-phase gestures ("lift").** `handbellsMartellatoLift` (U+E811),
 `handbellsMalletLft` (U+E816), `handbellsPluckLift` (U+E817), MusicXML `handbell-value`
@@ -1471,21 +1474,23 @@ SMuFL `pictCrashCymbals` (U+E720). Here the instrument *is a pair of plates* and
 describes how the two plates meet each other — there is no implement striking a site, so
 `site`, `contact` and `implement` are all empty and `technique` would have to carry the whole
 distinction. v0.1 has no hand-cymbal instrument and no vocabulary for plate-against-plate
-contact. A targeted search for "zing", "smash", "crunch" and "suc" as marching-cymbal terms
-returned a **negative result**: none of them appears in any reached source, while the corps
-technique packets that would carry them (Grand Valley State University and Rhythm Armada cymbal
-packets, Ohio State marching percussion fundamentals, Pearce's "Marching Cymbals 101") document
-a different vocabulary — Garfield grip, lock technique, V crashes, chokes. Treat the individual
-names as vendor coinages until a marching primary source says otherwise; the *family* is real,
-because Finale enumerates it independently. Bucket 08 (marching percussion) owns the resolution
-and has the same leads.
+contact. **`zing` is not a vendor coinage and is no longer marked UNVERIFIED**: bucket 08, which
+owns the corps technique packets, finds it defined in six institutionally independent
+non-Tapspace sources (Grand Valley State University, Rhythm Armada, Oregon State, PCHS, Missouri
+State, and a marching-cymbal technique site), all describing the same gesture — **a scrape of one
+plate's edge along the other plate's bow, bell outward**. On that definition `zing` belongs to
+this section twice over: it is plate-against-plate contact (no implement, no site in the v0.1
+sense) *and* a scrape with a stated direction (§3.14(a)). `suc` has four sources naming it plus
+Ohio State corroborating the mechanism without the name; `crunch` has two; only `smash` under
+that name still rests on a single packet. Bucket 08 holds the definitions.
 Finale independently enumerates the same family from a different vendor's library:
 **Crash Cymbals Crash / Click / Ding / Choke Fat** and **Cymbal Section Crash / Click / Crunch
 Choke / Hi-Hat Choke** (§2.11), where "Click" and "Ding" are edge-to-edge contacts and "Crunch"
 is a full plate-to-plate press. Two independent sources enumerating a family v0.1 cannot hold
 at all is the strongest case in this section for a new instrument plus its own technique set.
-UNVERIFIED: whether "Zing" and "Smash" are standard PAS marching terms or MuseScore's own; they
-are not in Weinberg 1994.
+Neither term is in Weinberg 1994, but that is a limit of Weinberg's scope (drumset), not evidence
+against them: `zing` is corroborated by six marching sources (above) and only `smash` remains
+single-sourced.
 
 **(d) Stroke length as identity.** MusicXML Standard Sounds and LilyPond both mint two
 instruments where there is one instrument and two stroke lengths: `shortguiro`/`longguiro`,
@@ -1635,7 +1640,8 @@ Read against `vocabulary/axes.json` at vocabulary_version 0.1.0, vocabulary_seri
 | technique | **choke** | SMuFL `pictChokeCymbal` "Choke (Weinberg)" U+E805; Guitar Pro `stick.hit.choke` on five instruments; Sibelius `choke` in 13 ids; MuseScore Crash-Choke, Tap-Choke, Bell Tap-Choke; Finale Crash Cymbals Choke Fat, Cymbal Section Crunch Choke, Cymbal Section Hi-Hat Choke, Suspended Cymbal Short/Fat Choke w/ Stick; Weinberg 1994 p. 21 (cut-off notation). Six independent sources. **Precisely stated**: `choke` does exist in the repository, but only in `vocabulary/rules.json` as a *relation* inside one decomposition (`splash.hit` → `crash.hit` + `crash.hit` with `"relation": "choke"`, reason "a splash is close to a choked crash: hit, then choke an eighth later"). That lets the resolver *synthesise* a choke; it gives a source file no way to *state* one. A choked crash in a MusicXML, Dorico, Finale, MuseScore or Guitar Pro file has nowhere to land. **The single clearest gap in this bucket.** |
 | technique | **return** (back-stroke of a shaken or scraped instrument) | Guitar Pro `hand.hit.return` (tambourine, cabasa, maraca, shaker), `stick.hit.return` (bell tree), `stick.scrape.return` (guiro) |
 | technique | **pressed** | Sibelius `pressed` (10 ids); SMuFL `pictCrushStem` "Combining crush for stem" is the same family |
-| technique | **tap**, **bell-tap**, **muted-tap**, **half-crash**, **full-crash**, **smash**, **zing** | MuseScore `marching-cymbals` — but see §3.14(c): these need a hand-cymbal instrument first |
+| technique | **zing** | the best-corroborated new term in this bucket: MuseScore `marching-cymbals` and Finale's Cymbal Section types from the notation side, plus six institutionally independent marching sources (via bucket 08) agreeing on the definition — a scrape of one plate's edge along the other's bow, bell outward. Needs a hand-cymbal instrument and a scrape direction to be expressible at all (§3.14(a), (c)). |
+| technique | **tap**, **bell-tap**, **muted-tap**, **half-crash**, **full-crash**, **crunch**, **suc**, **smash** | MuseScore `marching-cymbals` and Finale Cymbal Section / Crash Cymbals types — but see §3.14(c): these need a hand-cymbal instrument first, and their corroboration outside the two programs varies (`suc` four sources, `crunch` two, `smash` one). Bucket 08 owns the definitions. |
 | ornament | (none missing) | flam, drag, ruff, bounced, roll, buzz, crescendo, swell, wash cover everything found |
 | damping | **pressed** or a rename note | as above |
 | implement | **fist**, **fingernail** | MusicXML `beater-value` `fist`, `fingernail`; SMuFL `pictBeaterFist` U+E7E5, `pictBeaterFingernails` U+E7E6. **Resolved:** `vocabulary/axes.json` at serial 1 holds exactly 14 implement values and neither is among them; the round-2 brief listed them because it was written from an earlier axis sketch rather than from the minted file. The file is authoritative, so these are genuine gaps. |
@@ -1765,6 +1771,16 @@ score file, and must come from hardware or library sources instead:
    but not extracted, because bucket 12 owns the language axis and duplicating it here would
    waste the reconciliation pass's time. The one language finding worth carrying over is
    `Charley` for hi-hat in the Guitar Pro data model (§4).
+
+**A method note that cost this bucket two wrong statements.** Both concerned terms whose home is
+another bucket's literature — the Tapspace stroke `guz` and the marching-cymbal `zing` — and in
+both cases an empty search from *here* was written down as a property of the *literature*. It was
+not: bucket 08, which owns the corps packets and the Virtual Drumline documentation, had `guz` as
+a real shipping term and `zing` defined in six independent sources. The rule this bucket should
+have followed, and now records for the reconciliation pass: **a term found in a notation program's
+data but not in notation literature is not thereby unverified — it is out of this bucket's
+scope, and belongs to whichever bucket owns its tradition.** Say "not attested in the notation
+standards", never "unverified", when the term is plainly a trade term from elsewhere.
 
 **Weaknesses in what is here.**
 
