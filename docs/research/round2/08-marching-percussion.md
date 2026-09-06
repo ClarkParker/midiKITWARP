@@ -160,6 +160,16 @@ primary (a program's own technique packet — written by the people who use the 
 | 47 | Google Books API, `q="gock shot"` and `q="gock" marching snare` | Google | — | search API | `https://www.googleapis.com/books/v1/volumes` | — | **no — HTTP 429, daily project quota exhausted** |
 | 48 | **Marching Fundamentals**, percussion section | The Ohio State University Marching Band (TBDBITL) | 2019 rev. | teaching manual | `https://tbdbitl.osu.edu/sites/tbdbitl.osu.edu/files/fundamentals-percussion.pdf`, §D "Instrument Playing Position" | T | yes — names five cymbal **positions** (Traditional, Vertical A/V, Traditional hi-hat, **Gumption**, **Punch**) and no effect sounds |
 | 49 | Marching Cymbals 101 | Corey Pearce | n.d. | course outline | `https://coreypearce.com/marching-cymbals-101` | T | yes — **negative result**: a lesson index naming grips, positions and flips (Garfield Grip, Pistol Grip, Port, Set, Carry, Wrist Rolls, Sones Flips) with no sound definitions at all |
+| 50 | *Basic Snare Drum Technique*, 13 pp | Thom Hannum, published free by Pearl | 2019 | pedagogy primer | `https://pearldrum.com/sites/default/files/2019-10/basic-snare-drum-technique.pdf` | P | yes — **negative result**, see §2.5.1 |
+| 51 | "Backsticking — A Drumming Technique Institutionalized by John Dowlan" | Ellis Mirsky, *Field Drums* | 2008-12-28 | research blog quoting two primary sources | `http://www.fielddrums.com/2008/12/backsticking-drumming-technique.html` | S→P | yes |
+| 52 | "Was Carrington Backsticking in the 1870s? YES!" | Ellis Mirsky, *Field Drums* | 2009-01-03 | ditto | `http://www.fielddrums.com/2009/01/was-carrington-back-sticking-in-1870.html` | S→P | yes |
+| 53 | "The Baron of Backsticking" | Joe Marrella, *Drum Corps World* Vol. 36 No. 15 | 2007-12 | trade periodical | quoted verbatim in sources 51 and 52 | P | via quotation |
+| 54 | Official biography of John Dowlan | World Drum Corps Hall of Fame | n.d. | association record | quoted verbatim in source 51 | P | via quotation |
+| 55 | Lithograph, "A.R. Carrington, champion drum soloist, 1870s" | Armstrong & Co., Boston | 187‑ | image, primary artefact | New York Public Library, Mid-Manhattan Picture Collection, call no. `PC MUSIC-Dru`, Digital ID 832408, Record ID 1062097 | P | described in source 52, image not viewed |
+| 56 | *Utica New York Observer*, 1878-07-03, review of A.R. Carrington | — | 1878 | newspaper | quoted verbatim in source 52 | P | via quotation |
+| 57 | *New York Clipper*, 1879-07-19, p. 185 col. 5, Carrington advertisement | — | 1879 | newspaper | cited in source 52 | P | not viewed |
+| 58 | Wikipedia, **Casey Claw** | — | rev. 2026 | tertiary | `https://en.wikipedia.org/wiki/Casey_Claw` | X | yes |
+| 59 | "Percussion MIDI Maps: Tapspace Virtual Drumline", Finale 2014 Mac edition | MakeMusic / Finale | ~2014 | vendor manual | `https://usermanuals.finalemusic.com/Finale2014Mac/Content/Finale/PercussionMaps3.htm` | V | yes — third Finale edition carrying `Snare Guz Short` (53) / `Snare Guz Long` (54) |
 
 Searches run in round A (18, all distinct): `"gock" marching snare rimshot`; `PAS marching
 percussion terminology standard glossary`; `MuseScore Drumline MDL Tapspace`; `"spock
@@ -319,9 +329,33 @@ Tenorline" (source 14), `Spock 2 hits` sit at MIDI 73/74 and `Spock 1 hits` at 7
 the highest of the four**. In "VDL for Garritan Bassline", `Drum 1` is at 75/76 and
 `Drum 6` at 65/66 — **bass drum 1 is the highest/smallest**. The Finale "VDLite Finale
 Marching Percussion" combined map (source 13) also contains `Snare Guz Short` (53) and
-`Snare Guz Long` (54); "guz" appears in no other source reached, and its meaning is
-**UNVERIFIED** (the position in the map, where the Manual instruments carry `FAT crush` /
-`DRY crush`, suggests guz ≈ crush, but that is inference, not a finding).
+`Snare Guz Long` (54) — see §2.4.1.
+
+### 2.4.1 `guz` — a shipping term with no published definition anywhere reachable
+
+Recorded as a bounded negative rather than a guess, because that is a citable state.
+
+**Where it exists.** `Snare Guz Short` at MIDI 53 and `Snare Guz Long` at MIDI 54, in the
+"VDLite Finale Marching Percussion" combination map. Confirmed in **three** editions of the
+Finale user manual, all carrying the identical pair at the identical pitches: Finale 2012
+Windows, Finale Mac, and Finale 2014 Mac (sources 13 and 59). So it has been shipped by
+MakeMusic in a released product across at least three editions.
+
+**Where it does not exist.** Not in Tapspace's own 112-page *VDL 2.5 User Guide* — the
+SnareLine keymaps carry `FAT crush` and `DRY crush` in the region where the combination map
+puts guz, but never the word. Not in the VDL-for-Garritan maps. Not in any of the five
+technique packets, the two technique manuals, Blakley's glossary, drumming.com's 250-term
+glossary, or the Wikipedia snare articles. The supervisor ran two further searches across
+VDL documentation, drumline glossaries, technique manuals and snare pedagogy and found
+nothing that defines it.
+
+**Status.** A real term in a shipping product map with **no published definition anywhere
+reachable**. Its map position, adjacent to where the Manual instruments place `FAT crush` /
+`DRY crush`, and its Short/Long pairing, which every other VDL sustained articulation uses
+for length, together suggest `guz ≈ crush`. That is inference and is recorded as
+**UNVERIFIED**; it is not a finding and must not be minted as one. Tapspace is the sole
+source, which puts `guz` in the same bracket as `gok-shot`, `smash`, `crunch-choke` and
+`Half Crash` (§5.1 item 5).
 
 ### 2.5 Marching snare stroke names in the pedagogical and reference literature
 
@@ -342,6 +376,82 @@ Marching Percussion" combined map (source 13) also contains `Snare Guz Short` (5
 | **rimshot** | "played by simultaneously hitting the drum head and drum rim together with the implement" | ibid., s.v. Rimshot |
 | **Ping Shot**, **Full Shot** | used as written performance directions above the snare stave in a college warm-up | SUU Drumline 2025 Exercise Packet, exercise at rehearsal figures 23 and 25 |
 | **backsticking, crossovers, stick tosses** | grouped together as "embellishments" that "were developed in and originated in the North American drum & bugle corps activity" | Wikipedia *Marching percussion*, wikitext line 24 |
+
+### 2.5.1 `back-stick` — a dated provenance chain, and the oldest evidence in this bucket
+
+Raised because the rudiments bucket reports `back-stick` as unattested in any source it
+reached. It is attested, and better than any other term here: it has a named inventor, a
+date, an institution, and a nineteenth-century artefact.
+
+**The received account.** Joe Marrella, "The Baron of Backsticking", *Drum Corps World*
+Vol. 36 No. 15, December 2007, quoted verbatim by Mirsky:
+
+> "Believe it or not, BackSticking was developed in 1938 by its creator as a method to
+> improve a drummer's left hand. The first BackSticking exercise was accenting triplets.
+> The technique was first taught to the Air Force snare drum section in 1958 by my dear
+> friend, my mentor, my instructor … His name is John Dowlan. To me, he is the 'Baron of
+> BackSticking'."
+
+**The institutional record.** World Drum Corps Hall of Fame, official biography of John
+Dowlan, quoted verbatim by Mirsky:
+
+> "In 1935, John joined the Osmond Post Cadets Junior Corps in Philadelphia as a rookie
+> drummer … It was during this time John also developed and refined his practice techniques
+> commonly known today as BackSticking." … "In 1957, John was selected by M/Sgt Truman
+> Crawford to teach and arrange percussion for the drum line of the USAF Drum Corps,
+> Washington, DC. While there the Air Force drummers introduced the World to John's
+> BackSticking Techniques."
+
+Mirsky adds his own dating of the technique's spread: "I first saw backsticking during a
+visit to a rehearsal of the New York Skyliners at the 369th Regiment Armory … sometime in
+the early 1960s … At the time it was revolutionary."
+
+**The pre-1938 evidence.** Mirsky's follow-up article overturns the 1938 date using an
+artefact: an Armstrong & Co. (Boston) lithograph, *"A.R. Carrington, champion drum soloist,
+1870s"*, NYPL Mid-Manhattan Picture Collection, call number `PC MUSIC-Dru`, Digital ID
+832408, Record ID 1062097. He writes:
+
+> "it is now clear that some form of the technique was practiced by A.R. Carrington some 60
+> years earlier than 1938, in the 1870s, as evidenced by the drawing illustrating
+> Carrington's right hand in the middle of a backsticking flip."
+
+Corroborated by a contemporary review, *Utica New York Observer*, 3 July 1878:
+
+> "The manner in which he handles the drum-sticks is something marvelous … During his most
+> rapid performance a drum stick would be seen whirling in the air, or would be thrown from
+> behind up under one leg, and caught, the most exact time being kept the while."
+
+**What this fixes.** `back-stick` is not a vendor coinage. It is a named technique with a
+1930s inventor, a 1958 institutional debut through the USAF Drum Corps, and iconographic
+evidence from the 1870s. It also confirms the classification MuseScore's own 2013 name
+implied: the 1878 review describes *stick tosses in the same breath*, and MuseScore called
+pitch 60 `Visual (BS,X-Over,Etc)` until 2025. Backsticking is a visual technique that
+happens to sound.
+
+**Casey Claw** (Wikipedia, *Casey Claw*) is the sharpest statement of why `contact` needs
+`butt` as a first-class value: "the first note of every right hand double is played with the
+'butt' end of the drum stick and the very next note of the double is played with the tip".
+Created by Mark Casey in 1990 at the University of Kentucky, first performed at DCI in 1993,
+performed by the Cavaliers 1994, 1995 and 2023. The article also records a grip the model
+cannot express: "The stick is held with the right hand in the middle of the stick … held in
+a fist, where all the fingers wrap around the stick". The round 2 brief lists `fist` among
+the `implement` values; `axes.json` v0.1 does not contain it (see §5.2).
+
+### 2.5.2 Negative result: Thom Hannum, *Basic Snare Drum Technique*
+
+Hannum is among the most cited marching pedagogues in the United States (University of
+Massachusetts; Star of Indiana), and Pearl publishes this 13-page primer free. Its sections
+are: Stand Assembly and Instrument Position · Tuning and Stick Selection · Grip Guidelines
+and Posture · Stroke Motion, Rebounds, and Stick Heights · Multiple Bounce · Flams ·
+Single-double-triple beats · Music Reading · Practice Tips.
+
+It names **none** of `backstick`, `rimshot`, `ping`, `gock`, `stick shot`, `cross stick`,
+`rim click`, `shell` or `crush`. Its only relevant vocabulary is "striking area (center of
+the drum head)" and "multiple bounce, or buzz roll". This is a genuine finding, not a failed
+fetch: **the standard free primer by a leading marching authority is about grip, stroke and
+rudiment, and does not name striking positions or stroke variants at all.** The
+position-and-variant vocabulary this bucket documents lives in sample-library keymaps and in
+individual programmes' packets, not in general snare pedagogy.
 
 Three separate authorities therefore describe the *ping / normal / gock* triple as a
 **striking-position family within the single technique "rimshot"**: the variable is how far
@@ -469,7 +579,7 @@ and Corey Pearce here.
 | `Gok Shot` (snare .drm 52) | Muse Drumline via `c7dc55ea2d`; field term is **gock / gawk**, defined by Wikipedia *Rimshot* line 16 as a rimshot with the bead at the drum's centre; **also** a name for the small tenor drum ([Wikipedia *Marching percussion*] line 64, Blakley) | **Meaning yes, spelling no.** It is placed in the snare set as a rimshot variant, which is the correct sense; but "Gok" is a single-vendor spelling attested nowhere outside MuseScore/Muse Drumline. Tapspace's 112-page manual never uses the word at all. |
 | `Ping Shot` (snare .drm 49) | Wikipedia *Rimshot* line 15; used as a written performance direction in the SUU 2025 packet; **`Ping Shot` is a literal Tapspace VDL articulation name** (VDL guide pp. 24–28) | **Yes.** Name, spelling and meaning all match the vendor and the literature. |
 | `Rim Shot` (snare .drm 51, instruments.xml 52) | VDL `RIM SHOTS`; Wikipedia line 14; Blakley | **Yes**, but the model loses the ping/normal/gock distinction being *positional*: all three are rimshots. |
-| `Back Stick` / `Backstick` (60) | VDL `Backsticks`, `RH/LH backstick`; Wikipedia *Backsticking*; Blakley | **Yes.** Note the archaeology: MuseScore called pitch 60 `Visual (BS,X-Over,Etc)` from 2013 until `0ce0df221b` (2025-01-28). The 2013 name was the more honest one — the literature classes backsticking as a *visual* embellishment alongside crossovers and stick tosses. |
+| `Back Stick` / `Backstick` (60) | VDL `Backsticks`, `RH/LH backstick`; Wikipedia *Backsticking*; Blakley; and the full dated chain in **§2.5.1** — Marrella in *Drum Corps World* 2007, the World Drum Corps Hall of Fame bio of John Dowlan, and an 1870s NYPL lithograph | **Yes, and it is the best-sourced term in the bucket.** Note the archaeology: MuseScore called pitch 60 `Visual (BS,X-Over,Etc)` from 2013 until `0ce0df221b` (2025-01-28). The 2013 name was the more honest one — an 1878 newspaper review of A.R. Carrington describes backsticking and stick tosses in the same sentence. |
 | `Stick Shot` (57) | VDL `Stick Shot`, `Stick shot HIGH` / `Stick shot LOW`; Wikipedia *Rimshot* line 20; SMuFL `pictStickShot` U+E7F0 | **Yes.** MuseScore has one stick shot; VDL distinguishes two heights. |
 | `Cross Stick` (snare .drm 56) | VDL calls it `Cross stick Rim Knock`; Wikipedia line 22; Blakley gives **two** senses | **Partly.** MuseScore ships `Cross Stick` (56) and `Rim` (53) in the `.drm` but `Rim Click` (53) and no cross stick in `instruments.xml`. The two files disagree about pitch 53. |
 | `Rim` / `Rim Click` (53) | Blakley s.v. Rim Click; VDL `RIMS` and `Rim Knock` | **Yes** for meaning; the two MuseScore files name the same pitch differently. |
@@ -678,7 +788,9 @@ are reserved and unminted. Against that baseline:
    `gok-shot` (§0), the corroboration audit in §2.7.1 leaves four cymbal names resting on
    one source each. Any term minted from them must carry `confidence` accordingly:
    `smash` — PCHS handbook p. 12 only, under that name; `crunch-choke` as a compound —
-   Tapspace VDL p. 38 only; `whale-call` — Tapspace only; `weedwacker` — GVSU only. And
+   Tapspace VDL p. 38 only; `whale-call` — Tapspace only; `weedwacker` — GVSU only;
+   `guz` — Tapspace only, and with **no published definition at all** (§2.4.1), so it must
+   not be minted on the crush inference. And
    `Half Crash`, which MuseScore has shipped since 2013, is attested in **no source
    reached at all** and should not be minted without one. By contrast `zing` (6 independent
    sources), `suck` (4 plus a mechanism corroboration) and `ding`/`bell-tap` (3 with
@@ -733,9 +845,10 @@ is a mechanism value or an equipment sound.
 distinct from `rod`), **`felt`** (VDL `RH felt` on snare), **`puffy-mallet`** (VDL's
 keyswitched alternative bass/tenor mallet), **`aluminum-mallet`**, and **`plate`** /
 **`cymbal-on-cymbal`** for the entire marching cymbal line — where the implement *is*
-another cymbal. Note the brief lists `fist` and `fingernail` in the model description but
-`axes.json` v0.1 does not contain them; that discrepancy is worth a check by the
-reconciliation pass.
+another cymbal. The brief lists `fist` and `fingernail` in the model description but
+`axes.json` v0.1 contains neither. The Casey Claw is direct marching evidence that `fist`
+is needed — "held in a fist, where all the fingers wrap around the stick" (§2.5.1) — so
+this is a real omission, not just a drafting slip in the brief.
 
 `dynamic` — no gap.
 
@@ -804,13 +917,19 @@ authority for `split part`.
   not located; `musehub.com/muse-sounds/muse-drumline` was identified but not fetched. Its
   articulation list would show whether `Gok`, `Suc`, `Ting` and `Punch` are Muse Drumline's
   spellings or MuseScore's transcriptions of them.
-- **Pre-MIDI literature.** Bruce & Emmett 1862 is on IMSLP and was not fetched. It predates
-  every term in this bucket — gock, ping, spock, backstick and the whole marching cymbal
-  vocabulary are 20th-century American drum corps coinages, and 19th-century rudimental
-  manuals name *beats*, not *strokes at positions*. That is a defensible reason to skip it,
-  but it means this bucket contributes nothing to the "era" axis the brief asked for. The
-  reconciliation pass should note that **the marching bucket is the youngest vocabulary in
-  round 2**: nothing here is older than about 1970.
+- **Pre-MIDI literature.** Bruce & Emmett 1862 is on IMSLP and was not fetched. An earlier
+  draft of this dossier claimed the bucket contributes nothing to the era axis because
+  nothing here predates about 1970. **That was wrong and is corrected in §2.5.1.**
+  Backsticking has a documented 1930s invention (John Dowlan, Osmond Post Cadets, from
+  1935), a dated institutional debut (USAF Drum Corps, 1957–58), and iconographic evidence
+  from the 1870s in an Armstrong & Co. lithograph of A.R. Carrington held by the New York
+  Public Library, corroborated by a *Utica New York Observer* review of 3 July 1878. So one
+  term in this bucket reaches back 150 years. The rest — gock, ping, spock, skank, and the
+  marching cymbal effect vocabulary — do still look like post-1960 American drum corps
+  coinages, but that is now an observation about those terms rather than about the bucket.
+  Bruce & Emmett would still be worth fetching: 19th-century rudimental manuals name
+  *beats*, and confirming that they name no striking positions would firm up §2.5.2's
+  finding that position vocabulary is a sample-library phenomenon.
 - **German, French, Italian and Spanish.** Searched, deliberately, and found **nothing**.
   German *Spielmannszug* / *Marschtrommel* literature and French *batterie-fanfare*
   literature describe grip, roll and rudiment but have no equivalents for gock, ping, spock,
@@ -837,8 +956,10 @@ authority for `split part`.
    in the snare table has vendor or teaching-packet backing; gock does not. This is the
    bucket's central negative finding and it is stated plainly in §0 rather than smoothed
    over: `ping-shot` and `stick-shot` have authorities, `gok-shot` does not.
-2. "guz" (Finale's VDLite map, notes 53–54) is recorded but not explained. It is the one
-   term in this bucket I found and could not define.
+2. "guz" (Finale's VDLite map, notes 53–54) is recorded but not explained — now bounded in
+   §2.4.1 rather than merely noted: confirmed in three Finale editions, absent from
+   Tapspace's own manual and from every glossary and packet reached, and absent from two
+   further supervisor searches. A shipping term with no published definition anywhere.
 3. The bass-line numbering rule is triangulated from three artefacts rather than quoted.
 4. Marching cymbal terminology is drawn from five teaching packets, which are primary for
    the programmes that wrote them but are not standards. The disagreement between them
