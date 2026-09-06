@@ -67,6 +67,11 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | R32 | drummerforum.de thread 74875, "Technik-Fragen Basler Trommeln" | forum, German | trade | `https://www.drummerforum.de/forum/thread/74875-...` | cite-only | reached; exactly one term (`Doublé`) recovered |
 | R33 | Studio Drum MTL, "Best Resources for Learning the Brushes" | bibliography | secondary | `https://www.studiodrummontreal.com/post/best-resources-for-learning-the-brushes-a-helpful-guide` | cite-only | reached via WebFetch; 7 books + 5 videos named |
 | R34 | IMSLP, **Bruce & Emmett, _The Drummer's & Fifer's Guide_**, Wm. A. Pond & Co. | book, 1862 (this ed. 1865) | primary | `https://imslp.org/wiki/The_Drummer's_&_Fifer's_Guide_(Emmett,_Daniel_Decatur)`, file `PMLP1013283-b-e-guide.pdf`, 96 pp., 6.11 MB | public domain → free | **metadata reached, PDF not downloaded** |
+| R38 | **Hart, Col. H. C., _Col. H.C. Hart's New and Improved Instructor for the Drum, with Original Notation_** | book, 1860 (the manual R04 dates 1862) | primary | archive.org id `colhchartsnewimp00hart`, OCR `_djvu.txt`, 44 457 B | public domain → free | **reached in full**; four-primitive alphabet, §2.3b |
+| R39 | **Nevins, William (with A. J. Vaas), _Army Regulations for Drum, Fife and Bugle_** | book, 1864 | primary | archive.org id `armyregulationsf00nevi`, OCR `_djvu.txt`, 28 631 B | public domain → free | **reached in full**; the 30-item "Drum School" gamut, §2.3b |
+| R40 | Greissinger, F. Henri, _Instructions for the Trumpet and Drum_ | book, 1900 | primary | archive.org id `instructionsfor00smitgoog`, 45 877 B | public domain → free | reached; not yet mined |
+| R41 | Straight, Edward B., _Straight's Modern Syncopated Rhythms for Drums_ | book, 1922 | primary | archive.org id `StraightsModernSyncopatedRhythms`, 180 676 B | public domain → free | reached; not yet mined |
+| R42 | Peinkofer, Karl / Tannigel, Fritz, _Handbook of Percussion Instruments_ (English translation of N17) | handbook, 1976 | normative-in-German, in translation | archive.org ids `handbookofpercus0000pein`, `handbookofpercus0000karl` | in-copyright, lending-restricted → cite-only | **located, not opened** — this is the reachable route to N17 |
 
 ### 1.2 Reached only as an abstract (paywall)
 
@@ -110,11 +115,15 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | N28 | Dawson, Alan, "Rudimental Ritual" | curriculum, primary | the Berklee kit application of the rudiments | in print |
 | N29 | Freytag, _Rudimental Cookbook_ (1993); Delucia, _Percussion Discussion_ (1995); Wooton, _Rudimental Remedies_ (2010); Bachman, _Rudimental Logic_ (2010) | books, primary | where hybrid naming actually happened | in print |
 
-**Register totals:** 37 candidates reached in full or as abstract, 29 named and not reached,
-66 rows. Two access facts worth carrying forward: `web.archive.org` **content** is
-unreachable from this environment even though its availability API is not, and
-`archive.org/download/<id>/<id>_djvu.txt` **is** reachable — that is how R03 was obtained and
-is the cheapest route to any other pre-1929 drum manual.
+**Register totals:** 42 sources reached in full or as an abstract, 29 named and not reached —
+71 distinct sources, 75 register rows (R22 carries four sub-articles). Ids R35–R37 sit in §1.2
+and R38–R42 in §1.1 because the latter were added after the register was first closed; ids are
+not renumbered.
+
+Two access facts worth carrying forward: `web.archive.org` **content** is unreachable from
+this environment even though its availability API is not, and
+`archive.org/download/<id>/<id>_djvu.txt` **is** reachable — that is how R03, R38, R39, R40
+and R41 were obtained, and it is the cheapest route to any other pre-1929 drum manual.
 
 ---
 
@@ -229,6 +238,97 @@ The OCR of the engraved rudiment titles is partial (they are images in a lithogr
 so the 25-item list is taken from R04's transcription and only the items above are confirmed
 from the scan itself. Marked accordingly below.
 
+### 2.3b The Civil War layer — two manuals that name the *sound*, not the pattern
+
+This is the richest find of the bucket for KITWARP specifically, because both manuals below
+were written before any standard list existed and both therefore had to name the elementary
+sound events from scratch. Both were obtained in full from archive.org OCR.
+
+#### Hart 1860 (R38) — a four-character alphabet
+
+Hart states the design decision verbatim (lines 66–76):
+
+> "all Blows, Taps, Flams, or Single Beats have but **one length of sound** on the Drum,
+> therefore I would use but **four principal characters** in drumming, from which originate
+> all the beats necessary to a perfect performance of any piece of music on the Drum, to wit,
+> **a blow, a flam, a three roll closed, and a rest**"
+
+That is a pivot vocabulary from 1860: one plain stroke, one 2-attack ornament, one
+3-attack ornament, and silence. Every other figure in the book is said to *originate from*
+these four.
+
+Hart then grades each character on two independent scales (lines 133–166):
+
+| Character | Weight / duration grade | Hart's own word |
+|---|---|---|
+| full flam / full blow / three roll closed / full rest | quarter-note weight | "beat **heavy**" |
+| hard, quick flam / hard, quick blow / half rest | eighth-note weight | "hard, quick" |
+| full **open** flam / full **open** blow / full **open** three roll | quarter-note duration | "executed **soft and light**" |
+| small open flam / small open blow | eighth-note duration | soft and light |
+
+**`open` in Hart means soft, not un-closed.** The notation carries it through: a soft roll is
+written with an "**open figure**" numeral — an open 7, an open 5, an open 9, an open 11 — while
+the same roll played normally uses a solid numeral. See §4.1.
+
+Other Hart facts with locators:
+
+| Fact | Locator |
+|---|---|
+| "beat square upon the head of the drum, and **as near the center of the head as possible**, make **no drawing strokes or sideway beats** in no case whatever, although it has been recommended by many professional teachers of drumming" | lines 116–121 — a striking-position rule *and* a documented disagreement about the lateral stroke |
+| all motion "by turning or rolling the wrists, and not by motions of the arms or shoulders" | lines 124–128 |
+| "The **Three Roll open** is performed by striking two hard, quick blows with the left, then one full blow with the right … until perfected in a **closed three Roll**", "the two first blows appearing to be nearly silent, as they in fact are when closed to the fine" | Lesson III — the drag/ruff as an **open↔closed continuum**, not two figures |
+| "The **Flam** is performed by striking a **very soft, fine blow** with one hand, and a **full heavy blow** immediately following with the other" | Lesson IV — the flam defined purely as a dynamic relation between two attacks |
+| "the **full and half Flam**, both heavy and light" | Lesson IV — a two-step size grade on the flam itself |
+| "Those representing the **left hand flams are on the upper line**, and those for the **right hand on the lower line**" | Lesson IV — hand encoded in notation, as in Strube |
+| "A **light accent** should be placed on the **last blow** of the Five Roll, as well as **all other Rolls** used" | Lesson VI |
+| named rolls: two Stroke or Long Roll, Single Stroke (the "Single Blow Exercise"), Three Roll (open and closed), Seven Roll, Five Roll, Nine Roll, Eleven Roll, Fifteen Roll | Lessons I–VIII |
+| named beats that did **not** survive into any modern list: "**Compound Double Drag Beat**", "**Triple Compound Drag Beat, or the Seven Quick Single Blows**", "**Paradiddle Drag Beat**", "**Reversed Flam Paradiddle**", "**Double Drag Beat, Three Roll**" | lines 909–1013 |
+
+#### Nevins 1864 (R39) — the 30-item "Drum School" gamut
+
+The full numbered gamut, verbatim spelling (the drum notation is printed on the lower of two
+staves, ordinary notation on the upper):
+
+1 LONG ROLL (written out) · 2 FIVE STROKE ROLL · 3 SEVEN STROKE ROLL · 4 SEVEN STROKE ROLL:
+Faint, or Soft · 5 NINE STROKE ROLL · 6 TEN STROKE ROLL · 7 ELEVEN STROKE ROLL ·
+**POING STROKES:** 8 Hard · 9 Middling Hard · 10 Faint or Soft · 11 FLAMS · 12 FAINT FLAMS ·
+13 STROKE & FLAMS · 14 FLAMS & STROKE · 15 FLAMS PARADIDLE · 16 SINGLE PARADIDLE ·
+17 DOUBLE PARADIDLE · **18 TRIPLE PARADIDLE** · 19 FLAMS PARADIDLE DIDLE · 20 HALF DRAG ·
+21 FULL DRAG · 22 SINGLE DRAG · 23 DOUBLE DRAG · **24 SLOW SAG** · 25 RUFFS ·
+26 SINGLE ROTAMACUE · 27 DOUBLE ROTAMACUE · 28 Quick · 29 Half as Quick · 30 TAPS.
+
+Nevins's own definitions (lines 200–235), verbatim:
+
+| Item | Definition |
+|---|---|
+| striking position | "Strike the Drum **about an inch above the center**." |
+| No. 8 | "the **Poing Stroke**, means a sudden, **hard, short** beat." |
+| No. 9 | "moderately hard." |
+| No. 10 | "**soft, long, drawing stroke**." |
+| No. 11 | "the **Flam** is produced by one hand following the other as quickly as possible. Saying, '**P'lum, p'lum, p'lum**,' gives some idea of the Flam." |
+| No. 12 | "like No. 11, but with **soft strokes**." |
+| No. 25 | "**RUFFS** … composed of **three Poing Strokes**, as follows: right, left, right — left, right, left" |
+| No. 26 | "in beating these three beats, the hands change as quickly as possible." |
+| No. 30 | TAPS: "a signal for the front to advance slow" |
+
+Three findings from Nevins that bear directly on the pivot model:
+
+1. **A named three-level dynamic scale, 1864: Hard / Middling Hard / Faint or Soft**, applied
+   independently to the plain stroke (8, 9, 10) *and* to the flam (11 vs 12 "FAINT FLAMS")
+   *and* to a roll (3 vs 4 "SEVEN STROKE ROLL: Faint, or Soft"). Dynamic is treated as an
+   axis orthogonal to the figure — exactly as KITWARP treats it.
+2. **`Poing Stroke` is a name for the stroke's envelope**, not for a pattern: "sudden, hard,
+   short". Its opposite, No. 10, is "soft, long, **drawing**" — the very lateral gesture Hart
+   forbade four years earlier. Two Civil War manuals in direct disagreement about whether a
+   drawing stroke is legitimate technique.
+3. **`TRIPLE PARADIDLE` is item 18 of an 1864 American army manual.** PAS lists it among the
+   fourteen rudiments *added* in 1984 (§2.2), and R04 frames those additions as drum-corps,
+   European or contemporary. At least this one is neither: it is older than the NARD 26 that
+   omitted it.
+
+`SLOW SAG` (No. 24) appears in no later list reached and no source defines it; recorded as an
+unexplained 1864 name.
+
 ### 2.4 Per-note ornaments, with attack counts
 
 This is the table the pivot model actually needs: the rudiments are *patterns*, but a small
@@ -239,7 +339,7 @@ set of them are *single-note qualifiers* with a definite number of attacks.
 | **Flam** | 2 | one grace note on the opposite hand immediately before the primary; `rL` or `lR`; intended to sound as one broadened note | R04 §Terminology, §Flam rudiments |
 | **Open flam** | 2 | flam with an audibly wider grace-to-primary gap; listed separately in older and some European systems | R03 line 1134; R04 §Flam |
 | **Drag** (= half drag = PAS `ruff`) | 3 | two *diddled* (same-hand) grace notes before the primary; `llR` / `rrL` | R04 §Drag; R01 #31 "Two diddled grace notes before a tap" |
-| **Ruff** (historic / American 3-stroke ruff) | 3 | two *single-stroked, alternating* grace notes before the primary; `rlR` | R04 §Ruff |
+| **Ruff** (historic / American 3-stroke ruff) | 3 | two *single-stroked, alternating* grace notes before the primary; `rlR`. Confirmed in an 1864 primary: Nevins's No. 25 RUFFS is "composed of three Poing Strokes … right, left, right — left, right, left" | R04 §Ruff; **R39 line 231** |
 | **4-stroke ruff** | 4 | three single grace notes before the primary; `lrlR` | R04 §Ruff |
 | **Charge stroke** | 2 | an open flam in which the first note **precedes** the downbeat and the downbeat falls on the second; French form `Lr`/`Rl`, Swiss form `LR`/`RL` | R04 §Charge stroke |
 | **Coup de charge** (French) | 2 | explicitly *"l'inverse du fla"* — the weak stroke **follows** the accented one | R21 item 7 |
@@ -509,7 +609,7 @@ sequences, not sounds; there is no owning body; and the names are neither stable
 
 | Term (as the source spells it) | Axis | Existing v0.1 value | Note |
 |---|---|---|---|
-| centre of the head (Strube: "within a circle of about two inches") | position | `centre` | 1870 attestation |
+| centre of the head (Strube: "within a circle of about two inches"; Hart: "as near the center of the head as possible"; Nevins: "about an inch above the center") | position | `centre` | three independent 1860–1870 attestations |
 | bead 3 in from rim (normal rimshot) | position | `offset` (approx.) | v0.1 has no distance unit |
 | bead 1 in from rim (ping shot) | position | `perimeter`-ish | see §5 |
 | rimshot | technique | `rimshot` | ✔ |
@@ -575,7 +675,8 @@ about what layer of the model they belong to.
 | **Sticking pattern** | `RLRR`, `DGDD`, `DIDD`, lead hand, hand-to-hand, alternating | Per-note this collapses to `limb`; the *pattern* is above the pivot. |
 | **Practice directive** | "open (slow) to close (fast) to open (slow)", "at an even moderate march tempo" | Performance instruction, not identity. |
 | **Stick height as a number** | 1″, 3″ … 12″, 15″ | A continuous scalar; `dynamic` in v0.1 is a five-value unordered set. See §5. |
-| **Notation-only conventions** | Strube's E-space/F-space hand encoding; single/double/triple stem slashes for diddles | Belong to the notation bucket, not the pivot. |
+| **Notation-only conventions** | Strube's E-space/F-space hand encoding; Hart's upper-line/lower-line flams; single/double/triple stem slashes for diddles | Belong to the notation bucket, not the pivot. |
+| **Stroke envelope** | Nevins's `Poing Stroke` ("sudden, hard, short") vs his No. 10 ("soft, long, drawing"); Hart's counter-claim that all strokes "have but **one length of sound** on the Drum" | Two 1860s primaries disagree about whether a drum stroke *has* a duration at all. v0.1 has no `duration` or `envelope` axis. See §5.3 finding 5. |
 
 The one that should worry the model is **stroke type**, because it is the single most-taught
 vocabulary in this entire bucket (PAS itself teaches it, R37) and it maps to nothing. That is
@@ -603,6 +704,10 @@ the correct answer — but any future contributor will try to add `full-stroke` 
 | **dead** | orchestral `dead stroke`: mallet held against the bar | rudimental `deadstick`: a grace note that does not rebound | R04 §Drag |
 | **gock** | the stroke | the 6″/8″ **drum** in a multi-tenor arc named after it ("gock", "shot" or "spock" drums) | R07; R10 |
 | **chick** | hi-hat foot close | R16 also uses `chick` loosely for a general background hiss/rustle texture | R16 |
+| **open** | modern: un-closed — an open roll is double-stroked and audibly separated, an open hi-hat has the cymbals apart | **Hart 1860: soft and light.** "the full **open** flam … the full **open** blow … the full **open** three roll … will be executed **soft and light**", and a soft roll is written with an "**open figure**" numeral | R38 lines 158–170; R04 §Roll |
+| **drawing stroke** | Nevins 1864 No. 10: a legitimate stroke type, "soft, long, drawing" | Hart 1860: forbidden — "make **no drawing strokes** or sideway beats in no case whatever" | R39 line 213; R38 lines 116–121 |
+| **tap** | modern: the low stroke, one of the four stroke types | Nevins 1864 No. 30 **TAPS**: a bugle/drum *signal* ("a signal for the front to advance slow"); Hart lists "Blows, **Taps**, Flams" as interchangeable names for one plain stroke | R39; R38 line 68 |
+| **blow** | 1860–1864: the standard word for a plain single stroke | absent from every modern list reached | R38, R39 |
 
 ### 4.2 Different words, same physical action
 
@@ -611,7 +716,10 @@ the correct answer — but any future contributor will try to add `full-stroke` 
 | tip on head, butt against rim, hand muting | **cross-stick** = **rim click** = **side-stick** (R12, all three in one sentence) |
 | double-stroke roll of indeterminate length | **long roll** = **double stroke open roll** = `roulement` = `bâton rompu` = `Doppelschlagwirbel` = `redoble abierto` = `rullo a colpi doppi` |
 | pressed multiple-bounce roll | **buzz roll** = **closed roll** = **press roll** = **multiple bounce roll** = `Presswirbel` = `Druckruf` = `trizzlet` (Scottish) = `Ra stroke` (Dutch) = `Redoble de Zumbido` (Spanish) = `Los Rufaos` (Bajoaragonés) = `Rullo` (Eporedian) = `Rau Tau` (Mexican) |
-| 3-attack roll | **drag** = **half drag** = **ruff** = **3-stroke roll** |
+| 3-attack roll | **drag** = **half drag** = **ruff** = **3-stroke roll** = Hart's **three roll** (open and closed) = French **ra de 3** / **tra**. Nevins 1864 keeps **half drag**, **full drag**, **single drag**, **double drag** and **ruffs** as five separate gamut items where PAS has one `Drag` |
+| plain single stroke | **blow** (Hart, Nevins) = **tap** (Hart) = **single beat** (Hart) = **Poing Stroke** (Nevins, when hard and short) = `Einzelschlag` = `coup simple` = `golpe único` = `colpo singolo` |
+| ratamacue | **Rotamacue** (Nevins 1864 spelling) |
+| paradiddle | **paradidle** (Nevins 1864 spelling), **paradiddle** (modern), `moulin` (French), `Mühle`-adjacent (German, different sense — see §4.1) |
 | triple stroke roll | = **French roll** |
 | flam with a diddle | **cheese** (hybrid) — a flammed diddle |
 | drag with alternating sticking | **herta** |
@@ -683,8 +791,9 @@ Checked against `vocabulary/axes.json` v0.1.0, serial 1.
 | technique | **stick shot on the rim / stick-against-stick roll**, **coup de douille** (butt-end stroke) | R21 |
 | contact | **fan** (brush accent surface) as distinct from **tip** | R22c |
 | implement | v0.1 lacks `fist` and `fingernail`, which `.agents/round2/BRIEF.md` lists in the model but `axes.json` does not carry | `vocabulary/axes.json` vs BRIEF |
-| dynamic | v0.1's five values are an **unordered set**; marching practice uses an ordered height scale 1″–15″, and PAS teaches accent/tap as a *height* relation | R10, R37 |
-| position | v0.1's four values are radial and unitless; the sources give **distances in inches from the rim** (3″ normal rimshot, 1″ ping shot) and Strube gives a 2-inch target circle at the centre | R03, R07 |
+| dynamic | v0.1's five values are an **unordered set**; marching practice uses an ordered height scale 1″–15″, PAS teaches accent/tap as a *height* relation, and Nevins 1864 already names an ordered three-step scale **Hard / Middling Hard / Faint or Soft** applied independently to strokes, flams and rolls | R10, R37, **R39** |
+| dynamic | **faint / feathered** — a level below `ghost`: Nevins's "FAINT FLAMS" and "Faint, or Soft" seven-stroke roll; Hazilla's feathered bass drum | R39; R22b |
+| position | v0.1's four values are radial and unitless; the sources give **distances in inches** (3″ from the rim for a normal rimshot, 1″ for a ping shot), Strube gives a 2-inch target circle at the centre, and Nevins says "about **an inch above the center**" | R03, R07, **R39** |
 
 ### 5.3 Structural findings, not value lists
 
@@ -710,6 +819,20 @@ Checked against `vocabulary/axes.json` v0.1.0, serial 1.
 
 4. **Rudiment names must not enter the pivot vocabulary.** They name patterns. The only
    rudiment-derived terms that belong on an axis are the per-note ornaments in §2.4.
+
+5. **A stroke-envelope axis is arguable and currently absent.** Hart 1860 builds his whole
+   notation on the claim that "all Blows, Taps, Flams, or Single Beats have but **one length
+   of sound** on the Drum" (R38) — which is why he needs only four characters. Nevins 1864
+   contradicts it four years later with a graded pair, `Poing Stroke` = "sudden, hard, short"
+   against "soft, long, drawing" (R39). For a *sampled* pivot Hart is right and no envelope
+   axis is needed, because the sample carries the envelope. It is worth recording that the
+   question was asked and answered by the source material rather than by assumption.
+
+6. **The 1984 "additions" were not all new.** `Triple Paradiddle` is item 18 of Nevins's 1864
+   US Army gamut (R39) and `Flams Paradidle Didle` is item 19, yet both are counted among the
+   fourteen rudiments PAS *added* in 1984 (§2.2), which R04 characterises as drum-corps,
+   European or contemporary. Any provenance note that dates a rudiment by its list membership
+   will be wrong; date it by the earliest manual instead.
 
 ### 5.4 Confirmations — v0.1 values this bucket independently validates
 
@@ -746,7 +869,9 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 | Cameron _Brushworks_ (N11), Thigpen _The Sound of Brushes_ (N12) | the named brush-stroke systems. §2.8 has real definitions only because a PAS journal anthology happened to be mirrored on a university page; the two canonical brush books remain unread, so `Tap-Sweep-Tap`, `Silent Sweep`, `Lift`, `Guitar Stroke` stay UNVERIFIED |
 | Scottish Drumming Rudiments sheet (N21) | 46 names including the stroked rolls to 25 and `trizzlet` — the third national standard, entirely absent here |
 | Swiss Ordonnanz manuals 1728–1964 (N19) | the ~32-rudiment military Swiss system; R25 lists them but only behind Google Drive folders |
-| Bruce & Emmett 1862/1865 (N34/R34) | the first printed **Flamacue** and the first advocacy of "open, closed, open" practice; the IMSLP PDF is public domain and downloadable — a later worker should simply take it |
+| Bruce & Emmett 1862/1865 (R34) | the first printed **Flamacue** and the first advocacy of "open, closed, open" practice; the IMSLP PDF is public domain and downloadable — a later worker should simply take it |
+| Greissinger 1900 (R40), Straight 1922 (R41) | obtained but not mined; Straight 1922 in particular sits exactly at the hinge between rudimental and drum-set vocabulary |
+| Peinkofer/Tannigel English edition (R42) | the German normative handbook is on archive.org under lending restriction; worth one attempt with a borrowing account |
 | snarescience dictionary (N23) | the marching slang layer where `gock`, `sprock` and very likely `back stick` are actually defined |
 | Percussive Notes archive (R35–R37) | PAS's own account of the "certain changes in terminology" made in 1984 — i.e. exactly which names were changed and from what |
 
@@ -763,7 +888,11 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 - **`slide` and `swivel` are search-summary only** for the same reason.
 - **Strube's full 25-item list is second-hand.** The scan's engraved titles OCR'd only in
   part; twelve of the twenty-five are confirmed from the primary text and the rest come from
-  R04's transcription.
+  R04's transcription. Hart 1860 and Nevins 1864 OCR'd far better because their prose carries
+  the definitions; their *notation* is still unreadable to this dossier, so every claim about
+  what a Hart or Nevins figure looks like on the page rests on their prose alone.
+- **Two obtained sources were not mined**: Greissinger 1900 (R40) and Straight 1922 (R41).
+  They are in hand and cost nothing to re-fetch by identifier.
 - **The heel-toe article (R09) is weakly sourced on Wikipedia** and its attribution of the
   modern formalisation to James Davenport should not be repeated without a second source.
 - **No orchestral treatise was consulted** — Berlioz, Kastner, Blades, Peinkofer/Tannigel.
@@ -778,8 +907,13 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 ### 6.4 Environment findings worth passing to other buckets
 
 - `archive.org/download/<identifier>/<identifier>_djvu.txt` **works** and is the cheapest way
-  to read any pre-1929 method book; `archive.org/advancedsearch.php?...&output=json` works for
-  finding identifiers. This is how Strube 1870 was obtained.
+  to read any pre-1929 method book; `archive.org/advancedsearch.php?...&output=json` and
+  `archive.org/metadata/<id>` work for finding identifiers and file names. This is how Strube
+  1870, Hart 1860, Nevins 1864, Greissinger 1900 and Straight 1922 were all obtained, at a
+  cost of two HTTP requests each. The productive query shapes were
+  `title:(drum AND fife)`, `title:(drum beating)` and
+  `subject:(drum) AND date:[1800-01-01 TO 1930-01-01]`. Identifiers ending `0000xxxx` are
+  lending-restricted; plain identifiers are usually full public-domain text.
 - `web.archive.org` **content** returns proxy 403 for both WebFetch and urllib, although
   `archive.org/wayback/available?url=` returns JSON normally. The Wayback fallback named in
   the brief is therefore **not available** in this environment.
