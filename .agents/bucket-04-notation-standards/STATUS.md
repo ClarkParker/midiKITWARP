@@ -1,9 +1,9 @@
 status: done
-updated: 2026-09-06T13:16:00Z
+updated: 2026-09-06T13:29:00Z
 done:
   - dossier written, validated and pushed: docs/research/round2/04-notation-standards.md
-    (1663 lines, six sections in the structure the brief prescribes)
-  - round A: 15 distinct searches before any extraction; 41 candidates registered with
+    (1783 lines, six sections in the structure the brief prescribes)
+  - round A: 15 distinct searches before any extraction; 42 candidates registered with
     locators and a reached/not-reached verdict each
   - round B, all enumerations complete and verbatim from the machine-readable form:
       SMuFL 1.4 - 306 percussion glyphs across 16 ranges, taken from releases/1.4/tables
@@ -17,65 +17,51 @@ done:
       Guitar Pro - 90 articulations with GP's implement.action.variant sound ids
       MuseScore - 107 percussion instruments, incl. the four marching sets
       Sibelius - the SoundWorld id grammar plus 4887 observed unpitched ids
-      Finale - the Note Type vocabulary, 572 distinct types across the map pages
+      Finale - the Note Type vocabulary, 572 distinct types, plus the verbatim definitions
+      Dorico - the percussion map data model, from the archive.steinberg.help static mirror
       Weinberg / PAS 1994 - the primary standardisation article, read page by page
-  - two findings the reconciliation pass should not have to rediscover:
-      MEI has no percussion vocabulary at all and delegates to SMuFL glyph names, and MNX
-      has replaced MusicXML's pictogram enumerations with {name, midiNumber} - the
-      note-number pivot loss written into a draft W3C specification
-      SMuFL encodes centre and rim three times each, once per notational authority
-        (Weinberg, Ghent, Caltabiano), so a glyph list cannot be minted one-to-one
-  - axis mapping done for every extracted term, with eleven kinds of term that fit no axis
-  - the bucket is deliverable as it stands; the queries below would ADD to it, not repair it
+  - folded in all six supervisor search results (commit d76a29a):
+      Dorico: archive.steinberg.help serves real HTML where steinberg.help serves a JS
+        shell. Recovered the data model - a drum kit note is the combination of instrument
+        and playback playing technique, addressed by a MIDI note plus key switch; both of
+        its enumerations are confirmed closed and confirmed UNPUBLISHED. "Not published" is
+        a finding, not a gap: every third-party Dorico percussion map was written by someone
+        reading the list out of the application's own dialog.
+      Sibelius: confirmed and quoted verbatim - "Each unpitched percussion instrument is
+        listed as a separate ID, so SoundWorld needs no concept of drum sets", and "in
+        SoundWorld each drum sound must be represented by a different ID ... because these
+        are not perceived as the same timbre at all". Prior independent confirmation of this
+        repository's pivot decision, reached from the playback side around 2007.
+      Finale: the three glossary definitions verbatim, plus the cajon worked example - one
+        instrument, three techniques, three Note Types, three MIDI notes, one staff line.
+      Stone 1980: chapter 10 located as the percussion chapter with exactly the four
+        enumerations this bucket extracted from SMuFL and MusicXML, in their original.
+        Licence caution recorded: the academia.edu and scribd copies are reference-only.
+      marching cymbal terms: negative result recorded as such, with the corps packets named
+        and the resolution handed to bucket 08.
+  - two corrections to my own earlier text, both now in the dossier:
+      "Guz" is NOT an OCR artefact - it occurs twice in vendor HTML in a table where "Buzz"
+      occurs nine times, so it is either a real Tapspace stroke or MakeMusic's typo; meaning
+      stays UNVERIFIED, spelling is verified
+      "choke" stated precisely: it exists in vocabulary/rules.json only as a relation inside
+      the splash.hit decomposition, which lets the resolver SYNTHESISE a choke but gives a
+      source file no way to STATE one
 next:
-  - nothing required. If the supervisor runs the searches under questions, I can fold the
-    results in; otherwise the dossier stands and the unreached items are named in its
-    self-critique with what each would add.
+  - nothing; bucket complete
 questions:
-  - SEARCHES FOR THE SUPERVISOR TO RUN (worker WebSearch still refuses with 200 of 200).
-    Listed in value order. Each line says what the result would resolve.
-  - 1. Dorico "Playing Techniques.doricolib" percussion "Rim Shot" OR "Snares Off" technique
-    ID - resolves the top unreached item in the dossier: Dorico's percussion playing-technique
-    ids. Confirmed so far: the id namespace is pt.* (pt.natural, pt.legato found in public
-    third-party expression maps); no percussion pt.* id found anywhere public. A forum post or
-    a shared .doricolib containing percussion ids would settle it. Note steinberg.help is now a
-    FluidTopics single-page app - its topic URLs return a JS shell to curl and its
-    /api/khub/search endpoint 404s - so a search result pointing at a static mirror or a forum
-    thread is more useful than a steinberg.help URL.
-  - 2. Finale "Percussion Layout Designer" complete list of Note Types default percussion note
-    type list - resolves the one Finale gap left: I have 572 Note Types from the shipped
-    percussion-map pages, but not the master list the Layout Designer offers. Fetch note: the
-    Finale manual pages are reachable by plain curl with a browser user-agent; WebFetch
-    summarises them and refuses to reproduce the tables.
-  - 3. Sibelius SoundWorld "S3W" primary sound ID list unpitched percussion download - resolves
-    whether the 4887 ids I extracted from 17 published sound sets can be split into Sibelius's
-    own primary vocabulary and vendor secondary ids. Without it the Sibelius section is
-    "ids seen in the wild", not "Sibelius's vocabulary".
-  - 4. Kurt Stone "Music Notation in the Twentieth Century" percussion pictogram beater table
-    reproduced - the most authoritative source I could not get, and the upstream of BOTH
-    MusicXML's and SMuFL's percussion pictograms (the MusicXML XSD says its effect list is
-    "in addition to Stone's list"). Any reproduction of the pictogram plates would let the
-    reconciliation pass separate Stone's original distinctions from later inventions.
-    archive.org has it as a lending item (musicnotationint0000ston_h3s0) and archive.org
-    proper answers from here, so an archive.org full-text search may work where Wayback does not.
-  - 5. "guz" stroke marching snare drum definition Tapspace - the Finale Note Types "Snare Guz
-    Short" and "Snare Guz Long" are marked UNVERIFIED in the dossier; no primary definition found.
-  - 6. marching cymbal technique glossary "zing" "smash" "crunch choke" definitions - would
-    confirm or refute the dossier's UNVERIFIED note on whether MuseScore's Zing and Smash are
-    standard marching terms; Finale independently has Click, Ding and Crunch Choke, so the
-    family is real even if the individual names are vendor coinages.
-  - 7. vocabulary/axes.json at serial 1 has 14 implement values and does NOT contain fist or
-    fingernail, but the round 2 brief text lists both as if present. Which is authoritative?
-    No search needed - a repository question. Both are in MusicXML beater-value and SMuFL
-    (pictBeaterFist U+E7E5, pictBeaterFingernails U+E7E6), so my gap analysis treats them as
-    missing.
-  - noted, no action: IRCAM is irrelevant to this bucket - it holds no notation standard, and
-    nothing in my candidate register points at it. Wikipedia was not used as a source here.
+  - answered and closed: fist and fingernail are genuinely absent from axes.json serial 1,
+    the brief was written from an earlier sketch, the file is authoritative. The dossier now
+    says so and treats both as gaps with their MusicXML and SMuFL evidence.
+  - no open queries. If bucket 08 resolves "zing", "smash" and "crunch" from the Tapspace
+    manual, §3.14(c) of my dossier should be updated with the result; I have flagged it
+    there as theirs to resolve.
 needs_owner:
   - mint technique "choke"? Six independent sources name it (SMuFL pictChokeCymbal, Guitar
-    Pro on five instruments, Sibelius, MuseScore, Finale, Weinberg 1994) and v0.1 cannot
-    express a choked cymbal at all. Recommendation: mint it on the technique axis rather
-    than as a damping value, because every source treats it as a named stroke.
+    Pro on five instruments, Sibelius, MuseScore, Finale, Weinberg 1994). The existing
+    "choke" relation in rules.json is not a substitute: it synthesises a splash out of a
+    choked crash, it does not let an importer record that a crash WAS choked.
+    Recommendation: mint it on the technique axis, because every source treats it as a
+    named stroke rather than as a degree of damping.
   - site "crossstick" and technique "sidestick" are the same physical act carried on two
     axes; every source in this bucket encodes it once. Recommendation: keep both slugs
     (identifiers are forever) but document one as the canonical encoding before collection
