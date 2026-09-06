@@ -44,9 +44,12 @@ its German label is *Hi-hat* (§4.1). Wikidata is the only one with `ride cymbal
 `ride cymbal` item carries no MIMO id, no AAT id and no MusicBrainz id — that is, the item
 exists but no authority file has adopted it.
 
-**For everything that is not the instrument axis there is no authority file at all.**
-Getty AAT has no concept for rim shot, side stick, flam, drag, buzz, choke, or open/closed
-hi-hat (query, §2.5). LCMPT has none either, and by design — it is a *medium of
+**For everything that is not the instrument axis there is next to nothing.** The whole
+harvest from all five files, across KITWARP's other eleven axes, is five concepts: Getty
+AAT's `drumheads`, `shells (drum components)` and `snares (drum components)`, its five
+`percussion beaters`, and LCMPT's `drum machine`. Getty AAT has no concept for rim shot,
+side stick, flam, drag, buzz, choke, or open/closed hi-hat (query, §2.5), and no concept
+for a drum rim or a cymbal bow, bell or edge (§2.10). LCMPT has none either, and by design — it is a *medium of
 performance* thesaurus, not a technique thesaurus. Hornbostel-Sachs, in the authors' own
 words, deliberately excludes playing technique for membranophones (§2.2.3). The one
 linked-data vocabulary that promises "instrument playing techniques", DOREMUS
@@ -636,6 +639,53 @@ china or splash.** Core data is CC0.
 - Seventeen other DOREMUS vocabularies carry CC BY 4.0; one carries the French Licence
   Ouverte.
 
+### 2.10 The two instrument-*parts* vocabularies, checked because they are where a `site` axis could hide
+
+Both authority files that have a parts branch were walked to the leaf. Neither contains a
+striking site.
+
+**MIMO, `Elements of musical instruments` (concept 2205)** — a top concept of the
+thesaurus, alongside `Percussion instruments`. Seven branches, 21 leaves in total:
+
+| Branch | id | Children |
+|---|---|---|
+| Beaters | 6068 | Beater (6071), Gaktoe (11330), Galgo stick (11556), Janggu stick (11408), Ji (11331), Jin (11333) |
+| Bows | 2206 | Ajaeng bow, Bow (2207), Haegeum bow, Sanjo ajaeng bow |
+| Bridges | 11403 | Anjok, Wonsan |
+| Frets | 11415 | Fret, Gwea |
+| Mouthpieces | 6067 | Hyeo, Mouthpiece (6073) |
+| Pegs | 11420 | Dolgwea, Jua, Peg |
+| Plectra | 6070 | Plectrum (6074), Suldae |
+
+Fifteen of the 21 are Korean-specific instances added late (ids in the 11xxx range). **The
+branch contains no drumhead, no rim, no shell, no hoop, and no cymbal zone.** MIMO's
+`Bows` here are violin bows, not cymbal bows — see §4.8.
+
+**Getty AAT, `percussion instrument components` (300191003)** — 12 concepts in the whole
+extended branch:
+
+| AAT id | Term | Parent |
+|---|---|---|
+| 300041845 | drum components | percussion instrument components |
+| **300041846** | **drumheads** | drum components |
+| **300041856** | **shells (drum components)** | drum components |
+| **300041860** | **snares (drum components)** | drum components |
+| 300042611 | percussion beaters | percussion instrument components |
+| 300042613 | drumsticks (percussion beaters) | percussion beaters |
+| 300042609 | hammers (percussion beaters) | percussion beaters |
+| 300433366 | xylophone hammers | hammers (percussion beaters) |
+| 300425007 | gong mallets | percussion beaters |
+| 300429059 | percussion brushes | percussion beaters |
+| 300202390 | wire brushes (percussion beaters) | percussion brushes |
+| 300191303 | clappers (bell components) | percussion beaters |
+
+`drum components` has exactly three children, and they are the entire vocabulary of drum
+anatomy available anywhere in this bucket: **head, shell, snares**. A prefLabel query for
+`rims`, `hoops`, `counterhoops`, `lugs`, `tension rods`, `bell of…`, `bow of…` returns only
+unrelated senses — `rims (container components)`, `rims (landforms)`, `hoops (toys)`,
+`hoops (shaping garments)`, `lugs (knobs)`. **There is no drum rim and no cymbal bow, bell
+or edge concept in the Getty AAT.**
+
 ---
 
 ## 3. Axis mapping
@@ -672,26 +722,34 @@ china or splash.** Core data is CC0.
 | Knight `-x` snare crossing the head | K-Rev p. 37 | mechanism | `wires-on` |
 | H-S `-9211` with pedals | MIMO 2011 p. 12 | mechanism | pedal-operated, cf. `kick-*` |
 | drum machine, electronic percussion, electronic drum | LCMPT mp2013015221 | timbre | `electronic` |
+| drumheads | AAT 300041846 | site | `head` |
+| shells (drum components) | AAT 300041856 | site | `shell` |
+| snares (drum components) | AAT 300041860 | mechanism | `wires-on` |
 
-That is the entire list. **Twenty-nine mappings from five authority files and two
+That is the entire list. **Thirty-two mappings from five authority files and two
 classification schemes, and twenty-four of them land on the `instrument` axis.**
 
 ### 3.2 Axes for which no authority-file term exists at all
 
 | KITWARP axis | Values in v0.1 | Authority terms found |
 |---|---:|---:|
-| `site` | 9 | **0** |
+| `site` | 9 | **2 of 9** — AAT `drumheads` 300041846 → `head`, AAT `shells (drum components)` 300041856 → `shell`. Nothing for `rim`, `rim2`, `crossstick`, `bow`, `edge`, `bell`, `underside`, in any authority file (§2.10) |
 | `position` | 4 | **0** |
 | `contact` | 3 | **0** |
 | `technique` | 24 | **0** |
 | `ornament` | 9 | **0** |
 | `openness` | 8 | **0** |
 | `damping` | 5 | **0** (AAT 300256220 `damping` is a generic conservation/engineering activity, not an articulation) |
-| `mechanism` | 4 | **2** — Knight `-x` snare, H-S `-9211` pedal |
+| `mechanism` | 4 | **3** — AAT `snares (drum components)` 300041860, Knight `-x` snare, H-S `-9211` pedal |
 | `implement` | 14 | **7** — AAT's five beaters plus Knight's `-1`…`-5` |
 | `dynamic` | 5 | **0** |
 | `timbre` | 13 | **1** — LCMPT `drum machine` UF *electronic percussion* |
 | `voicing` | 7 | **0** |
+
+Even the two `site` hits are only nominally hits: AAT's `drumheads` and `shells` are
+*museum object types* — a spare head in a drawer, a shell without hardware — not places on
+an instrument that a stroke can land. Nothing in any authority file names a place on an
+instrument as a place.
 
 This is the single most important table in the dossier. **Organology and library
 authority control describe objects, not events.** They answer "what is this thing in the
@@ -826,6 +884,21 @@ therefore wrong by construction; only the Q-id is usable.
 | **Batterie** (fr) | the drum kit | in orchestral French, the percussion section | MIMO 5702 |
 | **caixa** | Brazilian samba snare, deep | LCMPT files it as a UF of `snare drum`; MusicBrainz makes it a *separate* instrument distinct from `tarol` (shallow) | LCMPT mp2013015657, MB 88dad742-…, c9af11ea-… |
 | **damping** | KITWARP's `damping` axis | AAT 300256220 is a generic activity term unrelated to music | AAT |
+| **mallet** | a percussion mallet | AAT's `mallets (striking tools)` 300024825 is a carpenter's mallet; the percussion sense is filed as `hammers (percussion beaters)` 300042609 | AAT |
+| **beater** | a drum beater | AAT has three unrelated `beaters` — culinary tools 300201092, striking tools 300379166, textile-working equipment 300312126 — and the percussion sense only as `percussion beaters` 300042611 | AAT |
+| **bow** | the playing area of a cymbal, between bell and edge | in MIMO's `Elements of musical instruments`, `Bows` (2206) are violin bows | MIMO 2206 |
+| **shell** | KITWARP `site = shell`, a place to hit | in AAT, `shells (drum components)` 300041856 is the object, the drum body as an artefact | AAT |
+
+### 4.8 A note on why `bow` is the worst word in the kit vocabulary
+
+KITWARP `site = bow` means the sloping playing area of a cymbal. In every organological
+source in this bucket, "bow" means a horsehair stick for exciting a string: MIMO's
+`Elements of musical instruments` branch `Bows` (2206) contains `Bow`, `Ajaeng bow`,
+`Haegeum bow`, `Sanjo ajaeng bow`. Hornbostel-Sachs uses it the same way. And bowing a
+cymbal is a real, common extended technique that KITWARP will eventually need, at which
+point `implement = bow` and `site = bow` will coexist and mean unrelated things in the same
+term. This is the same species of collision as `bell` in §5.3, and it is worth catching
+before the orchestral family is minted.
 
 ### 4.7 Different words, same thing
 
@@ -940,12 +1013,16 @@ versus hand-part, arriving from a different direction. **Recorded, not resolved.
   quoted here in English comes from the MIMO 2011 revision, which states it reproduces the
   1961 translation with revisions "not shown" in the version used. Where MIMO's English
   differs from Baines–Wachsmann, this dossier follows MIMO and does not know it.
-- **Museum catalogue terminology** (the bucket brief asked for it) is essentially unexplored.
-  CIMCIM's own resources page, its brasswind terminology thesaurus, the Horniman, MIM
-  Brussels and Philharmonie de Paris catalogues were identified and not opened. Museum
-  catalogues are where instrument *parts* get named, which is the closest any of this
-  literature comes to KITWARP's `site` axis, so this is the most likely place a `site`
-  vocabulary is hiding.
+- **Museum catalogue terminology** (the bucket brief asked for it) is only partly explored.
+  The two *published* parts vocabularies were found and walked to the leaf — MIMO's
+  `Elements of musical instruments` and Getty's `percussion instrument components`, §2.10 —
+  and between them they yield two site terms, `head` and `shell`. What was **not** opened
+  is the unpublished catalogue layer: CIMCIM's resources page and its brasswind
+  terminology thesaurus, and the Horniman, MIM Brussels and Philharmonie de Paris
+  catalogues. CIMCIM's brasswind thesaurus is the interesting one by analogy: if the
+  committee produced a part-by-part terminology for one family, a percussion equivalent may
+  exist or may be the obvious thing for KITWARP to look for. Confidence that no percussion
+  parts thesaurus exists: **medium**, not high.
 - **German museum vocabularies** — museumsvokabular.de and term.museum-digital.de — were
   identified but not fetched. They are the German-language equivalent of MIMO and would
   give a second, independent German label set to check MIMO's *Hi-hat* problem against.
@@ -960,6 +1037,11 @@ versus hand-part, arriving from a different direction. **Recorded, not resolved.
   Spanish searches returned pedagogical material and Wikipedia-grade summaries, and the one
   peer-reviewed hit (Revista Musical Chilena 67/219, SciELO, "Clasificación
   Sachs-Hornbostel de instrumentos musicales") was not opened. Bucket 12 owns that ground.
+
+- **The WebSearch budget for the session was exhausted twice**, the second time before the
+  gap-closing searches in this section could be run. The two gaps that were closed after
+  the first exhaustion (§2.10) were closed by querying APIs already known to work, not by
+  searching. Anything that could only be found by search remains unfound.
 
 ### 6.2 The single most authoritative source not obtained
 
