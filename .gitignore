@@ -13,6 +13,10 @@ venv/
 .ruff_cache/
 node_modules/
 
+# worker worktrees: supervisor/worker mode checks each worker out into its own git
+# worktree under here. Infrastructure, never content.
+/.claude/worktrees/
+
 # editors / OS
 .DS_Store
 *.swp
