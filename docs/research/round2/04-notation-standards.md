@@ -61,6 +61,7 @@ Authority levels used below:
 | 26 | Dorico help: "Unpitched percussion playing techniques" | Steinberg | 2018 | vendor manual | https://archive.steinberg.help/dorico_pro/v2/en/dorico/topics/notation_reference/notation_reference_unpitched_percussion_playing_techniques_c.html | vendor | yes — but it publishes no enumeration |
 | 27 | Dorico help: "Percussion Instrument Playing Techniques dialog" | Steinberg | 2018 | vendor manual | https://archive.steinberg.help/dorico_pro/v2/en/dorico/topics/notation_reference/notation_reference_unpitched_percussion_percussion_instrument_playing_techniques_dialog_r.html | vendor | yes — no enumeration |
 | 28 | Dorico `.doricolib` playing-technique ids (`pt.*`) | Steinberg + third-party expression maps | 2026 | vendor data | GitHub code search: `mhcoffin/fiddle`, `taylorbrook/O-Audio-VST-Development` (`pt.natural`, `pt.legato`, `<PlayingTechniqueDefinition>`) | vendor | partial — namespace confirmed, percussion ids not found in public files |
+| 28a | Dorico help: "Percussion Maps dialog" (Dorico Pro 3.1.10) | Steinberg | 2019 | vendor manual | https://archive.steinberg.help/dorico/v3/en/dorico/topics/play_mode/play_mode_percussion_maps_dialog_r.html — **`archive.steinberg.help` is a static mirror and serves real HTML; the live `steinberg.help` is a FluidTopics single-page app that returns only a JS shell to a fetcher** | vendor | yes — gives the data model (§2.12), not the technique list |
 | 29 | Finale "Percussion MIDI Map Editor dialog box" | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleMac/Content/Finale/db-percussion-midi-map-editor.htm | vendor | yes — no enumeration published |
 | 30 | Finale "Percussion Layout Designer dialog box" | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleWin/Content/Finale/db-percussion-layout-designer.htm | vendor | listed only |
 | 30a | Finale "Percussion MIDI Maps: Tapspace Drumline for Finale" — six complete Note Type ↔ MIDI tables | MakeMusic | — | vendor manual | https://usermanuals.finalemusic.com/FinaleMac/Content/Finale/PercussionMaps3.htm (direct HTTP; the WebFetch summariser refuses to reproduce the tables, curl with a browser user-agent returns them) | vendor | **yes — this is where Finale's enumeration actually is** |
@@ -992,6 +993,24 @@ Sibelius also encodes kit voicing as an id element in the GM sets (`kit-brush`,
 `kit-tr-808` — seen in the Vir2 VI.ONE set), which is the GM-2 kit list expressed as
 vocabulary rather than as a program-change number.
 
+**SoundWorld reached the same conclusion this project did, and wrote it down.** Two passages
+from the SoundWorld paper, verbatim (page text lines 159 and 685–688 of the extracted text):
+
+> "Each unpitched percussion instrument is listed as a separate ID, so SoundWorld needs no
+> concept of drum sets."
+
+> "How should drum sets and other multiple sounds be mapped onto IDs? In MIDI, drum sets are
+> usually represented as a single instrument for which different pitches product [*sic*]
+> different drum sounds. Because these are not perceived as the same timbre at all, in
+> SoundWorld each drum sound must be represented by a different ID. Therefore there are no
+> SoundWorld drum sets, just individual sounds which can be played without specifying a pitch."
+
+This is independent, prior confirmation of the decision behind this repository's pivot: key on
+the instrument-and-technique, never on the kit, and never on the pitch that a kit happens to
+assign it. Sibelius reached it from the playback side around 2007; the reasoning given —
+"these are not perceived as the same timbre at all" — is the same argument
+`docs/evidence/note-number-pivot-loss.md` makes from the authoring side.
+
 ---
 
 ### 2.10 Weinberg / Percussive Arts Society, "Guidelines for Drumset Notation" (1994)
@@ -1079,13 +1098,34 @@ mechanism only; **the enumeration is published on the percussion-map pages**, an
 supersedes the "no enumeration published" reading those two pages alone suggest).
 Licence: MakeMusic vendor documentation, all rights reserved — cited as evidence.
 
-Finale's term of art is **Note Type**: "A Percussion MIDI Map is simply a list that matches
-each percussion instrument in a sound library with a particular MIDI note number." A Note Type
-is the instrument-plus-technique identity that the percussion layout, the notehead and the
-staff position all hang off; the Percussion MIDI Map then binds each Note Type to a note number
-per sound library. Two Note Types may share a MIDI number in one map (e.g. 50 = "Snare Section
-Hits" and "Snare Drum"), which is the clearest possible statement that the Note Type, not the
-note number, is the identity.
+Finale's term of art is **Note Type**. The three definitions, verbatim from the glossary tooltips
+embedded in `FinaleWin/Content/Finale/Percussion.htm`:
+
+> "A **Note Type** is the instrument assignment paradigm used for percussion notation and is
+> part of a staff's percussion layout. Note Types and their corresponding MIDI notes can be
+> referenced and edited in the Percussion MIDI Map Editor dialog box. The staff position and
+> noteheads of a Note Type can be edited in the Percussion Layout Designer dialog box."
+
+> "A **percussion layout** is a list of percussion instrument variables available for use in a
+> staff. These variables include staff position, notehead style, and Note Type (snare drum,
+> cymbals, etc.)."
+
+> "A **Percussion MIDI Map** is simply a list that matches each percussion instrument in a sound
+> library with a particular MIDI note number (e.g. bass drum = 36, snare drum = 38, etc.). These
+> maps are required to properly assign the same percussion notation to various playback devices,
+> and are also used to accommodate the many different percussion sound banks that can be used for
+> input with an external MIDI device."
+
+So the Note Type is the identity; staff position and notehead hang off it in one dialog, and the
+MIDI note number hangs off it in another, per sound library. Two Note Types may share a MIDI
+number within one map (e.g. 50 = "Snare Section Hits" and "Snare Drum"), which is the clearest
+possible statement that the Note Type, not the note number, is what is being identified.
+
+The manual's own worked example makes the technique-as-Note-Type point concretely: in the Ethnic
+Percussion layout the cajón has **three** Note Types, all at Staff Position 6 (third staff line),
+distinguished only by notehead — "X for regular, triangle for slap, or normal for low" — and
+mapped to MIDI 53, 52 and 51 in the Ethnic Percussion map. One instrument, three techniques,
+three Note Types, three note numbers, one staff line.
 
 **VDLite Finale Marching Percussion Map, complete (72 rows, MIDI 36–101):**
 36 Bass Drum 5 (5) · 36 Kick Drum · 37 Bass Drum Rim · 38 Bass Drum 4 (4) · 39 Bass Drum Unison
@@ -1139,7 +1179,7 @@ technique-bearing ones, complete by technique word:
 | **Cross Stick / Cross Shot / Stick Click** | Snare Cross Stick, Snare Cross Shot, Snare Section Cross Shots, Stick Click, Stick Clicks |
 | **Flam** | Snare Flam, {Low, Low-Mid, High-Mid, High} Tom Flam |
 | **Roll (kinds)** | Snare Roll, Snare Buzz Roll, Snare Section Buzz Rolls, {…} Tom Buzz Roll, {…} Tom Short Roll, Spock Drum Sustained Buzz Roll, Bass Drum Roll, Bass Drum Unison Rolls, Side Drum Roll, Castanets Roll, Suspended Cymbal Roll, Suspended Cymbal Cresc (Loud) |
-| **Guz** | Snare Guz Short, Snare Guz Long (UNVERIFIED: a Tapspace/marching term this bucket could not define from a primary source) |
+| **Guz** | Snare Guz Short, Snare Guz Long — UNVERIFIED as to meaning, but **verified as to spelling**: the string occurs twice in the page's HTML source, in a table where "Buzz" occurs nine times separately (Snare Buzz Roll, Snare Section Buzz Rolls, four Tom Buzz Rolls, Spock Drum Sustained Buzz Roll). The source is machine-readable vendor HTML, not an OCR'd scan, so this is not a scanning corruption; it is either a distinct Tapspace stroke or a typo in MakeMusic's own documentation. No primary definition found. |
 | **Shake / Snap / Multi Shake** | Tambourine Shake, Shekere High Shake, Shekere Low Shake, Cabasa Multi Shake, Egg Shaker Multi Shake, Cabasa Snap |
 | **Scratch Push / Scratch Pull** | Scratch Push, Scratch Pull |
 | **Fingertips** | Djembe Fingertips |
@@ -1153,6 +1193,58 @@ Four of these are not attested anywhere else in this bucket and are recorded in 
 **Scratch Push / Scratch Pull** (direction of a scrape), **Crash Cymbals Click / Ding /
 Crunch** (hand-cymbal plate contact), **Dead Stroke** as a named family across nine
 instruments, and **Guz**.
+
+---
+
+### 2.12 Dorico — the percussion map data model
+
+Locator: Steinberg, "Percussion Maps dialog", Dorico Pro 3.1.10 help,
+https://archive.steinberg.help/dorico/v3/en/dorico/topics/play_mode/play_mode_percussion_maps_dialog_r.html.
+`archive.steinberg.help` is a static mirror that serves real HTML; the live `steinberg.help` is a
+FluidTopics single-page app whose topic URLs return a JS shell and whose `/api/khub/search`
+endpoint answers 404, which is why the first pass could not read it.
+Licence: Steinberg vendor documentation, all rights reserved — cited as evidence.
+
+Dorico's percussion map is a table of **drum kit notes**, and each row carries exactly these
+columns: **MIDI Note · Name · Instrument · Key Switch · Playing Techniques**. The field
+definitions, verbatim:
+
+> "**Name**: The displayed name for the specific combination of instrument and playback playing
+> technique. You may choose to input the name used in the manufacturer's documentation for your
+> VST instrument or MIDI output device."
+
+> "**Instrument**: Allows you to select an instrument for the drum kit note selected in the Drum
+> Kit Note Map section from a list of all the unpitched percussion instruments you can create in
+> Dorico Pro."
+
+> "**Key switches**: Allows you to specify the MIDI note number of the key you want to use as a
+> key switch if this sound requires another MIDI note to be played to trigger this specific
+> combination of instrument and playback playing techniques."
+
+> "**Techniques**: Allows you to select a playback playing technique to apply to the instrument
+> selected in the Instrument field from a list of the available playback playing techniques."
+
+Three structural points follow, and they matter more than any single term.
+
+1. **Dorico's identity is a tuple, not a note number.** A drum kit note *is* "the specific
+   combination of instrument and playback playing technique"; the MIDI note and the key switch
+   are what that combination is *addressed by* on one particular device. This is the same
+   separation KITWARP draws between a pivot term and a layout slot.
+2. **Both enumerations are closed, and both live in the application.** The Instrument field draws
+   "from a list of all the unpitched percussion instruments you can create in Dorico Pro" and the
+   Techniques field "from a list of the available playback playing techniques" — the two closed
+   sets this bucket wanted, neither of which Steinberg publishes.
+3. **Maps are `.doricolib` and their ids are free text.** "**ID**: Allows you to set the unique
+   ID of the percussion map. You can enter any content in the ID field. It can be useful to
+   include the instrument and sound library for which you created the map, as well as your name,
+   for example, `xmap.user.paulsmith.hso.cowbell`." The `xmap.*` namespace for maps is therefore
+   user-extensible free text, unlike the `pt.*` technique ids, which are not.
+
+Also verbatim, and relevant to how a layout slot is scoped: a map declares whether it "defines
+sounds for" **Multiple Instruments** ("the patch … contains many different percussion
+instruments, such as the General MIDI drum map") or **Single Instruments** ("the patch … contains
+only a single percussion instrument, perhaps with multiple playback playing techniques for that
+instrument. For example, a snare drumline patch in Virtual Drumline").
 
 ---
 
@@ -1379,7 +1471,15 @@ SMuFL `pictCrashCymbals` (U+E720). Here the instrument *is a pair of plates* and
 describes how the two plates meet each other — there is no implement striking a site, so
 `site`, `contact` and `implement` are all empty and `technique` would have to carry the whole
 distinction. v0.1 has no hand-cymbal instrument and no vocabulary for plate-against-plate
-contact. Finale independently enumerates the same family from a different vendor's library:
+contact. A targeted search for "zing", "smash", "crunch" and "suc" as marching-cymbal terms
+returned a **negative result**: none of them appears in any reached source, while the corps
+technique packets that would carry them (Grand Valley State University and Rhythm Armada cymbal
+packets, Ohio State marching percussion fundamentals, Pearce's "Marching Cymbals 101") document
+a different vocabulary — Garfield grip, lock technique, V crashes, chokes. Treat the individual
+names as vendor coinages until a marching primary source says otherwise; the *family* is real,
+because Finale enumerates it independently. Bucket 08 (marching percussion) owns the resolution
+and has the same leads.
+Finale independently enumerates the same family from a different vendor's library:
 **Crash Cymbals Crash / Click / Ding / Choke Fat** and **Cymbal Section Crash / Click / Crunch
 Choke / Hi-Hat Choke** (§2.11), where "Click" and "Ding" are edge-to-edge contacts and "Crunch"
 is a full plate-to-plate press. Two independent sources enumerating a family v0.1 cannot hold
@@ -1532,13 +1632,13 @@ Read against `vocabulary/axes.json` at vocabulary_version 0.1.0, vocabulary_seri
 
 | Axis | Proposed value | Attestation |
 |---|---|---|
-| technique | **choke** | SMuFL `pictChokeCymbal` "Choke (Weinberg)" U+E805; Guitar Pro `stick.hit.choke` on five instruments; Sibelius `choke` in 13 ids; MuseScore Crash-Choke, Tap-Choke, Bell Tap-Choke; Finale Crash Cymbals Choke Fat, Cymbal Section Crunch Choke, Cymbal Section Hi-Hat Choke, Suspended Cymbal Short/Fat Choke w/ Stick; Weinberg 1994 p. 21 (cut-off notation). Six independent sources; v0.1 has no way at all to say a cymbal was choked. **The single clearest gap in this bucket.** |
+| technique | **choke** | SMuFL `pictChokeCymbal` "Choke (Weinberg)" U+E805; Guitar Pro `stick.hit.choke` on five instruments; Sibelius `choke` in 13 ids; MuseScore Crash-Choke, Tap-Choke, Bell Tap-Choke; Finale Crash Cymbals Choke Fat, Cymbal Section Crunch Choke, Cymbal Section Hi-Hat Choke, Suspended Cymbal Short/Fat Choke w/ Stick; Weinberg 1994 p. 21 (cut-off notation). Six independent sources. **Precisely stated**: `choke` does exist in the repository, but only in `vocabulary/rules.json` as a *relation* inside one decomposition (`splash.hit` → `crash.hit` + `crash.hit` with `"relation": "choke"`, reason "a splash is close to a choked crash: hit, then choke an eighth later"). That lets the resolver *synthesise* a choke; it gives a source file no way to *state* one. A choked crash in a MusicXML, Dorico, Finale, MuseScore or Guitar Pro file has nowhere to land. **The single clearest gap in this bucket.** |
 | technique | **return** (back-stroke of a shaken or scraped instrument) | Guitar Pro `hand.hit.return` (tambourine, cabasa, maraca, shaker), `stick.hit.return` (bell tree), `stick.scrape.return` (guiro) |
 | technique | **pressed** | Sibelius `pressed` (10 ids); SMuFL `pictCrushStem` "Combining crush for stem" is the same family |
 | technique | **tap**, **bell-tap**, **muted-tap**, **half-crash**, **full-crash**, **smash**, **zing** | MuseScore `marching-cymbals` — but see §3.14(c): these need a hand-cymbal instrument first |
 | ornament | (none missing) | flam, drag, ruff, bounced, roll, buzz, crescendo, swell, wash cover everything found |
 | damping | **pressed** or a rename note | as above |
-| implement | **fist**, **fingernail** | MusicXML `beater-value` `fist`, `fingernail`; SMuFL `pictBeaterFist` U+E7E5, `pictBeaterFingernails` U+E7E6. **Note:** the round-2 brief text lists fist and fingernail as if they were already in the implement axis; `vocabulary/axes.json` at serial 1 does not contain them. Flagged as a question, not a decision. |
+| implement | **fist**, **fingernail** | MusicXML `beater-value` `fist`, `fingernail`; SMuFL `pictBeaterFist` U+E7E5, `pictBeaterFingernails` U+E7E6. **Resolved:** `vocabulary/axes.json` at serial 1 holds exactly 14 implement values and neither is among them; the round-2 brief listed them because it was written from an earlier axis sketch rather than from the minted file. The file is authoritative, so these are genuine gaps. |
 | implement | **coin**, **knitting-needle**, **spoon-mallet**, **guiro-scraper**, **chime-hammer**, **metal-hammer**, **triangle-beater**, **wire-brush** (if distinct from `brush`), **brass-mallets**, **snare-stick** | MusicXML `beater-value`, complete list in §2.2; SMuFL beaters in §2.1 |
 | implement | a **material dimension** (yarn, wound, gum, felt, wood, plastic, rubber, metal) crossed with a **hardness** dimension (soft, medium, hard) | MusicXML models exactly this as `stick-type` × `stick-material`; v0.1's `mallet-soft`/`-medium`/`-hard` cannot express "hard yarn" vs "hard gum" vs "wound, hard core", all of which SMuFL distinguishes |
 | voicing | **fusion**, **rock**, **concert**, **brush** (kit) | Sibelius id elements (`fusion` 28 ids, `rock` 15, `concert` 5) and the GM-2 kit names `kit-brush`, `kit-jazz`, `kit-power`, `kit-room`, `kit-orchestra`, `kit-standard` |
@@ -1603,6 +1703,15 @@ score file, and must come from hardware or library sources instead:
    technique→notehead→playback triple. **This is the single most valuable unreached item for a
    later pass**, and the way to get it is a Dorico installation (or its `Playing Techniques.doricolib`
    posted by a user), not the web.
+   A second attempt, after the static mirror `archive.steinberg.help` was identified, recovered
+   the *data model* (§2.12) and confirmed the negative: the help says the Instrument and
+   Techniques fields are populated "from a list of all the unpitched percussion instruments you
+   can create in Dorico Pro" and "from a list of the available playback playing techniques", and
+   never prints either list. Two independent search passes and a GitHub code search across all
+   public `.doricolib` files agree that no percussion `pt.*` id is published anywhere. The
+   finding is therefore not "not found yet" but "not published" — which is itself worth
+   recording, because it means every third-party Dorico percussion map in existence was written
+   by someone reading the list out of the application's own dialog.
 2. **Finale's Note Type list — obtained, after a false negative.** The two dialog-documentation
    pages describe the mechanism and name only "bass drum = 36, snare drum = 38" as examples,
    which reads as "not published". It is published, on the percussion-map pages (§2.11), and
@@ -1629,6 +1738,17 @@ score file, and must come from hardware or library sources instead:
    are largely Stone's, so both of the standards extracted above are downstream of a 1980 book
    this bucket could not read. Getting it would let the reconciliation pass tell which of the
    ~250 pictogram values are Stone's original distinctions and which are later inventions.
+   Located since, without being obtained: **chapter 10 is the percussion chapter**, and it
+   carries the instrument abbreviations and pictograms, the stick/mallet/beater pictograms, the
+   ranges of pitched percussion, score order, and effects and techniques — i.e. the four
+   enumerations this bucket extracted from SMuFL and MusicXML, in their 1980 original. The
+   archive.org lending item is `musicnotationint0000ston_h3s0`; archive.org proper answers from
+   this environment even though `web.archive.org` does not, and single chapters of this book are
+   known to circulate as PDFs (a bowed-strings chapter is public at
+   `kirstenvolness.com/Stone-BowedStringInstruments.pdf`), so a percussion chapter may be
+   obtainable the same way. **Licence caution for whoever chases it:** full copies on
+   academia.edu and scribd carry no stated licence, so under `docs/adr/0004` they are
+   reference-only — read to check a claim, never quote or transcribe into `data/`.
 5. **Smith Brindle *Contemporary Percussion* (1970), Gardner Read *Notation* (1969), the ICNMN
    Ghent 1974 resolutions, and the Agostini and Caltabiano systems** — all four survive in this
    bucket only as attributions inside SMuFL glyph descriptions and Weinberg's citations. Each is
