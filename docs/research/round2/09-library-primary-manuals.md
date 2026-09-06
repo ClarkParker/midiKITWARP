@@ -33,7 +33,7 @@ controls) and describing the vendor's own product.
 | **XLN Audio Addictive Drums 1** | **yes** | **yes** | `xlnaudio.com/downloads/manuals/addictive-drums-keymap.pdf` | 1-page PDF keyboard chart | yes, via Wayback replay of the vendor path (live path retired) |
 | **FXpansion / inMusic BFD3** | **yes** | **yes** | `fxpansion.com/webmanuals/bfd3/operationmanual/bfd3_key_map_reference.htm`, mirrored at `internal.bfddrums.com/manuals/BFD30/bfd3_key_map_reference.htm` | HTML table, MIDI key / key number / "BFD3 articulation" | yes |
 | **BFD Player** | **yes** | **yes** | `cdn.inmusicbrands.com/BFD/BFD_Player_-_User_Guide_-_v1.1.0_-_RevB.pdf`, Appendix "Keymap", pp. 16–17 | PDF table: Kit Piece / Articulation / MIDI Note / MIDI Number | yes |
-| **Steven Slate SSD5** | **no** | **no** | `download.stevenslatedrums.com/ssd5/SSD5 User Manual.pdf` (manual is official and public, but contains no articulation list and no map) | PDF | manual yes, chart does not exist |
+| **Steven Slate SSD5** | **no** | **no** | `download.stevenslatedrums.com/ssd5/SSD5 User Manual.pdf` — fetched (HTTP 200, 3.2 MB) and read: "Articulations" is a UI-panel description, there is no list and no map | PDF | manual yes, chart does not exist |
 | **Steven Slate SSD5.5** | **no** | **no** | `download.stevenslatedrums.com/ssd5/SSD5.5 User Manual.pdf`; KB article "MIDI Learn and Mapping in SSD5.5" describes the *mechanism* only | PDF + KB HTML | manual yes, chart does not exist |
 | **NI Studio Drummer** | **yes** | in-product only | manual §5 "Drum Articulations": `native-instruments.com/fileadmin/ni_media/downloads/manuals/Studio_Drummer_Manual_English.pdf`, also HTML at `docs.native-instruments.com/ni-tech-manuals/studio-drummer-manual/en/drum-articulations` | PDF + HTML tables | yes. The note map is in three separate "…Kit – Default Mapping" documents shipped with the library (Kontakt Library tab → Info) — **not on the public web** |
 | **NI Abbey Road 60s Drums** | **yes** | **yes** | manual §4.1–4.2 (articulations) and §4.3–4.4 "Default Drum Mapping" — `…/manuals/Abbey_Road_60s_Drums_Manual.pdf` | PDF; map is an annotated keyboard graphic | yes |
@@ -307,6 +307,29 @@ BFD Player (the free player, same house vocabulary) adds the CC-driven forms:
 is selected continuously by a controller. Everything else in its keymap is drawn from the
 same list (`Bow`, `Edge`, `Bell`, `Choke`, `Rim Click`, `Rim Shot`, `Side Stick`, `Pedal`,
 `Splash`, `1/4`, `Half`, `3/4`, `Open`, `Closed`, `Tip`, `Shank`).
+
+**BFD3 defines its own terms, and in doing so settles an axis question.** From
+`using_electronic_drumkits.htm`, verbatim:
+
+- "Some brains that support multi-zone triggers are capable of sending out different open
+  and closed notes for **tip (also known as bow)** and **shank (edge)** triggers."
+- "The Variable tip is used for the main surface or 'bow' of the hihat … **'Tip' refers to
+  the fact that the surface of the hihat is struck with the tip of the stick.**"
+- "The Variable shank is used for the edge of the hihat … **'Shank' refers to the fact that
+  the edge of the hat is struck with the shank, or body, of the stick.**"
+- "Almost all brains send out a 'pedal', or **'foot-chick'**, sound when the hihat control
+  pedal is depressed fully."
+- "BFD3 is capable of analyzing this controller data while a hihat trigger is received to
+  determine which hihat articulation to play from those available: **closed, 1/4-open,
+  1/2-open, 3/4-open or fully open**."
+- "The Open tip articulation in particular is more like a hihat bell sound, or a small ride
+  cymbal." — i.e. the vendor warns that its own `Open Tip` is not the sound most users mean
+  by an open hat, and recommends remapping a brain's open notes to `1/2-open tip` and
+  `1/2-open shank`.
+
+The first three are the single most useful sentences found in this bucket: a vendor stating
+that for a hi-hat, naming the *stick part* and naming the *cymbal region* are two names for
+one event, and saying which is which. See §3.3 and §4.
 
 Structural terms from the BFD3 manual worth carrying: a **Drum** occupies a **slot**; each
 Drum has a **Class**; "if the destination Drum's Class differs from that of the source Drum,
@@ -637,6 +660,16 @@ cymbal it lands and NI, XLN and Sennheiser name what part of the stick lands the
 that carries both `site` and `contact` can represent either, but an importer must know which
 axis a given vendor's word belongs on — the word alone does not say.
 
+For the hi-hat, one vendor says so outright, which converts the disagreement from a guess
+into a documented equivalence: BFD3 writes "tip (also known as bow)" and "shank (edge)", and
+explains that the words name the same event from the two ends — the stick's tip on the
+cymbal's bow, the stick's shank on the cymbal's edge (`using_electronic_drumkits.htm`).
+So `contact: tip` + `site: bow` and `contact: shank` + `site: edge` are the correct
+full-fidelity encodings, and a vendor that gives only one half is under-specifying rather
+than disagreeing. GGD's `Tight Edge` and NI's `Closed Shank` are therefore the *same*
+articulation, and can be reconciled — which round 1, working from note numbers, could not
+have established.
+
 ---
 
 ## 4. Conflicts and false friends
@@ -648,7 +681,7 @@ axis a given vendor's word belongs on — the word alone does not say.
 | `Pearl` | the tip of a drumstick (XLN Addictive Drums 1: `Ride Pearl`, `HH Closed1 Pearl`) | a drum manufacturer, and a shell finish | XLN itself abandoned the word between AD1 and AD2 |
 | `Shaft` / `Shank` | the same part of the stick | — | `Shaft` is XLN and Toontrack; `Shank` is NI, BFD and Jamstix. Pure synonym pair |
 | `Bell` | site on a cymbal | an instrument (`bell` in v0.1's instrument axis) | and in BFD `Hihat: Bell Tip` combines both |
-| `Edge` | site on a cymbal (BFD, NI) | contact point on a hi-hat naming the *stick* implicitly (GGD) | see §3.3 |
+| `Edge` | site on a cymbal (BFD, NI) | contact point on a hi-hat naming the *stick* implicitly (GGD) | not actually a conflict for the hi-hat: BFD3 documents "shank (edge)" and "tip (also known as bow)" as the same events named from opposite ends — see §3.3 |
 | `Tight` | openness anchor (NI `Closed Tight`, GGD `Tight Tip`) | a groove-feel control (`TIGHTNESS` knob, NI Studio Drummer §3.3) | different axes entirely |
 | `Open` | openness anchor | kick articulation `Open` = undamped port (NI) | and `Open Tone` in hand-percussion vocabulary is a third thing |
 | `Articulation` | a way of playing (every vendor) | `WRIST ARTICULATION ANGLE` — the anatomical joint angle of the animated drummer's wrist (Jamstix 4 manual §29) | genuine homograph inside one vendor's own manual |
@@ -698,10 +731,11 @@ v0.1's `technique` axis. The half they do use, they use almost unanimously.
   `halfway` and `offset` as separate values; nothing in this bucket's evidence distinguishes
   them physically. Either they are synonyms and one is redundant, or the distinction needs a
   definition that a vendor document supports. **Flagged for the reconciliation pass.**
-- v0.1 `technique: chick` — every vendor calls this `Pedal` or `Foot Close`; `chick` is
-  drummer's slang and appears in exactly one vendor document in this bucket (GGD
-  `Pedal Chick`). It is a defensible slug, but the alias table needs `pedal`, `foot-close`,
-  `closed pedal` and `hi-hat pedal` pointing at it.
+- v0.1 `technique: chick` — better attested than it looks. Most vendors call it `Pedal`,
+  `Closed Pedal` or `Foot Close`, but **two** use the word: GGD writes `Pedal Chick`, and
+  BFD3's manual writes "a 'pedal', or **'foot-chick'**, sound"
+  (`using_electronic_drumkits.htm`). The slug stands; the alias table needs `pedal`,
+  `foot-close`, `closed pedal`, `hi-hat pedal` and `foot-chick` pointing at it.
 - v0.1 `damping: towel` — NI writes `Tea Towel` on the snare and `Towel` on toms in the same
   library; Sennheiser writes `Beach towel`. The slug is right; the alias set is missing.
 
