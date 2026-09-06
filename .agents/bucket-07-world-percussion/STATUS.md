@@ -1,5 +1,5 @@
-status: done
-updated: 2026-09-06T12:57:29Z
+status: running
+updated: 2026-09-06T13:02:27Z
 done:
   - dossier committed and pushed at docs/research/round2/07-world-percussion.md
   - round A: 20 distinct searches across seven traditions in English, Spanish,
@@ -49,7 +49,11 @@ done:
   - python -m tools.validate, python -m tools.format --check and
     python -m tools.iom.roundtrip_check data/legacy-iom all pass
 next:
-  - nothing; bucket complete
+  - reopened by the supervisor: the WebSearch pool has recovered and all four
+    open gaps needed a search. Closing in order: sabar stroke names via the
+    archive.org copy of Tang, Masters of the Sabar; Javanese and Balinese
+    kendang syllabary; Korean janggu gi, gideok, gigideok; Brazilian surdo
+    open versus abafado and the other bateria instruments
 questions:
   - Sabar stroke names are the largest hole. Utrecht's Drum Languages Project
     states there are at least nine named strokes and that every stroke has a
