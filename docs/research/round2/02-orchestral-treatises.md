@@ -40,28 +40,48 @@ The environment blocked the ordinary route:
 
 | Channel | Result |
 |---|---|
-| `WebSearch` tool | Budget exhausted at 200/200 **for the whole session, shared across workers**. 3 queries were run before it closed. |
+| `WebSearch` tool | Budget exhausted at 200/200 **for the whole session, shared across all twelve workers**. 3 queries were run before it closed; two later attempts, after the supervisor reported the pool had recovered, still returned "used its web search budget (200 of 200)". |
 | `html.duckduckgo.com`, `lite.duckduckgo.com` | HTTP 202 with an anti-bot page; via WebFetch, a CAPTCHA challenge |
 | `searx.be` | "Verifying your browser…" / captcha |
 | `mojeek.com` | 403 |
 | `babel.hathitrust.org` | 403 (Cloudflare) — no in-volume full-text search |
 | `catalog.hathitrust.org/api/volumes/…` | **works** (bibliographic only, no text) |
 | `googleapis.com/books/v1/volumes` | HTTP 429, "Quota exceeded … for consumer project_number:624717413613" — the proxy project's daily quota, not ours; retried later, still 429 |
-| archive.org `fulltext/inside.php` (search-inside) | "Item not available" for every lending-restricted item, on both `d1` and `d2` hosts |
+| `ia-fts.archive.org` | HTTP 502 on CONNECT — blocked by egress policy |
+| `web.archive.org` | dead in this environment (supervisor-verified); not used |
+| `imslp.org/api.php?action=query&list=search` | HTTP 200 but `{"query":{"search":[]}}` for every query; `Special:Search` 302s. Not a usable route |
+| `www.vsl.co.at`, `howtowriteforpercussion.com` | HTTP 502 on CONNECT — egress policy, do not retry |
+| archive.org `fulltext/inside.php` (search-inside) | **works, HTTP 200, JSON with per-page match snippets, for unrestricted items**; **HTTP 403 "Item not available" for every lending-restricted item**, on both `d1` and `d2` hosts, with and without a `Referer` header and the `pre_tag`/`post_tag` parameters the BookReader itself sends |
 | archive.org `advancedsearch.php` | **works** — the main breadth instrument used here |
 | `openlibrary.org/search.json` | **works** |
-| archive.org `download/<id>/<id>_djvu.txt`, `_chocr.html.gz`, `_page_numbers.json` | **works** for non-restricted items — the main depth instrument |
-| direct `WebFetch` of known URLs | works (vsl.co.at returns 502; philharmonia.co.uk works) |
+| archive.org `download/<id>/<id>_djvu.txt`, `_chocr.html.gz`, `_page_numbers.json` | **works** for unrestricted items — the main depth instrument. Returns **HTTP 401** for restricted items |
+| archive.org `stream/<id>/<id>_djvu.txt` | returns the BookReader HTML shell (~143 KB), **not** text, for restricted items — it is not a way round the lending wall |
+| direct `WebFetch` of known URLs | works (philharmonia.co.uk works) |
+
+**The search-inside recipe, for reuse.** For an unrestricted item, GET
+`https://archive.org/metadata/<id>` for `d1` and `dir`, then
+`https://<d1>/fulltext/inside.php?item_id=<id>&doc=<id>&q=<query>&path=<dir>&pre_tag={{{&post_tag=}}}`
+returns `{"ia":…,"q":…,"indexed":true,"matches":[{"text":…,"par":[{"page":<leaf>,…}]}]}`.
+Verified working on `thesaurusoforche00read` and `TheMilitaryDrummerAManual`; verified
+refusing `percussioninstru00jame` with HTTP 403.
 
 Consequence for the bucket: **every book still in copyright and held on archive.org under
 controlled digital lending is unquotable from this environment** — not merely hard, but
-returning no text at all, not even a snippet. That is what puts Blades, Adler, Stone,
-Peinkofer/Tannigel, Brindle and Read's own later *Compendium* in the "not reached" column
-below, and it is not a research choice.
+returning no text at all, not even a snippet, through any of the four routes tested
+(download, stream, search-inside, FTS API). Six further archive.org searches (§1.1 Q33–Q38)
+were run to look for an unrestricted community upload of any of the six named books; there
+is none. That is what puts Blades, Adler, Stone, Peinkofer/Tannigel, Brindle and Read's own
+later *Compendium* in the "not reached" column below, and it is not a research choice.
+
+**Licence position.** Where an in-copyright book *is* openly posted on archive.org without a
+stated licence (Gould, S22), it is registered with its locator and **not quoted**, per
+CLAUDE.md rule 2 (unknown licence means all rights reserved) and the supervisor's standing
+instruction on unauthorised mirrors. Every verbatim quotation in §2 comes from a
+public-domain scan or from the publisher's own preview PDF.
 
 ### 1.1 The searches actually run
 
-Twelve is the floor the brief sets; 31 distinct queries were run, varying register,
+Twelve is the floor the brief sets; 42 distinct queries were run, varying register,
 language, source type and era.
 
 | # | Register / language / era | Query |
@@ -98,6 +118,21 @@ language, source type and era.
 | Q30 | scholarly, EN, 20–21c | IA: `("instrumental techniques" OR "playing techniques") AND subject:(music)` |
 | Q31 | notational, EN | IA: `("percussion notation" OR "notation for percussion")` |
 | Q32 | catalogue, EN | OpenLibrary: `orchestration percussion techniques` |
+| Q33 | any-copy sweep | IA: `(Blades AND percussion)` — looking for an unrestricted upload |
+| Q34 | any-copy sweep | IA: `("Kurt Stone" OR "music notation in the twentieth")` |
+| Q35 | any-copy sweep | IA: `(Adler AND orchestration)` |
+| Q36 | scholarly, EN | IA: `("percussion" AND ("playing techniques" OR "performance techniques" OR "extended techniques"))` |
+| Q37 | lexical, EN | IA: `("percussion" AND (glossary OR terminology OR nomenclature))` |
+| Q38 | pedagogical, EN | IA: `("writing for percussion" OR "percussion writing")` |
+| Q39 | vernacular, EN, 1920s | IA: `(Straight AND (drum OR drumming)) AND date:[1915 TO 1935]` |
+| Q40 | vernacular, EN, 19c | IA: `(Greissinger OR Strube OR Nevins OR "drum instructor")` |
+| Q41 | vernacular, EN, 1920s | IA: `("modern drumming" OR "dance drumming" OR "trap drummer" OR "traps")` |
+| Q42 | vernacular, EN, 1900–40 | IA: `(drum AND (ragtime OR jazz) AND (method OR instructor OR system)) AND date:[1900 TO 1940]` |
+
+Q33–Q35 returned **no** unrestricted copy of any of the six named books. Q36–Q38 returned
+only one relevant new item, Sanderson's 1980 thesis *The dramatic role of percussion in
+selected operas of Benjamin Britten* (`sanderson1980`), which is a repertoire study, not a
+technique catalogue.
 
 ### 1.2 The register
 
@@ -126,7 +161,9 @@ manual; **C** = a course guide, vendor page or derived resource.
 | S16 | Musik-Instrumentenkunde in Wort und Bild | Teuchert & Haupt | 1910 | organology, DE | `musikinstrumente01teuc` | B | medium (instrument names) |
 | S17 | The Bower System for Percussion, vol. 1: Drums | Harry A. Bower | 1912 | method, EN | `TheBowerSystemForPercussionV1` | B | medium (pre-MIDI stroke names) |
 | S18 | The Harry A. Bower System for the Drum, Bells, Xylophone and Timpani | Harry A. Bower | 1912 | method, EN | `TheHarryBowerSystem` | B | medium |
-| S19 | The Military Drummer | Carlton E. Gardner | 1918 | method, EN | `TheMilitaryDrummerAManual` | C | low |
+| S19 | **The Military Drummer** | Carlton E. Gardner | 1918 | method, EN | `TheMilitaryDrummerAManual` | B | medium — counted stroke-roll series, §2.15 |
+| S19b | **Straight's Modern Syncopated Rhythms for Drums** | Edward B. Straight | 1922 | dance-band method, EN | `StraightsModernSyncopatedRhythms` | B | medium — 1922 attestation of tip/butt and "Jazz sticks", §2.16 |
+| S19c | Army Regulations for Drum, Fife and Bugle | William Nevins | 1864 | military manual, EN | `armyregulationsf00nevi` | C | low |
 | S20 | Manuel général de musique militaire | J.-G. Kastner | 1848 | treatise, FR | `manuelgnraldemu00kastgoog` | A | not yet mined (see §6) |
 | S21 | Treatise on Orchestration, ch. 2 | Charles Koechlin (posted translation) | n.d. | treatise, EN tr. | `treatise-on-orchestration-chapter-2` | B | low |
 | S22 | **Behind Bars** | Elaine Gould | 2011 | notation manual, EN | `behind-bars-by-elaine-gould` — openly posted; **licence: all rights reserved (Faber). Treat as reference-only, do not copy tables into `data/`.** | A | high, but overlaps the notation-standards bucket |
@@ -159,8 +196,12 @@ manual; **C** = a course guide, vendor page or derived resource.
 | N12 | Orchestration (2/e) | Cecil Forsyth | 1935 / 1936 / 1944 | IA `orchestration0000ceci_*` (many) | second-edition revisions; the 1914 first edition (S7) was used instead |
 | N13 | Instrumentationslehre | Engelbert Humperdinck | 1981 | IA `instrumentations0000unse_o0c7` | 20c German pedagogical usage |
 | N14 | Traité d'instrumentation et d'orchestration (critical ed.) | Berlioz | 1970 | IA `traitdinstrument0000berl` | modern editorial apparatus on Berlioz's terms |
+| N15 | **Méthode complète et raisonnée de tambour / de timbales** | J.-G. Kastner | 1845 | not on archive.org under any identifier found by Q12 or Q24; BnF holds it | the primary French definitions of *ta*, *fla*, *tra*, *ra*, which Gevaert p. 332 n. 1 cites second-hand. Gallica returns 403 to this environment, so BnF is unreachable too |
 
-**Register totals: 27 reached (25 in full text), 14 named and not reached, 41 candidates.**
+**Register totals: 30 reached (28 in full text), 15 named and not reached, 45 candidates.**
+The fifteenth not-reached title is **Kastner, *Méthode complète et raisonnée de tambour* /
+*de timbales*** (Paris, 1845), which is what Gevaert p. 332 n. 1 actually points at and
+which is on archive.org under no identifier found by Q12 or Q24.
 
 ---
 
@@ -586,7 +627,76 @@ Chimes** 181 · Cabasa 183 · Conch Shell 184 · Crystal Glasses 184 · Rainstic
 **Vibraslap** 190 · **Boobams** 141 · **Roto-Toms** 137 · Frame Drums 138 · Djembe and
 Doumbek 141.
 
-### 2.15 Minor sources, recorded for completeness
+### 2.15 Carlton E. Gardner, *The Military Drummer* (1918) — the English counted series
+
+`TheMilitaryDrummerAManual`, public domain, full text. This is the American pre-MIDI
+counterpart to Gevaert's French stroke names, and it matters here for one reason: it names
+its ornaments **by stroke count**, exactly as the KITWARP `ornament` axis wants.
+
+> "All drum figures are based upon three fundamental beats technically called **roll, single
+> stroke, and flam**. When these three beats are mastered, the drummer has the foundation
+> for all technical figures." (Rudiments of Drumming, §opening)
+
+Contents, with the printed page numbers the book gives (pp. 7–8 of the contents):
+
+The Roll 16 · The Single Strokes 17 · **The Flams 18** · The Stroke Rolls · **The
+Five-Stroke Roll 20** · **The Six-Stroke Roll 21** · **The Seven-Stroke Roll 21** · **The
+Nine-Stroke Roll 22** · **The Ten-Stroke Roll 22** · **The Eleven-Stroke Roll 22** · **The
+Drag** · **The Four-Stroke Ruff 23** · Combinations 24 · Flam and Stroke 24 · Flam and
+Feint 24 · Flam and Two Strokes 24 · Flam and Three Strokes 25 · Single Paradiddle 25 ·
+Flam Paradiddle 25 · Drag Paradiddle 25 · Single Drag 25 · Double Drag 26 · Single
+Ratamacue 26 · Double Ratamacue 26 · Triple Ratamacue 27.
+
+Definition of the roll, p. 16: "The roll consists of an even reiteration of beats
+sufficiently rapid to prohibit rhythmic analysis."
+
+The rudiment names themselves belong to the rudiments bucket. What belongs *here* is the
+structural agreement across languages and thirty-three years: **Gevaert 1885 counts
+`ra de 3 / 4 / 5 / 6 / 7 coups`; Gardner 1918 counts `Five- / Six- / Seven- / Nine- / Ten- /
+Eleven-Stroke Roll` and `Four-Stroke Ruff`.** Two independent traditions arrive at the same
+model — an ornament identified by its attack count — which is the model v0.1's `ornament`
+axis assumes but does not yet carry a count for.
+
+### 2.16 Edward B. Straight, *Straight's Modern Syncopated Rhythms for Drums* (1922)
+
+`StraightsModernSyncopatedRhythms`, public domain, full text. Chased specifically to find
+where the American vernacular Read could not translate (§4) is first written down. It is
+the only pre-1930 dance-band drum method reachable here, and it is a genuine find, because
+it attests **two v0.1 axes by name, in 1922**.
+
+**`contact`, as a tip→butt continuum on a rim** — Lesson 53 (the prose head to Exercise 53):
+
+> "Feature the Bass Drum RIM. In this lesson work on Bass Drum Rim with sticks, striking
+> **first at small end or tip and work up to Butt of sticks**, do that by executing
+> sixteenth notes or Triplets. … Start to work slow at first and strike one hard tap and
+> two soft ones on count One with RIGHT … **keep moving up and down** and work up speed at
+> the same time. … Keep the foot on the count 1.8. while you work on the Rim, B.D. soft."
+
+That is `site: rim` × `contact: tip … butt` × `instrument: kick`, written as a *sweep*
+between the two contact points rather than as two discrete values — the same shape as
+Read's centre→rim roll (§3.9 G12), on the contact axis instead of the position axis.
+
+**`implement`, including `jazz-stick`** — Lesson 41 (prose head to Exercise 41):
+
+> "Here we have a few beats for the **Wood block** or **Clog mallets**, even **Rim of Bass
+> drum**, **Sand blocks**, **Jazz sticks** or **Leather straps**. Play on anything to
+> imitate either a Soft or Hard Shoe dancer."
+
+`Jazz sticks` in 1922 is the earliest attestation found in this bucket for v0.1's
+`implement: jazz-stick`, and `Sand blocks` and `Clog mallets` are two more implements v0.1
+lacks. The list is explicitly open-ended ("Play on anything").
+
+Other terms present: `muffled drums` used as a standing timbral state, not a one-off effect
+("Use muffled drums when you Jazz, not too loud"); `Traps` as the collective name for the
+auxiliary instruments; `Tom Tom`; `Cymbal`; `Rim of Bass Drum` as a named playing surface
+alongside the wood block.
+
+**What it does not contain: the words "rim shot" or "ride".** Neither does Gardner 1918
+(§2.15) nor Bower 1912. So the absence Read documents in 1953 (§4) is not yet traced to its
+first printing, and the search should continue in 1930s method books, which are outside this
+bucket.
+
+### 2.17 Minor sources, recorded for completeness
 
 - **Philharmonia Orchestra** percussion resource page (S25): technique words used in prose
   only — "softer sticks", "hard mallets topped with wood or metal hammers", "soft beater",
@@ -670,6 +780,7 @@ Two structural findings on this axis:
 | **With thick end of (the) stick / Coll'estremità grossa / Mit dem dicken Ende des Stockes** | Read 184 | `butt` |
 | **With thin end of (the) stick / Coll'estremità sottile / Mit dem dünnen Ende des Stockes** | Read 184 | `tip` |
 | **Ein Becken mit dem Holzschaft des Schlägels berühren** | Read 184 | `shank` |
+| **"striking first at small end or tip and work up to Butt of sticks … keep moving up and down"** | Straight 1922, Lesson 53 | `tip` → `butt` as a **continuum**, not two values |
 | Lay 1 stick on head — strike with the other | Read 198 | `stick-shot`; the laid stick is the contact surface — see §3.9 |
 
 ### 3.5 `technique`
@@ -720,6 +831,9 @@ Two structural findings on this axis:
 | **le coup de charge (*tra*)** | Gevaert 332 | **no v0.1 value** — a two-stroke figure distinguished from *fla* only by which note carries the accent |
 | **les roulements partiels dits *ra*: ra de 3, 4, 5, 6, 7 coups** | Gevaert 332 | `drag` / `ruff` / `bounced` — but Gevaert supplies the **explicit attack count** the brief's ornament axis asks for, as a named series |
 | **le roulement continu** | Gevaert 332 | `roll` |
+| **Five- / Six- / Seven- / Nine- / Ten- / Eleven-Stroke Roll** | Gardner 1918, 20–22 | `roll` with an explicit attack count — the English counterpart of Gevaert's *ra* series |
+| **The Four-Stroke Ruff** | Gardner 1918, 23 | `ruff`, attack count 4 — v0.1 has the slug but not the count |
+| **Single Drag / Double Drag** | Gardner 1918, 25–26 | `drag`, with multiplicity |
 | Roll(ed) / Rullo / Roulement / Wirbel | Read *passim* | `roll` |
 | "Flam" stroke | Read 198 | `flam` |
 | Rolls | Solomon 77 | `roll` |
@@ -782,7 +896,11 @@ Widor p. 100; **leather / rawhide** (Berlioz-Strauss's middle grade); **cane / r
 hammer**; **knitting needle** (Solomon 92); **coin** (Read 164, 181; Forsyth 50);
 **'cello bow** (Read 195; Solomon 95); **saw blade** (Read 195); **maracas used as
 beaters** (Read 172); **Klöppel** = the bass-drum beater as a named object distinct from
-`Schlägel` (Berlioz-Strauss 418, 422).
+`Schlägel` (Berlioz-Strauss 418, 422); and from the dance-band side, **clog mallets**,
+**sand blocks** and **leather straps** (Straight 1922, Lesson 41). Straight's same sentence
+is the earliest attestation found here of **"Jazz sticks"**, which v0.1 already carries as
+`implement: jazz-stick` — so that slug has a 1922 primary source, and should get the
+locator on its provenance record.
 
 **`dynamic`.** The treatises carry dynamics as ordinary musical dynamics, not as pivot
 terms. The only pivot-shaped items are *Barely touched / Appena toccata / À peine frôlé /
@@ -817,6 +935,7 @@ distinction that the current twelve-axis model cannot carry.
 | G10 | **Bowing** (cymbal, crotale, vibraphone bar, xylophone bar end) | Read 179, 195; Solomon 244 | Excitation by sustained friction with a bow — not a `technique` value, and the bow is not in `implement`. |
 | G11 | **Friction roll** / **Kept in vibration by friction on the edge** / **Rub a rosined glove over a stick pressed to the head** | Read 211, 219; Solomon 244 | Continuous friction excitation. Different from `scrape` (transient) and from `roll` (discrete attacks). |
 | G12 | **Roll beginning at centre gradually going to the rim** (and inverse) | Read 212 | A *trajectory* across `position` within one sounding event. The model has point values plus a `strike_position.radial` controller, but no term. |
+| G12b | **"striking first at small end or tip and work up to Butt of sticks … keep moving up and down"** | Straight 1922, Lesson 53 | The same trajectory shape on `contact` instead of `position`. `contact` has three enum values and **no** controller, so this cannot be expressed at all. If `position` earns a controller, `contact` needs one too. |
 | G13 | **Stop [dampen] half-way, and full** | Read 195 | `damping` is nominal; this is ordinal and mid-event. |
 | G14 | **le coup de charge (*tra*)** | Gevaert 332 | Two strokes distinguished from *fla* **only by which stroke carries the rhythmic accent**. No axis carries intra-ornament accent placement. |
 | G15 | **Laid on side / Sul lato / Auf die Seite gedreht** (bass drum); **Laid horizontal — without resonance** (gong); **Cymbal in the air / En l'air / In der Luft** | Read 198, 219, 183 | Instrument *orientation* and *mounting*, which changes both radiation and damping. No axis. |
@@ -904,7 +1023,7 @@ Measured against `vocabulary/axes.json` v0.1.0 (155 pivot terms, drum kit only).
 | `position` | nothing missing as *values*; missing as *shape* — Read 212's centre→rim gradient needs the radial controller, and the vocabulary should say so explicitly |
 | `contact` | v0.1 has `tip / shank / butt` for a stick. Read distinguishes **thick end** vs **thin end** (p. 184) which maps cleanly, and **`Holzschaft`** = shaft (p. 184) which is `shank`. No gap, but the aliases are missing |
 | `technique` | **bow** (Read 179, 195; Solomon 244), **friction-roll** (Read 219; Solomon 244), **fist** (Read 214), **knuckle** (Read 214, 216; Forsyth 32), **fingernail** (Read 164 — listed in the brief's axis sketch, absent from `axes.json`), **knee** (Read 214), **pitch-bend** (Solomon 123), **vibrato** (Read 179; Solomon 247), **cluster** (Solomon 249), **harmonic** (Read 225; Solomon 250), **two-plate-stroke** (Forsyth 35) |
-| `ornament` | **ra-3 / ra-4 / ra-5 / ra-6 / ra-7** as named attack counts (Gevaert 332), **tra / coup de charge** (Gevaert 332), **thumb-roll** as an ornament distinct from `roll` (Read 213; Forsyth 32; Widor 109 — Widor calls it a "temporary roll", i.e. it cannot be sustained) |
+| `ornament` | an **attack count** on `roll`, `ruff` and `drag`, which two independent traditions supply as named series — `ra de 3/4/5/6/7 coups` (Gevaert 332) and `Five-/Six-/Seven-/Nine-/Ten-/Eleven-Stroke Roll`, `Four-Stroke Ruff` (Gardner 1918, 20–23); **tra / coup de charge** (Gevaert 332); **thumb-roll** as an ornament distinct from `roll` (Read 213; Forsyth 32; Widor 109 — Widor calls it a "temporary roll", i.e. it cannot be sustained) |
 | `damping` | **prepared** (paper, felt, cloth *on* the head — Read 211, 212), **half** as an ordinal step (Read 195), **choke** for cymbals as distinct from `damped` (Read 194; Berlioz-Strauss 422) |
 | `mechanism` | **wires-slack** as a third state between `wires-on` and `wires-off` (Read 209; Berlioz-Strauss 423; Gevaert 332; Widor 108 — three independent sources make this the *usual* practice, not an edge case), **wires-tight** (Read 210 `Très timbrée`), **cymbal-coupled-to-kick** (Read 182; Berlioz-Strauss 418), **pedal-bass-drum** (Read 201) |
 | `implement` | **sponge** (Berlioz-Strauss 406; Widor 100; Read 166–167 — the historically dominant timpani beater), **leather**, **rawhide**, **cane**, **rattan**, **cotton**, **wool**, **fibre/capoc head**, **steel**, **iron**, **metal**, **plush**, **padded**, **two-headed stick**, **triangle-beater**, **chime-hammer**, **knitting-needle** (Solomon 92), **coin**, **bow**, **saw-blade**, **rosined-glove**. Also a *hardness* qualifier that is orthogonal to material: Read carries `quarter-hard`, `half-hard`, `medium-hard`, `medium-soft`, `soft`, `hard`, `very hard`, `very soft` on rubber, felt and leather independently (pp. 166–167) — v0.1's `mallet-soft/medium/hard` folds material and hardness into one value, which cannot express "medium-hard **leather**" |
@@ -954,8 +1073,10 @@ Measured against `vocabulary/axes.json` v0.1.0 (155 pivot terms, drum kit only).
   snare-slackening are *different means to the same end*, and Widor says the choice is left
   to the player. They must therefore be separate axes with independent values, which is what
   v0.1 does.
-- `ornament` carrying an attack count is confirmed by Gevaert's *ra de 3/4/5/6/7 coups*
-  (p. 332), which is a published, named, counted series from 1885.
+- `ornament` carrying an attack count is confirmed twice independently: Gevaert's *ra de
+  3/4/5/6/7 coups* (1885, p. 332) and Gardner's *Five-/Six-/Seven-/Nine-/Ten-/Eleven-Stroke
+  Roll* and *Four-Stroke Ruff* (1918, pp. 20–23). Two traditions, two languages,
+  thirty-three years apart, both name the ornament by its number of attacks.
 - `position` as radial is confirmed by Read's centre/rim pair being given for **timpani,
   bass drum, snare drum and tambourine alike** (pp. 164, 196–199, 214), i.e. it is a
   cross-instrument axis, not a snare-drum special case.
@@ -967,22 +1088,32 @@ Measured against `vocabulary/axes.json` v0.1.0 (155 pivot terms, drum kit only).
 ### 6.1 What is still missing from this bucket
 
 - **Six of the nine books the bucket names could not be opened at all.** Blades ×2, Adler,
-  Stone, Peinkofer/Tannigel, Brindle. Not "partially reached" — zero text, because
-  archive.org's search-inside endpoint now refuses lending-restricted items and every
-  snippet channel (Google Books, HathiTrust) was closed by quota or Cloudflare. Everything
-  in §2 therefore comes from public-domain treatises plus one publisher preview.
-- **Kastner's *Manuel général de musique militaire* (1848, S20) was downloaded and not
-  mined.** 1.3 MB of French text on military percussion by the author Gevaert cites as his
-  source for the French drum-beating names (Gevaert p. 332 n. 1). It should contain the
-  primary definitions of *ta*, *fla*, *tra*, *ra* and the full French *batterie*
-  repertoire. This is the cheapest remaining win in the bucket.
+  Stone, Peinkofer/Tannigel, Brindle. Not "partially reached" — zero text, verified through
+  four separate archive.org routes plus Google Books and HathiTrust (§1.0). Six further
+  searches (Q33–Q38) found no unrestricted copy. Everything in §2 therefore comes from
+  public-domain treatises plus one publisher preview.
+- **Kastner's *Manuel général de musique militaire* (1848, S20) was mined and is the wrong
+  book.** It is a history and repertoire survey of military music, not a method; it contains
+  no definition of *ta*, *fla*, *tra* or *ra*. The book that does is Kastner's separate
+  *Méthode complète et raisonnée de tambour* / *de timbales*, which is **not on archive.org
+  under any identifier found here** and should be added to the not-reached list. Gevaert
+  p. 332 n. 1 cites "Kastner, Manuel de musique militaire" as his source for the French
+  drum beats, so the definitions may be in a part of the 1848 volume the greps did not
+  reach; UNVERIFIED either way.
+- **Bower 1912 (S17, S18) was mined and yields almost nothing in text.** It is a Google
+  scan of an exercise book: the OCR is mostly noteheads, and the only prose terms are
+  "Primary" and "Secondary" blow (arm vs wrist). Gardner 1918 (S19) **was** productive and
+  is now §2.15.
+- **The American vernacular Read could not translate is still not traced to a printed
+  source.** Gardner 1918, Bower 1912 and Straight 1922 — the three pre-1930 American drum
+  methods reachable here — contain neither `rim shot` nor `ride`. Straight 1922 came closest
+  and instead yielded the tip/butt and "Jazz sticks" attestations (§2.16). The earliest
+  printing of `rim shot` is therefore still open and is probably in a 1930s dance-band
+  method, outside this bucket. Suggested query for the supervisor: `"rim shot" drum method
+  1930s "Gene Krupa" OR "Ray Bauduc" OR "Ben Duncan" site:archive.org`.
 - **The German and Italian registers are thinner than the French and English.** Hofmann
   (S15), Teuchert (S16) and Prout's Italian translation (S12) were downloaded but only
   spot-checked. Peinkofer/Tannigel would have been the German authority and is closed.
-- **Bower 1912 (S17, S18) and Gardner 1918 (S19)** — American pre-MIDI percussion methods,
-  downloaded, not mined. These are the likeliest printed source for the *American*
-  vernacular Read could not translate (rim shot, ride, stomp), and they predate the drum kit
-  as a fixed object.
 - **Elaine Gould, *Behind Bars* (S22)** was downloaded and deliberately not mined here: it
   is a notation manual, its percussion chapter overlaps the notation-standards bucket, and
   its licence is all-rights-reserved with an uncertain upload provenance. Flagged for the
