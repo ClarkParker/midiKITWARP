@@ -61,7 +61,7 @@ secondary; **D** aggregation.
 | S30 | *Musiklehre Online: Spielanweisungen* | musicademy.de | live | pedagogical glossary | http://www.musicademy.de/index.php?id=2591 | DE | C | NO |
 | S31 | *Spielanweisungen* (engraving-house notes) | Vadon Music Preparation | live | engraving practice | http://www.vadonmusicpreparation.com/tag/spielanweisungen/ | DE | C | YES — strings only, no percussion content |
 | S32 | *Klassifikation der Musikinstrumente nach Hornbostel/Sachs* | Universität Würzburg, Institut für Musikforschung | live | university course material | https://www.musikwissenschaft.uni-wuerzburg.de/musikinstrumente/organologie/systematiken/hornbostelsachs/ | DE | A | NO |
-| S33 | *Grand traité d'instrumentation et d'orchestration modernes* | Hector Berlioz | 1843 | **treatise, pre-MIDI French primary** | archive.org id `grandtraitdins1843berl`; full text at https://archive.org/download/grandtraitdins1843berl/grandtraitdins1843berl_djvu.txt | FR | A | YES (poor OCR — see §2.13a) |
+| S33 | *Grand traité d'instrumentation et d'orchestration modernes* | Hector Berlioz | 1843 | **treatise, pre-MIDI French primary** | archive.org id `grandtraitdins1843berl`; full text at https://archive.org/download/grandtraitdins1843berl/grandtraitdins1843berl_djvu.txt | FR | A | YES (poor OCR — see §2.16) |
 | S34 | *Batterie : les caisses* | marcdedouvan.com | live | pedagogical | http://www.marcdedouvan.com/instru.php?instru=caisses | FR | C | NO |
 | S35 | Musique contemporaine — performer's own modes-de-jeu catalogue | Camille Émaille | live | performer catalogue | https://camilleemaille.com/projets/musique-contemporaine/ | FR | C | NO |
 | S36 | *Schlagzeugbegriffe* | d-drums Schlagzeugschule Berlin | live | pedagogical glossary | https://schlagzeug-berlin.de/schlagzeugbegriffe-in-den-ring-geworfen/ | DE | C | NO |
@@ -75,7 +75,7 @@ secondary; **D** aggregation.
 | S44 | *Schule für alle Schlaginstrumente* | H. Kling | pre-1911 | method, named as a standard text by S42 p. 201 | — | DE | A | NO |
 | S45 | Instrumentology / Academy — vibraphone and gong, German edition | Vienna Symphonic Library | live | vendor instrumentology | https://www.vsl.co.at/de/academy/percussion/vibraphone ; `/gong` | DE | B | YES |
 
-Reached in whole or part: **22 of 45**.
+Reached: **24 of 45** — 23 marked YES plus S05 partially.
 
 ### 1.1 Discovery method, and what did not work
 
@@ -456,7 +456,7 @@ ISB Bayern *Bewertungskriterien Perkussion*:
 - "**Handsätze** (z. B. r-l-l-r)", dependent on **Aufstellung**: European (lowest timpano to
   the player's right) versus American (to the left).
 
-### 2.11a Pre-MIDI German, 1911 (S42)
+### 2.12 Pre-MIDI German, 1911 (S42)
 
 Haupt & Teuchert, *Musik-Instrumentenkunde in Wort und Bild*, section D
 *Schlaginstrumente*. This is the pre-MIDI layer the brief asks for: it names physical
@@ -511,7 +511,7 @@ historical variants, not as current usage.
 leather-covered wooden beater, corroborating the *Lederkopfschlägel* of S01 from a source
 a century earlier.
 
-### 2.11b Vibraphone and gong (S45)
+### 2.13 Vibraphone and gong (S45)
 
 | DE | gloss | Axis |
 |---|---|---|
@@ -541,7 +541,7 @@ Gong (S45), where German names the striking geometry differently from the cymbal
 | Gestrichen | bowed | technique — no value |
 | Gedämpft | damped | damping |
 
-### 2.12 Organological German (S06, Hornbostel–Sachs 1914)
+### 2.14 Organological German (S06, Hornbostel–Sachs 1914)
 
 Class terms verbatim from the German original: **Idiophone**, **Aufschlagidiophone**
 (111.2), **Aufschlagstäbe** (111.21), **Aufschlagspiele** (1112.2), **Aufschlaggefäße**
@@ -552,7 +552,7 @@ lost. **The *Aufschlag-* branch is verified in S06; the *Gegenschlag-* branch is
 UNVERIFIED** — the Würzburg PDF is the commentary text, not the full class list. S05 (MIMO's
 SKOS edition of Hornbostel-Sachs) would settle it and was not walked.
 
-### 2.13 French terms (S08, S10, S13, S19)
+### 2.15 French terms (S08, S10, S13, S19)
 
 | FR | source | definition given | Axis |
 |---|---|---|---|
@@ -635,7 +635,7 @@ where English GM names them by *mounting* (floor/rack) plus register — six Eng
 against three French registers. Here English is the more granular tradition, in the one
 place where it usually is not.
 
-### 2.13a Pre-MIDI French, 1843 (S33, Berlioz)
+### 2.16 Pre-MIDI French, 1843 (S33, Berlioz)
 
 The archive.org scan's OCR is poor — accents are mangled and words are broken — so every
 term below is given as the legible reading and the surrounding sense, and **the exact
@@ -677,13 +677,13 @@ Cymbals, from line 10455:
 
 **The chest-damping gesture is named independently in both pre-MIDI traditions**: Berlioz
 1843, "rapprochant de sa poitrine les cymbales", and Haupt & Teuchert 1911, "nach dem
-Schlagen schnell an die Brust gedrückt" (§2.11a). Two sources, two languages, sixty-eight
+Schlagen schnell an die Brust gedrückt" (§2.12). Two sources, two languages, sixty-eight
 years apart, naming the same physical act that KITWARP has no way to express — its nearest
 relative is `choke`, which `vocabulary/rules.json` deliberately excludes as a relation on a
 previously sounded event. That two independent traditions bothered to name it is the
 strongest evidence in this dossier that the exclusion of `choke` leaves a real hole.
 
-### 2.14 Italian terms beyond the snare (S03)
+### 2.17 Italian terms beyond the snare (S03)
 
 | IT | p. | gloss | Axis |
 |---|---|---|---|
@@ -714,7 +714,7 @@ strongest evidence in this dossier that the exclusion of `choke` leaves a real h
 | **Fischio sul bordo della carta** | 995 | whistle on the edge of a sheet of paper | technique, extended |
 | Piatti sospesi con cupola cilindrica e **bordo all'insù** | 77 | upturned edge | instrument morphology |
 
-### 2.15 Spanish hand-drum stroke taxonomy (S18)
+### 2.18 Spanish hand-drum stroke taxonomy (S18)
 
 *Percusión para Dummies*, table of contents. This is the only complete **Spanish** stroke
 taxonomy reached. The book organises hand strokes into three superordinate classes, which
@@ -956,7 +956,7 @@ against `vocabulary/axes.json` at the head of `claude/kitwarp-pivot-vocab-data-w
 | implement | `fist` | listed in the BRIEF's axis sketch but **absent from `vocabulary/axes.json`** | The BRIEF lists `fist` under implement; the shipped axes.json does not. Discrepancy, not a finding — flagged for the reconciliation pass. |
 | implement | `scraper` | Kralle (S01); Râcloir / Schrapinstrument / raspa / rascador (S04) | `technique.scrape` exists with no tool to do it. |
 | implement | `sponge-beater`, `cork-beater` | Schwamm, Kork (S42 p. 166, 1911); **baguettes à tête d'éponge** (S33, 1843) | Standard 19th-century timpani beaters, named independently in French in 1843 and in German in 1911. |
-| technique | `chest-damp` (or admit `choke` as a relation) | "rapprochant de sa poitrine les cymbales" (S33, 1843); "an die Brust gedrückt" (S42 p. 204, 1911) | Named in both pre-MIDI traditions. See §2.13a. |
+| technique | `chest-damp` (or admit `choke` as a relation) | "rapprochant de sa poitrine les cymbales" (S33, 1843); "an die Brust gedrückt" (S42 p. 204, 1911) | Named in both pre-MIDI traditions. See §2.16. |
 | implement | `brass-beater`, `rosewood-beater`, `ebonite-beater` | Messing, Rosenholz, Ebonitholz (S45, vibraphone) | For the mallet-percussion family when it is minted. |
 | mechanism | `head-slackened` | "das ganze, straff angezogene Fell nachläßt" (S42 p. 202) | Damping by detuning the head. Not `damping` — nothing touches the head. No axis has it. |
 | mechanism | `wires-slack` | "die angezogenen Saiten … nachläßt" (S42 p. 202) | A third snare state between `wires-on` and `wires-off`. |
@@ -1031,7 +1031,7 @@ taxonomy, S18, maps onto them one for one), `wires-off` (three languages, S02),
   `vsl.co.at/de/academy/...` and `vsl.co.at/academy/...`, so the German and English editions
   gloss each other line by line, and the English edition additionally carries FR and IT
   score directions (*sur le bois*, *sans timbre*, *senza corde*, *voilé*). Ten instrument
-  pages were mined (§2.3–2.9, §2.11b). **Not mined: tubular bells, plate bells, xylophone,
+  pages were mined (§2.3–2.9, §2.13). **Not mined: tubular bells, plate bells, xylophone,
   marimba, glockenspiel, celesta** — six more pages of the same density. They bear on the
   orchestral and mallet families, which are reserved and unminted, so finishing the set is
   the right next step only once those families are being minted.
@@ -1078,7 +1078,7 @@ UNVERIFIED. This is the source the reconciliation pass should chase.
 - **The Spanish taxonomy (S18) is TOC-only** for the same reason. Pages 55–65 of *Percusión
   para Dummies* would confirm or correct nine stroke glosses.
 - **Berlioz 1843 (S33) was reached, but only through a bad scan.** The archive.org OCR of
-  `grandtraitdins1843berl` mangles accents and breaks words, so §2.13a reports the terms
+  `grandtraitdins1843berl` mangles accents and breaks words, so §2.16 reports the terms
   with confidence but not the orthography. A clean edition — the 1855 reprint, the
   Berlioz–Strauss *Instrumentationslehre* (archive.org `instrumentations01berl`, 1905,
   which is the same text in German and therefore a ready-made FR/DE concordance), or the
@@ -1092,7 +1092,7 @@ UNVERIFIED. This is the source the reconciliation pass should chase.
   MuseScore source tree, reachable by `git clone --depth 1`. Note that MuseScore is GPL, so
   under `docs/adr/0004-provenance-and-licensing.md` its data is **rederive-only** — a reason
   to prefer it as a cross-check rather than a source of record.
-- **The *Gegenschlag-* branch of Hornbostel–Sachs is UNVERIFIED** (§2.12). MIMO publishes
+- **The *Gegenschlag-* branch of Hornbostel–Sachs is UNVERIFIED** (§2.14). MIMO publishes
   Hornbostel-Sachs as SKOS (S05) with German labels and a REST API that is known to work;
   walking that vocabulary would settle it in a few calls.
 - **No Austrian or Swiss source was reached**, and Basel drumming (*Basler Trommel*) has its
