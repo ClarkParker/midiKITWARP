@@ -1,4 +1,8 @@
-# Kept deliberately small: the data pipeline must be runnable from a clean checkout
-# with a stock Python. Anything added here has to earn its place in an ADR.
-jsonschema>=4.21
-tomli>=2.0 ; python_version < "3.11"
+# Kept deliberately small: the data pipeline must be runnable from a clean checkout with a
+# stock Python. Anything added here has to earn its place in an ADR (see ADR-0002).
+#
+# The repository's own data is read with the standard library alone. These two are for
+# validation in CI and for the friendlier error messages a curator sees locally.
+
+jsonschema>=4.21          # JSON Schema 2020-12, used by tools/validate
+check-jsonschema>=0.38    # CLI wrapper with better diagnostics; also used in CI
