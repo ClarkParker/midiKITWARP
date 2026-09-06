@@ -6,13 +6,13 @@ traditions. Method per `.agents/round2/BRIEF.md`: round A breadth (20 searches, 
 Spanish, Portuguese, French, German and transliterated source languages, scholarly through
 pedagogical registers), round B depth, round C self-critique.
 
-**Headline result.** Fourteen independent traditions on four continents, none of which
+**Headline result.** Sixteen independent traditions on four continents, none of which
 borrowed from the drum kit, converge on the same small stroke set: a low centre stroke, a
 high edge stroke, a damped variant of each, a slap, and a heel/tip pair. The sources define
 these strokes *physically* — by where on the instrument, how far from the centre, which
 part of the hand, and whether contact is held — and not as atomic named techniques. That
 is the KITWARP axis decomposition arrived at independently by centuries of pedagogy. §3
-maps every term; §3.4 lists the eleven kinds of term that fit no axis, which is where the
+maps every term; §3.4 lists the twelve kinds of term that fit no axis, which is where the
 model is actually incomplete.
 
 ---
@@ -59,6 +59,10 @@ research dataset); `C` trade or teaching site without citations; `D` marketing.
 | B9 | *Pandeiro Brasileiro* (Roberto Sampaio, 2006); *Pandeirada Brasileira* (Vina Lacerda, 2007) | — | 2006, 2007 | method books using the Stasi notation; cited **by** B3 | print | A | via B3 |
 | B10 | *Ritmos e Grafias aplicados à Música Brasileira* | Sandro Cartier | — | rival pandeiro notation, named by B3 §1.3 | print | A | no |
 | B11 | Luiz D'Anunciação's notation | — | — | "a primeira escrita formal" for pandeiro, named by B3 §1.3 | print | A | no |
+| B12 | *Tem que respeitar meu tamborim: notas sobre a transcrição musical da bateria da Mangueira* | L. E. P. Oliveira, *Revista Científica do UBM* v. 27 n. 52 (1 sem. 2025), pp. 157–171, e-ISSN 2764-5185 | 2025 | peer-reviewed transcription study, Portuguese; **quotes Mestre Odilon on the repique stroke sequence and defines the tamborim `virado` verbatim** | `https://revista.ubm.br/index.php/revistacientifica/article/download/2320/644/` | A | **yes** (PDF → text) |
+| B13 | *O criador na tradição oral: a linguagem do tamborim na escola de samba* | Dra. Marianne Zeh, Laboratório de Etnomusicologia, Escola de Música da UFRJ; XVI Congresso ANPPOM, Brasília | 2006 | peer-reviewed conference paper, Portuguese; **the three basic tamborim articulations and the `3 e 1` / `2 e 1` techniques** | `https://antigo.anppom.com.br/anais/anaiscongresso_anppom_2006/CDROM/COM/02_Com_Etno/sessao01/02COM_Etno_0105-023.pdf` | A | **yes** (PDF → text) |
+| B14 | *O ritmo das baterias das escolas de samba de Florianópolis em 2010, na perspectiva de seus mestres* | André Felipe Marcelino, Universidade do Estado de Santa Catarina, Centro de Artes, Departamento de Música | 2010 | university monograph, Portuguese; **the surdo hand-mute and the `maceta` beater tips** | `https://sistemabu.udesc.br/pergamumweb/vinculos/000000/000000000019/00001934.pdf` | A | **yes** (PDF → text) |
+| B15 | *Bateria de escola de samba* (Odilon & Gonçalves 2000; Gonçalves & Costa 2000); Farias 2010 | Mestre Odilon and others | 2000, 2010 | primary mestre pedagogy; cited **by** B12 and B14 with page numbers | print | A | via B12, B14 |
 
 ### 1.3 Indian — Hindustani (tabla) and Carnatic (mridangam, ghatam, kanjira)
 
@@ -105,6 +109,12 @@ research dataset); `C` trade or teaching site without citations; `D` marketing.
 | W6 | *Sabar Drumming: Puzzling Rhythms From Senegal* | DRUM! Magazine | n.d. | trade | `https://drummagazine.com/sabar-drumming-puzzling-rhythms-from-senegal/` | C | **no** (empty body) |
 | W7 | *Techniques de frappe au djembé : basse, tonique, claqué* | afro-sambas.fr | n.d. | teaching, French | `https://www.afro-sambas.fr/techniques-de-frappe-au-djembe-basse-tonique-claque-sans-douleur/` | C | round-A summary only |
 | W8 | *West-African Percussion rhythms from Guinea and surrounding countries* | academia.edu 10863412 | — | compiled notation | `https://www.academia.edu/10863412/` | B | no |
+| W9 | **Rhythm-Speech Correlations in a Corpus of Senegalese Drum Language** | Sofiya Ros, Utrecht Institute of Linguistics OTS; *Frontiers in Communication* 6, art. 643683 | 2021-07-01 | peer-reviewed, open access; **Table 1 "Sabar phonemes" is the complete nine-stroke table with variants and physical descriptions** | `https://www.frontiersin.org/articles/10.3389/fcomm.2021.643683/pdf`, doi 10.3389/fcomm.2021.643683 | A | **yes** (PDF → text) |
+| W10 | *On the Grammar of a Senegalese Drum Language* | Yoad Winter, *Language* 90(3) | 2014 | peer-reviewed; the source W9 cites for the three-class stroke division | doi 10.1353/lan.2014.0061 | A | **no** (503 on the author's copy; the DOI is the locator) |
+| W11 | *Masters of the Sabar: Wolof Griot Percussionists of Senegal* | Patricia Tang, Temple University Press | 2007 | the standard monograph; ISBN 9781592134199 / 159213419X, OCLC 260116387, 230 pp., refs pp. 183–197 | `https://archive.org/details/mastersofsabarwo00tang` | A | **metadata only** — item is access-restricted (controlled lending) |
+| W12 | *Masters of the sabar: Wolof griots in contemporary Senegal* (PhD dissertation) | Patricia Tang, Harvard University | 2000 | **p. 165 carries Tang's stroke-syllable definitions**, per the endnote in W13 | cited by W13 endnote ix | A | no |
+| W13 | *TUBS Transcription of the Bakks of Rambax MIT* | Anna Bershteyn, MIT 21M.293 *Music of Africa*, Fall 2005 | 2005 | course paper on MIT OpenCourseWare; names the stroke syllables and the Tang method | `https://ocw.mit.edu/courses/21m-293-music-of-africa-fall-2005/52df6ea86225d68323b454fac1227839_bakks_paper.pdf` | B | **yes** (PDF → text) |
+| W14 | *Sabar in Culture — Drum Types* | Boston College West African Music Ensemble | n.d. | university ensemble reference; **the fullest sabar drum-family list reached, with Wolof orthography** | `https://sites.google.com/bc.edu/bc-west-african-music-ensemble/sabar-in-culture/drum-types` | B | **yes** |
 
 ### 1.6 East Asian
 
@@ -124,6 +134,16 @@ research dataset); `C` trade or teaching site without citations; `D` marketing.
 | E12 | *The Instruments for Gamelan Bali* | University of Hawaii | n.d. | university course material | `http://remus.shidler.hawaii.edu/GAMELAN/BALIINST.HTM` | B | no |
 | E13 | *Notation of Javanese Gamelan dataset for traditional music applications* | ScienceDirect S235234092400088X | 2024 | data article | `https://www.sciencedirect.com/science/article/pii/S235234092400088X` | A | no |
 | E14 | *Luogu*; *Bangu (drum)* | Wikipedia EN, Britannica | 2026 | encyclopaedia | `https://en.wikipedia.org/wiki/Luogu`, `https://www.britannica.com/art/luogu` | B | no |
+| E15 | **Glossary of Frequently Used Terms in Balinese Music** | Andrew McGraw (ethnomusicologist, Univ. of Richmond) | n.d. | scholarly glossary; **defines the Balinese kendang strokes with their notation letters** | `https://swarasanti.nl/upload/doc/Glossary%20Balinese%20Music.pdf` | A | **yes** (PDF → text) |
+| E16 | **Javanese gamelan notation, MUSC 510 term paper** | Ethan Schwartz, Wesleyan University | 2021 | graduate research paper citing Sindoesawarno 1955, Sumarsam 1975/1995, Martopangrawit 1972, Buys 1940, Djakoeb & Wignjaroemeksa 1913, Djatiswara & Lebdapradangga 1924; **the history of kendhang notation and why it never standardised** | `https://elschwartz.research.wesleyan.edu/files/2021/03/musc510-final-Ethan-Schwartz.pdf` | A | **yes** (PDF → text) |
+| E17 | *Kendhangan Gaya Solo Dengan Selintas Pengetahuan Gamelan* (Sumarsam 1975); *Titilaras Kendhangan* (Martopangrawit 1972); Sindoesawarno 1955 | — | 1955–1975 | the three named Javanese kendhang notation systems; described **by** E16 | print | A | via E16 |
+| E18 | *Introduction to Ciblon Drumming in Javanese Gamelan* | Project MUSE open-access chapter, pub. 166 | — | the one open-access text that should carry the ciblon stroke table | `https://muse.jhu.edu/pub/166/oa_edited_volume/chapter/2707301` | A | **no** (MUSE "Verification required" gate) |
+| E19 | *Modul Praktik Karawitan Jawa*, kode 14140352W049 | Universitas Mulawarman repository | — | university teaching module, Indonesian; should carry the kendhang syllable/letter table | `https://repository.unmul.ac.id/bitstream/handle/123456789/8028/Modul%20Praktik%20Karawitan%20Jawa.pdf?sequence=1` | A | **no** (503) |
+| E20 | *Organologi dan Bunyi Kendang Jawa* | ResearchGate 365225984 / academia.edu 93705632 | 2022 | Indonesian organology article on kendang sound production | `https://www.researchgate.net/publication/365225984_Organologi_dan_Bunyi_Kendang_Jawa` | A | **no** (RG gate) |
+| E21 | *Mengenal instrumen kendhang … dan notasi kendang Jawa Tengah* | O.M. Adji Laras (blog) | 2019 | teaching reference, Indonesian; **the notation table exists only as scanned images on the page** | `https://wwwsugiyono.blogspot.com/2019/12/mengenal-instrumen-kendhanggendhangkend.html` | C | **partial** |
+| E22 | *Notation of Javanese Gamelan dataset for traditional music applications* | Kurniawati, Yuniarno, Suprapto, Ifada, Soewidiatmaka, *Data in Brief* 53:110116 | 2024 | peer-reviewed data article, open access via PMC10885543 | doi 10.1016/j.dib.2024.110116 | A | **yes** — and it states "the *Kendhang* instrument is not available for analysis" |
+| E23 | *Umulsai: A Plain-Text Format and In-Browser Engraving System for Jeongganbo, Korean Mensural Notation* | Danbinaerin Han, arXiv 2607.24230 | 2026 | preprint on Korean mensural notation | `https://arxiv.org/html/2607.24230` | A | **yes** — confirms a *jangdan* column of drum mnemonics exists but gives no inventory |
+| E24 | *국악/장단* (Korean traditional music / jangdan) | NamuWiki, English mirror | 2026 | reference wiki; **carries the five-class janggu technique table** | `https://en.namu.wiki/w/%EA%B5%AD%EC%95%85/%EC%9E%A5%EB%8B%A8` | C | **no** (403 to WebFetch; content reached only through search summary) |
 
 ### 1.7 Cajón, and cross-family / scholarly
 
@@ -137,7 +157,9 @@ research dataset); `C` trade or teaching site without citations; `D` marketing.
 | X6 | *Acoustic-iconic mnemonic systems* | David W. Hughes, cited as [7] by E7 | — | the scholarly umbrella term for bol / solkattu / kuchi-shōga / luógǔjīng | via E7 | A | via E7 |
 | X7 | *Directly struck membranophones* (Hornbostel–Sachs 211) | Wikipedia EN | 2026 | classification | `https://en.wikipedia.org/wiki/Directly_struck_membranophones` | B | no |
 
-**Register totals: 70 candidates listed, 34 reached in full or in substantial part.**
+**Register totals: 99 candidates listed. 51 reached directly in full or in substantial
+part; a further 8 reached indirectly, through a reached source that quotes them with a page
+number (B9, B15, I13, W12, E17, X6) or through metadata only (W11).**
 
 ---
 
@@ -484,12 +506,82 @@ near one end." W2 names no individual strokes. Each dunun player strikes the hea
 stick in one hand and the mounted bell with a rod in the other: the bell is a **second
 instrument on one layout slot**, not a site on the drum.
 
-W5 (*Sabar*): drum family "n'der, thiol, goron, m'beng m'beng, toungoné, and xiin"; the
-stick is the **`galan`**, "made of tamarind wood"; "The drum is generally played with one
-hand and one stick or 'galan'". W4 (Utrecht) states that "Playing the sabar involves at
-least nine distinct strokes: hand strokes, stick strokes, or their combinations" and that
-"Each drum stroke has a name, even the smallest variation" — **but neither reached source
-enumerates them.** This is the largest single hole in the bucket (§6).
+**2.7.1 Sabar — the nine strokes, closed.** W9 (Ros 2021, *Frontiers in Communication*,
+Table 1, headed **"Sabar phonemes"**), verbatim and complete. This is the bucket's only
+stroke table that names its own units *phonemes*, because the tradition uses them to encode
+Wolof speech.
+
+| Code | Variants | Description (verbatim) |
+|---|---|---|
+| **Gin** | Gi, bin | "Bass sound; the hand strikes the edge or the middle of the skin" |
+| **Pin** | — | "The hand strikes the edge of the drum" |
+| **Pax** | Pa, ba, bax, mbar, mbax | "The full palm strikes the whole skin" |
+| **tan** | Ta, sa, san, dan, ja | "The stick strikes the centre of the drum and bounces off" |
+| **tac** | Tas, tach | "The stick strikes the centre of the drum and bounces off, while the hand damps the edge of the drum" |
+| **ce** | Ña, ca, cek, cex, te | "The stick strikes the drum and is left there" |
+| **rwan** | Rwa | "pin tan or pax tan" |
+| **rwe** | Rwex | "Pax ce" |
+| **drin** | — | "Tan gin" |
+
+W9 divides them into three classes, verbatim, crediting Winter 2014 (W10):
+
+> "• Hand strokes: produced by one hand, which may bounce or stop on the skin.
+> • Stick strokes: produced by the stick, where the hand may be used for damping the sound.
+> • Hand + stick strokes: sequences of hand strokes and stick strokes; these sequences are
+> perceived as minimal rhythmic units."
+
+Three observations that bear directly on the model:
+
+1. **`tan` and `tac` differ only in whether the *other* hand damps the edge.** Same
+   implement, same site, same position, same rebound — the only difference is cross-hand
+   damping (§3.4 (9)). Sabar is the cleanest proof in the bucket that this is a real,
+   independently-named distinction and not a shading.
+2. **`ce` is `tan` with the stick left on the head**, i.e. rebound versus stopped. That is
+   the same open/closed opposition the darbuka draws between `tak` and `pa`/`sak` and the
+   pandeiro draws between `polegar solto` and `polegar abafado` — here applied to a *stick*.
+3. **`rwan`, `rwe` and `drin` are two-attack compounds "perceived as minimal rhythmic
+   units"** — that is v0.1's `ornament` with `attacks: 2` exactly, but the tradition mints
+   them as first-class stroke names rather than as a base stroke plus a qualifier.
+
+W9 also gives frequency counts over a 396-piece corpus recorded from griots of one family
+at Campement Nguekhohk, Senegal, 2018–19: Gin 1966 (36 %), Tan 1814 (33.3 %), Rwan 689
+(12.6 %), Pax 428 (7.8 %), Tac 317 (5.8 %), Ce 182 (3.3 %) — and notes "The stroke pin was
+not present throughout the data". W9 warns that the oral codes "may vary between different
+types of sabar drums (Tang, 2007)" and "depending on personal choice of a drummer, speed of
+playing or the drum that is being used" — the same school-and-player variance recorded in
+§3.4 (10).
+
+**2.7.2 Sabar — instruments and implement.** W14 (Boston College West African Music
+Ensemble), the fullest family list reached, with Wolof orthography:
+
+| Drum | Verbatim |
+|---|---|
+| `sabar nder` (ndeer) | "The tallest open-botton sabar drum. It has the widest range of all sabar drums and leads the ensemble" |
+| `ndënd` / `cól` / `làmb` (col, cóol, thiol, jol, lambe, lamba) | "The lead bass drum, typically ovoid in shape, on which the tulli (alt. touli) accompaniment is played" |
+| `gorong talmbat` (goroŋ) | "The slightly shorter descendant of the cól. It is the lead tenor drum" |
+| `gorong yeguel` / `gorong mbabas` | "essentially a closed-botton cól, but with the head strung tighter and laced in the style of an open-bottom drum"; credited to Doudou N'diaye Rose |
+| `mbëng-mbëng` (mbëŋ-mbëŋ, mbung-mbung) | "Named onomatopoeically for the sound it makes"; Serer origin |
+| `mbëng-mbëng ball` (bal, bale, balla) | "The tallest mbëng-mbëng, boasting a bassier sound than its shorter counterpart" |
+| `mbëng-mbëng tungune` (tuŋune, toungoné) | "The shortest sabar drum" and "the alto of the ensemble" |
+| `xiin` (xin, xeen, jiin, khin) | "A cylindrical baritone drum originating from Touba", seldom present today |
+| `tama` | talking-drum family; "Performers wear the tama on a sling and position it at the underarm, manipulating the timbre by squeezing and releasing the drum" |
+| `djembé` | "A later and uncommon addition to the Senegalese sabar ensemble"; "the only sabar drum played without a galeñ" |
+
+Implement, verbatim: **`galeñ`** (galen, galan) — "A slender wooden batter" used in the
+right hand while the left palm plays the drum, "Made from either sideem (jujube, alt.
+sidéem), daqar (tamarind, alt. dakkar), or sump." W5 gives the family more briefly as
+"n'der, thiol, goron, m'beng m'beng, toungoné, and xiin" and the stick as "made of tamarind
+wood".
+
+W13 (Bershteyn, MIT 21M.293, 2005) corroborates the stroke set independently — "a bass
+stroke is vocalized as gin, a tone as pin, and a slap as pax" — records the compounds
+"rwan, a rapid succession of pax and ja" and "sa-bin, a rapid succession of ja and gin",
+notes the doubling `gi-gin`, and observes the same instability of the syllables: the teacher
+varies them "slightly (e.g. rwan to rwa or gin to bin) but generally maintaining a
+consistent correspondence between stroke and syllable." W13 also gives the locator for the
+canonical stroke definitions: "Tang uses the first letters of these syllables as labels for
+notes in staff notation, and then defines the syllables with a physical description of a
+corresponding stroke", endnote ix = **Tang, PhD dissertation, Harvard 2000, p. 165** (W12).
 
 ### 2.8 East Asian — taiko
 
@@ -543,10 +635,46 @@ with a round head", bamboo and hardwood) and `yeolchae` ("always made from bambo
 Syllables: `kung` / `gung` (gungpyeon, gungchae), `deok` and `ta` / `tta` (chaepyeon,
 yeolchae), `deong` (both heads struck together). E4, verbatim: "With yeolchae, you can make
 the sound 'tta(따),' and with gungchae sound 'gung(궁)'" and combined use produces "'deong
-(덩)'". Round A adds `gi` ("lightly striking the end") and the compounds `gideok` /
-`gigideok`; **UNVERIFIED**, not confirmed by E4, E5 or E6. E5 (Graz) confirms only the
-existence of the system: "we learn our pieces using the traditional system of onomatopoeic
-syllables (we sing the drumming patterns before playing them!)".
+(덩)'".
+
+**2.9.1 The janggu's five technique classes.** The janggu vocabulary is **doubled**: each
+technique carries a Sino-Korean class name used in notation *and* an onomatopoeic `gu-eum`
+(oral-notation) syllable used in teaching. The table below comes from E24 (NamuWiki
+*gugak / jangdan*), which **returned 403 to direct fetch and was reached only through a
+search summary, so treat the pairing as UNVERIFIED-AT-SOURCE** — though every element in it
+is corroborated by E4 or by round A:
+
+| Class | Gu-eum | What it is |
+|---|---|---|
+| **Ssang** ('double', also *hap*) | `deong` | strike both heads of the janggu at once |
+| **Pyeon** ('whip') | `ttak` | strike the right head (chaepyeon) with the stick |
+| **Pyeon** | `gideok` | two consecutive strokes on the right head |
+| **Go** ('drum') | `kung` | strike the left head (gungpyeon / bukpyeon) with the palm of the left hand |
+| **Yo** ('shake') | `deoreoreo` | strike the right head with the stick **bouncing**, producing successive notes |
+
+This closes the round-A `gi` / `gideok` / `gigideok` question, and closes it by correcting
+it: `gideok` is not one stroke but **two consecutive right-head strokes**, i.e. an
+`attacks: 2` compound in the same class as sabar `rwan` and taiko `DoKo`; `gi` is the first
+of that pair, not an independent stroke. `deoreoreo` is a bounced roll — v0.1
+`ornament.bounced` / `ornament.roll`. The best-known instance of the whole vocabulary is the
+Gutgeori jangdan, chanted `deong gideok kung deoreoreo`, which is the class sequence
+Ssang–Pyeon–Go–Yo.
+
+Note what the doubling means for the model: Korean has **both** an abstract technique name
+(Go = "drum", i.e. the bass head) **and** an iconic one (`kung`). The abstract name is what
+a pivot vocabulary is; the iconic one is what a sample-library articulation label tends to
+be. Korean is the clearest case in the bucket of a tradition that maintains both layers
+explicitly.
+
+E5 (Graz) confirms only that the system exists: "we learn our pieces using the traditional
+system of onomatopoeic syllables (we sing the drumming patterns before playing them!)".
+E23 (Han, arXiv 2607.24230, a plain-text format for jeongganbo) confirms that published
+Korean scores carry "a *jangdan* column of drum mnemonics (*deong*, *gideok*, *kung*, ...)
+written once at the head of the piece" and registers "drum-mnemonic glyphs" in its symbol
+palette, but supplies no inventory: "folk-music (*minsogak*) notation practices and
+instrument-specific extensions ... are future inventory work." The authoritative inventory
+is the National Gugak Center's instrumental score series, which E23 cites and this bucket
+did not reach.
 
 **E7 (ISMIR 2014) — the luógǔjīng syllable table, Table 1, verbatim.** The Beijing opera
 ensemble is "formed mainly by five instruments played by four musicians. The ban clappers
@@ -578,8 +706,83 @@ acoustic phenomena they represent".
 which usually has the deepest tone"), `kendhang wayang` (medium, "traditionally used to
 accompany wayang performances"), `kendhang batangan` / `ciblon` ("used for the most complex
 or lively rhythms"), `kendhang ketipung` ("the smallest kendang"). The only stroke string
-E9 gives is for kendang Reog: "dang thak dhak thung glhang". **The systematic Javanese and
-Balinese kendang syllabary was NOT OBTAINED** (E11 returned 503, E13 paywalled).
+E9 gives is for kendang Reog: "dang thak dhak thung glhang".
+
+**2.9.2 Javanese kendhang — why there is no single syllabary, and what there is instead.**
+E16 (Schwartz, Wesleyan MUSC 510) is the decisive source, and its answer is that the
+tradition *has* the sounds but has never agreed a notation for them. Verbatim, and this is
+an axis statement written by an ethnomusicologist with no knowledge of KITWARP:
+
+> "each head of the kendhang can produce a multitude of different sounds depending on both
+> the **position of the hand (rim, edge, or center)** and the **stroke technique (open,
+> closed, sliding, tapping, etc.)**. The situation becomes yet again more complex for sounds
+> that are produced through a **combination of left- and right-hand strokes, either rendered
+> simultaneously or slightly offset in time**."
+
+Position x technique, plus the two-hand combination problem — §3.4 (1) — stated as the
+reason the kendhang "produces a greater number of distinct sounds than any other instrument
+in the gamelan" and therefore defeats notation.
+
+Head names: **`bem`** (the larger head) and **`kempyang`** (the smaller), which E16 deduces
+from the two staff lines of Djatiswara & Lebdapradangga 1924 and E21 confirms. Drum
+configurations, verbatim from E16 n.10: `kendhang satunggal` (the large `kendhang ageng`,
+optionally with a second player on the small `kendhang penunthung` / `ketipung`);
+`kendhang kalih` (`ageng` + `ketipung`); and the mid-sized `kendhang ciblon` / `batangan`
+played alone. The oral solfege has its own names: **`kendhang cangkem`** (Javanese, 'mouth
+drum'), `kendhang mulut`, `kendhang secara lisan` — and E16 notes it "exists prior to, and
+ultimately independently of, notation", so that "an ideal system of kendhang notation would
+directly reflect this vocalization, with as many unique symbols as there are rhythmic
+solfege syllables."
+
+Historical notation letters, from E16: the ~1910 Gondapangrawit manuscript spells out the
+kendhang ageng strokes `dhang` and `dhung` in Javanese script with dots for rests; the 1913
+Djakoeb & Wignjaroemeksa manual uses Latin capitals, **B = dhang/dhah** and **D = dhung**.
+E16 records four later typewriter-constrained systems — Sindoesawarno (1955),
+Martopangrawit (*Titilaras Kendhangan*, 1972), Sumarsam (1975) and Romo Kawindro / Sri
+Atmojo — and quotes the standardisation failure directly: Sindoesawarno in 1955,
+"At this time kendhang notation is the least systematized notation. It can be said to be out
+of control. Everyone does as he pleases"; Sumarsam twenty years later, "even today drumming
+notation is not uniform. Notation may vary from group to group and even from teacher to
+teacher." E21 adds three Indonesian stroke *classes* — `kebukan` (open), `keplakan`
+(struck), `ketegan` (damped/closed) — but its syllable table exists on the page only as
+scanned images.
+
+A syllable-to-letter mapping in current Indonesian teaching use, **search-derived and
+therefore UNVERIFIED-AT-SOURCE** (E19 returned 503, E20 is behind the ResearchGate gate,
+E18 behind the Project MUSE gate): `B` = dhen, `D` = ndang, `V` = dhet, `K` = ket,
+`L` = lung, `J` = tlang, `I` = tak, `O` = tong, `P` = thung, `H` = hen, `N` = dlong; with
+the compounds `dlong` = tong + dhah simultaneously, `ndang` = tak + dhen simultaneously,
+and `tlang` = tak + thung "simultaneously or nearly simultaneously, with tak slightly
+preceding thung". That last definition is worth keeping: it is a named term whose
+definition is *a few milliseconds of offset between two heads* — finer than any axis in the
+model, and finer than MIDI note-on granularity is usually used to express.
+
+**2.9.3 Balinese kendang — closed, with notation letters.** E15 (Andrew McGraw, *Glossary
+of Frequently Used Terms in Balinese Music*), verbatim:
+
+| Term | Verbatim definition |
+|---|---|
+| `dag` (D) | "Open right-hand stroke on the kendang wadon in cedugan style" |
+| `dug` (T) | "Open right-hand stroke on the kendang lanang in cedugan style" |
+| `tut` (T) | "High pitched right-hand stroke on the kendang lanang" |
+| `ka(p)` | "Left-hand slap-stroke on kendang wadon" |
+| `cedugan` | "Balinese drumming style incorporating the use of a mallet in the right hand" |
+| `gupekan` | "Balinese hand-drumming" |
+| `kendang tunggal` | "Improvised solo drumming" |
+| `lanang` | "Male. Refers to the higher of paired kendang or gong" |
+| `wadon` | "(Female.) Lower of a pair of kendang or gong" |
+
+Two things follow. First, **`cedugan` and `gupekan` are an implement distinction that
+renames the whole stroke set** — the same drum played with a mallet and played with the
+hand are, in the vocabulary, two different instruments. v0.1 puts `implement` on the term
+and would express this correctly, but only if the world-percussion mint resists the
+temptation to fold "cedugan" into the instrument name. Second, E15 prints the notation
+letter `(T)` for both `dug` and `tut`; that is either a collision in Balinese practice or a
+typo in the glossary, and it is **UNVERIFIED** which. A round-A search summary of an
+unreached ResearchGate study of gong kebyar drumming gives the fuller set as three lanang
+strokes `pak` (p), `pung` (v), `tut` (T) and three wadon strokes `kap` (k), `pung` (u),
+`dag` (d), which would resolve the collision by giving `dug` a different letter; treat that
+as UNVERIFIED-AT-SOURCE.
 
 **E10 (Yudane, *Notation for Gamelan Bali*).** Not a stroke source, but it supplies the
 Balinese ensemble-role vocabulary, which bears directly on §3.4:
@@ -641,14 +844,74 @@ jingle movement = pratos (cymbals).
 **B2 (*Surdo*).** `primeira` / `marcação` (largest, deepest, 22–26 in); `segunda` /
 `resposta` / `respondor` (medium, 20–22 in); `terceira` / `cutador` ('cutter', smallest,
 14–18 in). Beaters given only generically: "Surdo drummers beat the drums using hard or soft
-mallets"; in samba-reggae "the middle surdos are played with two mallets". The
-open / `abafado` (muffled) distinction is universal in the teaching literature but is **NOT
-VERIFIED** here from a source of authority B or better.
+mallets"; in samba-reggae "the middle surdos are played with two mallets".
 
-**B6 (*Tamborim*).** Beater: "a beater made of several nylon or polyacetal threads bound
-together" (in samba-batucada); otherwise "a small wooden drumstick", occasionally fingers or
-the rim. `virado`, verbatim: "the drum is flipped upside-down in the middle of the pattern,
-which produces one note that is slightly delayed". `carreteiro` = "the main groove pattern".
+**B14 closes the surdo open/muted pair from a source in the language.** Marcelino (UDESC
+2010, citing Farias 2010 p. 74), verbatim Portuguese: "Os surdos são tocados com baquetas,
+também chamadas de **macetas**, cobertas com espuma, feltro ou pano na ponta" — the beaters
+are `macetas`, tipped with foam, felt or cloth — and, decisively, **"Na figura da pausa, o
+ritmista abafa a pele com a mão, procedimento que é realizado da mesma forma nos três
+surdos"**: on the rest figure the player mutes the head *with the hand*, identically on all
+three surdos. B14 also gives `surdo de corte` as an alternate name for the `terceira` and
+notes that the third surdo "executa síncopes entre as marcações" and is one of the
+instruments responsible for the bateria's "balanço" (Gonçalves & Costa 2000, p. 19).
+
+The academic Brazilian terminology for the pair is **`toque solto`** (loose/open) and
+**`toque abafado`** (muffled); a published spectral-analysis study models samba piano
+left-hand voicings on "the loose and muffled touches of three types of surdos", and the
+*Na cadência do samba* teaching supplement notates surdo with a legend distinguishing
+"drumstick on the skin" from "left hand muffling the skin". Both are round-A search
+findings; the specific article was **not reached**, so treat the exact wording as
+UNVERIFIED-AT-SOURCE while the practice itself is now verified by B14. In §3.2 this is
+`damping` applied by the non-striking hand — the same cross-hand mechanism as the conga
+muffled slap and the sabar `tac` (§3.4 (9)).
+
+**B12 (Oliveira 2025, *Revista Científica do UBM*) — the repique stroke sequence,
+quoted from a mestre.** B12 n.13 quotes Mestre Odilon (Odilon & Gonçalves 2000, p. 25) on
+the standard Rio repique *levada*, verbatim:
+
+> "Sua execução exige 4 toques: no primeiro, a baqueta dá a primeira nota no centro da
+> pele, no segundo toca simultaneamente na pele e no aro; no terceiro ainda na pele e no
+> aro, só que mais perto da borda, e, finalmente, o quarto toque é tocado com a mão
+> esquerda nua."
+
+Four strokes: (1) stick at the **centre of the head**; (2) stick on **head and rim
+simultaneously** — a rimshot; (3) head and rim again but **nearer the edge**; (4) the
+**bare left hand**. Nothing in that sentence is a stroke *name*: it is four points in
+(site x position x contact). B12's own transcription legend says the same of the parenthesised
+notes — "a nota entre parênteses é tocada com a mão diretamente na pele, com um tapa, sem
+baquetas, enquanto as demais são tocadas pela baqueta". For the caixa, B12 names
+`manulação` (the sticking, written `D` and `E` for *direita* and *esquerda*) and `rufo`
+(the roll), and records that at Mangueira both "são executados obrigatoriamente como
+transcritos ... não sendo permitida qualquer tipo de variação", the only permitted change
+being a left-hander swapping the hands — a limb-only variant, exactly the case v0.1 puts on
+the layout slot rather than in the term.
+
+**B6, B12 and B13 on the tamborim `virado` — an articulation produced by moving the
+instrument, not the implement.** B6 (Wikipedia) says only "the drum is flipped upside-down
+in the middle of the pattern, which produces one note that is slightly delayed". B12 is
+precise, verbatim: "as notas entre parênteses são tocadas na pele do instrumento **de baixo
+para cima com o tamborim virado para baixo**. O ritmista ao tocar a nota anterior **gira o
+instrumento** para que a nota seguinte seja tocada no sentido inverso ao subir a baqueta."
+B13 (Zeh, ANPPOM 2006) is more precise still and states the mechanism outright: in the
+`carreteiro`, "usa-se a **virada do tamborim contra o movimento para cima da baqueta**,
+possibilitando, assim, o toque rápido de quatro semicolcheias num tempo do compasso", and
+in the `3 e 1` technique three notes are struck downward and one upward (↓↓↑↓), "sendo a de
+cima principalmente feita com a **virada do tamborim para a baqueta e não com a própria
+baqueta**" — the upstroke note is made by bringing the *drum* to the *stick*, not the stick
+to the drum. With a multi-rod `vassourinha` beater ("com três a oito varas") the easier
+`2 e 1` technique becomes possible.
+
+**This is the single strongest finding for §3.4 (4).** Every axis in the model assumes the
+implement moves and the instrument is static. The tamborim's principal technique inverts
+that, and the inversion is what produces the note.
+
+B13 also gives the tamborim's three basic articulations in popular music, verbatim: "com a
+baqueta (madeira ou bambu) na pele **solta** ou **presa** e com o **dedo**" — stick on a
+loose head, stick on a pressed head, and finger — and names the rhythmic cells `carreteiro`,
+`teleco-teco`, `afoxé`, `subida` and convenções "em cima da letra". Beaters: bamboo
+traditionally (it "quebrava facilmente"), replaced at Imperatriz by nylon in the late 1970s;
+B6 adds "a beater made of several nylon or polyacetal threads bound together".
 
 **B7 (*Cuíca*).** "The cuíca has a wooden or bamboo stick fastened at one end inside the
 drum in the center of, and perpendicular to, the drumhead." "This stick is rosined and
@@ -712,11 +975,14 @@ term in this bucket, this is the term the literature already uses.
 
 ## 3. Axis mapping
 
-### 3.1 The recurring stroke set, confirmed across fourteen traditions
+### 3.1 The recurring stroke set, confirmed across sixteen traditions
 
 The brief predicted "a small, recurring stroke vocabulary — open, muted, slap, bass, heel,
 tip, rim — applies across families". It does. Every cell below is from §2, and no tradition
-in the table borrowed its vocabulary from any other in it.
+in the table borrowed its vocabulary from any other in it. Sabar is set in bold because it
+is the strongest single row: it is a *stick-and-hand* tradition documented by linguists
+rather than by musicians, its terms are called "phonemes" because they encode speech, and it
+still lands on the same bass / edge / muted / slap / stopped set as the bare-hand traditions.
 
 | Tradition | bass / low centre | open / edge tone | muted | slap | heel | tip / finger | rim / edge |
 |---|---|---|---|---|---|---|---|
@@ -733,12 +999,23 @@ in the table borrowed its vocabulary from any other in it.
 | janggu (Korea) | kung / gung | deok | — | — | — | — | (deok at the wood/hide join) |
 | ghatam (S. India) | flat hand at the mouth | fingers on the body | — | — | wrists | fingers | neck |
 | cajón flamenco | graves (centre) | agudos (upper tapa) | apagados | chasqueos / rotos | palm of grave-agudo | yemas of grave-agudo | laterales |
-| kendang (Java) | dang / dhung | thak / dhak | — | — | — | — | — |
+| kendang (Java) | dhang / dhung / dhah | thung / tong | tak (pressed) | — | — | — | ket |
+| kendang (Bali) | dag (wadon) | dug, tut (lanang) | — | ka(p) (wadon, left hand) | — | — | — |
+| **sabar (Senegal)** | **gin** | **pin** | **tac** (stick + cross-hand damp) | **pax** | — | — | **ce** (stick left on the head) |
 
-**Every cell in the "bass" column is described by its sources as centre-of-head with the
-flat or cupped palm. Every cell in the "open" column is near the edge with the fingers.**
-The traditions are not naming different gestures; they are naming the same two points on a
-membrane and the same two hand shapes.
+**Every bare-hand cell in the "bass" column is described by its sources as centre-of-head
+with the flat or cupped palm. Every cell in the "open" column is near the edge with the
+fingers.** The traditions are not naming different gestures; they are naming the same two
+points on a membrane and the same two hand shapes.
+
+Sabar and the Balinese kendang show the same structure survives a change of implement. The
+sabar `gin` is the bass and it is a *hand* stroke; `tan` is the bright centre stroke and it
+is a *stick* stroke — so in a mixed-implement tradition the low/high opposition migrates
+from position onto implement, while position (centre versus edge) and damping stay where
+they are. Balinese `cedugan` (mallet) and `gupekan` (hand) rename the whole set for the same
+reason. This is what an orthogonal `implement` axis is for, and it is why folding the
+implement into the instrument name — which the traditions themselves do — would be a
+mistake for the pivot.
 
 ### 3.2 Terms that map cleanly onto an existing axis
 
@@ -779,7 +1056,7 @@ membrane and the same two hand shapes.
 
 ### 3.4 Terms that fit NO axis — the most valuable output
 
-Eleven kinds. Each is named by at least two independent traditions, so none is an artefact
+Twelve kinds. Each is named by at least two independent traditions, so none is an artefact
 of one source.
 
 **(1) Ensemble-combination names — a term for a simultaneous multi-instrument sound.**
@@ -787,9 +1064,19 @@ E7's luógǔjīng syllables are the pure case: `cāng` = daluo + optional naobo 
 xiaoluo; `qiē` = naobo + xiaoluo. E7, verbatim: "the syllables that form a pattern refer to
 the ensemble as a whole, and not to particular instruments." The tabla compound bols are
 the same thing in miniature: `Dha` = Ga(bayan) + Ta(dayan), and I4 maps it to `BD+SD`.
-Janggu `deong` = both heads struck together. **No KITWARP axis holds "these N instruments
-sound at once as one named event."** A layout can express it as two simultaneous slots, but
-then the *name* is lost, and in Beijing opera the name is the whole notation.
+Janggu `deong` = both heads struck together, and Korean gives it a class name of its own,
+**Ssang** ('double'). Javanese `dlong` = tong + dhah together, `ndang` = tak + dhen together.
+Sabar `rwan`, `rwe` and `drin` are two-stroke compounds that W9 says are "perceived as
+minimal rhythmic units". **No KITWARP axis holds "these N sources sound at once as one named
+event."** A layout can express it as two simultaneous slots, but then the *name* is lost, and
+in Beijing opera the name is the whole notation.
+
+A sharper sub-case: Javanese `tlang` is defined as tak + thung "simultaneously **or nearly
+simultaneously, with tak slightly preceding thung**". The term's definition is a few
+milliseconds of offset between two heads. A flam is the same shape and the model handles it
+as `ornament.flam` with `attacks: 2` — so the machinery exists; what is missing is that
+here the two attacks land on *different instruments*, and `ornament` is a qualifier on one
+term.
 
 **(2) Pitch bend / pressure modulation while sounding.** mridangam `gumiki` (I8 defines
 `Gum` as "just the gumiki movement, no strike"); tabla bayan modulation (I4: "which can
@@ -808,12 +1095,23 @@ pele"); conga glissando (moistened finger). Hornbostel–Sachs has the stem for 
 has `scrape` (19) and `swirl` (17) but no friction-rub. A güiro scrape and a cuíca rub are
 not the same action.
 
-**(4) Instrument-orientation change as an articulation.** tamborim `virado`: "the drum is
-flipped upside-down in the middle of the pattern, which produces one note that is slightly
-delayed" (B6). ghatam: "the ghatam is turned around so that the mouth faces towards the
-audience" (I9), and tone varied "by changing the distance between the pot and the stomach".
-Fits no axis. It is not site, position, contact, technique or damping — it is a change to
-the instrument's pose.
+**(4) Instrument-orientation change as an articulation — and, worse, the instrument
+moving into the implement.** tamborim `virado`: B6, "the drum is flipped upside-down in the
+middle of the pattern, which produces one note that is slightly delayed"; B12, verbatim,
+"O ritmista ao tocar a nota anterior gira o instrumento para que a nota seguinte seja tocada
+no sentido inverso ao subir a baqueta". B13 (Zeh, ANPPOM 2006) states the mechanism without
+euphemism: in the `3 e 1` technique the upstroke note is "feita com a virada do tamborim
+para a baqueta e não com a própria baqueta" — **made by bringing the drum to the stick, not
+the stick to the drum**. ghatam: "the ghatam is turned around so that the mouth faces
+towards the audience" (I9), with tone varied "by changing the distance between the pot and
+the stomach".
+
+Every axis in the model presupposes that the implement moves and the instrument is static:
+`site` and `position` locate a point the implement travels to, `contact` names the part of
+the implement that arrives. The tamborim's principal technique inverts the kinematics, and
+three independent sources agree that the inversion is what produces the note. This is the
+clearest case in the bucket of a term that fits no axis because it violates an unstated
+assumption of the axis set rather than because it needs a new value.
 
 **(5) Ensemble role, as distinct from instance ordinal.** `quinto` (lead) vs `salidor`
 (marking) vs `tres dos`; `sangban` ("defines the rhythm") vs `dununba` ("depth") vs
@@ -846,13 +1144,19 @@ substitute `bargardan`; daf's "fingers … fastened about their neighbours and s
 released, like the action of finger-snapping". v0.1 `technique` has no `snap`. It is not a
 slap (no palm contact), not a hit, not an ornament (it is a single primary attack).
 
-**(9) Cross-hand damping — damping by the hand that is not striking.** conga muffled slap
-("the other hand rests on the drumhead"); tabla `Dha` where the bayan hand's state modifies
-the dayan stroke; kanjira left-hand pressure. v0.1's `damping` description already notes
-"hand damping while striking and while not striking are different sounds", so the axis
-anticipates this — but the value list (`none, muted, damped, towel, gated`) has no value
-that says *which* hand damps. In hand-drum traditions that distinction changes the pitch,
-not just the decay.
+**(9) Cross-hand damping — damping by the hand that is not striking.** The strongest case
+is sabar, where it is the *only* difference between two separately named strokes: W9 defines
+`tan` as "The stick strikes the centre of the drum and bounces off" and `tac` as "The stick
+strikes the centre of the drum and bounces off, **while the hand damps the edge of the
+drum**". Same implement, same site, same position, same rebound. Also: conga muffled slap
+("the other hand rests on the drumhead"); tabla `Dha`, where the bayan hand's state modifies
+the dayan stroke; surdo, where B14 records that on the rest figure "o ritmista abafa a pele
+com a mão"; kanjira left-hand pressure. v0.1's `damping` description already notes "hand
+damping while striking and while not striking are different sounds", so the axis anticipates
+this — but the value list (`none, muted, damped, towel, gated`) has no value that says
+*which* hand damps. Sabar proves that traditions mint separate names for exactly that
+difference, so a converter that collapses `tan` and `tac` onto one `damping` value loses a
+distinction the source vocabulary considers phonemic.
 
 **(10) School / lineage as a qualifier on a stroke.** tabla `Te` is "the middle finger in
 Delhi gharana, or … middle, ring, and little fingers together in Varanasi style" (I1);
@@ -864,10 +1168,21 @@ recorded sound, not the lineage. Any world-percussion pivot term will need eithe
 qualifier or a documented decision to pick one school and alias the rest.
 
 **(11) Rest and silence as notated members of the stroke vocabulary.** taiko `Su` = "a
-rest"; E2's fricative and semivowel rest syllables `sa`, `ho`, `iya`. Every oral mnemonic
-system in the bucket carries silence as a named member of the same alphabet as the strokes.
-KITWARP will never mint a term for a rest, but a converter reading kuchi-shōga must know
-that `Su` is not an unmapped instrument.
+rest"; E2's fricative and semivowel rest syllables `sa`, `ho`, `iya`; the Gondapangrawit
+kendhang manuscript's dots (E16). Every oral mnemonic system in the bucket carries silence
+as a named member of the same alphabet as the strokes. KITWARP will never mint a term for a
+rest, but a converter reading kuchi-shōga must know that `Su` is not an unmapped instrument.
+
+**(12) An abstract technique class parallel to the iconic name.** Korean is explicit about
+it: every janggu stroke has both a Sino-Korean class name used in notation — `Ssang`
+('double'), `Pyeon` ('whip'), `Go` ('drum'), `Yo` ('shake') — and a `gu-eum` onomatopoeic
+syllable used in teaching — `deong`, `ttak`, `kung`, `deoreoreo` (§2.9.1). Beijing opera has
+the same split at ensemble level: E7's five group symbols `DA / TAI / QI / QIE / CANG` are
+an abstract reduction over dozens of iconic syllables. Persian compounds `riz` + a stroke
+name rather than minting a roll name. This is not a missing axis; it is a missing *layer*
+distinction. The abstract class is what a pivot vocabulary is. The iconic syllable is what a
+sample library tends to ship as an articulation label. A tradition that maintains both tells
+the reconciliation pass which of the two it is looking at.
 
 ---
 
@@ -1032,13 +1347,30 @@ rename.
 
 ## 6. Self-critique (round C)
 
+### 6.0 Second pass: what the reopened round B closed
+
+The bucket was reopened after the shared WebSearch pool recovered, because all four gaps
+left at the end of the first pass needed a search rather than a fetch. Three closed, one
+closed partially.
+
+| Gap | Outcome |
+|---|---|
+| **Sabar stroke names** | **CLOSED at authority A.** W9, Ros 2021, *Frontiers in Communication* 6:643683, Table 1 "Sabar phonemes" — all nine strokes with variants and verbatim physical descriptions (§2.7.1), plus corpus frequencies. Corroborated independently by W13 (MIT OCW). The drum family and the `galeñ` stick closed from W14. Tang's canonical definitions are located precisely (W12, Harvard PhD 2000, p. 165) without needing the restricted book |
+| **Javanese and Balinese kendang** | **Bali CLOSED at authority A** — E15, McGraw's glossary, four strokes with notation letters and the `cedugan`/`gupekan` implement split (§2.9.3). **Java closed as to structure, not as to syllabary** — E16, Schwartz (Wesleyan), gives the head names, the three drum configurations, the historical notation letters, the name of the oral solfege (`kendhang cangkem`) and, decisively, an ethnomusicologist's own statement that kendhang sounds are (position × technique) plus two-hand combination. The syllable-to-letter table itself is search-derived and marked UNVERIFIED-AT-SOURCE (§2.9.2) |
+| **Korean janggu `gi` / `gideok` / `gigideok`** | **RESOLVED, by correction.** `gideok` is two consecutive right-head strokes, not one stroke; `gi` is the first of the pair. The five-class Ssang/Pyeon/Go/Yo system is now recorded (§2.9.1) and produced a new no-axis finding, §3.4 (12). The class table is search-derived (E24 returned 403) and marked UNVERIFIED-AT-SOURCE |
+| **Brazilian surdo open vs `abafado`** | **CLOSED at authority A**, and better than asked. B14 (UDESC 2010) verifies the hand-mute directly: "Na figura da pausa, o ritmista abafa a pele com a mão ... nos três surdos". B12 (Oliveira 2025, peer-reviewed) added Mestre Odilon's four-stroke repique sequence verbatim and a precise `virado` definition; B13 (Zeh, ANPPOM 2006) added the tamborim's three articulations and the finding that the `virado` note is made by moving the drum into the stick — which is now the strongest single item in §3.4 |
+
+Register grew from 70 candidates / 34 reached to 99 / 51 reached directly. The stroke matrix §3.1 grew from
+fourteen traditions to sixteen. One new no-axis category was found, §3.4 (12).
+
 ### 6.1 What this bucket did not reach, and what it would have added
 
 | Not reached | What it would have added | Why it failed |
 |---|---|---|
 | **B. Michael Williams, *Selected works for solo frame drums*, DMA dissertation, University of North Texas** (M3) | The single most authoritative reachable-in-principle English source on riq, tar, bendir and daf stroke nomenclature, with a notation legend. Would have closed the entire frame-drum stroke gap in one document | UNT Digital Library serves a JavaScript "Validating your request…" gate to WebFetch. The `ark:/67531/metadc11019` identifier is stable; a plain HTTP client with a browser user-agent, or the UNT OAI endpoint, should reach it |
-| **Sabar stroke names** (W4, W6) | Utrecht's Drum Languages Project states there are "at least nine distinct strokes" and that "each drum stroke has a name" — none of the reached sources names one. Patricia Tang, *Masters of the Sabar* (Temple UP, 2007) is the standard monograph | W4's public page carries no table; W6 returned an empty body; the WebSearch budget ran out before a targeted search for Tang's stroke list |
-| **Javanese and Balinese kendang syllabary** (E11, E13) | The one major tradition in this bucket left with essentially no stroke vocabulary. E9 gives five drum names and a single five-syllable string | E11 returned 503; E13 is behind Elsevier; E10 turned out to be about kotekan and pitch notation, not drumming |
+| **Patricia Tang, *Masters of the Sabar*** (W11) and her Harvard PhD (W12) | The canonical stroke-definition table, W12 p. 165. The stroke set itself is now closed from W9, so this would be confirmation and orthography rather than new content | The archive.org item `mastersofsabarwo00tang` is access-restricted (controlled lending); metadata and OCR confidence are public, the text is not. A full-text mirror exists at epdf.pub with no stated licence — **reference-only under CLAUDE.md rule 2, not quoted from and not used** |
+| **The Javanese kendhang syllable-to-letter table at source** (E18, E19, E20) | Would upgrade §2.9.2's mapping from search-derived to authority A, and would give the physical description behind each syllable | E18 is behind a Project MUSE "Verification required" gate; E19 (Universitas Mulawarman module) returned 503; E20 is behind the ResearchGate gate; E21 has the table only as scanned images |
+| **The janggu class table at source** (E24) | Would upgrade §2.9.1 from search-derived to a citable reference | NamuWiki returns 403 to WebFetch. The authoritative alternative is the National Gugak Center instrumental score series, cited by E23 |
 | **Beijing opera `luógǔjīng` full pattern library** | E7 gives the 15-syllable alphabet (obtained, §2.9) but the ~90 named patterns live at `compmusic.upf.edu/bo-perc-patterns` | Not fetched; low value for a *pivot* vocabulary since patterns are not strokes (§3.4 (7)) |
 | **Fernando Ortiz, *Los instrumentos de la música afrocubana*** (C8) | The pre-MIDI Spanish organological monograph for every Cuban instrument in §2.1–2.2. Would settle the conga stroke-count disagreement of §4.3 from a 1952 primary source | No open full text located; not on archive.org's open shelf |
 | **Mamady Keïta & Billmeier, *A Life for the Djembe*** (W3) | The authoritative Malinke notation legend and the `dundunba`/`sangban`/`kenkeni` bell notation | Print only |
@@ -1054,27 +1386,32 @@ family — riq, tar, bendir, daf, pandeiro, tambourine — where this bucket's e
 thinnest and most dependent on authority-C sources. Everything §2.6 says about Arabic and
 Turkish frame-drum strokes rests on encyclopaedia entries and one trade site; Williams would
 replace all of it. **Recommended for the reconciliation pass to chase**, with a non-WebFetch
-client.
+client. It remains the answer after the second pass: the frame drums are now the thinnest
+part of the bucket, because sabar, kendang, janggu and the Brazilian bateria have all
+gained authority-A sources and the riq, tar and bendir have not.
 
 ### 6.3 Known weaknesses in what was extracted
 
-- **Wikipedia carries too much weight.** 12 of the 30 reached sources are Wikipedia
-  articles. They are cited and internally consistent, and for `Conga`, `Djembe` and
-  `Goblet drum` they carry material (the Spanish stroke list, the frequency measurements,
-  the `pa`/`sak` definition) that no reached authority-A source duplicated — but a second
-  independent confirmation is missing for most of §2.1.2, §2.2 and §2.7.
-- **Two traditions rest on one source each.** Beijing opera on E7, Balinese ensemble roles
-  on E10. Both are authority A and both are internally complete, but neither is
-  cross-checked.
-- **The Brazilian material is strong for pandeiro (B3, a dissertation with a verbatim
-  appendix) and weak for everything else.** Surdo, tamborim, cuíca, agogô, caixa, ganzá,
-  reco-reco and zabumba rest on Wikipedia alone; the surdo open/`abafado` pair — one of the
-  most-used articulations in the whole bucket — is explicitly marked UNVERIFIED in §2.10.
-- **The WebSearch budget (200 calls) is one session-wide pool shared by all twelve round-2
-  workers, and it was exhausted immediately after this bucket's round A.** Round B therefore
-  proceeded by direct URL only, which is why sabar, Javanese kendang and Peruvian cajón were
-  not closed: reaching them needed a search, not a fetch. Any future worker on this bucket
-  should spend its share of the pool on those three targets first.
+- **Wikipedia still carries weight in the Afro-Cuban and frame-drum sections.** 16 of the
+  51 directly reached sources are Wikipedia articles. They are cited and internally consistent, and
+  for `Conga`, `Djembe` and `Goblet drum` they carry material (the Spanish stroke list, the
+  frequency measurements, the `pa`/`sak` definition) that no reached authority-A source
+  duplicated — but a second independent confirmation is still missing for most of §2.1.2,
+  §2.2 and §2.6.
+- **Two traditions rest on one source each.** Beijing opera on E7, Balinese kendang strokes
+  on E15. Both are authority A and both are internally complete, but neither is
+  cross-checked, and E15's notation letters carry an apparent collision (§2.9.3).
+- **Three tables are search-derived and could not be confirmed at source**, and are marked
+  UNVERIFIED-AT-SOURCE where they appear: the Javanese kendhang syllable-to-letter mapping
+  (§2.9.2), the janggu five-class table (§2.9.1), and the Balinese six-stroke letter set
+  (§2.9.3). In each case the structure is corroborated by a reached authority-A source and
+  only the tabulation is not.
+- **Brazilian minor percussion is still thin.** Cuíca, agogô, ganzá, reco-reco, chocalho and
+  zabumba rest on Wikipedia alone. Surdo, caixa, repique, tamborim and pandeiro are now all
+  covered by Portuguese-language academic sources (B3, B12, B13, B14).
+- **Peruvian cajón was never separately closed.** §2.11 covers the flamenco cajón from X1
+  (authority A) and the instrument from X2; the Peruvian stroke vocabulary that the flamenco
+  one descends from is represented only by round-A trade summaries.
 - **`web.archive.org` is unreachable in this environment** (connections reset mid-tunnel,
   confirmed by the supervisor for both curl and WebFetch), so the brief's Wayback fallback
   was never available. `archive.org` itself answers and its metadata and full-text search
@@ -1095,6 +1432,13 @@ client.
 /tmp/b07/gamelan_bali.pdf/.txt      E10, Yudane — ensemble roles extracted §2.9
 /tmp/b07/hornbostel.pdf/.txt        X4, Würzburg reprint of the 1914 introductory essay
 /tmp/b07/dicciani.pdf/.txt          C13, Dicciani 2009 — the cáscara definition, §2.2.1
+/tmp/b07/frontiers_sabar.pdf/.txt   W9, Ros 2021 — Table 1, the nine sabar phonemes, §2.7.1
+/tmp/b07/mit_sabar.pdf/.txt         W13, Bershteyn 2005 — sabar corroboration and the Tang locator
+/tmp/b07/mcgraw_glossary.pdf/.txt   E15, McGraw — Balinese kendang strokes, §2.9.3
+/tmp/b07/schwartz_gamelan.pdf/.txt  E16, Schwartz 2021 — Javanese kendhang notation history, §2.9.2
+/tmp/b07/mangueira.pdf/.txt         B12, Oliveira 2025 — repique and virado, §2.10
+/tmp/b07/tamborim_anppom.pdf/.txt   B13, Zeh 2006 — tamborim articulations and 3-e-1, §2.10
+/tmp/b07/udesc_bateria.pdf/.txt     B14, Marcelino 2010 — surdo hand-mute and macetas, §2.10
 ```
 Outside the repository, per the brief. Not committed.
 
