@@ -980,7 +980,93 @@ the snare is worth recording: it is the 1982 precedent for Roland treating
 The LinnDrum manual is the weakest-quality source in this bucket. Everything
 above beyond the instrument names is marked **UNVERIFIED** pending a better scan.
 
-### 2.17 Korg Volca Beats, E-mu SP-1200, Alesis SR-16
+### 2.17 Roland HandSonic HPD-20 — the densest hand-percussion vocabulary found
+
+Locator: **HandSonic HPD-20 Sound List**, `HPD-20_PA.pdf`
+(`https://static.roland.com/assets/media/pdf/HPD-20_PA.pdf`, 200, 869 257 B),
+"Inst List" section, pp. 4 onward. Official Roland download, 2013.
+
+Inst List categories, in document order:
+
+```
+LATIN 1  LATIN 2  AFRICAN 1  AFRICAN 2  ASIAN 1  ASIAN 2  MELODIC  ORCHESTRA
+ELECTRO  KICK 1  KICK 2  SNARE 1  SNARE 2  TOM 1  TOM 2  HI-HAT 1  HI-HAT 2
+CYMBALS 1  CYMBALS 2  CLAP  SOUND FX  OTHERS
+```
+
+Four per-instrument capability flags, verbatim from the legend:
+
+```
+*p : Instruments whose sound varies depending on the location of your strike
+     (M1 and M2 pads only)
+*l : Instruments whose sound is sustained if "Trigger Mode" is set to "GATE" or "ALT"
+*n : Instruments that also sound at note-off if "Trigger Mode" is set to "GATE"
+*h : Instruments whose open/close state can be controlled by a hi-hat control pedal
+```
+
+`*h` is the important one: **openness control is a per-instrument capability, not
+a per-pad one**, and it is granted to instruments that are not hi-hats. `*n` is a
+note-off-sounding flag, which no other document in this bucket has and which the
+model has no way to express.
+
+The instrument names are **compositional**, and the composition is exactly the
+KITWARP axis decomposition applied by hand. Naming grammar observed:
+
+`<instrument> [<site>] [<technique>] [<hand>]`
+
+Site tokens found in names: `Rim` (34), `Edge` (24), `Inner` (10), `Side`,
+`SideEdge`, `Hole`, `Bottom`, `Ears`, `Gourd`, `Paila`, `Center`.
+Technique tokens: `Slap` (13), `Bass` (16), `Mute` (17), `Open` (20), `Close`
+(27), `Hand` (16), `Stick` (10), `Roll` (9), `Click` (7), `Heel` (6), `Toe` (5),
+`Scrape` (5), `Damp` (5), `Press` (4), `Finger` (4), `Gliss` (3), `Buzz` (3),
+`Bend` (3), `Thumb` (2), `Tip` (2), `Harm` (2), `Sweep`, `Choke`, `Splash`.
+Hand tokens: `L` (31), `R` (28).
+
+Worked examples, verbatim instrument names:
+
+| Name | Decomposition |
+|---|---|
+| `Conga L *p` | instrument conga, limb left-hand, positional |
+| `Conga Inner L` | + site inner |
+| `Conga Edge L` | + site edge |
+| `Conga Bass` | technique bass-tone |
+| `Conga Slap *p` | technique slap |
+| `Conga Gliss` | technique gliss |
+| `Conga /Heel L *p` | technique heel |
+| `Conga /Toe R` | technique toe |
+| `Cajon Thumb` | technique thumb |
+| `Cajon Side L`, `Cajon SideEdge L` | site side, site side-edge |
+| `Cajon Foot` | technique foot |
+| `Pandeiro Thumb / Slap / Heel / Toe / Roll` | four techniques + ornament roll |
+| `Bendir Edge / Scrape / Harm` | site edge; technique scrape; technique harmonic |
+| `Pot Drum Hole S / Hole L / Bottom / Heel / Gliss` | four sites + technique |
+| `Cowbell 1 Tip`, `Cowbell 3 Close` | contact tip; damping/openness close |
+| `Berimbau Press / Bend / Gourd` | technique press, bend; site gourd |
+| `Timbale H Rim L`, `Timbale H Paila`, `Timbale H Hand` | site rim, site paila, implement hand |
+| `Djembe Hi Edge / Bass`, `Djembe Ears` | site edge, technique bass-tone, site ears |
+| `Bougarabou Hi / Slap / Bass` | instance + technique |
+
+Three tokens here have **no KITWARP axis value**:
+
+- **`Harm`** (Bendir Harm) — a harmonic/overtone stroke on a frame drum. Neither
+  `technique` nor `timbre` has it.
+- **`Paila`** — the metal shell side of a timbale, struck with the stick. It is a
+  `site`, and the vocabulary's `shell` is close but `paila` is the trade term and
+  it is not the same surface as a drum shell.
+- **`Ears`** (Djembe Ears) — the metal rings on a djembe's tuning ropes. A `site`
+  that is not part of the resonating body.
+
+Two tokens confirm existing axis values from a primary vendor source:
+`Heel` / `Toe` (technique, already in v0.1) and `Thumb` (technique, already in
+v0.1). Before this bucket those three had no vendor citation.
+
+`Conga Inner` / `Bongo H Inner` establish **`inner` as a named radial position**
+between `centre` and `edge`. The vocabulary's `position` axis has
+`centre / halfway / offset / perimeter`; Roland's own three-way split for a hand
+drum is `<bare> / Inner / Edge`, which maps to `centre / halfway / perimeter`
+but is not obviously the same partition.
+
+### 2.18 Korg Volca Beats, E-mu SP-1200, Alesis SR-16
 
 Volca Beats manual reached (`cdn.korg.com`, 200, 3 360 577 B) but its text layer
 is thin (624 lines for a multi-language leaflet) and its part names were not
@@ -1102,6 +1188,29 @@ capability, not a term.
 **16. Roland `ELEMENTS` group (28 instruments) and `CYMBAL OTHERS` (10).** Vendor
 catch-all groups whose members are not instruments in any organological sense.
 Named here because Phase 3 will meet them.
+
+**17. `Harm` — a harmonic stroke.** Roland HPD-20 `Bendir Harm`. Damping the
+membrane at a node to sound an overtone. Neither `technique` nor `timbre` nor
+`damping` has a value for it, and it is not `mute-stroke`: a mute-stroke kills
+the sound, a harmonic selects a partial.
+
+**18. `Paila` — the metal shell side of a timbale.** Roland HPD-20
+`Timbale H Paila`. `site: shell` is the nearest value but a timbale's paila is a
+different surface from a drum shell and the trade word is universal in Latin
+percussion.
+
+**19. `Ears` — the tuning rings on a djembe.** Roland HPD-20 `Djembe Ears`. A
+`site` on the instrument that is not part of the resonating body at all.
+
+**20. Note-off-sounding instruments.** Roland HPD-20 flag `*n`, "Instruments that
+also sound at note-off if Trigger Mode is set to GATE". A term whose realisation
+has two attacks bracketing a held gate. Nothing in the model expresses a sound
+that is a function of note *duration*.
+
+**21. Openness as a per-instrument capability.** Roland HPD-20 flag `*h`,
+"Instruments whose open/close state can be controlled by a hi-hat control pedal",
+granted to instruments that are not hi-hats. The `openness` axis is currently
+implicitly a hi-hat property.
 
 ### 3.3 Terms that map but with a warning
 
@@ -1257,8 +1366,22 @@ quijada, star chime.
 TR-808: claves, maracas, hi/mid/low conga.
 Roland TD-50X groups: `BLOCK/COWBELL`, `BELL/CHIME/GONG`, `PERCUSSION` (104
 instruments), `PERC ELEC` (36).
-Roland HandSonic HPD-20 Patch List (reached, 869 257 B, not mined) is the single
-densest source of hand-percussion instrument names in this bucket.
+
+Roland HandSonic HPD-20 Sound List, mined in section 2.17 — the densest source in
+this bucket. Instrument names appearing there and absent from v0.1, by category:
+
+*Latin:* conga, tumba, bongo (hi/lo), timbale (hi/mid/lo), cajon, pandeiro,
+tamborim, repinique, surdo, bombo, tambour, agogo, claves, guiro, maracas,
+metal maracas, shaker, caxixi, ganza, string bean, chafchas, cabasa, afuche,
+quijada, vibra-slap, cuica, berimbau, rain stick.
+
+*African:* djembe, kenkeni, sangban, doumdoumba, bougarabou, talking drum,
+bendir, pot drum, log drum, water drum, afro claves, metal castanets, apitua,
+grello, african bracelet, african jingle, ankle bells, moroccan castanet.
+
+Together with the TR-727 list (section 2.13) that is roughly 60 primary-sourced
+percussion instrument names ready to be minted, all from officially downloadable
+manufacturer documents.
 
 ---
 
@@ -1301,8 +1424,8 @@ its own name. The LinnDrum manual I did get is badly OCR'd.
 
 **Elektron Machinedrum not found.** Discontinued; not on Elektron's support pages.
 
-**Not mined, though reached:** HandSonic HPD-20 Patch List and MIDI
-Implementation (the densest percussion-name source in the bucket), SPD-SX PRO
+**Not mined, though reached:** HandSonic HPD-20 MIDI Implementation (the Sound
+List *was* mined, section 2.17), SPD-SX PRO
 Reference Manual, TR-8S Reference Manual and Preset INST Tone List, TM-6 PRO
 Reference Manual, TD-50X German Reference Manual, Millenium MPS-1000 manuals
 (EN+DE), Simmons legacy manuals, Korg Volca Beats, SP-1200 owner's manual,
