@@ -158,6 +158,8 @@ primary (a program's own technique packet — written by the people who use the 
 | 45 | Drum Glossary, 250+ terms | drumming.com | 2026 | glossary | `https://www.drumming.com/drum-glossary` | S | yes — **negative result**: no entry for gock, gawk, ping shot, stick shot or backstick |
 | 46 | archive.org full-text/metadata search for `"gock" AND "rimshot"` | Internet Archive | — | search API | `https://archive.org/advancedsearch.php?q=%22gock%22+AND+%22rimshot%22&output=json` | — | yes — **0 hits** |
 | 47 | Google Books API, `q="gock shot"` and `q="gock" marching snare` | Google | — | search API | `https://www.googleapis.com/books/v1/volumes` | — | **no — HTTP 429, daily project quota exhausted** |
+| 48 | **Marching Fundamentals**, percussion section | The Ohio State University Marching Band (TBDBITL) | 2019 rev. | teaching manual | `https://tbdbitl.osu.edu/sites/tbdbitl.osu.edu/files/fundamentals-percussion.pdf`, §D "Instrument Playing Position" | T | yes — names five cymbal **positions** (Traditional, Vertical A/V, Traditional hi-hat, **Gumption**, **Punch**) and no effect sounds |
+| 49 | Marching Cymbals 101 | Corey Pearce | n.d. | course outline | `https://coreypearce.com/marching-cymbals-101` | T | yes — **negative result**: a lesson index naming grips, positions and flips (Garfield Grip, Pistol Grip, Port, Set, Carry, Wrist Rolls, Sones Flips) with no sound definitions at all |
 
 Searches run in round A (18, all distinct): `"gock" marching snare rimshot`; `PAS marching
 percussion terminology standard glossary`; `MuseScore Drumline MDL Tapspace`; `"spock
@@ -416,6 +418,50 @@ Tapspace VDL 2.5 p. 38.
 | **Garfield grip** | "the hand goes through the leather strap and twists, causing the hand to be flat against the bell of the cymbal", named after the Garfield Cadets | [Wikipedia line 92], [RA p. 7] |
 | **Lock / West Coast vs Flow / East Coast** | two named schools of marching cymbal technique, rigid-aggressive vs fluid-relaxed | [RA p. 3] |
 
+### 2.7.1 Corroboration status of the cymbal terms — is Tapspace the only authority?
+
+Raised by the supervisor on behalf of the notation-standards bucket, which carries `zing`,
+`smash` and `crunch choke` as UNVERIFIED and was told that no general marching-cymbal source
+names them. **That negative is wrong for three of the four terms.** Counts below are
+word-bounded occurrences in the extracted text of each source, all of them non-Tapspace and
+institutionally independent of each other.
+
+| Term | Independent non-Tapspace sources naming it | Verdict |
+|---|---|---|
+| **zing** | 6 — GVSU/Waling (2, with a full definition), Rhythm Armada (2, definition), Oregon State (5, definition), PCHS (2, definition), Missouri State ("scrapes/zings", p. 541), marchingcymbalstechnique blog (definition) | **Well corroborated.** The most uniformly defined marching cymbal term in the bucket: every source describes a scrape of one plate's edge along the other's bow, bell outward. Notation bucket may drop the UNVERIFIED mark. |
+| **suc / succ / suck** | 4 naming it — GVSU (8, "also referred to as Vacuum, Suck"), Rhythm Armada ("Sucks (suck)" in its Glossary of Sounds, plus a definition), Oregon State ("sizz-suck", 3), marchingcymbalstechnique blog (definition) — plus Ohio State corroborating the *mechanism* without the name: cymbals are held "slightly offset to prevent suctioning" | **Well corroborated as a sound.** MuseScore's spelling `Suc` remains single-vendor; the field spellings are succ and suck. |
+| **crunch** | 2 — GVSU, which lists **Crunch** as an explicit synonym of its `Press` sound ("also referred to as Crunch, Crush, Closed Sizzle, Slam"); marchingcymbalstechnique blog, which defines it outright: "slamming the cymbals together from a distance for a forceful hi-hat sound". Oregon State's ten "crunches" are abdominal exercises, not a cymbal sound — a false positive worth recording | **Thinly corroborated but real.** Two sources, one of them only as a synonym. MuseScore's `Crunch (HH)` gloss is vindicated by the blog's definition, which literally says "hi-hat sound". |
+| **smash** | 1 — PCHS Marching Percussion Handbook, "**Smash Crash**", p. 12, with a full definition ("All of the edges must come in contact at the same time … The objective is to produce a very short accented sound. There should be no vibrating"). Its documented synonym **slam** adds 3 more: GVSU, Rhythm Armada ("Slams (slam)"), Oregon State | **Weakest of the four.** Under the name *smash* it rests on one packet; under the name *slam* it is well attested — but see §4, where three programmes give *slam* three incompatible meanings. |
+| **crunch choke** (the Tapspace key name specifically) | 0 | **Tapspace-only as a compound.** `Crunch` and `choke` are each attested; their combination is a VDL key name (p. 38) and nothing else reached uses it. |
+
+So the marching cymbal vocabulary does **not** stand on Tapspace alone — it is the one part
+of this bucket with the *most* independent corroboration, from five programmes' own
+technique packets. What does stand on a single source is narrower and should be marked as
+such: `smash` under that name (PCHS only), `crunch choke` as a compound (Tapspace only),
+`Half Crash` (no source at all — see §2.8), and `Whale Call` / `Weedwacker` (one source each).
+
+Two named sources fetched at the supervisor's suggestion returned **negative results worth
+recording**, because they show where this vocabulary is *not* written down:
+
+- **Ohio State (TBDBITL) Marching Fundamentals**, §D, names five cymbal *positions* —
+  Traditional, Vertical A/V, Traditional hi-hat, **Gumption**, **Punch** — and no effect
+  sounds whatever. It is a drill-and-carriage document. Two incidental corroborations fall
+  out of it: `Gumption` as a position name, which GVSU also lists (as a synonym of Flat,
+  alongside "Mid Port"); and `Punch` as a **low** position, "tops at the level of the
+  armpits … an upside-down 'V'", which independently supports §2.8's finding that
+  MuseScore's `Punch` at pitch 79 is mislabelled, since a punch is played low and choked,
+  not as a crash.
+- **Corey Pearce, "Marching Cymbals 101"** is a video-course index. It names grips,
+  positions and flips (Garfield Grip, Pistol Grip, Port, Set, Carry, Wrist Rolls, Basic
+  Flips, Holster, Sones Flips) and defines nothing. Useful only as further evidence that
+  marching cymbal pedagogy is organised by *holding position* first — the dimension §3.2
+  item 12 records as fitting no axis.
+
+The four sources the supervisor named as places where corroboration for the Garfield grip,
+lock technique, V crashes and choke technique would live: all four are now cited in this
+dossier — GVSU and Rhythm Armada in §2.7 (fetched before the suggestion arrived), Ohio State
+and Corey Pearce here.
+
 ### 2.8 Verdict per MuseScore name — does its use match the authority?
 
 | MuseScore name (file) | Authority found | Does MuseScore's use match? |
@@ -628,6 +674,16 @@ are reserved and unminted. Against that baseline:
    are all strikes on hardware, not on the drum.
 4. **`Battery Snare`** (MuseScore's name for a plain hit) is a section label, not a stroke.
    Do not mint it.
+5. **Single-source names, to be minted only with the provenance recorded as such.** Beside
+   `gok-shot` (§0), the corroboration audit in §2.7.1 leaves four cymbal names resting on
+   one source each. Any term minted from them must carry `confidence` accordingly:
+   `smash` — PCHS handbook p. 12 only, under that name; `crunch-choke` as a compound —
+   Tapspace VDL p. 38 only; `whale-call` — Tapspace only; `weedwacker` — GVSU only. And
+   `Half Crash`, which MuseScore has shipped since 2013, is attested in **no source
+   reached at all** and should not be minted without one. By contrast `zing` (6 independent
+   sources), `suck` (4 plus a mechanism corroboration) and `ding`/`bell-tap` (3 with
+   explicit synonym lists) are the best-evidenced terms in the whole bucket and can be
+   minted with confidence.
 
 ### 5.2 Missing values, by axis
 
