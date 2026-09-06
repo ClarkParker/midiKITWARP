@@ -152,7 +152,7 @@ Authority levels: **P** = vendor primary (vendor-authored, vendor-controlled hos
 | 16 | Abbey Road Modern Drummer Manual | Native Instruments | manual + note map | `…/manuals/Abbey_Road_Modern_Drummer_Manual_English_2012_07.zip`, Wayback 2026-02 | P-m | **yes** |
 | 17 | Abbey Road 50s Drummer Manual | Native Instruments | manual + note map | `…/manuals/Abbey_Road_50s_Drummer_Manual_English.zip` | P-m | not fetched |
 | 18 | Abbey Road Vintage Drummer Manual | Native Instruments | manual + note map | `…/manuals/Abbey_Road_Vintage_Drummer_Manual_English_12_2012.zip` | P-m | not fetched |
-| 19 | Studio Drummer Manual (German) | Native Instruments | manual, German terms | `…/manuals/Studio_Drummer_Manual_German_2012_07.zip` | P-m | not fetched — would give NI's German articulation names |
+| 19 | Studio Drummer Manual (German) | Native Instruments | manual, German terms | `…/manuals/Studio_Drummer_Manual_German_2012_07.zip` | P-m | **yes** — and it translates no articulation name at all, see §2.1.1 |
 | 20 | Karriem Riggins Drums Manual | Native Instruments | manual | `…/manuals/play-series/Karriem_Riggins_Drums_Manual_English_02_16_2023.pdf` | P | not fetched |
 | 21 | SSD5.5 User Manual | Steven Slate | manual | `download.stevenslatedrums.com/ssd5/SSD5.5%20User%20Manual.pdf` | P | **yes** |
 | 22 | SSD5 User Manual | Steven Slate | manual | `download.stevenslatedrums.com/ssd5/SSD5%20User%20Manual.pdf` | P | listed and confirmed live; content equivalent to #21 for our purposes |
@@ -162,7 +162,7 @@ Authority levels: **P** = vendor primary (vendor-authored, vendor-controlled hos
 | 26 | KB "Assign kit piece mapping manually" / "Use preset MIDI map configurations" / "Adjust hi-hat CC parameters" | GetGood Drums | KB articles | articles 31476769525783 / 31476793134743 / 31476794941079 | P | **yes** |
 | 27 | Full GGD KB index (47 articles) | GetGood Drums | KB index | `support.ggd.co/api/v2/help_center/en-us/articles.json` | P | **yes** |
 | 28 | Jamstix 4 User Manual, rel. 4.4.4 | Rayzoon | manual + appendices | `rayzoon2.com/docs/jamstix4_manual.pdf` | P | **yes** |
-| 29 | Jamstix 4 Handbuch (German) | Rayzoon | manual, German terms | `rayzoon2.com/docs/jamstix4_manual_german.pdf` | P | not fetched |
+| 29 | Jamstix 4 Handbuch (German) | Rayzoon | manual, German terms | `rayzoon2.com/docs/jamstix4_manual_german.pdf` | P | **yes** — older revision, no Appendix B; UI labels untranslated, see §2.1.1 |
 | 30 | Jamstix 3 User Manual, rel. 3.6.0 | Rayzoon | manual | `rayzoon2.com/docs/jamstix3_manual.pdf` | P | not fetched |
 | 31 | DrumMic'a! Manual (EN), 60 pp., InDesign 2013 | Sennheiser | manual + six note maps | `dn721903.ca.archive.org/0/items/dru-mic-a/DrumMicA/Documentation/DrumMicA_manual_en.pdf` | P-m | **yes** |
 | 32 | MT Power Drum Kit 2 drum-map downloads | Manda Audio | note-name files, 9 DAWs | `powerdrumkit.com/presets_drum-maps.php`; e.g. `resources.manda-audio.com/DOWNLOADS/presets/drum-maps/MT-PowerDrumKit_2_Drum_Map_for_Reaper.zip` | P | **yes** |
@@ -208,6 +208,37 @@ recorded here as UNVERIFIED and unsourced.
 | Sennheiser (DrumMic'a) | no cover term; the map lists instrument + technique as one string | **MIDI mapping** — glossary: "assigning sounds to MIDI-notes" | DrumMic'a manual §4.5.2, glossary p. 57 |
 | Manda Audio (MT Power) | no cover term; entries are drum names | **drum map** / **note names** / **pitch names** | `powerdrumkit.com/presets_drum-maps.php` |
 | IK Multimedia (MODO Drum) | **PLAY STYLES** — technique is a model parameter, not a named articulation | **Factory mapping** / **Custom MIDI mapping** | product page; FAQ 1262 |
+
+### 2.1.1 What the vendors' own German editions do — the identifier finding
+
+Two vendors publish a German manual, and both were fetched to see whether the articulation
+names get translated. **Neither translates a single articulation name.**
+
+- **NI Studio Drummer, German manual** (`Studio_Drummer_Manual_German_2012_07.zip` →
+  `Studio Drummer Manual German.pdf`). The chapter is retitled "5 Drum **Spielvarianten**"
+  and the running prose uses *Spielvariante* throughout ("jeder Spielvariante eine oder
+  mehrere MIDI-Noten zuweisen", §3.4.2). But the tables in that chapter keep the English
+  column header `Articulation` and every value in English: `Dampened`, `Open`,
+  `Center Right/Left Alternating`, `Halfway Left Hand`, `Rimshot`, `Sidestick`, `Flam`,
+  `Roll`, `Wires Off`, `Rim Only`, `Closed Tight Tip Right Hand`, `Open Three-Quarters`,
+  `Open Controller`. The manual even keeps the English document titles when pointing at the
+  note maps: "…in den separaten Dokumenten 'The Session Kit - Default Mapping', 'The Stadium
+  Kit - Default Mapping' und 'The Garage Kit - Default Mapping'". Where NI does translate,
+  it translates the *concepts*: `Belegung` (mapping/assignment), `MIDI-Zuweisungen`,
+  `Anschlagsebenen` (velocity layers), `Anschlagsdynamik` (velocity),
+  `Schlagzeuginstrument`.
+- **Rayzoon Jamstix 4, German manual** (`rayzoon2.com/docs/jamstix4_manual_german.pdf`,
+  68 pp. against the English edition's 77 — it is an older revision and does **not** contain
+  the Appendix B reference-ID table). UI labels stay English in the German text:
+  `'KIT PIECE'-Liste`, `'ARTICULATION'-Liste`, `WRIST ARTICULATION ANGLE`. Translated
+  vocabulary is again conceptual: `Kit-Teil` / `Drumkit-Teil` / `Schlagzeugteil` (kit piece),
+  `Fell` (head), `Kessel` (shell).
+
+That is worth more to KITWARP than a German word list would have been: two independent
+vendors, translating everything else, treat articulation names as **identifiers rather than
+prose**. It is direct vendor practice supporting ADR-0003's "identifiers are forever" —
+and it means a German-language KITWARP surface should localise the *labels* while keeping
+the slugs, exactly as NI does.
 
 Two structural outliers:
 
@@ -730,11 +761,12 @@ Two side findings from the same sweep, both from vendor pages:
    cannot express (positional continua rather than discrete stroke types). Its public
    parameter vocabulary was captured; its articulation names were not.
 
-4. **The German-language vendor manuals.** `Studio_Drummer_Manual_German_2012_07.zip` and
-   `rayzoon2.com/docs/jamstix4_manual_german.pdf` both exist and were located but not
-   fetched. They would give NI's and Rayzoon's *own* German articulation terms, which is
-   exactly the cross-language evidence bucket 12 is looking for, from a vendor rather than
-   from a translator. Cheap to get; worth a follow-up.
+4. ~~The German-language vendor manuals.~~ **Fetched after the first draft** — see §2.1.1.
+   The result is a negative that is more useful than the positive would have been: neither
+   NI nor Rayzoon translates any articulation name. Bucket 12 should not expect vendor
+   German terminology to exist; the German percussion vocabulary it is after comes from
+   scores and treatises, not from library vendors. What NI *does* translate is the concept
+   layer (`Spielvariante`, `Belegung`, `Anschlagsebene`).
 
 5. **NI Abbey Road 50s and Vintage Drummer manuals.** Same format as the three that were
    fetched, so probably no new vocabulary — but "probably" is doing work there, and the 80s
