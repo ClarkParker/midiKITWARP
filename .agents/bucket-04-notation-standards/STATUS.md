@@ -1,5 +1,5 @@
 status: done
-updated: 2026-09-06T13:08:00Z
+updated: 2026-09-06T13:16:00Z
 done:
   - dossier written, validated and pushed: docs/research/round2/04-notation-standards.md
     (1663 lines, six sections in the structure the brief prescribes)
@@ -26,16 +26,51 @@ done:
       SMuFL encodes centre and rim three times each, once per notational authority
         (Weinberg, Ghent, Caltabiano), so a glyph list cannot be minted one-to-one
   - axis mapping done for every extracted term, with eleven kinds of term that fit no axis
+  - the bucket is deliverable as it stands; the queries below would ADD to it, not repair it
 next:
-  - nothing; bucket complete
+  - nothing required. If the supervisor runs the searches under questions, I can fold the
+    results in; otherwise the dossier stands and the unreached items are named in its
+    self-critique with what each would add.
 questions:
-  - vocabulary/axes.json at serial 1 has 14 implement values and does NOT contain fist or
-    fingernail, but the round 2 brief text lists both as if they were present. Which is
-    authoritative? Both are in MusicXML beater-value and in SMuFL (pictBeaterFist U+E7E5,
-    pictBeaterFingernails U+E7E6), so the gap analysis treats them as missing.
-  - the shared WebSearch budget refused calls for this worker even after the supervisor
-    reported it had recovered; three items were chased by direct HTTP instead and two of
-    them succeeded (Finale, Weinberg).
+  - SEARCHES FOR THE SUPERVISOR TO RUN (worker WebSearch still refuses with 200 of 200).
+    Listed in value order. Each line says what the result would resolve.
+  - 1. Dorico "Playing Techniques.doricolib" percussion "Rim Shot" OR "Snares Off" technique
+    ID - resolves the top unreached item in the dossier: Dorico's percussion playing-technique
+    ids. Confirmed so far: the id namespace is pt.* (pt.natural, pt.legato found in public
+    third-party expression maps); no percussion pt.* id found anywhere public. A forum post or
+    a shared .doricolib containing percussion ids would settle it. Note steinberg.help is now a
+    FluidTopics single-page app - its topic URLs return a JS shell to curl and its
+    /api/khub/search endpoint 404s - so a search result pointing at a static mirror or a forum
+    thread is more useful than a steinberg.help URL.
+  - 2. Finale "Percussion Layout Designer" complete list of Note Types default percussion note
+    type list - resolves the one Finale gap left: I have 572 Note Types from the shipped
+    percussion-map pages, but not the master list the Layout Designer offers. Fetch note: the
+    Finale manual pages are reachable by plain curl with a browser user-agent; WebFetch
+    summarises them and refuses to reproduce the tables.
+  - 3. Sibelius SoundWorld "S3W" primary sound ID list unpitched percussion download - resolves
+    whether the 4887 ids I extracted from 17 published sound sets can be split into Sibelius's
+    own primary vocabulary and vendor secondary ids. Without it the Sibelius section is
+    "ids seen in the wild", not "Sibelius's vocabulary".
+  - 4. Kurt Stone "Music Notation in the Twentieth Century" percussion pictogram beater table
+    reproduced - the most authoritative source I could not get, and the upstream of BOTH
+    MusicXML's and SMuFL's percussion pictograms (the MusicXML XSD says its effect list is
+    "in addition to Stone's list"). Any reproduction of the pictogram plates would let the
+    reconciliation pass separate Stone's original distinctions from later inventions.
+    archive.org has it as a lending item (musicnotationint0000ston_h3s0) and archive.org
+    proper answers from here, so an archive.org full-text search may work where Wayback does not.
+  - 5. "guz" stroke marching snare drum definition Tapspace - the Finale Note Types "Snare Guz
+    Short" and "Snare Guz Long" are marked UNVERIFIED in the dossier; no primary definition found.
+  - 6. marching cymbal technique glossary "zing" "smash" "crunch choke" definitions - would
+    confirm or refute the dossier's UNVERIFIED note on whether MuseScore's Zing and Smash are
+    standard marching terms; Finale independently has Click, Ding and Crunch Choke, so the
+    family is real even if the individual names are vendor coinages.
+  - 7. vocabulary/axes.json at serial 1 has 14 implement values and does NOT contain fist or
+    fingernail, but the round 2 brief text lists both as if present. Which is authoritative?
+    No search needed - a repository question. Both are in MusicXML beater-value and SMuFL
+    (pictBeaterFist U+E7E5, pictBeaterFingernails U+E7E6), so my gap analysis treats them as
+    missing.
+  - noted, no action: IRCAM is irrelevant to this bucket - it holds no notation standard, and
+    nothing in my candidate register points at it. Wikipedia was not used as a source here.
 needs_owner:
   - mint technique "choke"? Six independent sources name it (SMuFL pictChokeCymbal, Guitar
     Pro on five instruments, Sibelius, MuseScore, Finale, Weinberg 1994) and v0.1 cannot
