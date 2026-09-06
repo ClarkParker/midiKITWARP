@@ -51,8 +51,12 @@ harvest from all six files, across KITWARP's other eleven axes, is **nine concep
 Getty AAT's `drumheads`, `shells (drum components)` and `snares (drum components)`, its
 five `percussion beaters`, and LCMPT's `drum machine`. Getty AAT has no concept for rim
 shot, side stick, flam, drag, buzz, choke, or open/closed hi-hat (query, §2.5), and no
-concept for a drum rim or a cymbal bow, bell or edge (§2.10). LCMPT has none either, and
-by design — it is a *medium of performance* thesaurus, not a technique thesaurus. Hornbostel-Sachs, in the authors' own
+concept for a drum rim or a cymbal bow, bell or edge (§2.10). No percussion parts thesaurus
+exists to be found: ICOM's CIMCIM built exactly such a thesaurus for brasswind and never
+built the percussion counterpart (§2.12), and the museum catalogue that does name drum
+parts, the Horniman, names them in free prose rather than in its structured term layer
+(§2.13). LCMPT has none either, and by design — it is a *medium of performance* thesaurus,
+not a technique thesaurus. Hornbostel-Sachs, in the authors' own
 words, deliberately excludes playing technique for membranophones (§2.2). The one
 linked-data vocabulary that promises "instrument playing techniques", DOREMUS
 `vocabulary/technique/`, turns out to hold 20 concepts, all of them vocal — *blow,
@@ -81,14 +85,14 @@ never a source of truth:
   contains several same-label items (five distinct items labelled `triangle`@en, three
   labelled `cymbal`@en — §4.5). Choosing between duplicates is a human judgement that a
   validator cannot make, and a wrong choice is invisible.
-- **Licence cost.** Mixed, and this is the sharp edge. Getty AAT is ODC-By 1.0 with a
-  mandatory attribution string. LC data at `id.loc.gov` is declared a public domain data
-  set. MusicBrainz core data is CC0. Wikidata is CC0. GND is CC0, stated per record. **MIMO publishes no licence
-  statement anywhere reachable** — not in the Skosmos vocabulary metadata, not on the
-  concept-scheme resource, not on the vocabulary landing page. Under ADR-0004 that is
-  `unknown` and therefore all rights reserved. See the open question in §6.4: storing the
-  bare integer `2729` and copying MIMO's label string `Side drum` are different acts, and
-  only the second is plausibly a reproduction.
+- **Licence cost.** Low, and settled — see §0.5. Getty AAT is ODC-By 1.0 with a mandatory
+  attribution string. LC data at `id.loc.gov` is declared a public domain data set.
+  MusicBrainz core data is CC0. Wikidata is CC0. GND is CC0, stated per record. **MIMO
+  publishes no licence statement anywhere reachable** — not in the Skosmos vocabulary
+  metadata, not on the concept-scheme resource, not on the vocabulary landing page — and
+  under ADR-0004 that is `unknown` and therefore all rights reserved. Storing the bare
+  integer `2729` and copying MIMO's label string `Side drum` are nevertheless different
+  acts, and the ruling in §0.5 is that only the second is a reproduction.
 - **Complexity cost.** One new optional object in `pivot.json`, one schema addition, one
   validator rule (id must match a syntax pattern per namespace; no xref may be treated as
   identity). No effect on the compiled table if the exporter drops `xref`.
@@ -122,9 +126,10 @@ never a source of truth:
    the granularity KITWARP needs; adopting one would force the vocabulary to invent
    children under borrowed parents, which is worse than owning the whole namespace.
 2. **Do add an optional outbound `xref` block** with namespaces `mimo`, `lcmpt`, `aat`,
-   `wikidata`, `mb`, `gnd`. Populate it only where the match is exact and a human has checked it;
-   leave it absent otherwise. A documented gap beats a guessed cross-reference, exactly as
-   for note numbers.
+   `wikidata`, `mb`, `gnd`. Populate it only where the match is exact and a human has
+   checked it; leave it absent otherwise. A documented gap beats a guessed cross-reference,
+   exactly as for note numbers. The three conditions in §0.5 are part of this
+   recommendation, not a caveat on it.
 3. **Do not copy any authority's label text into `pivot.json`.** Ids only. This keeps the
    MIMO licence gap out of the repository entirely, and it is also the honest position:
    KITWARP's display names describe drum-kit articulations, and MIMO's describe museum
@@ -133,6 +138,38 @@ never a source of truth:
    `kick` 211.212.12, drum kit 211.212.21, cymbal family 111.142) as a **reference axis**,
    not a pivot facet. They are a useful sanity check on family assignment and nothing more
    — see §4.2 for why they cannot carry more weight than that.
+
+### 0.5 The MIMO licence, ruled on
+
+MIMO states no licence, so ADR-0004 classes it `unknown` and therefore all rights reserved.
+The question this dossier raised was whether storing a bare MIMO integer, with none of
+MIMO's text, falls inside that restriction. **Ruling: it does not.** The reasoning, recorded
+here rather than taken on trust:
+
+- **Copyright does not reach it.** A number is not a work; § 2(2) UrhG requires a personal
+  intellectual creation. MIMO's expression is in its labels, its thirteen translations, its
+  definitions and its hierarchy. An id reproduces none of them.
+- **The sui generis database right does not reach it.** The protected acts are extraction —
+  defined as a transfer of *contents* to another medium — and re-utilisation. An outbound
+  identifier transfers no contents; it is functionally a hyperlink to a record. The new
+  thing being created is *our* mapping, KITWARP term → MIMO id, which is our own work.
+- **Volume is not an issue.** Roughly 40 ids against MIMO's 2 724 concepts is about 1.5 %,
+  comfortably inside the extraction cap in ADR-0004.
+
+**Three conditions attach to the recommendation in §0.4 and are part of it:**
+
+1. **Ids only.** Never a label, a definition, a translation or a hierarchy relation.
+2. **MIMO registered in `data/sources.json`** with `licence_applied: none-stated`.
+3. **The ids counted against MIMO's extraction budget** like any other rows.
+
+One wrinkle is escalated to the owner rather than decided here: ADR-0004 currently defines
+`reference-only` as "may be cited in documentation; never ingested at all", which read
+literally forbids putting an id into `data/`. The recommendation going to the owner is that
+an **outbound cross-reference belongs to the provenance layer, not to the shipped
+assertion**, and that ADR-0004 should say so explicitly.
+
+Cheap and worth doing regardless: **write to MIMO and ask for a licence statement.** An
+answer settles this permanently and costs an email.
 
 ---
 
@@ -160,7 +197,7 @@ secondary aggregation or index.
 | 12 | "Adaptation française de la classification des professeurs E. M. von Hornbostel et C. Sachs" | A. Schaeffner | 1935 | encyclopaedia entry | *Encyclopédie Française* 16, pp. 15–16. The French-language H-S terminology | B | **no** |
 | 13 | *Origine des instruments de musique* | A. Schaeffner | 1936 | book | cited #5 p. 4 | B | **no** |
 | 14 | *The Ethnomusicologist* (Hood organogram) | M. Hood | 1971 | book | cited #5 p. 2 | B | **no** |
-| 15 | *On Concepts and Classifications of Musical Instruments* | M. J. Kartomi | 1990 | book | Univ. of Chicago Press, ISBN 9780226425498; Internet Archive item `onconceptsclassi0000kart` (lending, not open) | B | **no** — borrow-only |
+| 15 | *On Concepts and Classifications of Musical Instruments* | M. J. Kartomi | 1990 | book, 329 pp, **17 classification systems compared** | Univ. of Chicago Press, ISBN 9780226425498; Internet Archive `onconceptsclassi0000kart` (lending-restricted); Google Books id `4rLfb4utJuMC`. An excerpt PDF on academia.edu has **no stated licence — reference-only, not quotable** | B | **no** — borrow-only |
 | 16 | "Classification", *Grove Dictionary of Musical Instruments*, 2nd ed. | K. Wachsmann, expanded by M. Kartomi and J. Montagu | 2014 | reference article | vol. 1, pp. 568–79, per #5 p. 3 | A | **no** — paywalled |
 | 17 | "Drum kit", *Grove Music Online* | — | — | reference article | `https://www.oxfordmusiconline.com/grovemusic/display/10.1093/gmo/9781561592630.001.0001/omo-9781561592630-e-0000042868` returns **HTTP 403** | A | **no** |
 | 18 | *Typologie et classification en organologie musicale* | C. Marcel-Dubois, ICOM CIMCIM | 1985 (Bern) | committee paper | `https://icom.museum/en/ressource/typologie-et-classification-en-organologie-musicale/` | B | **no** — record only |
@@ -178,12 +215,14 @@ secondary aggregation or index.
 | 25 | Wikidata | Wikimedia | 877 items under *percussion instrument* (Q133163) | SPARQL `https://query.wikidata.org/sparql` | B | **yes** |
 | 26 | MusicBrainz instrument entity | MetaBrainz | 288 of type *Percussion instrument* | WS2 `https://musicbrainz.org/ws/2/instrument?query=…&fmt=json` | B | **yes** |
 | 27 | Digital Hornbostel & Sachs Classification of Musical Instruments | ACDH-CH / OeAW, on DARIAH Skosmos | — | `https://vocabs.dariah.eu/rest/v1/hsinstruments_thesaurus/…`. **curl gets HTTP 502 from the egress proxy**; WebFetch on the same URLs succeeds | A | **partly** — via WebFetch only |
-| 28 | Hornbostel-Sachs-Klassifikation (German museum vocabulary) | museumsvokabular.de / KOBV | — | `https://museumsvokabular.de/hornbostel-sachs/`, mirror `https://museumsvokabular.kobv.de/hornbostel-sachs/` | A | **no** |
-| 29 | term.museum-digital.de instrument tags | museum-digital | — | `https://smb.museum-digital.de/tag/38141` (Hornbostel-Sachs-Systematik) | B | **no** |
+| 28 | Hornbostel-Sachs-Klassifikation (German museum vocabulary) | museumsvokabular.de / KOBV | — | `https://museumsvokabular.de/hornbostel-sachs/`, mirror `https://museumsvokabular.kobv.de/hornbostel-sachs/`, older host `https://museum.zib.de/museumsvokabular/`. Confirmed live; explicitly published as freely available vocabularies for museum documentation | A | **no** — confirmed reachable, not extracted |
+| 29 | term.museum-digital.de instrument tags | museum-digital | — | `https://term.museum-digital.de/`, `https://smb.museum-digital.de/tag/38141` (Hornbostel-Sachs-Systematik). Confirmed live | B | **no** — confirmed reachable, not extracted |
 | 30 | DOREMUS controlled vocabularies (33 vocabularies, 23 categories) | DOREMUS ANR project; described as IFLA de-facto standard | `technique` 20 concepts; `mop-mimo` 2 572 MIMO concepts | `git clone --depth 1 https://github.com/DOREMUS-ANR/knowledge-base.git`, HEAD 2024-03-29; portal `https://data.doremus.org/vocabularies/` | B | **yes** |
 | 31 | Gemeinsame Normdatei (GND) | Deutsche Nationalbibliothek, via lobid (hbz) | **908** subject headings in category 14.3 *Musikinstrumentenkunde*; 8 M+ records overall | `https://lobid.org/gnd/search?q=…&format=json`, `https://lobid.org/gnd/{id}.json`. Licence CC0 1.0, stated per record | A | **yes** |
 | 32 | Iconclass | Henri van de Waal foundation, on DARIAH Skosmos | — | `https://vocabs.dariah.eu/iconclass/` | A | **no** — iconography, not organology |
-| 33 | CIMCIM resources (classification, brasswind terminology thesaurus) | ICOM CIMCIM | — | `https://cimcim.mini.icom.museum/resources/` | A | **no** |
+| 33 | **Brasswind Terminology Thesaurus** | ICOM CIMCIM Working Group | — | `https://icom-music.mini.icom.museum/resources/brasswind-terminology-thesaurus/`; registered in BARTOC at `https://bartoc.org/en/node/1202` | A | **yes** (supervisor search) — and **no percussion equivalent exists**, §2.12 |
+| 33a | Horniman Museum musical instrument catalogue | Horniman Museum and Gardens | — | object pages `https://www.horniman.ac.uk/object/{id}/`, structured records at `…/json`. Examples M1.6.60/1 (211.312), M24.8.56/191 (211.211.1), M90-1983 (232.11) | B | **yes** — §2.13 |
+| 33b | Carl Engel, illustrated catalogue of the Horniman collection | C. Engel | 1869 | museum catalogue | reported, not located | B | **no** |
 | 34 | Collections du Musée de la musique / POP-Joconde | Philharmonie de Paris | 8 000+ objects | `https://collectionsdumusee.philharmoniedeparis.fr/` | B | **no** |
 | 35 | "Controlled Vocabularies for Music Metadata" | P. Lisena, K. Todorov | 2018 | conference paper | ISMIR 2018, `https://ismir2018.ircam.fr/doc/pdfs/68_Paper.pdf`; Zenodo 1492441 | B | **no** — record only |
 | 36 | *List of idiophones / membranophones by Hornbostel–Sachs number* | Wikipedia | — | `https://en.wikipedia.org/wiki/List_of_idiophones_by_Hornbostel%E2%80%93Sachs_number` | C | **no** — index only |
@@ -734,6 +773,61 @@ Two things GND does that KITWARP should notice:
    Those are exactly the tokens a parser meets in a German score or a device menu, and no
    other authority file records them.
 
+### 2.12 CIMCIM's brasswind thesaurus, and the sourced negative it produces for percussion
+
+The last plausible home for a striking-site vocabulary was the committee that actually
+writes instrument terminology, ICOM's CIMCIM. It was checked and the result is a **negative
+finding, which closes the question rather than leaving it open**.
+
+- The **Brasswind Terminology Thesaurus** is real and maintained:
+  `https://icom-music.mini.icom.museum/resources/brasswind-terminology-thesaurus/`.
+  CIMCIM Terminology is registered in BARTOC at `https://bartoc.org/en/node/1202`.
+- **No percussion equivalent exists**, on the CIMCIM site or in BARTOC.
+- The working group's stated method is to derive terminology from close inspection of an
+  instrument in its musical, social, historical and technological context, rather than by
+  classification. That is precisely the method that *would* produce a part-by-part
+  striking-site vocabulary. It has been applied to brass and to nothing else.
+
+(Search run by the supervisor; the worker's WebSearch quota was exhausted. The two URLs
+above were reported, not independently re-fetched here — UNVERIFIED as to their current
+content, though the absence of a percussion thesaurus is the load-bearing claim and it is
+a negative across both sources.)
+
+### 2.13 The Horniman catalogue — a corpus of part terms, not a vocabulary of them
+
+Horniman object records were checked directly, because a museum catalogue is where
+instrument parts get named in practice. Verified here, not reported:
+
+`https://www.horniman.ac.uk/object/M1.6.60/1/` (HTTP 200) is titled **"211.312 Double-skin
+frame drum"** and its structured record is available as JSON at
+`https://www.horniman.ac.uk/object/M1.6.60/1/json` (HTTP 200, 48 935 bytes). Other examples
+reported: `M24.8.56/191/` (211.211.1), `M90-1983/` (232.11).
+
+The record has a real term layer with stable internal ids:
+
+| Field | Content in this record |
+|---|---|
+| `hornbostelSachs` | `{"title": "211.312 Double-skin frame drums", "role": "classified as", "uid": "hmc-term-1016012", "uuid": "1c14c2d3-…"}` |
+| `term` | `Tuareg` (maker or user), `211.312 Double-skin frame drums` (classified as), `frame drums` (object name) |
+| `physical` | four entries, all `component: "overall"`, `descriptor: "material"` — wood, pigment, hide, vegetable fibre |
+| `description` | free prose, `type: "catalogue description"` |
+
+**The `physical` array has a `component` field — which is exactly where a part vocabulary
+would live — and its only value in this record is `"overall"`. The structured layer records
+materials, not parts.** The part terms are in the prose alone:
+
+> "Double-skin frame drum. The **shell** is a shallow cylinder formed from a piece of thin
+> wood bent into a **hoop** and stuck together. The two skin **membranes** are **lapped**
+> onto **hoops** of twigs each with an **outer hoop**. The **heads** are tensioned by light
+> cords, tied together by a heavier cord. … A knotted cord **snare** passes across one
+> **head**."
+
+So Horniman is a **corpus** of part terminology, not a controlled vocabulary of it. Its
+Hornbostel-Sachs numbers are structured and citable; its shells, hoops, heads and membranes
+are not. Mining the prose of several thousand object records would yield a frequency list
+of English drum-part words, which is a different and much weaker thing than an authority
+file, and it is not something this bucket attempted.
+
 ---
 
 ## 3. Axis mapping
@@ -783,7 +877,7 @@ definition, not new distinctions.
 
 | KITWARP axis | Values in v0.1 | Authority terms found |
 |---|---:|---:|
-| `site` | 9 | **2 of 9** — AAT `drumheads` 300041846 → `head`, AAT `shells (drum components)` 300041856 → `shell`. Nothing for `rim`, `rim2`, `crossstick`, `bow`, `edge`, `bell`, `underside`, in any authority file (§2.10) |
+| `site` | 9 | **2 of 9** — AAT `drumheads` 300041846 → `head`, AAT `shells (drum components)` 300041856 → `shell`. Nothing for `rim`, `rim2`, `crossstick`, `bow`, `edge`, `bell`, `underside`, in any authority file (§2.10), and no percussion parts thesaurus exists to be found (§2.12) |
 | `position` | 4 | **0** |
 | `contact` | 3 | **0** |
 | `technique` | 24 | **0** |
@@ -1087,19 +1181,22 @@ versus hand-part, arriving from a different direction. **Recorded, not resolved.
   quoted here in English comes from the MIMO 2011 revision, which states it reproduces the
   1961 translation with revisions "not shown" in the version used. Where MIMO's English
   differs from Baines–Wachsmann, this dossier follows MIMO and does not know it.
-- **Museum catalogue terminology** (the bucket brief asked for it) is only partly explored.
-  The two *published* parts vocabularies were found and walked to the leaf — MIMO's
-  `Elements of musical instruments` and Getty's `percussion instrument components`, §2.10 —
-  and between them they yield two site terms, `head` and `shell`. What was **not** opened
-  is the unpublished catalogue layer: CIMCIM's resources page and its brasswind
-  terminology thesaurus, and the Horniman, MIM Brussels and Philharmonie de Paris
-  catalogues. CIMCIM's brasswind thesaurus is the interesting one by analogy: if the
-  committee produced a part-by-part terminology for one family, a percussion equivalent may
-  exist or may be the obvious thing for KITWARP to look for. Confidence that no percussion
-  parts thesaurus exists: **medium**, not high.
-- **German museum vocabularies** — museumsvokabular.de and term.museum-digital.de — were
-  identified but not fetched. They are the German-language equivalent of MIMO and would
-  give a second, independent German label set to check MIMO's *Hi-hat* problem against.
+- **Museum catalogue terminology** (the bucket brief asked for it) is now explored and the
+  question is closed rather than open. The two published parts vocabularies were walked to
+  the leaf (§2.10) and yield two site terms, `head` and `shell`. CIMCIM's brasswind
+  thesaurus exists and **has no percussion counterpart** (§2.12). The Horniman catalogue
+  was opened and its part terms turn out to live in free prose, not in its structured term
+  layer (§2.13). Confidence that no percussion parts thesaurus exists is now **high**.
+  What remains unopened: the MIM Brussels and Philharmonie de Paris catalogues, which
+  would have to be queried through their own databases, and which on the Horniman evidence
+  would most likely also be corpora rather than vocabularies.
+- **German museum vocabularies** — museumsvokabular.de, term.museum-digital.de and the
+  older museum.zib.de host — are confirmed live and explicitly published as freely
+  available vocabularies for museum documentation, but were **not extracted**. They are the
+  second, independent German label set that would settle whether MIMO's duplicate German
+  `Hi-hat` (§4.1) is MIMO's own error or a general German-cataloguing convention. This is
+  the largest remaining piece of work in the bucket and it is a bounded one: two hosts,
+  both reachable, both with SKOS behind them.
 - **GND** was queried after the search budget ran out, through the lobid JSON API, and is
   now the sixth column in §0.1 (§2.11). What was *not* done is an enumeration of its 908
   instrument headings; the coverage figure quoted for GND is a sample, marked UNVERIFIED.
@@ -1134,9 +1231,14 @@ absence of kit-level terms in the authority files is well evidenced; what Grove 
 is whether the *scholarship* has the terms even though the *thesauri* do not. If the
 reconciliation pass can reach one paywalled source, this is the one.
 
-Second choice: Kartomi 1990 (register #15), on Internet Archive as a lending item. It
-would settle whether any of the seventeen classification systems she surveys uses playing
-technique as a primary axis, which would be a direct precedent for KITWARP's design.
+Second choice: **Kartomi 1990** (register #15) — 329 pages comparing **17 classification
+systems** cross-culturally, arguing that societies imbue classification with
+culture-specific concepts (musical practice, theory, genre, cosmology, gender). It would
+settle whether any of those seventeen systems uses playing technique as a primary axis,
+which would be a direct precedent for KITWARP's design. Search could not settle it; only
+the book can. Internet Archive `onconceptsclassi0000kart` is lending-restricted, and the
+academia.edu excerpt carries no stated licence and is therefore reference-only under
+ADR-0004 — it must not be quoted even if opened.
 
 ### 6.3 Where this dossier could be wrong
 
@@ -1161,13 +1263,18 @@ technique as a primary axis, which would be a direct precedent for KITWARP's des
   *Tamburin*, `2390` = *Cowbell* / de *Kuhglocke*). The remaining Wikidata↔MIMO
   assertions in §2.7 were not spot-checked and are UNVERIFIED.
 
-### 6.4 The one question this bucket cannot answer itself
+### 6.4 The question this bucket could not answer itself, and its answer
 
-MIMO publishes no licence. ADR-0004 says unknown licence means all rights reserved. But an
-integer identifier minted by a third party, stored without any of that party's text, is
-arguably a fact and not a reproduction — the same reasoning that lets this repository
-publish note numbers. The distinction decides whether §0.4's recommendation is
-implementable as written or whether the `mimo` namespace must be dropped from the xref
-block, leaving AAT (ODC-By, attributable), LCMPT (public domain), Wikidata (CC0),
-MusicBrainz (CC0) and GND (CC0). This is a licence-policy judgement, not a research question, and it is
-recorded in the worker's `STATUS.md`.
+MIMO publishes no licence, and ADR-0004 says unknown licence means all rights reserved.
+Whether a bare third-party integer, stored without any of that party's text, falls inside
+that restriction is a licence-policy judgement rather than a research question. It was
+referred up and **has been answered: it does not.** The reasoning and the three conditions
+that attach to it are recorded in §0.5, so the `mimo` namespace stays in the xref block
+alongside AAT (ODC-By, attributable), LCMPT (public domain), Wikidata (CC0), MusicBrainz
+(CC0) and GND (CC0).
+
+One matter remains genuinely open and is in the owner bundle, not here: ADR-0004's
+definition of `reference-only` as "may be cited in documentation; never ingested at all"
+reads literally as forbidding an id in `data/`, and the ADR should be amended to say that
+an outbound cross-reference lives in the provenance layer rather than in the shipped
+assertion.
