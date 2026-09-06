@@ -1,0 +1,4 @@
+# Kept deliberately small: the data pipeline must be runnable from a clean checkout
+# with a stock Python. Anything added here has to earn its place in an ADR.
+jsonschema>=4.21
+tomli>=2.0 ; python_version < "3.11"

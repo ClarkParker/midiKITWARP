@@ -1,0 +1,24 @@
+# build / generated
+/build/
+/dist/
+/generated/
+*.pyc
+__pycache__/
+.venv/
+venv/
+
+# tooling
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+
+# editors / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# scraped intermediates - raw downloads are kept out of the repository on purpose;
+# only the extracted, provenance-carrying data is committed.
+/scrape-cache/

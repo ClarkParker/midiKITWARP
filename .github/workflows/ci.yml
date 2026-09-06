@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tooling
+        run: python -m pip install -r tools/requirements.txt
+      - name: Validate vocabulary and device data
+        run: python -m tools.validate
+      - name: Round-trip the legacy .iom files
+        run: python -m tools.iom.roundtrip_check data/legacy-iom
+      - name: Check exports are lossless
+        run: python -m tools.export --check
