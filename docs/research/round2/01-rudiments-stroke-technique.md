@@ -72,6 +72,9 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | R40 | **Greissinger, F. Henri, _Instructions for the Trumpet and Drum_** | book, 1900 | primary | archive.org id `instructionsfor00smitgoog`, OCR `_djvu.txt`, 45 877 B | public domain → free | **reached in full**; the `t/f/d/r` + count encoding, §2.3c |
 | R41 | **Straight, Edward B., _Straight's Modern Syncopated Rhythms for Drums_** | book, 1922 | primary | archive.org id `StraightsModernSyncopatedRhythms`, OCR `_djvu.txt`, 180 676 B | public domain → free | **reached in full**; drag-vs-press by attack count, 1922 implement list, §2.3c |
 | R42 | Peinkofer, Karl / Tannigel, Fritz, _Handbook of Percussion Instruments_ (English translation of N17) | handbook, 1976 | normative-in-German, in translation | archive.org ids `handbookofpercus0000pein`, `handbookofpercus0000karl` | in-copyright, lending-restricted → cite-only | **located, not opened** — this is the reachable route to N17 |
+| R43 | **Arsenault, Frank, _Wm. F. Ludwig Presents The 26 Standard American Drum Rudiments and Selected Solos_**, Ludwig Drum Company, 1958 | LP, 1958 | **normative** — NARD's own official recording, made by a NARD president | archive.org id `lp_wm-f-ludwig-presents-the-26-standard-ameri_frank-arsenault`; **item metadata carries the full 33-track list** | recording in copyright; the **track titles are the deliverable** → cite-only | **reached** via `archive.org/metadata/<id>`; §2.2b |
+| R44 | _Corps Style Snare Drum Dictionary: A Complete Reference Guide … Through The Use Of American And Swiss Rudiments_, Alfred Publishing, 1981 | dictionary, 1981 | secondary, but a **dictionary** — the genre this bucket most needs | archive.org id `corpsstylesnared0000unse`, ISBN 9780739023228 | in-copyright, lending-restricted → cite-only | **located, not opened**; the likeliest place to find `back stick` and `gock` defined |
+| R45 | Retzel, Frank / Adler, Henry / McKenzie, Ted, _Buddy Rich's Modern Interpretation of Snare Drum Rudiments_, Amsco | book | secondary | archive.org id `buddyrichsmodern0000fran`, ISBN 9780825634659 | in-copyright, lending-restricted → cite-only | located, not opened |
 
 ### 1.2 Reached only as an abstract (paywall)
 
@@ -115,10 +118,10 @@ recorded with a locator but no text or notation may be copied into `data/`.
 | N28 | Dawson, Alan, "Rudimental Ritual" | curriculum, primary | the Berklee kit application of the rudiments | in print |
 | N29 | Freytag, _Rudimental Cookbook_ (1993); Delucia, _Percussion Discussion_ (1995); Wooton, _Rudimental Remedies_ (2010); Bachman, _Rudimental Logic_ (2010) | books, primary | where hybrid naming actually happened | in print |
 
-**Register totals:** 42 sources reached in full or as an abstract, 29 named and not reached —
-71 distinct sources, 75 register rows (R22 carries four sub-articles). Ids R35–R37 sit in §1.2
-and R38–R42 in §1.1 because the latter were added after the register was first closed; ids are
-not renumbered.
+**Register totals:** 45 sources reached in full, as an abstract or as catalogue metadata, and
+29 named and not reached — 74 distinct sources, 78 register rows (R22 carries four
+sub-articles). Ids R35–R37 sit in §1.2 and R38–R45 in §1.1 because the latter were added after
+the register was first closed; ids are never renumbered.
 
 Two access facts worth carrying forward: `web.archive.org` **content** is unreachable from
 this environment even though its availability API is not, and
@@ -212,6 +215,62 @@ named founders including William F. Ludwig and George Lawrence Stone.
 bounce roll, triple stroke roll, six stroke roll, seventeen stroke roll, triple paradiddle,
 single paradiddle-diddle, single flammed mill, pataflafla, Swiss Army triplet, inverted flam
 tap, flam drag, single dragadiddle.
+
+### 2.2b The NARD 26 in NARD's own words, 1958
+
+R24 (nard.us.com) prints the 26 names as raster images, so the association's own spelling could
+not be read there. It was recovered instead from the item metadata of NARD's **official
+recording**: Frank Arsenault — then NARD president — recorded the 26 for the Ludwig Drum
+Company in 1958, one rudiment per track, in NARD's own order (R43). The track list *is* the
+list, and the numbering confirms the 13 + 13 split: tracks 1–13 are the essentials, 14–26 the
+second thirteen, 27–33 are solos.
+
+| # | Track title as issued, 1958 | PAS 1984 name (R01) |
+|---|---|---|
+| 1 | **The Long Roll** | Double Stroke Open Roll |
+| 2 | The Five Stroke Roll | Five Stroke Roll |
+| 3 | The Seven Stroke Roll | Seven Stroke Roll |
+| 4 | The Flam | Flam |
+| 5 | The Flam Accent | Flam Accent |
+| 6 | The Flam Paradiddle | Flam Paradiddle |
+| 7 | The Flamacue | Flamacue |
+| 8 | **The Ruff** | Drag |
+| 9 | **The Single Drag** | Single Drag Tap |
+| 10 | **The Double Drag** | Double Drag Tap |
+| 11 | The Double Paradiddle | Double Paradiddle |
+| 12 | The Single Ratamacue | Single Ratamacue |
+| 13 | The Triple Ratamacue | Triple Ratamacue |
+| 14 | The Single Stroke Roll | Single Stroke Roll |
+| 15 | The Nine Stroke Roll | Nine Stroke Roll |
+| 16 | The Ten Stroke Roll | Ten Stroke Roll |
+| 17 | The Eleven Stroke Roll | Eleven Stroke Roll |
+| 18 | The Thirteen Stroke Roll | Thirteen Stroke Roll |
+| 19 | The Fifteen Stroke Roll | Fifteen Stroke Roll |
+| 20 | The Flam Tap | Flam Tap |
+| 21 | The Single Paradiddle | Single Paradiddle |
+| 22 | The Drag Paradiddle No. 1 | Drag Paradiddle #1 |
+| 23 | The Drag Paradiddle No. 2 | Drag Paradiddle #2 |
+| 24 | The Flam Paradiddle-Diddle | Flam Paradiddle-diddle |
+| 25 | **Lesson 25** | Lesson 25 |
+| 26 | The Double Ratamacue | Double Ratamacue |
+
+Solo tracks 27–33: Connecticut Halftime, Downfall Of Paris, The Three Camps, Hell On The
+Wabash, Old Dan Tucker, Grandfather's Clock, The General.
+
+**This settles what R35's abstract only hints at.** PAS's own committee said it made "certain
+changes in terminology"; comparing 1958 with 1984 shows exactly four:
+
+| 1958 (NARD) | 1984 (PAS) | Nature of the change |
+|---|---|---|
+| The Long Roll | Double Stroke Open Roll | descriptive-of-*sound* → descriptive-of-*sticking* |
+| **The Ruff** | **Drag** | one name displaced another for the same figure (see §4.1, §5.1) |
+| The Single Drag | Single Drag **Tap** | the terminal stroke added to the name |
+| The Double Drag | Double Drag **Tap** | same |
+
+`No. 1` / `No. 2` also became `#1` / `#2`, and `Paradiddle-Diddle` lost its second capital.
+Note that `Lesson 25` survived both revisions unchanged, still carrying Strube's 1870 lesson
+number (§2.3) — a rudiment named after its position in a book that almost nobody using the
+name has read.
 
 ### 2.3 Strube 1870 — the pre-standard layer, from the source
 
@@ -782,8 +841,13 @@ Vic Firth's education page (R28), the largest single distributor of the PAS list
 John Wooton) that cut across the PAS I–IV grouping entirely. Italian (R18) prints
 `flam paradiddle-didle` and `Single Dragadiggle`; Spanish (R19) glosses `flam` as `mordente`.
 
+And the standards body respells its own list across revisions: §2.2b sets NARD's official 1958
+recording against the 1984 sheet and finds four renamings (`Long Roll` → `Double Stroke Open
+Roll`, `Ruff` → `Drag`, `Single Drag` → `Single Drag Tap`, `Double Drag` → `Double Drag Tap`).
+
 **Consequence for KITWARP:** the rudiment names are *not* a controlled vocabulary even where a
-standards body owns them. Any mapping table keyed on rudiment name must carry aliases.
+standards body owns them. Any mapping table keyed on rudiment name must carry aliases, and the
+alias set has to span revisions of the *same* list, not just rival lists.
 
 ### 4.4 Competing standards, all current
 
@@ -811,10 +875,14 @@ Checked against `vocabulary/axes.json` v0.1.0, serial 1.
 
 ### 5.1 Misnamed in v0.1
 
+The renaming history in §2.2b is the strongest reason this section exists: a name that PAS
+prints today is not the name the same figure carried in 1958, 1900, 1870 or 1860. Aliases are
+not a nicety here, they are the only way a mapping survives contact with a source.
+
 | v0.1 slug | Problem | Evidence | Recommendation |
 |---|---|---|---|
 | `technique: gok-shot` | The literature spells it **gock** (alt. **gawk**). "gok" appears in no source reached. Marching tenors even name a *drum* after it — "gock", "shot" or "spock" drums. | R07, R10 | ids are forever (ADR-0003): keep `gok-shot`, add a `correction` alias `gock-shot` and record `gock` / `gawk` as source spellings |
-| `ornament: ruff` vs `ornament: drag` | v0.1 treats them as two ornaments. In the current PAS standard they are **the same figure**: PAS #31 is printed `Drag` and NARD calls it "drag (half drag or ruff)". The historical distinction was **open vs closed execution**, not two figures. The genuinely distinct item is the American **3-stroke ruff** `rlR` (single-stroked graces), which is on no official sheet. | R01 #31; R04 §Ruff, §Drag; R23 | keep both ids; document that `ruff` means the *single-stroked* 3-attack grace and `drag` the *diddled* one, and that most sources conflate them |
+| `ornament: ruff` vs `ornament: drag` | v0.1 treats them as two ornaments. In the current PAS standard they are **the same figure**: PAS #31 is printed `Drag` and NARD calls it "drag (half drag or ruff)". NARD's own 1958 recording calls track 8 simply **The Ruff** — `Drag` displaced `Ruff` in 1984. The historical distinction was **open vs closed execution** (Hart's `Three Roll open`/`closed`, Greissinger's `Open Drag`/`Close Drag or Half Drag`), not two figures. The genuinely distinct item is the American **3-stroke ruff** `rlR` (single-stroked graces), which is on no official sheet but is defined in an 1864 army manual. | R01 #31; **R43 track 8**; R04 §Ruff, §Drag; R23; R38 Lesson III; R39 No. 25; R40 lines 4385–4406 | keep both ids; document that `ruff` means the *single-stroked* 3-attack grace and `drag` the *diddled* one, that most sources conflate them, and that `ruff` is the older name for what PAS now calls `drag` |
 | `technique: heel` / `technique: toe` | These read as two separate contact points, but the literature's **heel-toe** is one compound motion producing **two** attacks, and R09 states that physically "it's the ball of the foot (or toes) both times". The real per-note distinction is heel-**down** vs heel-**up** posture, which is inaudible. | R09 | document the two values as *positions on a pedal or frame drum*, and record that "heel-toe" is a double-stroke ornament, not a technique value |
 | `technique: sidestick` + `site: crossstick` | The same physical action is modelled on two axes at once. R12 gives cross-stick, rim click and side-stick as three names for one thing. | R12 | keep both ids; write the rule that a term uses one or the other, never both, and add `rim-click` as an alias |
 | `technique: dead` | Ambiguous: orchestral *dead stroke* (implement held down on the bar) vs rudimental *deadstick* grace note. | R04 §Drag | disambiguate in the description |
@@ -897,6 +965,15 @@ Checked against `vocabulary/axes.json` v0.1.0, serial 1.
 `left-foot`/`right-foot`, `centre`. Every one of these is attested in at least one source
 reached, most in a pre-1930 or non-English one.
 
+Two more that this bucket did not expect to confirm:
+
+- **`implement: jazz-stick`** — attested by name in Straight 1922: "Sand-blocks, Clog-mallets,
+  **Jazz-sticks** or Leather straps" (R41 line 13078). Not a modern marketing coinage.
+- **`damping: muted` / `damped`** — Straight 1922 uses "**muffled** drums" as a standing
+  instruction ("Use muffled drums when you Jazz, not too loud"), and the Basel drum's batter
+  head carries a permanent `Dämpfer` to stop it singing (R17). Damping is a 19th- and early
+  20th-century concept, not a sampling-era one.
+
 ---
 
 ## 6. Self-critique (round C)
@@ -928,6 +1005,7 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 | the *notation* of R03, R38, R39, R40 | all four are lithographed scores whose engraved figures did not OCR; every claim about them here rests on their **prose** only. Reading the plates would settle, for instance, exactly how many strokes Nevins's `SLOW SAG` has |
 | Peinkofer/Tannigel English edition (R42) | the German normative handbook is on archive.org under lending restriction; worth one attempt with a borrowing account |
 | snarescience dictionary (N23) | the marching slang layer where `gock`, `sprock` and very likely `back stick` are actually defined |
+| **_Corps Style Snare Drum Dictionary_, Alfred 1981 (R44)** | the one *dictionary* of corps-style vocabulary located anywhere in this bucket. It is on archive.org under lending restriction (`corpsstylesnared0000unse`, ISBN 9780739023228). A borrowing account would very likely settle `back stick`, `gock`, `spock` and the American "Swiss" rudiment names in a single sitting. **This is the cheapest remaining win in the bucket.** |
 | Percussive Notes archive (R35–R37) | PAS's own account of the "certain changes in terminology" made in 1984 — i.e. exactly which names were changed and from what |
 
 ### 6.3 Known weaknesses in what *is* reported
@@ -954,11 +1032,15 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 - **No orchestral treatise was consulted** — Berlioz, Kastner, Blades, Peinkofer/Tannigel.
   That is bucket 02's job, but it means the orchestral half of the rimshot/roll conflict in
   §4.1 rests on encyclopaedic sources rather than on a treatise.
-- **Round A's search leg was cut short by budget**, not by exhaustion: the session's WebSearch
-  allowance (200 calls) was consumed at search 20 of this bucket, and the DuckDuckGo HTML
-  endpoint is blocked by the egress proxy. Everything after search 20 was done by constructing
-  URLs directly. Two specific searches that were queued and never ran: the Rudimental Codex
-  list, and a German-language search for an enumerated Basel `Grundstreiche` table.
+- **Round A's search leg was cut short by budget**, not by exhaustion: the session-wide
+  WebSearch allowance (200 calls, shared across all twelve buckets) was consumed at search 20
+  of this bucket, and the DuckDuckGo HTML endpoint is blocked by the egress proxy. Everything
+  after search 20 was done by constructing URLs directly and by querying archive.org, which is
+  where the five 1860–1922 primaries and the 1958 NARD track list came from. A later message
+  said the pool had recovered; two retries from this worker were still refused with
+  `200 of 200`. **Two searches were queued and never ran**: the Percussion Creativ
+  _Rudimental Codex_ list (N08), and a German-language search for an enumerated Basel
+  `Grundstreiche` table. Both are named in §6.1 as the chase-list for reconciliation.
 
 ### 6.4 Environment findings worth passing to other buckets
 
@@ -973,7 +1055,16 @@ route is probably percussion-creativ.de's publications page or Claus Hessler dir
 - `web.archive.org` **content** returns proxy 403 for both WebFetch and urllib, although
   `archive.org/wayback/available?url=` returns JSON normally. The Wayback fallback named in
   the brief is therefore **not available** in this environment.
+- `archive.org/metadata/<id>` returns an item's **description field**, and for LPs that field
+  routinely contains the full track list. For a bucket about *names*, a recording's track list
+  is a primary artefact: the NARD 26 in §2.2b were recovered this way after the association's
+  own web page turned out to publish them only as images. Worth trying for any list that a
+  publisher issued as a record, a video or a poster.
 - Several publisher sites (bloomdrums, elephantdrums, pdfcoffee, drumlines mirrors) return 403
   to urllib but **succeed via WebFetch**, and vice versa for PDFs. Trying both is worth it.
+- Full-text mirrors of in-copyright method books surface on unlicensed aggregators
+  (pdfcoffee, epdf and similar). Under CLAUDE.md rule 2 those are reference-only: this dossier
+  registers such books with their locator and does **not** quote them. Every verbatim quotation
+  above comes from a public-domain scan, an openly published PDF, or CC BY-SA text.
 - pas.org's WordPress uploads directory serves PDFs at 200 while its article pages are
   paywalled — the sheet is reachable even though the journal is not.
